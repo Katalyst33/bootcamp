@@ -1,56 +1,46 @@
-const express = require('express');
-const dotenv = require('dotenv');
-
-
+const express = require("express");
+const dotenv = require("dotenv");
+const morgan = require("morgan");
+const colors = require("colors");
+const logger = require("./middleware/logger");
+const connectDB = require("./config/db");
 //load env vars
 
 dotenv.config({
-    path: './config/config.env'
+  path: "./config/config.env",
 });
 
+//cnnetct to the database
+connectDB();
+
+//route files
+const bootcamps = require("./routes/bootcamp");
 const app = express();
 
-app.get('/api/v1/bootcamps', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: 'Show all bootcamps'
-    });
-});
+//body parser
+app.use(express.json());
 
-app.get('/api/v1/bootcamps/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `get Bootcamp ${req.params.id}`
-    });
-});
+//dev logging middle ware
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+  app.use(logger);
+}
 
-
-app.post('/api/v1/bootcamps', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: 'Create new bootcamp'
-    });
-});
-
-
-app.put('/api/v1/bootcamps/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `update Bootcamp ${req.params.id}`
-    });
-});
-
-app.delete('/api/v1/bootcamps/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `Delete Bootcamp ${req.params.id}`
-    });
-});
-
+app.use("/api/v1/bootcamps", bootcamps);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(
-    PORT,
-    console.log(`Server running on ${process.env.NODE_ENV} mode on port ${PORT}`)
+const server = app.listen(
+  PORT,
+
+  console.log(
+    `Server running on ${process.env.NODE_ENV} mode on port ${PORT}`.rainbow
+  )
 );
+//handle unhanled promise rejection
+
+process.on("unhandledRejection", (err, promise) => {
+  console.log(`Error:${err.message}`.red);
+  //Close server & exit Process
+  server.close(() => process.exit(1));
+});
