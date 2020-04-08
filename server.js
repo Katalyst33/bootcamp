@@ -11,7 +11,7 @@ dotenv.config({
   path: "./config/config.env",
 });
 
-//cnnetct to the database
+//connect to the database
 connectDB();
 
 //route files
@@ -39,7 +39,7 @@ const server = app.listen(
     `Server running on ${process.env.NODE_ENV} mode on port ${PORT}`.rainbow
   )
 );
-//handle unhanled promise rejection
+//handle unhandled promise rejection
 
 process.on("unhandledRejection", (err, promise) => {
   console.log(`Error:${err.message}`.red);

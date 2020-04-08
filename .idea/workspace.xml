@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/geocoder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/hibrid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/hibrid.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,7 @@
       <workItem from="1585611326808" duration="64000" />
       <workItem from="1585849723965" duration="15000" />
       <workItem from="1585849750506" duration="186000" />
-      <workItem from="1586284250063" duration="8970000" />
+      <workItem from="1586284250063" duration="12369000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -114,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586304759401</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="setting up geo coder API🙃🦾">
+      <created>1586305382336</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586305382336</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,17 +133,18 @@
     <MESSAGE value="mongoose custom errors handling next" />
     <MESSAGE value="about to add async handler" />
     <MESSAGE value="added slugify" />
-    <option name="LAST_COMMIT_MESSAGE" value="added slugify" />
+    <MESSAGE value="setting up geo coder API" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting up geo coder API" />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="0" y="139" key="CommitChangelistDialog2" timestamp="1586304759295">
+    <state x="0" y="139" key="CommitChangelistDialog2" timestamp="1586305382238">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="139" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586304759295" />
+    <state x="0" y="139" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586305382238" />
     <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog" timestamp="1585264705810">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -143,33 +153,33 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="717" height="245" key="GridCell.Tab.0.bottom" timestamp="1586305179451">
+    <state width="632" height="278" key="GridCell.Tab.0.bottom" timestamp="1586309985803">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="717" height="245" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586305179451" />
-    <state width="717" height="245" key="GridCell.Tab.0.center" timestamp="1586305179450">
+    <state width="632" height="278" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985803" />
+    <state width="632" height="278" key="GridCell.Tab.0.center" timestamp="1586309985802">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="717" height="245" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586305179450" />
-    <state width="717" height="245" key="GridCell.Tab.0.left" timestamp="1586305179449">
+    <state width="632" height="278" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985802" />
+    <state width="632" height="278" key="GridCell.Tab.0.left" timestamp="1586309985802">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="717" height="245" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586305179449" />
-    <state width="717" height="245" key="GridCell.Tab.0.right" timestamp="1586305179451">
+    <state width="632" height="278" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985802" />
+    <state width="632" height="278" key="GridCell.Tab.0.right" timestamp="1586309985803">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="717" height="245" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586305179451" />
+    <state width="632" height="278" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985803" />
     <state x="661" y="104" key="SettingsEditor" timestamp="1586303137206">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586303137206" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586304761573">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586305384136">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586304761573" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586286927280">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586305384136" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586305405320">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586286927280" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586305405320" />
   </component>
 </project>

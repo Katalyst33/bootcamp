@@ -3,7 +3,11 @@
     <words>
       <w>bootcamp</w>
       <w>bootcamps</w>
+      <w>dotenv</w>
       <w>errorhandler</w>
+      <w>geocoder</w>
+      <w>slugify</w>
+      <w>zipcode</w>
     </words>
   </dictionary>
 </component>
