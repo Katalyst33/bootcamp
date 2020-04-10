@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/geocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/hibrid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/hibrid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/bootcamps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/courses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/reviews.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/users.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Bootcamp-model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Bootcamp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Bootcamp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/geocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/geocoder.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +28,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -35,11 +40,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="tv.twelvetone.intellij.plugins.intellivue.preferences.IntellivueConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routes" />
@@ -94,6 +100,8 @@
       <workItem from="1585849723965" duration="15000" />
       <workItem from="1585849750506" duration="186000" />
       <workItem from="1586284250063" duration="12369000" />
+      <workItem from="1586468923557" duration="350000" />
+      <workItem from="1586533820350" duration="5658000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -127,7 +135,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mongoose custom errors handling next" />
@@ -153,33 +161,33 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="632" height="278" key="GridCell.Tab.0.bottom" timestamp="1586309985803">
+    <state width="775" height="292" key="GridCell.Tab.0.bottom" timestamp="1586540171526">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="632" height="278" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985803" />
-    <state width="632" height="278" key="GridCell.Tab.0.center" timestamp="1586309985802">
+    <state width="775" height="292" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171526" />
+    <state width="775" height="292" key="GridCell.Tab.0.center" timestamp="1586540171525">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="632" height="278" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985802" />
-    <state width="632" height="278" key="GridCell.Tab.0.left" timestamp="1586309985802">
+    <state width="775" height="292" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171525" />
+    <state width="775" height="292" key="GridCell.Tab.0.left" timestamp="1586540171525">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="632" height="278" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985802" />
-    <state width="632" height="278" key="GridCell.Tab.0.right" timestamp="1586309985803">
+    <state width="775" height="292" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171525" />
+    <state width="775" height="292" key="GridCell.Tab.0.right" timestamp="1586540171526">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="632" height="278" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586309985803" />
-    <state x="661" y="104" key="SettingsEditor" timestamp="1586303137206">
+    <state width="775" height="292" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171526" />
+    <state x="661" y="104" key="SettingsEditor" timestamp="1586469164847">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586303137206" />
+    <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
     <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586305384136">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586305384136" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586305405320">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586540968114">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586305405320" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586540968114" />
   </component>
 </project>

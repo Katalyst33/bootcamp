@@ -13,7 +13,6 @@ const connectDB = async () => {
 module.exports = connectDB;
 
 /*
-
 mongoose.connect(  "mongodb://127.0.0.1/newagebot",
     {
         useNewUrlParser: true,
