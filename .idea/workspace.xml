@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bootcamp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +13,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="271f5295-5bbf-43ee-9858-da877ed49709" />
   </component>
   <component name="ProjectId" id="1ZgCy1qugYbC3L0kwqarxwlSH0Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -30,6 +35,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
@@ -91,7 +97,7 @@
       <workItem from="1585849750506" duration="186000" />
       <workItem from="1586284250063" duration="12369000" />
       <workItem from="1586468923557" duration="350000" />
-      <workItem from="1586533820350" duration="5809000" />
+      <workItem from="1586533820350" duration="7845000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -128,13 +134,29 @@
       <option name="project" value="LOCAL" />
       <updated>1586549347934</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added seeder.js to add and delete bootcamp data">
+      <created>1586549466733</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586549466733</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added seeder.js to add and delete bootcamp data">
+      <created>1586549499013</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586549499013</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="mongoose custom errors handling next" />
     <MESSAGE value="about to add async handler" />
     <MESSAGE value="added slugify" />
@@ -147,46 +169,50 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="0" y="139" key="CommitChangelistDialog2" timestamp="1586549347781">
+    <state x="0" y="139" key="CommitChangelistDialog2" timestamp="1586549498924">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="139" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586549347781" />
+    <state x="0" y="139" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586549498924" />
     <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog" timestamp="1585264705810">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585264705810" />
-    <state x="120" y="454" key="Github.Dialog.Accounts.Choose" timestamp="1586549358206">
+    <state x="120" y="454" key="Github.Dialog.Accounts.Choose" timestamp="1586549478369">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="120" y="454" key="Github.Dialog.Accounts.Choose/0.0.1680.1050@0.0.1680.1050" timestamp="1586549358206" />
+    <state x="120" y="454" key="Github.Dialog.Accounts.Choose/0.0.1680.1050@0.0.1680.1050" timestamp="1586549478369" />
     <state x="224" y="424" key="Github.ShareDialog" timestamp="1586285343615">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="775" height="292" key="GridCell.Tab.0.bottom" timestamp="1586540171526">
+    <state width="880" height="292" key="GridCell.Tab.0.bottom" timestamp="1586552381190">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="775" height="292" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171526" />
-    <state width="775" height="292" key="GridCell.Tab.0.center" timestamp="1586540171525">
+    <state width="880" height="292" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586552381190" />
+    <state width="880" height="292" key="GridCell.Tab.0.center" timestamp="1586552381189">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="775" height="292" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171525" />
-    <state width="775" height="292" key="GridCell.Tab.0.left" timestamp="1586540171525">
+    <state width="880" height="292" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586552381189" />
+    <state width="880" height="292" key="GridCell.Tab.0.left" timestamp="1586552381188">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="775" height="292" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171525" />
-    <state width="775" height="292" key="GridCell.Tab.0.right" timestamp="1586540171526">
+    <state width="880" height="292" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586552381188" />
+    <state width="880" height="292" key="GridCell.Tab.0.right" timestamp="1586552381190">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="775" height="292" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586540171526" />
+    <state width="880" height="292" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586552381190" />
     <state x="661" y="104" key="SettingsEditor" timestamp="1586469164847">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586549350167">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586549501348">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586549350167" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586549501348" />
+    <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586552379212" />
     <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586540968114">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
