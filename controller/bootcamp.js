@@ -17,7 +17,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
   //Loop over removeFields and delete them from reqQuery
   removeFields.forEach((param) => delete reqQuery[param]);
 
-  //Create query string
+  //Create query stringc
   let queryStr = JSON.stringify(reqQuery);
 
   //Creat  operators($gt, $gte, etc)

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/bootcamp.js" afterDir="false" />
-    </list>
+    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +97,7 @@
       <workItem from="1586647629205" duration="62000" />
       <workItem from="1586648356360" duration="372000" />
       <workItem from="1586649436278" duration="4030000" />
+      <workItem from="1586737766393" duration="210000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -157,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586553030922</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added pagination">
+      <created>1586738423464</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586738423464</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,17 +177,19 @@
     <MESSAGE value="setting up geo coder API" />
     <MESSAGE value="added seeder.js to add and delete bootcamp data" />
     <MESSAGE value="get bootcamp by radius distance " />
-    <option name="LAST_COMMIT_MESSAGE" value="get bootcamp by radius distance " />
+    <MESSAGE value="added pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pagination" />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="0" y="139" key="CommitChangelistDialog2" timestamp="1586553030821">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="0" y="171" key="CommitChangelistDialog2" timestamp="1586738423370">
+      <screen x="0" y="23" width="1680" height="1000" />
     </state>
-    <state x="0" y="139" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586553030821" />
+    <state x="0" y="155" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586737787098" />
+    <state x="0" y="171" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738423370" />
     <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog" timestamp="1585264705810">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -215,10 +222,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586553033049">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="0" y="272" key="Vcs.Push.Dialog.v2" timestamp="1586738433748">
+      <screen x="0" y="23" width="1680" height="1000" />
     </state>
     <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586553033049" />
+    <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
