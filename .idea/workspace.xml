@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="" />
+    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/Course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +118,10 @@
       <workItem from="1586647629205" duration="62000" />
       <workItem from="1586648356360" duration="372000" />
       <workItem from="1586649436278" duration="4030000" />
-      <workItem from="1586737766393" duration="210000" />
+      <workItem from="1586737766393" duration="300000" />
+      <workItem from="1586803741089" duration="435000" />
+      <workItem from="1587154391040" duration="155000" />
+      <workItem from="1587159751492" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -162,11 +186,30 @@
       <option name="project" value="LOCAL" />
       <updated>1586738423464</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added api pagination 🎯">
+      <created>1586738522032</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1586738522032</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -178,18 +221,23 @@
     <MESSAGE value="added seeder.js to add and delete bootcamp data" />
     <MESSAGE value="get bootcamp by radius distance " />
     <MESSAGE value="added pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pagination" />
+    <MESSAGE value="added api pagination " />
+    <option name="LAST_COMMIT_MESSAGE" value="added api pagination " />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="0" y="171" key="CommitChangelistDialog2" timestamp="1586738423370">
-      <screen x="0" y="23" width="1680" height="1000" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1586738521914">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="155" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586737787098" />
-    <state x="0" y="171" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738423370" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586738521914" />
+    <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
+    <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="0" y="115" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586738498244" />
     <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog" timestamp="1585264705810">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -222,10 +270,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="272" key="Vcs.Push.Dialog.v2" timestamp="1586738433748">
-      <screen x="0" y="23" width="1680" height="1000" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1586738528385">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586553033049" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1586738528385" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
