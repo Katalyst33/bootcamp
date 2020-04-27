@@ -2,6 +2,7 @@ const path = require("path");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const geocoder = require("../utils/geocoder");
+const sendEmail = require("../utils/sendEmail");
 const User = require("../models/User");
 
 //@desc Register User
@@ -65,7 +66,7 @@ exports.getMe = asyncHandler(async (req, res, next) => {
 //@access Public
 
 exports.forgotPassword = asyncHandler(async (req, res, next) => {
-  const user = await User.findById({ email: req.body.email });
+  const user = await User.findOne({ email: req.body.email });
 
   if (!user) {
     return next(new ErrorResponse("There is no user with that email", 404));
@@ -73,6 +74,8 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
 
   //GEt Reset token
   const resetToken = user.getResetPasswordToken();
+
+  await user.save({ validateBeforeSave: false });
 
   res.status(200).json({
     success: true,

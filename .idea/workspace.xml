@@ -20,13 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/sendEmail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/bootcamp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +135,7 @@
       <workItem from="1587851497828" duration="1214000" />
       <workItem from="1587854519546" duration="8105000" />
       <workItem from="1587934200081" duration="17308000" />
-      <workItem from="1588003249251" duration="6717000" />
+      <workItem from="1588003249251" duration="11038000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -234,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588004531933</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="started adding reset passord token funtion">
+      <created>1588015985947</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588015985947</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,17 +275,18 @@
     <MESSAGE value="add course seeder " />
     <MESSAGE value="add course seeder" />
     <MESSAGE value="publisher can add only one course" />
-    <option name="LAST_COMMIT_MESSAGE" value="publisher can add only one course" />
+    <MESSAGE value="started adding reset passord token funtion" />
+    <option name="LAST_COMMIT_MESSAGE" value="started adding reset passord token funtion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588004531770">
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588015985841">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588004531770" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588015985841" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -295,34 +304,34 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="636" height="42" key="GridCell.Tab.0.bottom" timestamp="1588014874733">
+    <state width="663" height="134" key="GridCell.Tab.0.bottom" timestamp="1588020298980">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="636" height="42" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588014874733" />
+    <state width="663" height="134" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588020298980" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="636" height="42" key="GridCell.Tab.0.center" timestamp="1588014874732">
+    <state width="663" height="134" key="GridCell.Tab.0.center" timestamp="1588020298979">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="636" height="42" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588014874732" />
+    <state width="663" height="134" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588020298979" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="636" height="42" key="GridCell.Tab.0.left" timestamp="1588014874731">
+    <state width="663" height="134" key="GridCell.Tab.0.left" timestamp="1588020298978">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="636" height="42" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588014874731" />
+    <state width="663" height="134" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588020298978" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="636" height="42" key="GridCell.Tab.0.right" timestamp="1588014874732">
+    <state width="663" height="134" key="GridCell.Tab.0.right" timestamp="1588020298980">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="636" height="42" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588014874732" />
+    <state width="663" height="134" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588020298980" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="661" y="104" key="SettingsEditor" timestamp="1586469164847">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588004534176">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588015987910">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588004534176" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588015987910" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
