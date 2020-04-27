@@ -20,13 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/course.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/advancedResults.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/bootcamp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/courses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Bootcamp-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Bootcamp-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +136,14 @@
       <workItem from="1586803741089" duration="435000" />
       <workItem from="1587154391040" duration="155000" />
       <workItem from="1587159751492" duration="7404000" />
-      <workItem from="1587333734456" duration="686000" />
+      <workItem from="1587333734456" duration="4894000" />
+      <workItem from="1587434024192" duration="11000" />
+      <workItem from="1587532927063" duration="291000" />
+      <workItem from="1587579584326" duration="623000" />
+      <workItem from="1587851497828" duration="1214000" />
+      <workItem from="1587854519546" duration="8105000" />
+      <workItem from="1587934200081" duration="17308000" />
+      <workItem from="1588003249251" duration="1010000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -213,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587161721703</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add course seeder">
+      <created>1587334709410</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587334709410</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,17 +267,18 @@
     <MESSAGE value="added api pagination " />
     <MESSAGE value="add course models and route " />
     <MESSAGE value="add course seeder " />
-    <option name="LAST_COMMIT_MESSAGE" value="add course seeder " />
+    <MESSAGE value="add course seeder" />
+    <option name="LAST_COMMIT_MESSAGE" value="add course seeder" />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1587161721610">
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1587334709246">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1587161721610" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1587334709246" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -272,38 +296,46 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="736" height="100" key="GridCell.Tab.0.bottom" timestamp="1587169187346">
+    <state width="760" height="312" key="GridCell.Tab.0.bottom" timestamp="1588004359548">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="736" height="100" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587169187346" />
-    <state width="736" height="100" key="GridCell.Tab.0.center" timestamp="1587169187345">
+    <state width="760" height="312" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588004359548" />
+    <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
+    <state width="760" height="312" key="GridCell.Tab.0.center" timestamp="1588004359546">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="736" height="100" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587169187345" />
-    <state width="736" height="100" key="GridCell.Tab.0.left" timestamp="1587169187345">
+    <state width="760" height="312" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588004359546" />
+    <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
+    <state width="760" height="312" key="GridCell.Tab.0.left" timestamp="1588004359546">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="736" height="100" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587169187345" />
-    <state width="736" height="100" key="GridCell.Tab.0.right" timestamp="1587169187345">
+    <state width="760" height="312" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588004359546" />
+    <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
+    <state width="760" height="312" key="GridCell.Tab.0.right" timestamp="1588004359547">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="736" height="100" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587169187345" />
+    <state width="760" height="312" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588004359547" />
+    <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="661" y="104" key="SettingsEditor" timestamp="1586469164847">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1587161723204">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1587334712499">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587161723204" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587334712499" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586552379212" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1587333975360">
+    <state x="128" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587869866285">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1587333975360" />
+    <state x="128" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587869866285" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1588003811905">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1588003811905" />
   </component>
 </project>

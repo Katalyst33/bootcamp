@@ -1,7 +1,10 @@
+const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const colors = require("colors");
+const fileupload = require("express-fileupload");
+const cookieParser = require("cookie-parser");
 const errorHandler = require("./middleware/error");
 // const logger = require("./middleware/logger");
 const connectDB = require("./config/db");
@@ -17,19 +20,27 @@ connectDB();
 //route files
 const bootcamps = require("./routes/bootcamp");
 const courses = require("./routes/course");
+const auth = require("./routes/auth");
 const app = express();
 
 //body parser
 app.use(express.json());
+app.use(cookieParser());
 
 //dev logging middle ware
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
   // app.use(logger);
 }
+//File uploading
+app.use(fileupload());
+
+//Set static folder
+app.use(express.static(path.join(__dirname, "public")));
 //Mount routers
 app.use("/api/v1/bootcamps", bootcamps);
 app.use("/api/v1/courses", courses);
+app.use("/api/v1/auth", auth);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
