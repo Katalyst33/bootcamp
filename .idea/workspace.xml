@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="" />
+    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Course.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +135,7 @@
       <workItem from="1588898563099" duration="4000" />
       <workItem from="1588898579160" duration="2122000" />
       <workItem from="1588913190632" duration="366000" />
-      <workItem from="1588979134403" duration="8004000" />
+      <workItem from="1588979134403" duration="8226000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -261,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588992145829</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added protected routes for admin">
+      <created>1588993038480</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588993038480</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,10 +314,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588992145697">
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588993038371">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588992145697" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993038371" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -354,10 +363,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588992147725">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588993040632">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588992147725" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993040631" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
