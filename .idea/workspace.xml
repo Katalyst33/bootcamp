@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/Reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/reviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,20 +57,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/config/db.js" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/models" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -136,7 +145,7 @@
       <workItem from="1588898563099" duration="4000" />
       <workItem from="1588898579160" duration="2122000" />
       <workItem from="1588913190632" duration="366000" />
-      <workItem from="1588979134403" duration="8811000" />
+      <workItem from="1588979134403" duration="18226000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -278,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588993110411</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added review schema">
+      <created>1588993881821</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588993881821</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,17 +332,18 @@
     <MESSAGE value="reset password !! " />
     <MESSAGE value="added protected routes for admin" />
     <MESSAGE value="added protected routes for admin ☠️" />
-    <option name="LAST_COMMIT_MESSAGE" value="added protected routes for admin ☠️" />
+    <MESSAGE value="added review schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="added review schema" />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588993110305">
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588993881722">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993110305" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993881722" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -344,38 +361,38 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="746" height="261" key="GridCell.Tab.0.bottom" timestamp="1588989344188">
+    <state width="870" height="261" key="GridCell.Tab.0.bottom" timestamp="1589007570759">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="746" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588989344188" />
+    <state width="870" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570759" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="746" height="261" key="GridCell.Tab.0.center" timestamp="1588989344187">
+    <state width="870" height="261" key="GridCell.Tab.0.center" timestamp="1589007570758">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="746" height="261" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588989344187" />
+    <state width="870" height="261" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570758" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="746" height="261" key="GridCell.Tab.0.left" timestamp="1588989344187">
+    <state width="870" height="261" key="GridCell.Tab.0.left" timestamp="1589007570757">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="746" height="261" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588989344187" />
+    <state width="870" height="261" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570757" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="746" height="261" key="GridCell.Tab.0.right" timestamp="1588989344188">
+    <state width="870" height="261" key="GridCell.Tab.0.right" timestamp="1589007570758">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="746" height="261" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588989344188" />
+    <state width="870" height="261" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570758" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="661" y="104" key="SettingsEditor" timestamp="1586469164847">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588993112359">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588993886887">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993112359" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993886887" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -385,9 +402,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="128" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587869866285" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1588986873479">
+    <state x="126" y="252" width="582" height="546" key="find.popup" timestamp="1589004765891">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1588986873479" />
+    <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589004765891" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589006826913">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589006826913" />
   </component>
 </project>
