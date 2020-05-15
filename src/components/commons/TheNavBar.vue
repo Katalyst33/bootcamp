@@ -23,8 +23,12 @@
                     </router-link>
 
 
-                    <router-link :to="{name:'Bootcamps'}" class="navbar-item">
+                    <router-link :to="{name:'AllBootcamps'}" class="navbar-item">
                        Browse Bootcamps
+                    </router-link>
+
+                    <router-link :to="{name:'Bootcamp'}" class="navbar-item">
+                        view Bootcamp
                     </router-link>
 <!--
                     <div class="navbar-item has-dropdown is-hoverable">
