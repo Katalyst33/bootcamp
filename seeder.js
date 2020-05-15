@@ -7,10 +7,10 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
 
 //lload models
-const Bootcamp = require("./models/Bootcamp-model");
-const Course = require("./models/Course");
-const User = require("./models/User");
-const Review = require("./models/Review");
+const Bootcamp = require("./api/models/Bootcamp-model");
+const Course = require("./api/models/Course");
+const User = require("./api/models/User");
+const Review = require("./api/models/Review");
 
 //Connect to DB
 mongoose.connect(process.env.MONGO_URI, {

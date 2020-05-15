@@ -20,16 +20,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/reviews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/ashcanbb_bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-duotone-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-duotone-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-duotone-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-duotone-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-duotone-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-light-300.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-light-300.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-light-300.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-light-300.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-light-300.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-pro/webfa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/null-devcamp-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/null-devcamp-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Bootcamps.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-bootcamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-bootcamp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-course.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-review.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/bootcamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/bootcamp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/bootcamps.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/bootcamps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-account.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-bootcamp-none.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-bootcamp-none.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-bootcamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-bootcamp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-courses-none.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-courses-none.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/reset-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/reset-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/update-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/update-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/advancedResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/advancedResults.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/async.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/async.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/logger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Bootcamp-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Bootcamp-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/photo_5d713a66ec8f2b88b8f830b8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/errorResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/errorResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/geocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/geocoder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/sendEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/sendEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +114,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="271f5295-5bbf-43ee-9858-da877ed49709" />
   </component>
   <component name="ProjectId" id="1ZgCy1qugYbC3L0kwqarxwlSH0Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -51,48 +124,65 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/config/db.js" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/src/scss" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
+  <component name="RunManager" selected="npm.front-end">
+    <configuration name="vue.config.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/vue.config.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="back-end" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev" />
+        <script value="back-end" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="front-end" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="front-end" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -100,9 +190,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="Node.js.server.js" />
+        <item itemvalue="npm.front-end" />
+        <item itemvalue="npm.back-end" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="Node.js.vue.config.js" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +236,16 @@
       <workItem from="1588898563099" duration="4000" />
       <workItem from="1588898579160" duration="2122000" />
       <workItem from="1588913190632" duration="366000" />
-      <workItem from="1588979134403" duration="18226000" />
+      <workItem from="1588979134403" duration="24005000" />
+      <workItem from="1589072486166" duration="930000" />
+      <workItem from="1589439280339" duration="414000" />
+      <workItem from="1589439705886" duration="1257000" />
+      <workItem from="1589442057098" duration="12213000" />
+      <workItem from="1589463745744" duration="213000" />
+      <workItem from="1589500224852" duration="1586000" />
+      <workItem from="1589515327498" duration="4000" />
+      <workItem from="1589515400729" duration="2605000" />
+      <workItem from="1589521544302" duration="7242000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -294,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588993881821</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added all review routes !! 🤮">
+      <created>1589007966374</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1589007966374</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,26 +440,27 @@
     <MESSAGE value="added protected routes for admin" />
     <MESSAGE value="added protected routes for admin ☠️" />
     <MESSAGE value="added review schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="added review schema" />
+    <MESSAGE value="added all review routes !! " />
+    <option name="LAST_COMMIT_MESSAGE" value="added all review routes !! " />
   </component>
   <component name="WindowStateProjectService">
-    <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585281983599">
+    <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589533246676">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1585281983599" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1588993881722">
+    <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589007966232">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993881722" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589007966232" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="0" y="115" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586738498244" />
-    <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog" timestamp="1585264705810">
+    <state x="108" y="156" width="671" height="702" key="EditFileWatcherDialog" timestamp="1589517826656">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="109" y="199" width="666" height="702" key="EditFileWatcherDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585264705810" />
+    <state x="108" y="156" width="671" height="702" key="EditFileWatcherDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589517826656" />
     <state x="120" y="454" key="Github.Dialog.Accounts.Choose" timestamp="1586549478369">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -361,38 +469,42 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="870" height="261" key="GridCell.Tab.0.bottom" timestamp="1589007570759">
+    <state width="812" height="260" key="GridCell.Tab.0.bottom" timestamp="1589534379308">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="870" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570759" />
+    <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
+    <state width="812" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589534379308" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="870" height="261" key="GridCell.Tab.0.center" timestamp="1589007570758">
+    <state width="812" height="260" key="GridCell.Tab.0.center" timestamp="1589534379307">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="870" height="261" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570758" />
+    <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
+    <state width="812" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589534379307" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="870" height="261" key="GridCell.Tab.0.left" timestamp="1589007570757">
+    <state width="812" height="260" key="GridCell.Tab.0.left" timestamp="1589534379306">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="870" height="261" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570757" />
+    <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
+    <state width="812" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589534379306" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="870" height="261" key="GridCell.Tab.0.right" timestamp="1589007570758">
+    <state width="812" height="260" key="GridCell.Tab.0.right" timestamp="1589534379308">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="870" height="261" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589007570758" />
+    <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
+    <state width="812" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589534379308" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state x="661" y="104" key="SettingsEditor" timestamp="1586469164847">
+    <state x="43" y="97" key="SettingsEditor" timestamp="1589463636078">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="661" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586469164847" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1588993886887">
+    <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589007968252">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1588993886887" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589007968252" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586552379212">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -402,13 +514,17 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="128" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587869866285" />
+    <state x="100" y="100" width="462" height="850" key="dock-window-1" timestamp="1589522963568">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="100" y="100" width="462" height="850" key="dock-window-1/0.0.1680.1050@0.0.1680.1050" timestamp="1589522963568" />
     <state x="126" y="252" width="582" height="546" key="find.popup" timestamp="1589004765891">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589004765891" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589006826913">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589534645797">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589006826913" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589534645797" />
   </component>
 </project>

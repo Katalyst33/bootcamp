@@ -1,0 +1,20 @@
+$primary: #3f3a64;
+$info: #3298dc;
+$danger:#f15622;
+$warning: #11a7f8;
+$info:#466db5;
+$dark:#171621;
+$grey:#ababab;
+$success: darken(#68ffab, 30%);
+
+$my-primary-light: fade_out($primary, 0.1);
+
+$navbar-item-color:$primary;
+
+::selection {
+  background: #FFE6B3; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #FFE6B3; /* Gecko Browsers */
+}
+

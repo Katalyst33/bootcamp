@@ -1,0 +1,26 @@
+// var includes all custom variables
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,900&display=swap');
+//@import "variables";
+@import "variables";
+@import "~bulma";
+@import "~shred-bootstrap/css/utilities/text.css";
+@import "~shred-bootstrap/css/utilities/shadows.css";
+@import "~shred-bootstrap/css/utilities/spacing.css";
+
+//@import "sweetAlertCustom";
+
+
+
+
+
+
+
+ .input, .textarea, .select select {
+   font-family: 'Balsamiq Sans', cursive;
+   background-color: #3298dc;
+   border-color: #3298dc;
+   border-radius: 4px;
+   color: #ffffff;
+ }
+
+
