@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/null-devcamp-dark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bootcamp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bootcamp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/bootcamps.json" beforeDir="false" afterPath="$PROJECT_DIR$/_data/bootcamps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Bootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Bootcamps.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +70,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.front-end">
+  <component name="RunManager" selected="npm.back-end">
     <configuration name="vue.config.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/vue.config.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -113,9 +106,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.back-end" />
         <item itemvalue="npm.front-end" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.back-end" />
         <item itemvalue="Node.js.vue.config.js" />
       </list>
     </recent_temporary>
@@ -168,7 +161,8 @@
       <workItem from="1589500224852" duration="1586000" />
       <workItem from="1589515327498" duration="4000" />
       <workItem from="1589515400729" duration="2605000" />
-      <workItem from="1589521544302" duration="20358000" />
+      <workItem from="1589521544302" duration="22230000" />
+      <workItem from="1589593309223" duration="1104000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -331,7 +325,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589534758065</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="adding view bootcamp page">
+      <created>1589551976293</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1589551976294</updated>
+    </task>
+    <task id="LOCAL-00025" summary="adding view bootcamp page 😩">
+      <created>1589551996767</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589551996767</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,17 +380,19 @@
     <MESSAGE value="added review schema" />
     <MESSAGE value="added all review routes !! " />
     <MESSAGE value="added front end&#10;connected back and front&#10;&#10;&gt;&gt;&gt;&#10;Design frontend for back end resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="added front end&#10;connected back and front&#10;&#10;&gt;&gt;&gt;&#10;Design frontend for back end resources" />
+    <MESSAGE value="adding view bootcamp page" />
+    <MESSAGE value="adding view bootcamp page " />
+    <option name="LAST_COMMIT_MESSAGE" value="adding view bootcamp page " />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589533246676">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589534754436">
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589551996593">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589534754436" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589551996593" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -400,42 +410,42 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="853" height="260" key="GridCell.Tab.0.bottom" timestamp="1589539903010">
+    <state width="703" height="260" key="GridCell.Tab.0.bottom" timestamp="1589593413544">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="853" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589539903010" />
+    <state width="703" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413544" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="853" height="260" key="GridCell.Tab.0.center" timestamp="1589539903009">
+    <state width="703" height="260" key="GridCell.Tab.0.center" timestamp="1589593413543">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="853" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589539903009" />
+    <state width="703" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413543" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="853" height="260" key="GridCell.Tab.0.left" timestamp="1589539903008">
+    <state width="703" height="260" key="GridCell.Tab.0.left" timestamp="1589593413542">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="853" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589539903008" />
+    <state width="703" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413542" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="853" height="260" key="GridCell.Tab.0.right" timestamp="1589539903010">
+    <state width="703" height="260" key="GridCell.Tab.0.right" timestamp="1589593413543">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="853" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589539903010" />
+    <state width="703" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413543" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="43" y="97" key="SettingsEditor" timestamp="1589463636078">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589534761052">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589551998410">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589534761051" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589551998410" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589534860805">
       <screen x="0" y="0" width="1680" height="1050" />

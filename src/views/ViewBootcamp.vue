@@ -1,50 +1,54 @@
 <template>
     <div>
-        <div class="section">
+        <div v-if="loaded === true" class="section">
             <div class="container">
                 <div class="columns">
                     <div class="column -is-8 has-text-left">
-                        <div v-for="(bootcamp, index) in bootcamps" :key="index">
+                        <template>
+                            <div >
 
 
-
-                            <div class="has-text-left">
-                                <h1 class="is-size-2 has-text-weight-semibold">{{bootcamp.name}}</h1>
-                                <p class="py-3">Devworks is a full stack JavaScript Bootcamp located in the heart of
-                                    Boston that focuses
-                                    on the technologies you need to get a high paying job as a web developer</p>
-                                <h4 class="is-size-5 has-text-weight-semibold ">Average Course Cost:<span
-                                        class="has-text-primary">$10,000</span></h4>
-                            </div>
-
-                            <div class="my-3">
-                                <div class="box-border ">
-                                    <div class="has-background-primary">
-                                        <h1 class="is-size-4 has-text-weight-semibold has-text-white px-3 py-1">Front
-                                            End Web Development</h1>
-                                    </div>
-                                    <div class="px-3 py-4">
-                                        <h3 class="is-size-5 has-text-weight-semibold">Duration: 8 Weeks</h3>
-                                        <p class="py-2">This course will provide you with all of the essentials to
-                                            become a successful
-                                            frontend web developer. You will learn to master HTML, CSS and front end
-                                            JavaScript,
-                                            along with tools like Git, VSCode and front end frameworks like Vue</p>
-                                        <ul class="py-2 has-text-weight-semibold">
-                                            <li class="my-2"><i class="fad fa-money-bill-wave pr-2"></i>Cost:<span
-                                                    class="is-size-5 has-text-weight-semibold">$8,000 USD</span></li>
-                                            <li class="my-2"><i class="fad fa-lightbulb-on pr-2"></i>Skill Required:
-                                                <span class="is-size-5 has-text-weight-semibold">Beginner</span></li>
-                                            <li class="my-2"><i class="fad fa-graduation-cap pr-2"></i>Scholarship
-                                                Available: Yes
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="has-text-left">
+                                    <h1 class="is-size-2 has-text-weight-semibold">{{bootcamp.data.name}}</h1>
+                                    <p class="py-3">{{bootcamp.data.description}}</p>
+                                    <h4 class="is-size-5 has-text-weight-semibold ">Average Course Cost:<span
+                                            class="has-text-primary">${{bootcamp.data.averageCost}}</span></h4>
                                 </div>
+                                <hr>
 
+
+                                <template v-for="(course, index) in courses.data">
+                                    <div :key="index">
+                                        <div class="my-3">
+                                            <div class="box-border ">
+                                                <div class="has-background-primary">
+                                                    <h1 class="is-size-4 has-text-weight-semibold has-text-white px-3 py-1">
+                                                       {{course.title}}</h1>
+                                                </div>
+                                                <div class="px-3 py-4">
+                                                    <h3 class="is-size-5 has-text-weight-semibold">Duration: {{course.weeks}}</h3>
+                                                    <p class="py-2">{{course.description}}</p>
+                                                    <ul class="py-2 has-text-weight-semibold">
+                                                        <li class="my-2"><i
+                                                                class="fad fa-money-bill-wave pr-2"></i>Cost:<span
+                                                                class="is-size-5 has-text-weight-semibold">${{course.tuition}}</span>
+                                                        </li>
+                                                        <li class="my-2"><i class="fad fa-lightbulb-on pr-2"></i>Skill
+                                                            Required:
+                                                            <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
+                                                        </li>
+                                                        <li class="my-2"><i class="fad fa-graduation-cap pr-2"></i>Scholarship
+                                                            Available: {{course.scholarshipAvailable}}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </template>
                             </div>
-
-                        </div>
+                        </template>
                     </div>
 
                     <div class="column is-4">
@@ -83,10 +87,16 @@
 
         </div>
         <hr>
+        <h1>Bootcamp</h1>
         <template>
-            <json-view :data="bootcamps.data"/>
+            <json-view :data="bootcamp.data"/>
         </template>
+        <hr>
+        <h1>Courses</h1>
 
+        <template>
+            <json-view :data="courses.data"/>
+        </template>
     </div>
 </template>
 
@@ -96,24 +106,37 @@
   export default {
     data() {
       return {
-        bootcamps: []
+        loaded:false,
+        bootcamp: [],
+        courses:[],
       };
     },
 
     mounted() {
-      this.viewBootcamp();
+      this.fetchBootcamp();
+      this.fetchCourses();
     },
 
     methods: {
-      viewBootcamp() {
+      fetchBootcamp() {
         const code = this.$route.params.id;
         axios.get("/api/v1/bootcamps/" + code)
           .then(({ data }) => {
-            this.bootcamps = data;
+            this.bootcamp = data;
+            this.loaded = true;
+          })
+          .catch();
+      },
+      fetchCourses(){
+        const code = this.$route.params.id;
+        axios.get(`/api/v1/bootcamps/${code}/courses`)
+          .then(({ data }) => {
+            this.courses = data;
             this.loaded = true;
           })
           .catch();
       }
+
     }
 
   };
