@@ -13,9 +13,9 @@
                     <div class="column is-2 has-text-left">
                         <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Explore</h3>
                             <ul>
-                                <li>item</li>
-                                <li>item</li>
-                                <li>item</li>
+                                <li><router-link :to="{name:'AllBootcamps'}">All bootcamps</router-link></li>
+                                <li><router-link :to="{name:'Bootcamp'}">Single Bootscamp</router-link></li>
+                                <li><router-link :to="{name:'AddBootcamp'}">Add bootcamp</router-link></li>
                                 <li>item</li>
                             </ul>
                     </div>
@@ -34,7 +34,8 @@
                                 <li>item</li>
                                 <li>item</li>
                                 <li><a class="has-text-grey" src="file:///Users/hibrid/hRoot/hScript/bootcamp/devcamper_project_resources/devcamper_theme/dist/index.html" target="_blank">item</a></li>
-                                <li><a class="has-text-grey" href="https://maxcoach.thememove.com/main/" target="_blank">item</a></li>
+                                <li><a class="has-text-grey" href="https://maxcoach.thememove.com/main/" target="_blank">front</a></li>
+                                <li><a class="has-text-grey" href="https://midone.left4code.com/" target="_blank">Admin</a></li>
                             </ul>
                     </div>
 

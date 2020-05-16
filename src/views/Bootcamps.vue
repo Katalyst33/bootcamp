@@ -5,49 +5,54 @@
         </h1>
 
         <div class="section">
-            <div>
+            <div v-if="loaded === true">
                 <div class="columns">
-                    <div v-for="(bootcamp, index) in bootcamps.data" :key="index" class="column">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img :src="`uploads/${bootcamp.photo}`" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <div class="has-background-success">
-                                            <p class="has-text-white has-text-weight-bold is-size-4 px-2">{{bootcamp.averageRating}}</p>
+                    <template v-for="bootcamp in bootcamps.data">
+                        <div :key="bootcamp._id"
+                        >
+                            <div class="column">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img :src="`uploads/${bootcamp.photo}`" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <div class="has-background-success">
+                                                    <p class="has-text-white has-text-weight-bold is-size-4 px-2">
+                                                        {{bootcamp.averageRating}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="media-content">
+
+                                                   <router-link :to="{name:'Bootcamp' , params:{id:bootcamp._id}}"
+                                                                class="title is-4 has-text-primary">{{bootcamp.name}}
+                                                   </router-link>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="media-content">
-                                        <router-link :to="{name:'Bootcamp' , params:{id:bootcamp._id}}" class="title is-4 has-text-primary">{{bootcamp.name}}</router-link>
+
+                                        <div class="content">
+                                            <p class="has-text-justified">
+                                                {{bootcamp.description}}
+                                            </p>
+                                        </div>
+                                        <div class="is-clearfix">
+                                            <div class="is-pulled-left">
+                                                <p class=" has-text-weight-bold has-text-left  is-rounded">
+                                                    <i class="fad fa-map-marker-alt"></i> {{bootcamp.location.city}},
+                                                    {{bootcamp.location.state}}
+                                                </p>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
-
-                                <div class="content">
-                                    <p class="has-text-justified">
-                                        {{bootcamp.description}}
-                                    </p>
-                                </div>
-                                <div class="is-clearfix">
-                                    <div class="is-pulled-left">
-                                        <p class=" has-text-weight-bold has-text-left  is-rounded">
-                                            <i class="fad fa-map-marker-alt"></i> {{bootcamp.location.city}}, {{bootcamp.location.state}}
-                                        </p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
+                    </template>
 
-
-<!--sepeatot-->
-
-<!--sepeatot-->
                 </div>
             </div>
             <hr>
@@ -64,23 +69,25 @@
   export default {
     data() {
       return {
-        bootcamps: [],
-        devCamps: [
-          {
-            image: null,
-            name: null,
-            rating: null
+        loaded: false,
+        bootcamps: null,
+        bootId:null,
 
-          }
-        ]
       };
     },
 
+
     mounted() {
       this.fetchBootcamp();
+
+   //    console.log(`route area ${this.$route.params.id}`)
+
     },
 
+
+
     methods: {
+
 
 
       fetchBootcamp() {
@@ -89,6 +96,7 @@
           .then(({ data }) => {
             this.bootcamps = data;
             this.loaded = true;
+
 
           })
           .catch();

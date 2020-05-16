@@ -20,7 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/views/admin/AddBootcamp.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/courses.json" beforeDir="false" afterPath="$PROJECT_DIR$/_data/courses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/Bootcamp-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Bootcamp-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Bootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Bootcamps.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +172,7 @@
       <workItem from="1589515327498" duration="4000" />
       <workItem from="1589515400729" duration="2605000" />
       <workItem from="1589521544302" duration="22230000" />
-      <workItem from="1589593309223" duration="1104000" />
+      <workItem from="1589593309223" duration="14523000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -339,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589551996767</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="&#10;🔥 added single bootcamp page&#10;&#10;added courses page 🔥">
+      <created>1589594488125</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1589594488125</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,17 +399,18 @@
     <MESSAGE value="added front end&#10;connected back and front&#10;&#10;&gt;&gt;&gt;&#10;Design frontend for back end resources" />
     <MESSAGE value="adding view bootcamp page" />
     <MESSAGE value="adding view bootcamp page " />
-    <option name="LAST_COMMIT_MESSAGE" value="adding view bootcamp page " />
+    <MESSAGE value="&#10; added single bootcamp page&#10;&#10;added courses page " />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10; added single bootcamp page&#10;&#10;added courses page " />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589533246676">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589551996593">
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589594487954">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589551996593" />
+    <state x="59" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589594487954" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -410,42 +428,42 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="703" height="260" key="GridCell.Tab.0.bottom" timestamp="1589593413544">
+    <state width="1027" height="260" key="GridCell.Tab.0.bottom" timestamp="1589599338167">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="703" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413544" />
+    <state width="1027" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589599338167" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="703" height="260" key="GridCell.Tab.0.center" timestamp="1589593413543">
+    <state width="1027" height="260" key="GridCell.Tab.0.center" timestamp="1589599338165">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="703" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413543" />
+    <state width="1027" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589599338165" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="703" height="260" key="GridCell.Tab.0.left" timestamp="1589593413542">
+    <state width="1027" height="260" key="GridCell.Tab.0.left" timestamp="1589599338164">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="703" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413542" />
+    <state width="1027" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589599338164" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="703" height="260" key="GridCell.Tab.0.right" timestamp="1589593413543">
+    <state width="1027" height="260" key="GridCell.Tab.0.right" timestamp="1589599338166">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="703" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589593413543" />
+    <state width="1027" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589599338166" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="43" y="97" key="SettingsEditor" timestamp="1589463636078">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589551998410">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589594490032">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589551998410" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589594490032" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589534860805">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -463,9 +481,21 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589540505785" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589550473506">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589610957078">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589550473506" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589610957078" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/Bootcamps.vue</url>
+          <line>9</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

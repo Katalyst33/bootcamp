@@ -37,6 +37,15 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/ViewBootcamp.vue"),
   },
+  {
+    path: "/add-bootcamp/",
+    name: "AddBootcamp",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/admin/AddBootcamp.vue"),
+  },
 ];
 
 const router = new VueRouter({

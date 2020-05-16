@@ -5,7 +5,7 @@
                 <div class="columns">
                     <div class="column -is-8 has-text-left">
                         <template>
-                            <div >
+                            <div>
 
 
                                 <div class="has-text-left">
@@ -20,13 +20,15 @@
                                 <template v-for="(course, index) in courses.data">
                                     <div :key="index">
                                         <div class="my-3">
-                                            <div class="box-border ">
-                                                <div class="has-background-primary">
-                                                    <h1 class="is-size-4 has-text-weight-semibold has-text-white px-3 py-1">
-                                                       {{course.title}}</h1>
+                                            <div class="box">
+                                                <div class="">
+                                                    <h1 class="is-size-3 has-text-weight-bold has-text-primary  px-3">
+                                                        {{course.title}}</h1>
                                                 </div>
+                                                <hr class="line">
                                                 <div class="px-3 py-4">
-                                                    <h3 class="is-size-5 has-text-weight-semibold">Duration: {{course.weeks}}</h3>
+                                                    <h3 class="is-size-5 has-text-weight-semibold">Duration:
+                                                        {{course.weeks}} weeks</h3>
                                                     <p class="py-2">{{course.description}}</p>
                                                     <ul class="py-2 has-text-weight-semibold">
                                                         <li class="my-2"><i
@@ -38,7 +40,12 @@
                                                             <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
                                                         </li>
                                                         <li class="my-2"><i class="fad fa-graduation-cap pr-2"></i>Scholarship
-                                                            Available: {{course.scholarshipAvailable}}
+                                                            Available:
+                                                            <i v-if="course.scholarshipAvailable === true "
+                                                               class="fas fa-check-circle has-text-success is-size-4"></i>
+                                                            <i v-else
+                                                               class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
+
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -56,25 +63,36 @@
                             <img src="/img/null-devcamp-dark.png">
 
                             <p class="has-text-left has-text-dark "><span
-                                    class="px-2 is-size-3 has-text-success font-weight-bold ">8.8</span> Rating</p>
+                                    class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating}}</span>
+                                Rating</p>
                             <ul class="has-text-left">
                                 <hr>
 
-                                <li><i class="fas fa-home-alt pr-2"></i>Housing:<i
-                                        class="fas fa-check-circle has-text-success is-size-5 px-3"></i></li>
+                                <li><i class="fas fa-home-alt pr-2"></i>Housing:
+                                    <i v-if="bootcamp.data.housing === 'true'"
+                                       class="fas fa-check-circle has-text-success is-size-4 px-3"></i>
+                                    <i v-else class="fas fa-times-circle has-text-danger is-size-4"></i>
+                                </li>
                                 <hr>
-                                <li><i class="fad fa-user-cog pr-2"></i>Job Assistance: <i
-                                        class="fas fa-check-circle has-text-success is-size-5 px-3"></i></li>
+                                <li><i class="fad fa-user-cog pr-2"></i>Job Assistance:
+                                    <i v-if="bootcamp.data.jobAssistance === true"
+                                       class="fas fa-check-circle has-text-success is-size-4 px-3"></i>
+                                    <i v-else class="fas fa-times-circle has-text-danger is-size-4"></i>
+                                </li>
                                 <hr>
-
-                                <li><i class="fas fa-users-cog pr-2"></i>Job Guarantee: <i
-                                        class="fas fa-check-circle has-text-success is-size-5 px-3"></i></li>
+                                <li><i class="fas fa-industry-alt pr-2"></i>Job Guarantee:
+                                    <i v-if="bootcamp.data.jobGuarantee === true"
+                                       class="fas fa-check-circle has-text-success is-size-5 px-3"></i>
+                                    <i v-else class="fas fa-times-circle has-text-danger is-size-4"></i>
+                                </li>
                                 <hr>
-                                <li>Accepts GI Bill: <i class="fas fa-check-circle has-text-success is-size-5 px-3"></i>
+                                <li>Accepts GI Bill:
+                                    <i v-if="bootcamp.data.acceptGi === true"
+                                       class="fas fa-check-circle has-text-success is-size-4 px-3"></i>
+                                    <i v-else class="fas fa-times-circle has-text-danger is-size-4"></i>
                                 </li>
                                 <hr>
                             </ul>
-
 
                             <button class="button is-dark my-2">Read Reviews</button>
                             <button class="button is-dark my-2">Write a Review</button>
@@ -106,9 +124,9 @@
   export default {
     data() {
       return {
-        loaded:false,
+        loaded: false,
         bootcamp: [],
-        courses:[],
+        courses: []
       };
     },
 
@@ -127,7 +145,7 @@
           })
           .catch();
       },
-      fetchCourses(){
+      fetchCourses() {
         const code = this.$route.params.id;
         axios.get(`/api/v1/bootcamps/${code}/courses`)
           .then(({ data }) => {
@@ -146,7 +164,9 @@
     .box-border {
         border-style: solid;
         border-color: #d7d7d7;
-        border-width: 1px
+        border-width: 1px;
+        border-radius: 10px;
+        background-color: #ffffff;
     }
 
     .dot {
@@ -157,5 +177,8 @@
         display: inline-block;
     }
 
+    .line{
+        margin:0;
+    }
 
 </style>
