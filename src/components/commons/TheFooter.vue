@@ -14,7 +14,6 @@
                         <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Explore</h3>
                             <ul>
                                 <li><router-link :to="{name:'AllBootcamps'}">All bootcamps</router-link></li>
-                                <li><router-link :to="{name:'Bootcamp'}">Single Bootscamp</router-link></li>
                                 <li><router-link :to="{name:'AddBootcamp'}">Add bootcamp</router-link></li>
                                 <li>item</li>
                             </ul>

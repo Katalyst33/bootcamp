@@ -5,7 +5,7 @@
         </h1>
 
         <div class="section">
-            <div v-if="loaded === true">
+            <div v-if="loaded">
                 <div class="columns">
                     <template v-for="bootcamp in bootcamps.data">
                         <div :key="bootcamp._id"
@@ -26,6 +26,8 @@
                                                 </div>
                                             </div>
                                             <div class="media-content">
+
+<!--                                                {{bootcamp._id}}-->
 
                                                    <router-link :to="{name:'Bootcamp' , params:{id:bootcamp._id}}"
                                                                 class="title is-4 has-text-primary">{{bootcamp.name}}

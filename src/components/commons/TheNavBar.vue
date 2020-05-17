@@ -27,9 +27,9 @@
                        Browse Bootcamps
                     </router-link>
 
-                    <router-link :to="{name:'Bootcamp'}" class="navbar-item">
+                   <!-- <router-link :to="{name:'Bootcamp'}" class="navbar-item">
                         view Bootcamp
-                    </router-link>
+                    </router-link>-->
 <!--
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
