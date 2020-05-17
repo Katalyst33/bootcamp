@@ -32,12 +32,24 @@ const routes = [
       import(/* webpackChunkName: "bootcamp" */ "../views/ViewBootcamp.vue"),
   },
   {
-    path: "/add-bootcamp/",
+    path: "/add-bootcamp",
     name: "AddBootcamp",
     component: () =>
       import(
-        /* webpackChunkName: "bootcampt" */ "../views/admin/AddBootcamp.vue"
+        /* webpackChunkName: "bootcamp" */ "../views/admin/AddBootcamp.vue"
       ),
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/Register.vue"),
   },
 ];
 

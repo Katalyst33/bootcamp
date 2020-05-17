@@ -20,14 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Register.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Bootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Bootcamps.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/AddBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/AddBootcamp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +79,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.front-end">
+  <component name="RunManager" selected="npm.back-end">
     <configuration name="vue.config.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/vue.config.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -112,8 +115,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.front-end" />
         <item itemvalue="npm.back-end" />
+        <item itemvalue="npm.front-end" />
         <item itemvalue="npm.build" />
         <item itemvalue="Node.js.vue.config.js" />
       </list>
@@ -168,7 +171,7 @@
       <workItem from="1589515327498" duration="4000" />
       <workItem from="1589515400729" duration="2605000" />
       <workItem from="1589521544302" duration="22230000" />
-      <workItem from="1589593309223" duration="16938000" />
+      <workItem from="1589593309223" duration="25343000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -359,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589616664607</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add bootcamp route &gt;&gt;&gt; 🤔">
+      <created>1589686026169</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1589686026169</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,17 +414,18 @@
     <MESSAGE value="adding view bootcamp page " />
     <MESSAGE value="&#10; added single bootcamp page&#10;&#10;added courses page " />
     <MESSAGE value="missing param for id " />
-    <option name="LAST_COMMIT_MESSAGE" value="missing param for id " />
+    <MESSAGE value="add bootcamp route &gt;&gt;&gt; " />
+    <option name="LAST_COMMIT_MESSAGE" value="add bootcamp route &gt;&gt;&gt; " />
   </component>
   <component name="WindowStateProjectService">
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589533246676">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589616664376">
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589686025907">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589616664376" />
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589686025907" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -432,42 +443,42 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="816" height="260" key="GridCell.Tab.0.bottom" timestamp="1589676622267">
+    <state width="828" height="260" key="GridCell.Tab.0.bottom" timestamp="1589696684158">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="816" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589676622267" />
+    <state width="828" height="260" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589696684158" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="816" height="260" key="GridCell.Tab.0.center" timestamp="1589676622266">
+    <state width="828" height="260" key="GridCell.Tab.0.center" timestamp="1589696684157">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="816" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589676622266" />
+    <state width="828" height="260" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589696684157" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="816" height="260" key="GridCell.Tab.0.left" timestamp="1589676622265">
+    <state width="828" height="260" key="GridCell.Tab.0.left" timestamp="1589696684156">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="816" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589676622265" />
+    <state width="828" height="260" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589696684156" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="816" height="260" key="GridCell.Tab.0.right" timestamp="1589676622267">
+    <state width="828" height="260" key="GridCell.Tab.0.right" timestamp="1589696684157">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="816" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589676622267" />
+    <state width="828" height="260" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589696684157" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="43" y="97" key="SettingsEditor" timestamp="1589463636078">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589616666432">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589686028050">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589616666432" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589686028050" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="100" y="100" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589534860805">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -485,9 +496,21 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589676909883" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589685988303">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589696695750">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589685988303" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589696695750" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/auth.js</url>
+          <line>50</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

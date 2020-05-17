@@ -8,14 +8,14 @@
                     </h1>
                 </router-link>
 
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a @click="menuToggle" role="button" class="navbar-burger burger" :class="toggleMenu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu pl-5 ">
+            <div id="navbarBasicExample" class="navbar-menu  pl-5 " :class="toggleMenu">
                 <div class="navbar-start">
 
                     <router-link to="/" class="navbar-item">
@@ -57,12 +57,12 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-primary">
+                            <router-link :to="{name:'register'}" class="button is-primary">
                                 <strong>Sign up</strong>
-                            </a>
-                            <a class="button is-light">
+                            </router-link>
+                            <router-link :to="{name:'login'}" class="button is-light">
                                 Log in
-                            </a>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -74,6 +74,19 @@
 
 <script>
   export default {
+    data() {
+      return {
+        toggleMenu:{
+          'is-active':false
+        }
+      };
+    },
+
+    methods:{
+      menuToggle(){
+        this.toggleMenu["is-active"] = !this.toggleMenu["is-active"]
+      }
+    }
 
   };
 </script>

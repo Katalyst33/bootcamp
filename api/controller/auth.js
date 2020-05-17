@@ -47,6 +47,7 @@ exports.login = asyncHandler(async (req, res, next) => {
   }
 
   sendTokenResponse(user, 200, res);
+  console.log(user);
 });
 
 //@desc Get current logged in User
@@ -220,4 +221,5 @@ const sendTokenResponse = (user, statusCode, res) => {
     success: true,
     token,
   });
+  console.log(token);
 };
