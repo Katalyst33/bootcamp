@@ -119,7 +119,7 @@
 </template>
 
 <script>
-  import axios from "axios";
+
 
   export default {
     data() {
@@ -138,7 +138,7 @@
     methods: {
       fetchBootcamp() {
         const code = this.$route.params.id;
-        axios.get("/api/v1/bootcamps/" + code)
+        this.$http.get("/api/v1/bootcamps/" + code)
           .then(({ data }) => {
             this.bootcamp = data;
             this.loaded = true;
@@ -147,7 +147,7 @@
       },
       fetchCourses() {
         const code = this.$route.params.id;
-        axios.get(`/api/v1/bootcamps/${code}/courses`)
+        this.$http.get(`/api/v1/bootcamps/${code}/courses`)
           .then(({ data }) => {
             this.courses = data;
             this.loaded = true;
@@ -177,8 +177,8 @@
         display: inline-block;
     }
 
-    .line{
-        margin:0;
+    .line {
+        margin: 0;
     }
 
 </style>

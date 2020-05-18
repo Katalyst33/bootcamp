@@ -23,7 +23,12 @@
                                 </div>
                             </div>
                             <button @click="login" class="button is-primary is-medium">Login</button>
+
+                            <button @click="logOut" class="button is-danger">logout</button>
+                            <button @click="heyTravis" class="button is-grey">cookie</button>
                         </section>
+
+
 
 
                     </div>
@@ -38,48 +43,73 @@
 </template>
 
 <script>
-    import axios from "axios"
+  import store from "../store/index";
+
   export default {
 
     data() {
       return {
-        notification:{
-          error:null,
-          success:null,
+        notification: {
+          error: null,
+          success: null
         },
-        error:null,
+        error: null,
         form: {
-          email: 'admin@gmail.com',
-          password:'123456'
+          email: "admin@gmail.com",
+          password: "123456"
         }
       };
     },
 
+    computed: {
+      loggedUser() {
+        return store.state.user;
+      }
+    },
 
+    mounted() {
+      this.$store.dispatch('getCurrentUser')
+    },
     methods: {
 
-      async login() {
-        function navigate(ms) {
-          return new Promise(resolve => setTimeout(resolve, ms));
-        }
+        heyTravis(){
+          this.$store.dispatch('getCurrentUser')
 
-        try {
-          const {data} = await axios.post('/api/v1/auth/login', this.form);
+        },
 
-          this.notification.success = `welcome back`;
-          localStorage.setItem('token', data.token);
-          await navigate(3000);
-          this.$router.push({name: 'AddBootcamp'});
+      logOut() {
 
-        } catch (e) {
-
-          this.notification.error = 'Invalid Details'
-        }
+        this.$http.get("/api/v1/auth/logout")
+          .then(() => {
+                console.log('logout successfully')
+          })
+          .catch();
 
       },
 
+      async login() {
+        // function navigate(ms) {
+        //   return new Promise(resolve => setTimeout(resolve, ms));
+        // }
 
-    },
+        try {
+          const { data } = await this.$http.post("/api/v1/auth/login", this.form);
+
+          this.notification.success = `welcome back`;
+          // localStorage.setItem("token", data.token);
+          console.log(`user data ${data.token}`);
+          // await navigate(3000);
+          // this.$router.push({name: 'AddBootcamp'});
+
+        } catch (e) {
+
+          this.notification.error = "Invalid Details";
+        }
+
+      }
+
+
+    }
 
   };
 </script>

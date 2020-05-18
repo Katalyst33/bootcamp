@@ -6,16 +6,16 @@ const jwt = require("jsonwebtoken");
 //protect routes
 
 exports.protect = asyncHandler(async (req, res, next) => {
-  let token;
+  let token = req.cookies["token"];
 
-  if (
+  /*if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
   ) {
     //set token fom bearer token in header
     token = req.headers.authorization.split(" ")[1];
     //set token from cookie
-  }
+  }*/
   /*  else if (req.cookies.token) {
     token = req.cookies.token;
   }*/

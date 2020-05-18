@@ -45,9 +45,7 @@ exports.login = asyncHandler(async (req, res, next) => {
   if (!isMatch) {
     return next(new ErrorResponse("Invalid credentials", 401));
   }
-
   sendTokenResponse(user, 200, res);
-  console.log(user);
 });
 
 //@desc Get current logged in User
@@ -61,6 +59,7 @@ exports.getMe = asyncHandler(async (req, res, next) => {
     success: true,
     data: user,
   });
+  console.log(req.cookies);
 });
 
 //@desc Log user out / clear cookie

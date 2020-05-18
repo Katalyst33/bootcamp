@@ -20,7 +20,7 @@
                             <div class="field">
                                 <label class="label">Name:</label>
                                 <div class="control">
-                                    <input v-model="form.bootcampName" class="input" type="text"
+                                    <input v-model="form.name" class="input" type="text"
                                            placeholder="Bootcamp name ?">
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="field">
                                 <label class="label">Phone number:</label>
                                 <div class="control">
-                                    <input v-model="form.phoneNumber" class="input" type="text"
+                                    <input v-model="form.phone" class="input" type="text"
                                            placeholder="Bootcamp name ?">
                                 </div>
                             </div>
@@ -149,15 +149,15 @@
 </template>
 
 <script>
-    import axios from "axios"
+
   export default {
     data() {
       return {
         message:null,
         form: {
-          bootcampName: null,
+          name: null,
           address: null,
-          phoneNumber: null,
+          phone: null,
           email: null,
           website: null,
           description: null,
@@ -179,7 +179,7 @@
         }*/
 
         try {
-          await axios.post('/api/v1/bootcamps/', this.form);
+          await this.$http.post('/api/v1/bootcamps/', this.form);
           // this.traderCode = data;
 
 

@@ -4,11 +4,13 @@
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
                     <img src="/logo.svg">
-                    <h1 class="is-size-4  has-text-primary"><span class="has-text-weight-bold">Dev</span><span>Bootcamp</span>
+                    <h1 class="is-size-4  has-text-primary"><span
+                            class="has-text-weight-bold">Dev</span><span>Bootcamp</span>
                     </h1>
                 </router-link>
 
-                <a @click="menuToggle" role="button" class="navbar-burger burger" :class="toggleMenu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a @click="menuToggle" role="button" class="navbar-burger burger" :class="toggleMenu" aria-label="menu"
+                   aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -24,34 +26,36 @@
 
 
                     <router-link :to="{name:'AllBootcamps'}" class="navbar-item">
-                       Browse Bootcamps
+                        Browse Bootcamps
                     </router-link>
 
-                   <!-- <router-link :to="{name:'Bootcamp'}" class="navbar-item">
-                        view Bootcamp
-                    </router-link>-->
-<!--
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            More
-                        </a>
+                    <h1 class="navbar-item">Username</h1>
 
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                About
-                            </a>
-                            <a class="navbar-item">
-                                Jobs
-                            </a>
-                            <a class="navbar-item">
-                                Contact
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item">
-                                Report an issue
-                            </a>
-                        </div>
-                    </div>-->
+                    <!-- <router-link :to="{name:'Bootcamp'}" class="navbar-item">
+                         view Bootcamp
+                     </router-link>-->
+                    <!--
+                                        <div class="navbar-item has-dropdown is-hoverable">
+                                            <a class="navbar-link">
+                                                More
+                                            </a>
+
+                                            <div class="navbar-dropdown">
+                                                <a class="navbar-item">
+                                                    About
+                                                </a>
+                                                <a class="navbar-item">
+                                                    Jobs
+                                                </a>
+                                                <a class="navbar-item">
+                                                    Contact
+                                                </a>
+                                                <hr class="navbar-divider">
+                                                <a class="navbar-item">
+                                                    Report an issue
+                                                </a>
+                                            </div>
+                                        </div>-->
                 </div>
 
                 <div class="navbar-end">
@@ -73,18 +77,33 @@
 </template>
 
 <script>
+  import store from "../../store/index";
+
   export default {
     data() {
       return {
-        toggleMenu:{
-          'is-active':false
+        user:null,
+        toggleMenu: {
+          "is-active": false
         }
       };
     },
+    computed: {
+      currentUser() {
+        return store.state.user;
+      }
+    },
+    mounted() {
+      this.getMe();
+    },
+    methods: {
+      menuToggle() {
+        this.toggleMenu["is-active"] = !this.toggleMenu["is-active"];
+      },
 
-    methods:{
-      menuToggle(){
-        this.toggleMenu["is-active"] = !this.toggleMenu["is-active"]
+      getMe() {
+
+
       }
     }
 
@@ -93,12 +112,11 @@
 
 <style scoped>
 
-.logo{
-    height: 60px;
-    max-width: 100%;
+    .logo {
+        height: 60px;
+        max-width: 100%;
 
-}
-
+    }
 
 
 </style>

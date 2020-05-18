@@ -11,17 +11,17 @@
 
                     </div>
                     <div class="column is-2 has-text-left">
-                        <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Explore</h3>
+                        <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Public</h3>
                             <ul>
                                 <li><router-link :to="{name:'AllBootcamps'}">All bootcamps</router-link></li>
-                                <li><router-link :to="{name:'AddBootcamp'}">Add bootcamp</router-link></li>
                                 <li>item</li>
                             </ul>
                     </div>
                     <div class="column is-2 has-text-left">
-                        <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Explore</h3>
-                            <ul>
-                                <li>item</li>
+                        <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Admin routes</h3>
+                            <ul class="has-text-danger">
+                                <li ><router-link :to="{name:'AddBootcamp'}" class="has-text-danger">Add bootcamp</router-link></li>
+
                                 <li>item</li>
                                 <li>item</li>
                                 <li>item</li>
