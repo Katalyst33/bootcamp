@@ -16,7 +16,13 @@ components:{
   TheNavBar,
   TheFooter
 },
+
+    mounted() {
+      this.$store.dispatch("getCurrentUser");
+    },
   };
+
+
 </script>
 
 

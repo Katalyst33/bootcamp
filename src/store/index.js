@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import axios from "axios";
+import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -14,47 +14,42 @@ export default new Vuex.Store({
       address: process.env["VUE_APP_ADDY"] || "{env.APP_ADDY}",
       telephone: process.env["VUE_APP_NUM"] || "{env.APP_NUM}",
     },
-    userDetails: {
-      email: "",
-      password: "",
+    user: {
+      email: "travis@gmail.com",
+      name: "travis",
     },
   },
 
   actions: {
-    getCurrentUser() {
+    /* getCurrentUser() {
       console.log("hey Travis");
-    },
-
-    loginUser(context) {
-      context.commit("LOGIN_USER");
-    },
-    /* async loginUser({ commit }, { form }) {
-      // function navigate(ms) {
-      //   return new Promise(resolve => setTimeout(resolve, ms));
-      // }
-
-      try {
-        const { data } = await this.$http.post("/api/v1/auth/login", this.form);
-
-        // this.notification.success = `welcome back`;
-        // localStorage.setItem("token", data.token);
-        console.log(`user data ${data.token}`);
-        console.log(`user data ${data}`);
-        commit("SET_USER", user);
-        // await navigate(3000);
-        // this.$router.push({name: 'AddBootcamp'});
-      } catch (e) {
-        console.log(e);
-        // this.notification.error = "Invalid Details";
-      }
     },*/
-  },
-
-  getters: {
-    getUserDetails: (state) => {
-      return state.userDetails.email;
+    getCurrentUser: (context) => {
+      setTimeout(function () {
+        axios
+          .get("/api/v1/auth/me")
+          .then(({ data }) => {
+            console.log("vuex user here", data);
+            let user = data;
+            context.commit("SET_USER", user);
+          })
+          .catch((e) => {
+            console.log("error message ", e);
+          });
+      }, 1000);
     },
   },
-  mutations: {},
+
+  mutations: {
+    SET_USER: (state, user) => {
+      state.user = user;
+      console.log("mutation arror here", user);
+    },
+  },
+
+  /*SET_USER(state, user) {
+      state.user = user;
+    },
+  },*/
   modules: {},
 });

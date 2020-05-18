@@ -4,6 +4,8 @@
         <div class="section">
             <div class="container"><h1>Login here !!!</h1>
 
+                {{user}}
+
                 <div class="columns is-mobile">
                     <div class="column is-half is-offset-one-quarter">
                         <section class="has-text-left">
@@ -22,13 +24,29 @@
                                            placeholder="Password ?">
                                 </div>
                             </div>
-                            <button @click="login" class="button is-primary is-medium">Login</button>
 
-                            <button @click="logOut" class="button is-danger">logout</button>
-                            <button @click="heyTravis" class="button is-grey">cookie</button>
                         </section>
 
+                        <div class="field is-grouped mt-5">
+                            <p class="control">
+                                <button @click="login" class="button is-primary">Login</button>
 
+                            </p>
+
+                            <p class="control">
+                                <button @click="checkUser" class="button is-warning">Check user</button>
+
+                            </p>
+                            <p class="control">
+                                <button @click="logOut" class="button is-danger">logout</button>
+
+                            </p>
+                            <p class="control">
+<!--                                <button @click="heyTravis" class="button is-grey">cookie</button>-->
+
+                            </p>
+
+                        </div>
 
 
                     </div>
@@ -43,7 +61,8 @@
 </template>
 
 <script>
-  import store from "../store/index";
+
+    import { mapState } from "vuex";
 
   export default {
 
@@ -62,29 +81,28 @@
     },
 
     computed: {
-      loggedUser() {
-        return store.state.user;
-      }
+      ...mapState(["user"])
     },
 
-    mounted() {
-      this.$store.dispatch('getCurrentUser')
-    },
+
     methods: {
 
-        heyTravis(){
-          this.$store.dispatch('getCurrentUser')
-
-        },
 
       logOut() {
 
         this.$http.get("/api/v1/auth/logout")
           .then(() => {
-                console.log('logout successfully')
+            console.log("logout successfully");
           })
           .catch();
 
+      },
+      checkUser(){
+        this.$http.get("/api/v1/auth/me")
+          .then(({data}) => {
+            console.log(data);
+          })
+          .catch();
       },
 
       async login() {
