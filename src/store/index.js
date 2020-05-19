@@ -14,34 +14,35 @@ export default new Vuex.Store({
       address: process.env["VUE_APP_ADDY"] || "{env.APP_ADDY}",
       telephone: process.env["VUE_APP_NUM"] || "{env.APP_NUM}",
     },
-    user: {
-      email: "travis@gmail.com",
-      name: "travis",
-    },
+    user: "",
   },
 
   actions: {
     /* getCurrentUser() {
       console.log("hey Travis");
     },*/
+
     getCurrentUser: (context) => {
-      setTimeout(function () {
-        axios
-          .get("/api/v1/auth/me")
-          .then(({ data }) => {
-            console.log("vuex user here", data);
-            let user = data;
-            context.commit("SET_USER", user);
-          })
-          .catch((e) => {
-            console.log("error message ", e);
-          });
-      }, 1000);
+      /*   setTimeout(function () {
+
+      }, 1000);*/
+
+      axios
+        .get("/api/v1/auth/me")
+        .then(({ data }) => {
+          console.log("vuex user here", data);
+          let user = data;
+          context.commit("SET_USER", user);
+        })
+        .catch((e) => {
+          console.log("error message ", e);
+        });
     },
   },
 
   mutations: {
     SET_USER: (state, user) => {
+      console.log("before request", user);
       state.user = user;
       console.log("mutation arror here", user);
     },

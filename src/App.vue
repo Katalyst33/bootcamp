@@ -1,25 +1,55 @@
 <template>
-  <div id="app">
-    <TheNavBar/>
+    <div id="app">
+        <TheNavBar/>
 
-    <router-view/>
-    <TheFooter/>
+        <router-view v-if="loaded"/>
+        <TheFooter/>
 
-  </div>
+    </div>
 </template>
 
 <script>
+
   import TheNavBar from "./components/commons/TheNavBar";
   import TheFooter from "./components/commons/TheFooter";
+  import { mapState } from "vuex";
+
   export default {
-components:{
-  TheNavBar,
-  TheFooter
-},
+    data() {
+      return {
+        loaded: true
+      };
+    },
+    components: {
+      TheNavBar,
+      TheFooter
+    },
 
     mounted() {
+
       this.$store.dispatch("getCurrentUser");
+      console.log("store user1", this.user);
+
+      setTimeout(function() {
+        console.log("store user1", this.user);
+
+      }, 4000);
+
+
     },
+
+    computed: {
+      ...mapState(["user"])
+    },
+
+    methods: {
+
+      checkUser() {
+        console.log();
+      }
+
+
+    }
   };
 
 
@@ -27,25 +57,25 @@ components:{
 
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
-  #app {
-    font-family: 'Khula', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100vh;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
+
+    #app {
+        font-family: 'Khula', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        height: 100vh;
+    }
 
 
+    #nav a {
+        font-weight: bold;
+        color: #2c3e50;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    #nav a.router-link-exact-active {
+        color: #42b983;
+    }
 </style>
 

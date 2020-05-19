@@ -42,7 +42,7 @@
 
                             </p>
                             <p class="control">
-<!--                                <button @click="heyTravis" class="button is-grey">cookie</button>-->
+                                <!--                                <button @click="heyTravis" class="button is-grey">cookie</button>-->
 
                             </p>
 
@@ -62,7 +62,7 @@
 
 <script>
 
-    import { mapState } from "vuex";
+  import { mapState } from "vuex";
 
   export default {
 
@@ -84,6 +84,8 @@
       ...mapState(["user"])
     },
 
+    mounted() {
+    },
 
     methods: {
 
@@ -95,11 +97,13 @@
             console.log("logout successfully");
           })
           .catch();
+        this.$store.dispatch("getCurrentUser");
+
 
       },
-      checkUser(){
+      checkUser() {
         this.$http.get("/api/v1/auth/me")
-          .then(({data}) => {
+          .then(({ data }) => {
             console.log(data);
           })
           .catch();
@@ -110,6 +114,7 @@
         //   return new Promise(resolve => setTimeout(resolve, ms));
         // }
 
+
         try {
           const { data } = await this.$http.post("/api/v1/auth/login", this.form);
 
@@ -118,6 +123,7 @@
           console.log(`user data ${data.token}`);
           // await navigate(3000);
           // this.$router.push({name: 'AddBootcamp'});
+          await this.$store.dispatch("getCurrentUser");
 
         } catch (e) {
 

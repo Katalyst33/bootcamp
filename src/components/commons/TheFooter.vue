@@ -14,7 +14,8 @@
                         <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Public</h3>
                             <ul>
                                 <li><router-link :to="{name:'AllBootcamps'}">All bootcamps</router-link></li>
-                                <li>item</li>
+                                <li><router-link :to="{name:'login'}">Login</router-link></li>
+
                             </ul>
                     </div>
                     <div class="column is-2 has-text-left">
@@ -22,7 +23,6 @@
                             <ul class="has-text-danger">
                                 <li ><router-link :to="{name:'AddBootcamp'}" class="has-text-danger">Add bootcamp</router-link></li>
 
-                                <li>item</li>
                                 <li>item</li>
                                 <li>item</li>
                             </ul>
