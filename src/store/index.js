@@ -30,7 +30,6 @@ export default new Vuex.Store({
       axios
         .get("/api/v1/auth/me")
         .then(({ data }) => {
-          console.log("vuex user here", data);
           let user = data;
           context.commit("SET_USER", user);
         })
@@ -42,9 +41,7 @@ export default new Vuex.Store({
 
   mutations: {
     SET_USER: (state, user) => {
-      console.log("before request", user);
       state.user = user;
-      console.log("mutation arror here", user);
     },
   },
 

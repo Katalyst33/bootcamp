@@ -59,7 +59,7 @@ exports.getMe = asyncHandler(async (req, res, next) => {
     success: true,
     data: user,
   });
-  console.log(req.cookies);
+  // console.log(req.cookies);
 });
 
 //@desc Log user out / clear cookie
@@ -220,5 +220,5 @@ const sendTokenResponse = (user, statusCode, res) => {
     success: true,
     token,
   });
-  console.log(token);
+  // console.log(token);
 };

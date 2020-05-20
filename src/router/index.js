@@ -1,8 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import LoginAndRegister from "../views/LoginAndRegister";
 
 Vue.use(VueRouter);
+
+import xxRoutes from "./xxxRoutes";
 
 const routes = [
   {
@@ -18,11 +21,23 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/bootcamps",
+    path: "/login",
+    name: "login",
+    component: LoginAndRegister,
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: LoginAndRegister,
+  },
+  xxRoutes,
+
+  {
+    path: "/bootcamp/",
     name: "AllBootcamps",
 
     component: () =>
-      import(/* webpackChunkName: "bootcamp" */ "../views/Bootcamps.vue"),
+      import(/* webpackChunkName: "bootcamp" */ "../views/Bootcamps"),
   },
   {
     path: "/bootcamp/:id",
@@ -31,26 +46,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "bootcamp" */ "../views/ViewBootcamp.vue"),
   },
-  {
-    path: "/add-bootcamp",
-    name: "AddBootcamp",
-    component: () =>
-      import(
-        /* webpackChunkName: "bootcamp" */ "../views/admin/AddBootcamp.vue"
-      ),
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
-  },
-  {
-    path: "/register",
-    name: "register",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Register.vue"),
-  },
+  //admin routes
 ];
 
 const router = new VueRouter({

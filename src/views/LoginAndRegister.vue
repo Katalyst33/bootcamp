@@ -2,10 +2,10 @@
     <div>
 
         <div class="section">
+            {{notification.error}}
+            {{notification.success}}
             <div class="container"><h1>Login here !!!</h1>
-
                 {{user}}
-
                 <div class="columns is-mobile">
                     <div class="column is-half is-offset-one-quarter">
                         <section class="has-text-left">
@@ -16,7 +16,6 @@
                                            placeholder="Email address">
                                 </div>
                             </div>
-
                             <div class="field">
                                 <label class="label">Password:</label>
                                 <div class="control">
@@ -24,26 +23,13 @@
                                            placeholder="Password ?">
                                 </div>
                             </div>
-
                         </section>
-
                         <div class="field is-grouped mt-5">
                             <p class="control">
                                 <button @click="login" class="button is-primary">Login</button>
-
                             </p>
-
                             <p class="control">
                                 <button @click="checkUser" class="button is-warning">Check user</button>
-
-                            </p>
-                            <p class="control">
-                                <button @click="logOut" class="button is-danger">logout</button>
-
-                            </p>
-                            <p class="control">
-                                <!--                                <button @click="heyTravis" class="button is-grey">cookie</button>-->
-
                             </p>
 
                         </div>
@@ -90,14 +76,16 @@
     methods: {
 
 
-      logOut() {
+      async logOut() {
 
-        this.$http.get("/api/v1/auth/logout")
-          .then(() => {
-            console.log("logout successfully");
-          })
-          .catch();
-        this.$store.dispatch("getCurrentUser");
+        try {
+          await this.$http.get("/api/v1/auth/logout");
+          console.log("logout successfully");
+          await this.$store.commit("SET_USER");
+
+        } catch (e) {
+          return e;
+        }
 
 
       },
@@ -106,32 +94,22 @@
           .then(({ data }) => {
             console.log(data);
           })
-          .catch();
+          .catch(({ data }) => {
+            console.log(data);
+          });
       },
 
+
       async login() {
-        // function navigate(ms) {
-        //   return new Promise(resolve => setTimeout(resolve, ms));
-        // }
-
-
         try {
-          const { data } = await this.$http.post("/api/v1/auth/login", this.form);
-
-          this.notification.success = `welcome back`;
-          // localStorage.setItem("token", data.token);
-          console.log(`user data ${data.token}`);
-          // await navigate(3000);
-          // this.$router.push({name: 'AddBootcamp'});
+          await this.$http.post("/api/v1/auth/login", this.form);
+          this.notification.success = "Welcome back";
           await this.$store.dispatch("getCurrentUser");
-
-        } catch (e) {
-
-          this.notification.error = "Invalid Details";
+        } catch (error) {
+          this.notification.error = error.response.data.error;
         }
 
       }
-
 
     }
 

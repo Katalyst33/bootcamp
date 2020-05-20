@@ -8,7 +8,7 @@ const Bootcamp = require("../models/Bootcamp-model");
 //@route GET /api/v1/bootcamps
 //@access Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
-  console.log("big cookie", req.cookies.token);
+  // console.log("big cookie", req.cookies.token);
   res.status(200).json(res.advancedResults);
 });
 

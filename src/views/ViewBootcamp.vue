@@ -6,8 +6,6 @@
                     <div class="column -is-8 has-text-left">
                         <template>
                             <div>
-
-
                                 <div class="has-text-left">
                                     <h1 class="is-size-2 has-text-weight-semibold">{{bootcamp.data.name}}</h1>
                                     <p class="py-3">{{bootcamp.data.description}}</p>
@@ -15,45 +13,49 @@
                                             class="has-text-primary">${{bootcamp.data.averageCost}}</span></h4>
                                 </div>
                                 <hr>
+                                <div v-if="courses.data">
+                                    <template v-for="(course, index) in courses.data">
+                                        <div :key="index">
+                                            <div class="my-3">
+                                                <div class="box">
+                                                    <div class="">
+                                                        <h1 class="is-size-3 has-text-weight-bold has-text-primary  px-3">
+                                                            {{course.title}}</h1>
+                                                    </div>
+                                                    <hr class="line">
+                                                    <div class="px-3 py-4">
+                                                        <h3 class="is-size-5 has-text-weight-semibold">Duration:
+                                                            {{course.weeks}} weeks</h3>
+                                                        <p class="py-2">{{course.description}}</p>
+                                                        <ul class="py-2 has-text-weight-semibold">
+                                                            <li class="my-2"><i
+                                                                    class="fad fa-money-bill-wave pr-2"></i>Cost:<span
+                                                                    class="is-size-5 has-text-weight-semibold">${{course.tuition}}</span>
+                                                            </li>
+                                                            <li class="my-2"><i class="fad fa-lightbulb-on pr-2"></i>Skill
+                                                                Required:
+                                                                <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
+                                                            </li>
+                                                            <li class="my-2"><i class="fad fa-graduation-cap pr-2"></i>Scholarship
+                                                                Available:
+                                                                <i v-if="course.scholarshipAvailable === true "
+                                                                   class="fas fa-check-circle has-text-success is-size-4"></i>
+                                                                <i v-else
+                                                                   class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
 
-
-                                <template v-for="(course, index) in courses.data">
-                                    <div :key="index">
-                                        <div class="my-3">
-                                            <div class="box">
-                                                <div class="">
-                                                    <h1 class="is-size-3 has-text-weight-bold has-text-primary  px-3">
-                                                        {{course.title}}</h1>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <hr class="line">
-                                                <div class="px-3 py-4">
-                                                    <h3 class="is-size-5 has-text-weight-semibold">Duration:
-                                                        {{course.weeks}} weeks</h3>
-                                                    <p class="py-2">{{course.description}}</p>
-                                                    <ul class="py-2 has-text-weight-semibold">
-                                                        <li class="my-2"><i
-                                                                class="fad fa-money-bill-wave pr-2"></i>Cost:<span
-                                                                class="is-size-5 has-text-weight-semibold">${{course.tuition}}</span>
-                                                        </li>
-                                                        <li class="my-2"><i class="fad fa-lightbulb-on pr-2"></i>Skill
-                                                            Required:
-                                                            <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
-                                                        </li>
-                                                        <li class="my-2"><i class="fad fa-graduation-cap pr-2"></i>Scholarship
-                                                            Available:
-                                                            <i v-if="course.scholarshipAvailable === true "
-                                                               class="fas fa-check-circle has-text-success is-size-4"></i>
-                                                            <i v-else
-                                                               class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
 
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                             </div>
-
                                         </div>
-                                    </div>
-                                </template>
+                                    </template>
+                                </div>
+
+                                <div v-else>
+                                    <h4 class="is-size-3">No courses available...</h4>
+                                </div>
                             </div>
                         </template>
                     </div>

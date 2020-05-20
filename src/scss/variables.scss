@@ -7,11 +7,14 @@ $dark:#171621;
 $grey:#ababab;
 $grey-lightest:#f1f5f8;
 $success: darken(#68ffab, 30%);
+$border:fade_out($primary, 0.8);
 
 $body-background-color:$grey-lightest;
 $my-primary-light: fade_out($primary, 0.1);
 
 $navbar-item-color:$primary;
+$table-cell-border:1px solid $border;
+$table-background-color:fade_out($primary, 0.9);
 
 ::selection {
   background: #FFE6B3; /* WebKit/Blink Browsers */

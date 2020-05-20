@@ -29,45 +29,30 @@
                         Browse Bootcamps
                     </router-link>
 
-                    <h1 class="navbar-item">Username</h1>
+                   <template v-if="user">
+                       <h1  class="navbar-item">{{user.data.name}}</h1>
+                       <h1  class="navbar-item">{{user.data.email}}</h1>
 
-                    <!-- <router-link :to="{name:'Bootcamp'}" class="navbar-item">
-                         view Bootcamp
-                     </router-link>-->
-                    <!--
-                                        <div class="navbar-item has-dropdown is-hoverable">
-                                            <a class="navbar-link">
-                                                More
-                                            </a>
+                   </template>
 
-                                            <div class="navbar-dropdown">
-                                                <a class="navbar-item">
-                                                    About
-                                                </a>
-                                                <a class="navbar-item">
-                                                    Jobs
-                                                </a>
-                                                <a class="navbar-item">
-                                                    Contact
-                                                </a>
-                                                <hr class="navbar-divider">
-                                                <a class="navbar-item">
-                                                    Report an issue
-                                                </a>
-                                            </div>
-                                        </div>-->
                 </div>
 
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <div class="buttons">
-                            <router-link :to="{name:'register'}" class="button is-primary">
-                                <strong>Sign up</strong>
-                            </router-link>
-                            <router-link :to="{name:'login'}" class="button is-light">
-                                Log in
-                            </router-link>
-                        </div>
+                       <template v-if="!user">
+                           <div class="buttons">
+                               <router-link :to="{name:'register'}" class="button is-primary">
+                                   <strong>Sign up</strong>
+                               </router-link>
+                               <router-link :to="{name:'login'}" class="button is-light">
+                                   Log in
+                               </router-link>
+                           </div>
+                       </template>
+                        <template v-else>
+                            <button  @click="logOut" class="button is-danger">Logout</button>
+                        </template>
+
                     </div>
                 </div>
             </div>
@@ -77,34 +62,41 @@
 </template>
 
 <script>
-  import store from "../../store/index";
+  import { mapState } from "vuex";
+
 
   export default {
     data() {
       return {
-        user:null,
+
         toggleMenu: {
           "is-active": false
         }
       };
     },
     computed: {
-      currentUser() {
-        return store.state.user;
-      }
+      ...mapState(["user"])
     },
-    mounted() {
-      this.getMe();
-    },
+
     methods: {
       menuToggle() {
         this.toggleMenu["is-active"] = !this.toggleMenu["is-active"];
       },
 
-      getMe() {
+      async logOut() {
+
+        try {
+          await this.$http.get("/api/v1/auth/logout");
+          console.log("logout successfully");
+          await  this.$store.commit("SET_USER");
+
+        } catch (e) {
+          return e;
+        }
 
 
-      }
+      },
+
     }
 
   };

@@ -92,8 +92,6 @@
           .then(({ data }) => {
             this.bootcamps = data;
             this.loaded = true;
-
-
           })
           .catch();
 

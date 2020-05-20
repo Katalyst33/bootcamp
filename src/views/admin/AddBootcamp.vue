@@ -4,6 +4,7 @@
         <div class="section">
             <div class="container">
                 <div class="has-text-left">
+
                     <h1 class="is-size-2">Add bootcamp</h1>
                     <p>Important: you must be affiliated with a bootcamp to add to Devcamper</p>
 
@@ -21,15 +22,15 @@
                                 <label class="label">Name:</label>
                                 <div class="control">
                                     <input v-model="form.name" class="input" type="text"
-                                           placeholder="Bootcamp name ?">
+                                           placeholder="Bootcamp name">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Address:</label>
                                 <div class="control">
-                                    <input v-model="form.address" class="input" type="text"
-                                           placeholder="Bootcamp address ?">
+                                    <input v-model="computedAddress" class="input" type="text"
+                                           placeholder="Street, city, state, etc">
                                     <small class="has-text-danger">Street, city, state, etc</small>
                                 </div>
                             </div>
@@ -38,20 +39,21 @@
                                 <label class="label">Phone number:</label>
                                 <div class="control">
                                     <input v-model="form.phone" class="input" type="text"
-                                           placeholder="Bootcamp name ?">
+                                           placeholder="Phone number ?">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">Email:</label>
                                 <div class="control">
-                                    <input v-model="form.email" class="input" type="text" placeholder="Bootcamp name ?">
+                                    <input v-model="form.email" class="input" type="text"
+                                           placeholder="youremail@domain.com">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">Website:</label>
                                 <div class="control">
                                     <input v-model="form.website" class="input" type="text"
-                                           placeholder="Bootcamp name ?">
+                                           placeholder="http://www.website.com">
                                 </div>
                             </div>
 
@@ -67,7 +69,7 @@
                             <div class="field">
                                 <label class="label">Description:</label>
                                 <div class="control">
-                                    <textarea v-model="form.description" class="textarea"
+                                    <textarea v-model="computedDescription" class="textarea"
                                               placeholder="Description (What you offer)"></textarea>
                                 </div>
                             </div>
@@ -129,7 +131,12 @@
                             <div class="field is-grouped">
                                 <div class="control">
                                     <button @click="newBootcamp" class="button is-link">Submit</button>
+
+                                    <button @click="changeAddress" class="button">address</button>
+
                                 </div>
+
+                                {{message}}
 
                             </div>
                         </section>
@@ -140,6 +147,7 @@
         </div>
         <hr class="has-background-warning">
 
+
         <template>
             <json-view :data="form"/>
         </template>
@@ -149,52 +157,67 @@
 </template>
 
 <script>
+  import Chance from "chance";
 
+  const chance = new Chance;
   export default {
     data() {
+
       return {
-        message:null,
+
+        message: null,
         form: {
           name: null,
           address: null,
-          phone: null,
-          email: null,
-          website: null,
-          description: null,
-          careers: [],
-          housing: false,
-          jobAssistance: false,
-          jobGuarantee: false,
-          acceptsGi: false
+          phone: chance.phone(),
+          email: chance.email(),
+          website: chance.url(),
+          description: chance.paragraph({ sentences: 2 }),
+          careers:[],
+          housing: [true, false][chance.integer({ min: 0, max: 1 })],
+          jobAssistance: [true, false][chance.integer({ min: 0, max: 1 })],
+          jobGuarantee: [true, false][chance.integer({ min: 0, max: 1 })],
+          acceptsGi: [true, false][chance.integer({ min: 0, max: 1 })]
         }
       };
     },
 
-    methods:{
+    watch: {
+      newAddress() {
+        this.form.address = this.computedAddress;
+      }
+    },
 
+    computed: {
+      computedAddress() {
+        return `${chance.street({ country: "us" })},${chance.city()}, ${chance.state({ country: "us" })}`;
+      },
+
+      computedDescription() {
+        return `${this.form.name} ${chance.paragraph({ sentences: 2 })}`;
+      }
+    },
+
+    methods: {
+
+      changeAddress() {
+        this.form.address = this.computedAddress;
+      },
 
       async newBootcamp() {
-       /* function navigate(ms) {
-          return new Promise(resolve => setTimeout(resolve, ms));
-        }*/
-
         try {
-          await this.$http.post('/api/v1/bootcamps/', this.form);
-          // this.traderCode = data;
+          await this.$http.post("/api/v1/bootcamps/", this.form);
 
+          this.message = "Trader Created Successfully ";
+          console.log(this.message);
 
-          this.message = 'Trader Created Successfully ';
-          console.log(this.message)
-          // await navigate(2000);
-          // return this.$router.push({name: 'editTrader', params:{id:this.traderCode.data.createdTraders.code}});
-
-        } catch (err) {
-          this.message = err;
+        } catch (error) {
+          this.message = error.response.data.error;
         }
 
 
-      },
-    },
+      }
+    }
 
 
   };

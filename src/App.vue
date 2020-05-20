@@ -17,7 +17,8 @@
   export default {
     data() {
       return {
-        loaded: true
+        loaded: true,
+        userDetail:null,
       };
     },
     components: {
@@ -27,13 +28,9 @@
 
     mounted() {
 
+
       this.$store.dispatch("getCurrentUser");
-      console.log("store user1", this.user);
 
-      setTimeout(function() {
-        console.log("store user1", this.user);
-
-      }, 4000);
 
 
     },
@@ -42,14 +39,6 @@
       ...mapState(["user"])
     },
 
-    methods: {
-
-      checkUser() {
-        console.log();
-      }
-
-
-    }
   };
 
 
