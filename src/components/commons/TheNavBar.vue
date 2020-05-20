@@ -29,28 +29,28 @@
                         Browse Bootcamps
                     </router-link>
 
-                   <template v-if="user">
-                       <h1  class="navbar-item">{{user.data.name}}</h1>
-                       <h1  class="navbar-item">{{user.data.email}}</h1>
+                    <template v-if="user">
+                        <h1 class="navbar-item">{{user.data.name}}</h1>
+                        <h1 class="navbar-item">{{user.data.email}}</h1>
 
-                   </template>
+                    </template>
 
                 </div>
 
                 <div class="navbar-end">
                     <div class="navbar-item">
-                       <template v-if="!user">
-                           <div class="buttons">
-                               <router-link :to="{name:'register'}" class="button is-primary">
-                                   <strong>Sign up</strong>
-                               </router-link>
-                               <router-link :to="{name:'login'}" class="button is-light">
-                                   Log in
-                               </router-link>
-                           </div>
-                       </template>
+                        <template v-if="!user">
+                            <div class="buttons">
+                                <router-link :to="{name:'register'}" class="button is-primary">
+                                    <strong>Sign up</strong>
+                                </router-link>
+                                <router-link :to="{name:'login'}" class="button is-light">
+                                    Log in
+                                </router-link>
+                            </div>
+                        </template>
                         <template v-else>
-                            <button  @click="logOut" class="button is-danger">Logout</button>
+                            <button @click="logOut" class="button is-danger">Logout</button>
                         </template>
 
                     </div>
@@ -84,11 +84,38 @@
       },
 
       async logOut() {
+        function timerInterval() {
+          setInterval(() => {
+            const content = this.$swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = this.$swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        }
 
+        await this.$swal.fire({
+          icon: 'error',
+          text: "logout successfully, you will be redirected shortly",
+          timer: 2000,
+          timerProgressBar: true,
+          onBeforeOpen: () => {
+            this.$swal.showLoading()
+
+          },
+          onClose: () => {
+            clearInterval(timerInterval)
+          }
+        });
         try {
           await this.$http.get("/api/v1/auth/logout");
           console.log("logout successfully");
-          await  this.$store.commit("SET_USER");
+          await this.$store.commit("SET_USER");
+
+          await  this.$router.push('/')
+
 
         } catch (e) {
           return e;
@@ -96,6 +123,35 @@
 
 
       },
+      checkButtonAnswer(answerOption) {
+
+        if (answerOption === this.calculateAnswer()) {
+          this.$swal.fire({
+            title: "Correct !",
+            text: this.message.correct,
+            imageUrl: "/img/face/albert.png",
+            imageWidth: 300,
+            imageHeight: 300,
+            imageAlt: "Custom image"
+          }).then(this.onWin);
+
+        } else {
+          this.$swal.fire({
+            title: `Wrong!! \n ${this.valueA} ${this.operator} ${this.valueB} is ${this.answer}`,
+            text: this.message.wrong,
+            imageUrl: "/img/face/hawk.png",
+            imageWidth: 300,
+            imageHeight: 300,
+            imageAlt: "Custom image"
+          }).then(this.refreshGameValues);
+        }
+
+        // alert(`value: ${answerOption}`);
+        // return answerOption;
+
+        // console.log(this.calculateAnswer())
+
+      }
 
     }
 

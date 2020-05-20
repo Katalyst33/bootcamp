@@ -101,6 +101,12 @@
 
 
       async login() {
+
+        await this.$swal.fire({
+          icon: 'success',
+          text: 'login successfully, you will be redirected shortly',
+          imageAlt: "Custom image",
+        })
         try {
           await this.$http.post("/api/v1/auth/login", this.form);
           this.notification.success = "Welcome back";

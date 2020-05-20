@@ -1,0 +1,38 @@
+@import "~sweetalert2/dist/sweetalert2.css";
+$grey-lightest:#f1f5f8;
+$primary: #5e53a5;
+.swal2-popup {
+
+  background: $grey-lightest;
+  font-family: inherit;
+
+}
+
+.swal2-title {
+
+  color: $primary;
+  font-size: 1.875em;
+
+}
+
+.swal2-content {
+  z-index: 1;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  color:$primary;
+  font-size: 1.125em;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.swal2-styled.swal2-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: fade_in($primary, 0.9);;
+  color:#ffffff;
+  font-size: 1.0625em;
+}
