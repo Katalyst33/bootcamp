@@ -29,15 +29,11 @@
                         Browse Bootcamps
                     </router-link>
 
-                    <template v-if="user">
-                        <h1 class="navbar-item">{{user.data.name}}</h1>
-                        <h1 class="navbar-item">{{user.data.email}}</h1>
 
-                    </template>
 
                 </div>
 
-                <div class="navbar-end">
+                <div class="navbar-end mr-4">
                     <div class="navbar-item">
                         <template v-if="!user">
                             <div class="buttons">
@@ -50,7 +46,25 @@
                             </div>
                         </template>
                         <template v-else>
-                            <button @click="logOut" class="button is-danger">Logout</button>
+                            <div class="navbar-item has-dropdown  mr-5 is-hoverable"  >
+                                <a class="navbar-link">
+                                    Account
+                                </a>
+
+                                <div class="navbar-dropdown mr-5">
+                                    <template v-if="user">
+                                        <h1 class="navbar-item">{{user.data.name}}</h1>
+                                        <h1 class="navbar-item">{{user.data.email}}</h1>
+                                        <div class="navbar-item">
+                                            <h1 class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'">{{user.data.role}} Role</h1>
+
+                                        </div>
+                                    </template>
+                                    <hr class="navbar-divider">
+                                    <button @click="logOut" class="button is-danger">Logout</button>
+                                </div>
+                            </div>
+
                         </template>
 
                     </div>
@@ -71,6 +85,9 @@
 
         toggleMenu: {
           "is-active": false
+        },
+        toggleDrop: {
+          "is-active": false
         }
       };
     },
@@ -82,31 +99,34 @@
       menuToggle() {
         this.toggleMenu["is-active"] = !this.toggleMenu["is-active"];
       },
+      dropToggle(){
+        this.toggleDrop["is-active"] = !this.toggleDrop["is-active"];
+      },
 
       async logOut() {
         function timerInterval() {
           setInterval(() => {
-            const content = this.$swal.getContent()
+            const content = this.$swal.getContent();
             if (content) {
-              const b = content.querySelector('b')
+              const b = content.querySelector("b");
               if (b) {
-                b.textContent = this.$swal.getTimerLeft()
+                b.textContent = this.$swal.getTimerLeft();
               }
             }
-          }, 100)
+          }, 100);
         }
 
         await this.$swal.fire({
-          icon: 'error',
+          icon: "error",
           text: "logout successfully, you will be redirected shortly",
           timer: 2000,
           timerProgressBar: true,
           onBeforeOpen: () => {
-            this.$swal.showLoading()
+            this.$swal.showLoading();
 
           },
           onClose: () => {
-            clearInterval(timerInterval)
+            clearInterval(timerInterval);
           }
         });
         try {
@@ -114,7 +134,7 @@
           console.log("logout successfully");
           await this.$store.commit("SET_USER");
 
-          await  this.$router.push('/')
+          await this.$router.push("/");
 
 
         } catch (e) {

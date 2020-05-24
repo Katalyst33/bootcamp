@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import LoginAndRegister from "../views/LoginAndRegister";
+import notFound from "../views/404.vue";
+import store from "../store/index";
 
 Vue.use(VueRouter);
 
@@ -46,13 +48,35 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "bootcamp" */ "../views/ViewBootcamp.vue"),
   },
-  //admin routes
+  {
+    path: "/404",
+    alias: "*",
+    name: "notFound",
+    component: notFound,
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  store,
 });
-
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (!store.state.user) {
+      next({
+        name: "login",
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
 export default router;
+
+setTimeout(() => {
+  console.log("vue router store", store.state.user.data.role);
+}, 100);

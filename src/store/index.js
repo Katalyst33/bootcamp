@@ -43,6 +43,9 @@ export default new Vuex.Store({
     SET_USER: (state, user) => {
       state.user = user;
     },
+    /*SET_MESSAGE: (state, user) => {
+      state. = user;
+    },*/
   },
 
   /*SET_USER(state, user) {
