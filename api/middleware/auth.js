@@ -6,8 +6,11 @@ const jwt = require("jsonwebtoken");
 //protect routes
 
 exports.protect = asyncHandler(async (req, res, next) => {
+  const isMeRoute = req.url === "/me";
   let token = req.cookies["token"];
-
+  if (isMeRoute && (!token || token === "none")) {
+    return next();
+  }
   /*if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
@@ -22,7 +25,9 @@ exports.protect = asyncHandler(async (req, res, next) => {
 
   //Make sure token exsits
   if (!token) {
-    return next(new ErrorResponse("Not authorized to access this route", 401));
+    return next(
+      new ErrorResponse("Not authorized t00o access this route", 401)
+    );
   }
 
   try {

@@ -33,8 +33,8 @@ export default new Vuex.Store({
           let user = data;
           context.commit("SET_USER", user);
         })
-        .catch((e) => {
-          console.log("error message ", e);
+        .catch((error) => {
+          return console.log("get Me error ", error.response.data.error);
         });
     },
   },

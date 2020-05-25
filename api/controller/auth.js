@@ -53,8 +53,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 //@access Private
 
 exports.getMe = asyncHandler(async (req, res, next) => {
-  const user = await User.findById(req.user.id);
-
+  const user = req.user ? await User.findById(req.user.id) : null;
   res.status(200).json({
     success: true,
     data: user,
@@ -71,6 +70,8 @@ exports.logout = asyncHandler(async (req, res, next) => {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
   });
+  delete req.cookies["token"];
+
   res.status(200).json({
     success: true,
     data: {},

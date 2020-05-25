@@ -37,7 +37,7 @@
                     <div class="navbar-item">
                         <template v-if="!user">
                             <div class="buttons">
-                                <router-link :to="{name:'register'}" class="button is-primary">
+                                <router-link :to="{name:'login'}" class="button is-primary">
                                     <strong>Sign up</strong>
                                 </router-link>
                                 <router-link :to="{name:'login'}" class="button is-light">
@@ -70,6 +70,7 @@
                     </div>
                 </div>
             </div>
+
         </nav>
 
     </div>

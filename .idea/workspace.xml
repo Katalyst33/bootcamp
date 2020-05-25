@@ -20,14 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/404.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/xxxRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/xxxRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/LoginAndRegister.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LoginAndRegister.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,9 +116,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.back-end" />
         <item itemvalue="Node.js.index.js" />
         <item itemvalue="npm.front-end" />
-        <item itemvalue="npm.back-end" />
         <item itemvalue="npm.build" />
         <item itemvalue="Node.js.vue.config.js" />
       </list>
@@ -180,7 +180,7 @@
       <workItem from="1589776999157" duration="896000" />
       <workItem from="1589777900150" duration="11687000" />
       <workItem from="1589859583383" duration="61161000" />
-      <workItem from="1590313571925" duration="6252000" />
+      <workItem from="1590313571925" duration="14793000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -420,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589984688225</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="implement route guard part 2">
+      <created>1590328443838</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1590328443838</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +448,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added pagination" />
     <MESSAGE value="added api pagination " />
     <MESSAGE value="add course models and route " />
     <MESSAGE value="add course seeder " />
@@ -466,7 +472,8 @@
     <MESSAGE value="vueX refactor" />
     <MESSAGE value="add Sweet alert" />
     <MESSAGE value="added sweet alert " />
-    <option name="LAST_COMMIT_MESSAGE" value="added sweet alert " />
+    <MESSAGE value="implement route guard part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement route guard part 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -477,10 +484,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1589984687990">
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1590328443626">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589984687990" />
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590328443626" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -498,42 +505,46 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="733" height="161" key="GridCell.Tab.0.bottom" timestamp="1590325558324">
+    <state width="627" height="347" key="GridCell.Tab.0.bottom" timestamp="1590391842647">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="733" height="161" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590325558324" />
+    <state width="627" height="347" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590391842647" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="733" height="161" key="GridCell.Tab.0.center" timestamp="1590325558323">
+    <state width="627" height="347" key="GridCell.Tab.0.center" timestamp="1590391842645">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="733" height="161" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590325558323" />
+    <state width="627" height="347" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590391842645" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="733" height="161" key="GridCell.Tab.0.left" timestamp="1590325558322">
+    <state width="627" height="347" key="GridCell.Tab.0.left" timestamp="1590391842645">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="733" height="161" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590325558322" />
+    <state width="627" height="347" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590391842645" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="733" height="161" key="GridCell.Tab.0.right" timestamp="1590325558323">
+    <state width="627" height="347" key="GridCell.Tab.0.right" timestamp="1590391842646">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="733" height="161" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590325558323" />
+    <state width="627" height="347" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590391842646" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
+    <state x="149" y="150" key="RollbackChangesDialog" timestamp="1590329481410">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="149" y="150" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590329481410" />
     <state x="43" y="97" key="SettingsEditor" timestamp="1589463636078">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1589984690003">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1590328448314">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589984690003" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590328448314" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -547,14 +558,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="100" y="100" width="462" height="850" key="dock-window-1/0.0.1680.1050@0.0.1680.1050" timestamp="1589522963568" />
-    <state x="126" y="252" width="582" height="546" key="find.popup" timestamp="1589871707621">
+    <state x="126" y="252" width="582" height="546" key="find.popup" timestamp="1590391815708">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589871707621" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590327258744">
+    <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590391815708" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590391992172">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590327258744" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590391992172" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,8 +577,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/api/middleware/auth.js</url>
-          <line>10</line>
+          <line>13</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/router/index.js</url>
+          <line>50</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

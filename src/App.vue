@@ -18,7 +18,7 @@
     data() {
       return {
         loaded: true,
-        userDetail:null,
+        userDetail: null
       };
     },
     components: {
@@ -27,17 +27,23 @@
     },
 
     mounted() {
+      this.getMe();
+    },
 
+    methods: {
+      async getMe() {
+        try {
+          await this.$store.dispatch("getCurrentUser");
 
-      this.$store.dispatch("getCurrentUser");
-
-
-
+        } catch (error) {
+          return console.log('get me error',error)
+        }
+      }
     },
 
     computed: {
       ...mapState(["user"])
-    },
+    }
 
   };
 

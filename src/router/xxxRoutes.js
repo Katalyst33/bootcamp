@@ -1,3 +1,5 @@
+import store from "../store/index";
+
 const index = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/index");
 const AddBootcamp = () =>
@@ -11,6 +13,15 @@ const AllBootcamps = () =>
 export default {
   path: "/xxx",
   component: index,
+  beforeEnter: (to, from, next) => {
+    if (store.state.user.data.role !== "admin") {
+      next({
+        name: "login",
+      });
+    } else {
+      next();
+    }
+  },
 
   children: [
     {

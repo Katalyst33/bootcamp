@@ -62,21 +62,26 @@ const router = new VueRouter({
   routes,
   store,
 });
-router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (!store.state.user) {
-      next({
-        name: "login",
-      });
-    } else {
-      next();
-    }
-  } else {
-    next();
-  }
-});
+
 export default router;
 
 setTimeout(() => {
   console.log("vue router store", store.state.user.data.role);
 }, 100);
+/*
+
+/!*router.beforeEach(*!/(to, from, next) => {
+  setTimeout(() => {
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+      if (store.state.user.data.role === "user") {
+        next({
+          name: "login",
+        });
+      } else {
+        next();
+      }
+    } else {
+      next();
+    }
+  }, 100);
+});*/
