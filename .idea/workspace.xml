@@ -20,20 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/xxxRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/xxxRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/LoginAndRegister.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LoginAndRegister.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/AddBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/AddAndUpdateBootcamp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/AddAndUpdateBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/AddAndUpdateBootcamp.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/ManageBootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/ManageBootcamps.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/XBootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/AllBootcampsX.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/photo_5d713995b721c3bb38c1f5d0.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +72,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.front-end">
+  <component name="RunManager" selected="npm.build">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/router/index.js" working-dir="$PROJECT_DIR$/src/router">
       <method v="2" />
     </configuration>
@@ -122,9 +111,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.back-end" />
         <item itemvalue="npm.front-end" />
-        <item itemvalue="npm.build" />
         <item itemvalue="Node.js.index.js" />
         <item itemvalue="Node.js.vue.config.js" />
       </list>
@@ -189,7 +178,7 @@
       <workItem from="1590313571925" duration="19386000" />
       <workItem from="1590463957191" duration="14148000" />
       <workItem from="1590494910175" duration="923000" />
-      <workItem from="1590504450162" duration="13974000" />
+      <workItem from="1590504450162" duration="18277000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -443,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590392132995</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="and and update bootcamp completed 😈🔥">
+      <created>1590560668428</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1590560668428</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +460,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add course models and route " />
     <MESSAGE value="add course seeder " />
     <MESSAGE value="add course seeder" />
     <MESSAGE value="publisher can add only one course" />
@@ -489,7 +484,8 @@
     <MESSAGE value="added sweet alert " />
     <MESSAGE value="implement route guard part 2" />
     <MESSAGE value="fixed crash on get me route" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed crash on get me route" />
+    <MESSAGE value="and and update bootcamp completed " />
+    <option name="LAST_COMMIT_MESSAGE" value="and and update bootcamp completed " />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -500,10 +496,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1590392132821">
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1590560668174">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590392132821" />
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590560668174" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -557,10 +553,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1590392134616">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1590560670212">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590392134616" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590560670212" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -578,10 +574,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590475600035" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590519117578">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590561199874">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590519117578" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590561199874" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

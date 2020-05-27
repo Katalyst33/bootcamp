@@ -238,6 +238,7 @@
             icon: "success",
             text: "Bootcamp created Successfully"
           });
+          await this.$router.push({name:'ManageBootcamp'})
 
         } catch (error) {
           await this.$swal.fire({
@@ -254,7 +255,7 @@
           await this.$http.put(`/api/v1/bootcamps/${code}`, this.newBootcampData);
           await this.$swal.fire({
             icon: "success",
-            text: "Bootcamp Updated Successfully"
+            text: "Bootcamp Updated Successfully, you will now be redirected"
           });
 
         } catch (error) {
@@ -274,6 +275,10 @@
           })
           .catch();
       },
+
+
+
+
 
       makeRequest() {
         if (this.isUpdateBootcamp) {

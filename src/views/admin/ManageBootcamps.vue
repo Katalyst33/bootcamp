@@ -7,7 +7,8 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img :src="`/uploads/${bootcamp.data.photo}`" alt="Placeholder image">
+                                <img v-if="!newImg" :src="`/uploads/${bootcamp.data.photo}`" alt="Placeholder image">
+                                <img v-else :src="imageData" alt="Placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -19,8 +20,6 @@
                                     </div>
                                 </div>
                                 <div class="media-content">
-
-
                                     <router-link :to="{name:'Bootcamp' , params:{id:bootcamp.data._id}}"
                                                  class="title is-4 has-text-primary">{{bootcamp.data.name}}
                                     </router-link>
@@ -55,52 +54,63 @@
 
                     <div class="columns">
                         <div class="column is-half is-offset-one-quarter">
-                            <article class="media">
-                                <figure class="media-left">
-                                    <div class="image">
+                            <div v-if="message"
+                                 :class="`message ${error ? 'is-danger': 'is-success'}`"
+                            >
+                                <div class="message-body">{{message}}</div>
+                            </div>
 
-                                        <div v-if="message"
-                                             :class="`message ${error ? 'is-danger': 'is-success'}`"
-                                        >
-                                            <div class="message-body">{{message}}</div>
-                                        </div>
+                            <div class="field">
 
-                                        <div class="field">
+                                <div class="file is-boxed ">
+                                    <label class="file-label">
 
-                                            <div class="file is-boxed ">
-                                                <label class="file-label">
+                                        <input
+                                                type="file"
+                                                ref="file"
+                                                @change="selectFile"
+                                                class="file-input"
+                                                accept="image/*"/>
 
-                                                    <input
-                                                            type="file"
-                                                            ref="file"
-                                                            @change="selectFile"
-                                                            class="file-input"
-                                                    />
-
-                                                    <span class="file-cta">
+                                        <span class="file-cta">
                             <span class="file-icon">
                                 <i class="fas fa-uploader"></i>
                             </span>
                             <span class="file-label is-size-4 has-text-primary has-text-weight-bold">
                                 Choose a file...
                             </span>
+                                            <span class="image-preview" v-if="imageData.length > 0">
+                                <img class="preview" :src="imageData">
+                            </span>
 
                                              </span>
-                                                    <span v-if="file" class="file-name">{{file.name}}</span>
-                                                </label>
-                                            </div>
+                                        <span v-if="file" class="file-name">{{file.name}}</span>
+                                    </label>
+                                </div>
+                            </div>
 
-                                        </div>
+
+
+                            <div class="field">
+                                <button class="button is-primary mt-4">Upload File</button>
+                            </div>
+
+                            <article class="media">
+                                <figure class="media-left">
+                                    <div class="image">
+
+
                                     </div>
                                 </figure>
+
                                 <div class="media-content">
                                     <div class="content">
-                                        <div class="field">
-                                            <button class="button is-primary mt-4">Upload File</button>
-                                        </div>
+
                                     </div>
                                 </div>
                             </article>
+
+
 
 
 
@@ -114,7 +124,7 @@
             <!--           image uploader-->
             <div class="button mx-3 is-dark">Manage Courses</div>
             <router-link :to="{name:'UpdateBootcamp',params:{id:bootcamp.data._id} }" class="button is-dark mx-3">Edit Boootcamp</router-link>
-            <div  class="button is-danger mx-3">Remove bootcamp</div>
+            <div @click="deleteBootcamp" class="button is-danger mx-3">Remove bootcamp</div>
 
             <p>* You can only add one bootcamp per account</p>
             <p>* You must be affiliated with the bootcamp in some way in
@@ -129,6 +139,8 @@
     components: {},
     data() {
       return {
+        newImg:false,
+        imageData:'',
         bootcamp: [],
         loaded: false,
         file: "",
@@ -147,7 +159,6 @@
           const { data } = await this.$http.get("/api/v1/bootcamps/" + code);
           this.bootcamp = data;
           this.loaded = true;
-          console.log('bootcamp detail',data)
 
         } catch (e) {
           return e;
@@ -155,7 +166,16 @@
       },
 
       // photoupload
-      selectFile() {
+      selectFile(event) {
+        let input = event.target;
+        if(input.files && input.files[0]){
+          let reader = new FileReader()
+          reader.onload = (e) =>{
+            this.imageData = e.target.result;
+          }
+          reader.readAsDataURL(input.files[0]);
+          this.newImg = true;
+        }
         const file = this.$refs.file.files[0];
         const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
         const MAX_SIZE = 700000;
@@ -189,7 +209,23 @@
 
         }
 
-      }
+      },
+      async deleteBootcamp(){
+        try {
+          const code = this.$route.params.id;
+          await  this.$http.delete("/api/v1/bootcamps/" + code)
+          await this.$swal.fire({
+            icon: "success",
+            text: "Bootcamp has been deleted"
+          });
+          await this.$router.push({name:'AllBootcampX'})
+        }catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+        }
+      },
     }
 
 
