@@ -4,7 +4,6 @@
         <div class="section">
             <div class="container">
                 <div class="has-text-left">
-
                     <h1 class="is-size-2">Add bootcamp</h1>
                     <p>Important: you must be affiliated with a bootcamp to add to Devcamper</p>
 
@@ -21,7 +20,7 @@
                             <div class="field">
                                 <label class="label">Name:</label>
                                 <div class="control">
-                                    <input v-model="form.name" class="input" type="text"
+                                    <input v-model="bootcamp.data.name" class="input" type="text"
                                            placeholder="Bootcamp name">
                                 </div>
                             </div>
@@ -38,21 +37,21 @@
                             <div class="field">
                                 <label class="label">Phone number:</label>
                                 <div class="control">
-                                    <input v-model="form.phone" class="input" type="text"
+                                    <input v-model="bootcamp.data.phone" class="input" type="text"
                                            placeholder="Phone number ?">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">Email:</label>
                                 <div class="control">
-                                    <input v-model="form.email" class="input" type="text"
+                                    <input v-model="bootcamp.data.email" class="input" type="text"
                                            placeholder="youremail@domain.com">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">Website:</label>
                                 <div class="control">
-                                    <input v-model="form.website" class="input" type="text"
+                                    <input v-model="bootcamp.data.website" class="input" type="text"
                                            placeholder="http://www.website.com">
                                 </div>
                             </div>
@@ -62,7 +61,7 @@
 
                     </div>
                     <div class="column has-background-white mx-2">
-                        <h1 class="is-size-3">Other infomation</h1>
+                        <h1 class="is-size-3">Other information</h1>
                         <section class="py-3 px-2">
 
 
@@ -74,14 +73,13 @@
                                 </div>
                             </div>
 
-
                             <div class="field">
                                 <label class="label">Careers:</label>
                                 <small class="has-text-danger is-hidden-touch">hold Shift key and click to select
                                     multiple</small>
                                 <div class="control">
                                     <div class="select is-multiple">
-                                        <select v-model="form.careers" multiple size="6">
+                                        <select v-model="bootcamp.data.careers" multiple size="6">
                                             <option disabled value="null">Click to select</option>
                                             <option value="Web Development">Web Development</option>
                                             <option value="Mobile Development">Mobile Development</option>
@@ -99,28 +97,28 @@
                             <div class="field py-3">
                                 <div class="control">
                                     <label class="check-box">
-                                        <input v-model="form.housing" type="checkbox">
+                                        <input v-model="bootcamp.data.housing" type="checkbox">
                                         <span class="checkmark"></span>
                                         Housing
                                     </label>
                                 </div>
                                 <div class="control">
                                     <label class="check-box">
-                                        <input v-model="form.jobAssistance" type="checkbox">
+                                        <input v-model="bootcamp.data.jobAssistance" type="checkbox">
                                         <span class="checkmark"></span>
                                         Job Assistance
                                     </label>
                                 </div>
                                 <div class="control">
                                     <label class="check-box">
-                                        <input v-model="form.jobGuarantee" type="checkbox">
+                                        <input v-model="bootcamp.data.jobGuarantee" type="checkbox">
                                         <span class="checkmark"></span>
                                         Job Guarantee
                                     </label>
                                 </div>
                                 <div class="control">
                                     <label class="check-box">
-                                        <input v-model="form.acceptsGi" type="checkbox">
+                                        <input v-model="bootcamp.data.acceptsGi" type="checkbox">
                                         <span class="checkmark"></span>
                                         Accepts GI Bill
                                     </label>
@@ -130,13 +128,20 @@
 
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <button @click="newBootcamp" class="button is-link">Submit</button>
+                                    <template>
+                                        <button v-if="isUpdateBootcamp" @click="updateBootcamp"
+                                                class="button is-primary  mr-4">Update Bootcamp
+                                        </button>
+                                        <button v-else @click="newBootcamp" class="button is-primary mr-4">Add
+                                            bootcamp
+                                        </button>
+                                    </template>
+
 
                                     <button @click="changeAddress" class="button">address</button>
 
                                 </div>
 
-                                {{message}}
 
                             </div>
                         </section>
@@ -149,7 +154,7 @@
 
 
         <template>
-            <json-view :data="form"/>
+            <json-view :data="bootcamp.data"/>
         </template>
 
 
@@ -164,27 +169,29 @@
     data() {
 
       return {
+        bootcamp: {
+          data: {
+            name: "",
+            address: null,
+            phone: chance.phone(),
+            email: chance.email(),
+            website: chance.url(),
+            description: chance.paragraph({ sentences: 2 }),
+            careers: [],
+            housing: [true, false][chance.integer({ min: 0, max: 1 })],
+            jobAssistance: [true, false][chance.integer({ min: 0, max: 1 })],
+            jobGuarantee: [true, false][chance.integer({ min: 0, max: 1 })],
+            acceptsGi: [true, false][chance.integer({ min: 0, max: 1 })]
+          }
+        },
+        message: null
 
-        message: null,
-        form: {
-          name: null,
-          address: null,
-          phone: chance.phone(),
-          email: chance.email(),
-          website: chance.url(),
-          description: chance.paragraph({ sentences: 2 }),
-          careers:[],
-          housing: [true, false][chance.integer({ min: 0, max: 1 })],
-          jobAssistance: [true, false][chance.integer({ min: 0, max: 1 })],
-          jobGuarantee: [true, false][chance.integer({ min: 0, max: 1 })],
-          acceptsGi: [true, false][chance.integer({ min: 0, max: 1 })]
-        }
       };
     },
 
     watch: {
       newAddress() {
-        this.form.address = this.computedAddress;
+        this.bootcamp.data.address = this.computedAddress;
       }
     },
 
@@ -193,30 +200,88 @@
         return `${chance.street({ country: "us" })},${chance.city()}, ${chance.state({ country: "us" })}`;
       },
 
+      isUpdateBootcamp() {
+        return ["UpdateBootcamp"].includes(this.$route.name);
+
+      },
+
       computedDescription() {
-        return `${this.form.name} ${chance.paragraph({ sentences: 2 })}`;
+        return `${this.bootcamp.data.name} ${chance.paragraph({ sentences: 2 })}`;
+      },
+      /* eslint-disable no-unused-vars */
+
+      newBootcampData() {
+        const { _id, id, ...other } = this.bootcamp.data;
+        return other;
       }
+      /* eslint-disable no-unused-vars */
+
+    },
+
+    mounted() {
+
+      this.makeRequest();
+
     },
 
     methods: {
 
       changeAddress() {
-        this.form.address = this.computedAddress;
+        this.bootcamp.data.address = this.computedAddress;
       },
+
 
       async newBootcamp() {
         try {
-          await this.$http.post("/api/v1/bootcamps/", this.form);
-
-          this.message = "Trader Created Successfully ";
-          console.log(this.message);
+          await this.$http.post("/api/v1/bootcamps/", this.bootcamp.data);
+          await this.$swal.fire({
+            icon: "success",
+            text: "Bootcamp created Successfully"
+          });
 
         } catch (error) {
-          this.message = error.response.data.error;
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+
         }
+      },
 
+      async updateBootcamp() {
+        try {
+          const code = this.$route.params.id;
+          await this.$http.put(`/api/v1/bootcamps/${code}`, this.newBootcampData);
+          await this.$swal.fire({
+            icon: "success",
+            text: "Bootcamp Updated Successfully"
+          });
 
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+        }
+      },
+
+      fetchBootcamp() {
+        const code = this.$route.params.id;
+        this.$http.get("/api/v1/bootcamps/" + code)
+          .then(({ data }) => {
+            this.bootcamp = data;
+            this.loaded = true;
+          })
+          .catch();
+      },
+
+      makeRequest() {
+        if (this.isUpdateBootcamp) {
+          this.fetchBootcamp();
+        }
       }
+
+
     }
 
 

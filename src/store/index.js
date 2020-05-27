@@ -14,28 +14,22 @@ export default new Vuex.Store({
       address: process.env["VUE_APP_ADDY"] || "{env.APP_ADDY}",
       telephone: process.env["VUE_APP_NUM"] || "{env.APP_NUM}",
     },
-    user: "",
+    user: {},
+    loaded: true,
   },
 
   actions: {
-    /* getCurrentUser() {
-      console.log("hey Travis");
-    },*/
-
     getCurrentUser: (context) => {
-      /*   setTimeout(function () {
-
-      }, 1000);*/
-
-      axios
-        .get("/api/v1/auth/me")
-        .then(({ data }) => {
-          let user = data;
-          context.commit("SET_USER", user);
-        })
-        .catch((error) => {
-          return console.log("get Me error ", error.response.data.error);
-        });
+      setTimeout(function () {
+        axios
+          .get("/api/v1/auth/me")
+          .then(({ data }) => {
+            context.commit("SET_USER", data);
+          })
+          .catch((error) => {
+            return console.log("get Me error ", error.response.data.error);
+          });
+      }, 100);
     },
   },
 
@@ -43,14 +37,10 @@ export default new Vuex.Store({
     SET_USER: (state, user) => {
       state.user = user;
     },
-    /*SET_MESSAGE: (state, user) => {
-      state. = user;
-    },*/
+    SET_STATUS: (state, authenticated) => {
+      state.authenticated = authenticated;
+    },
   },
 
-  /*SET_USER(state, user) {
-      state.user = user;
-    },
-  },*/
   modules: {},
 });

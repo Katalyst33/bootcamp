@@ -65,9 +65,12 @@ const router = new VueRouter({
 
 export default router;
 
+/*
 setTimeout(() => {
   console.log("vue router store", store.state.user.data.role);
 }, 100);
+*/
+
 /*
 
 /!*router.beforeEach(*!/(to, from, next) => {

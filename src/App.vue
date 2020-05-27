@@ -33,10 +33,11 @@
     methods: {
       async getMe() {
         try {
-          await this.$store.dispatch("getCurrentUser");
+       await this.$store.dispatch("getCurrentUser");
+        // await console.log('get me data', data)
 
         } catch (error) {
-          return console.log('get me error',error)
+          // return console.log('get me error',error)
         }
       }
     },

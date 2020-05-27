@@ -30,12 +30,11 @@
                     </router-link>
 
 
-
                 </div>
 
                 <div class="navbar-end mr-4">
                     <div class="navbar-item">
-                        <template v-if="!user">
+                        <template v-if="!user.data">
                             <div class="buttons">
                                 <router-link :to="{name:'login'}" class="button is-primary">
                                     <strong>Sign up</strong>
@@ -45,27 +44,33 @@
                                 </router-link>
                             </div>
                         </template>
+                        <!--                        error part-->
                         <template v-else>
-                            <div class="navbar-item has-dropdown  mr-5 is-hoverable"  >
-                                <a class="navbar-link">
-                                    Account
-                                </a>
+                           <template >
+                               <div class="navbar-item has-dropdown  mr-5 is-hoverable">
+                                   <a class="navbar-link">
+                                       Account
+                                   </a>
 
-                                <div class="navbar-dropdown mr-5">
-                                    <template v-if="user">
-                                        <h1 class="navbar-item">{{user.data.name}}</h1>
-                                        <h1 class="navbar-item">{{user.data.email}}</h1>
-                                        <div class="navbar-item">
-                                            <h1 class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'">{{user.data.role}} Role</h1>
+                                   <div class="navbar-dropdown mr-5">
+                                       <template >
+                                           <h1 class="navbar-item">{{user.data.name}}</h1>
+                                           <h1 class="navbar-item">{{user.data.email}}</h1>
+                                           <div class="navbar-item">
+                                               <h1 class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'">
+                                                   {{user.data.role}} Role</h1>
 
-                                        </div>
-                                    </template>
-                                    <hr class="navbar-divider">
-                                    <button @click="logOut" class="button is-danger">Logout</button>
-                                </div>
-                            </div>
+                                           </div>
+                                       </template>
+                                       <hr class="navbar-divider">
+                                       <button @click="logOut" class="button is-danger">Logout</button>
+                                   </div>
+                               </div>
+                           </template>
 
                         </template>
+                        <!--                        error part-->
+
 
                     </div>
                 </div>
@@ -89,22 +94,25 @@
         },
         toggleDrop: {
           "is-active": false
-        }
+        },
+
       };
     },
     computed: {
-      ...mapState(["user"])
+      ...mapState(["user", "loaded"])
     },
+
 
     methods: {
       menuToggle() {
         this.toggleMenu["is-active"] = !this.toggleMenu["is-active"];
       },
-      dropToggle(){
+      dropToggle() {
         this.toggleDrop["is-active"] = !this.toggleDrop["is-active"];
       },
 
       async logOut() {
+        await this.$store.commit("SET_USER");
         function timerInterval() {
           setInterval(() => {
             const content = this.$swal.getContent();
@@ -135,44 +143,13 @@
           console.log("logout successfully");
           await this.$store.commit("SET_USER");
 
-          await this.$router.push("/");
-
+          await this.$router.push({ name: "Home" });
 
         } catch (e) {
           return e;
         }
-
-
-      },
-      checkButtonAnswer(answerOption) {
-
-        if (answerOption === this.calculateAnswer()) {
-          this.$swal.fire({
-            title: "Correct !",
-            text: this.message.correct,
-            imageUrl: "/img/face/albert.png",
-            imageWidth: 300,
-            imageHeight: 300,
-            imageAlt: "Custom image"
-          }).then(this.onWin);
-
-        } else {
-          this.$swal.fire({
-            title: `Wrong!! \n ${this.valueA} ${this.operator} ${this.valueB} is ${this.answer}`,
-            text: this.message.wrong,
-            imageUrl: "/img/face/hawk.png",
-            imageWidth: 300,
-            imageHeight: 300,
-            imageAlt: "Custom image"
-          }).then(this.refreshGameValues);
-        }
-
-        // alert(`value: ${answerOption}`);
-        // return answerOption;
-
-        // console.log(this.calculateAnswer())
-
       }
+
 
     }
 

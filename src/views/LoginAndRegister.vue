@@ -4,7 +4,7 @@
         <div class="section">
 
             <div class="container"><h1>Login here !!!</h1>
-{{user}}
+                {{user}}
                 <h1 class="is-size-3 has-text-danger">login form</h1>
                 <h1 v-if="isRegister" class="is-size-3 has-text-danger">Registration form</h1>
 
@@ -39,7 +39,6 @@
                                         <input type="radio" checked="checked" name="answer">
                                         <span class="checkmark"></span>
                                     </label>
-
                                     <label class="radio-btn">
                                         Bootcamp Publisher
                                         <input type="radio" name="answer">
@@ -47,7 +46,8 @@
                                     </label>
                                 </div>
                             </div>
-                            <p v-if="isRegister" class="has-text-danger"> * You must be affiliated with the bootcamp in some way in order
+                            <p v-if="isRegister" class="has-text-danger"> * You must be affiliated with the bootcamp in
+                                some way in order
                                 to add it to DevCamper.
                             </p>
                         </section>
@@ -55,8 +55,9 @@
                             <p class="control">
                                 <button @click="login" class="button is-primary">Login</button>
                             </p>
+
                             <p class="control">
-                                <button @click="checkUser" class="button is-warning">Check user</button>
+                                <button @click="logOut" class="button is-danger">Log Out</button>
                             </p>
 
                         </div>
@@ -81,10 +82,6 @@
 
     data() {
       return {
-        notification: {
-          error: null,
-          success: null
-        },
         error: null,
         form: {
           email: "admin@gmail.com",
@@ -101,8 +98,7 @@
       }
     },
 
-    mounted() {
-    },
+
 
     methods: {
 
@@ -112,7 +108,9 @@
         try {
           await this.$http.get("/api/v1/auth/logout");
           console.log("logout successfully");
+          await this.$store.dispatch("getCurrentUser");
           await this.$store.commit("SET_USER");
+
 
         } catch (e) {
           return e;
@@ -136,21 +134,18 @@
           await this.$http.post("/api/v1/auth/login", this.form);
           await this.$swal.fire({
             icon: "success",
-            text: "login successfully, you will be redirected shortly",
+            text: "Welcome back, you will be redirected shortly",
             imageAlt: "Custom image"
           });
-          this.notification.success = "Welcome back";
           await this.$store.dispatch("getCurrentUser");
         } catch (error) {
           await this.$swal.fire({
             icon: "error",
             text: `${error.response.data.error}`
           });
-
         }
 
       }
-
     }
 
   };
