@@ -1,0 +1,30 @@
+@import "~vue-range-slider/dist/vue-range-slider.css";
+
+
+.range-slider-fill {
+  background-color: #5e53a5;
+}
+
+.range-slider-fill {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 10px;
+  border-radius: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.range-slider-rail {
+  width: 100%;
+   background-color: #ddd9fa;
+}
+
+.range-slider-knob {
+  height: 30px;
+  width: 30px;
+  background-color:#5e53a5;
+  border: 2px solid #f5f5f5;
+}

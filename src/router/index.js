@@ -59,13 +59,13 @@ const routes = [
     component: Review,
   },
   {
-    path: "/add-reviews/",
+    path: "/add-reviews/:id",
     name: "AddReview",
 
     component: AddAndUpdateReview,
   },
   {
-    path: "/update-reviews/",
+    path: "/update-reviews/:id",
     name: "UpdateReview",
     component: AddAndUpdateReview,
   },

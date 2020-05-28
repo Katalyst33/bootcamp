@@ -20,14 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/commons/GoBack.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Review.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/rangeSlider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controller/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Review.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Review.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ViewBootcamp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/ManageCourse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/ManageCourse.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +185,7 @@
       <workItem from="1590463957191" duration="14148000" />
       <workItem from="1590494910175" duration="923000" />
       <workItem from="1590504450162" duration="41553000" />
-      <workItem from="1590656987055" duration="14910000" />
+      <workItem from="1590656987055" duration="20135000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -466,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590627949214</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="refactor router/index&#10;&#10;add view review page&#10;&#10;updated review controller to display review username">
+      <created>1590684851670</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1590684851670</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +495,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="started adding reset passord token funtion" />
     <MESSAGE value="added nodemailer" />
     <MESSAGE value="reset password !! " />
     <MESSAGE value="added protected routes for admin" />
@@ -512,7 +519,8 @@
     <MESSAGE value="added beautiful image upload in manage bootcamp" />
     <MESSAGE value="created Update and add course component" />
     <MESSAGE value=", update, add, delete courses" />
-    <option name="LAST_COMMIT_MESSAGE" value=", update, add, delete courses" />
+    <MESSAGE value="refactor router/index&#10;&#10;add view review page&#10;&#10;updated review controller to display review username" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor router/index&#10;&#10;add view review page&#10;&#10;updated review controller to display review username" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -523,10 +531,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="113" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589533246676" />
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1590627949010">
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1590684851366">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590627949010" />
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590684851366" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -544,32 +552,32 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="907" height="215" key="GridCell.Tab.0.bottom" timestamp="1590684369472">
+    <state width="802" height="215" key="GridCell.Tab.0.bottom" timestamp="1590684871250">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="907" height="215" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590684369472" />
+    <state width="802" height="215" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590684871250" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="907" height="215" key="GridCell.Tab.0.center" timestamp="1590684369471">
+    <state width="802" height="215" key="GridCell.Tab.0.center" timestamp="1590684871249">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="907" height="215" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590684369471" />
+    <state width="802" height="215" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590684871249" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
-    <state width="907" height="215" key="GridCell.Tab.0.left" timestamp="1590684369470">
+    <state width="802" height="215" key="GridCell.Tab.0.left" timestamp="1590684871249">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="907" height="215" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590684369470" />
+    <state width="802" height="215" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590684871249" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
-    <state width="907" height="215" key="GridCell.Tab.0.right" timestamp="1590684369471">
+    <state width="802" height="215" key="GridCell.Tab.0.right" timestamp="1590684871250">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="907" height="215" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590684369471" />
+    <state width="802" height="215" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590684871250" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state x="149" y="150" key="RollbackChangesDialog" timestamp="1590329481410">
@@ -580,10 +588,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1590627950883">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1590684854021">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590627950883" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590684854021" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -601,10 +609,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590475600035" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590684160151">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590689633254">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590684160151" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590689633254" />
     <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.998@0.23.1680.998" timestamp="1590683462900" />
   </component>
   <component name="XDebuggerManager">

@@ -33,7 +33,7 @@
                             <h1 class="is-size-3 has-text-weight-bold">Rating: <span class="has-text-success">10</span>
                             </h1>
 
-                            <button class="button is-dark mt-5">Review this Bootcamp</button>
+                            <router-link :to="{name:'AddReview', params:{id:bootcamp.data._id}}" class="button is-dark mt-5">Review this Bootcamp</router-link>
 
                         </section>
                     </div>
