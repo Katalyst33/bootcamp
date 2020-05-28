@@ -3,7 +3,7 @@
         <div v-if="loaded === true" class="section">
             <div class="container">
                 <div class="columns">
-                    <div class="column -is-8 has-text-left">
+                    <div class="column is-8 has-text-left">
                         <template>
                             <div>
                                 <div class="has-text-left">
@@ -96,7 +96,7 @@
                                 <hr>
                             </ul>
 
-                            <button class="button is-dark my-2">Read Reviews</button>
+                            <router-link :to="{name:'Reviews', params:{id:bootcamp.data._id}} " class="button is-dark my-2">Read Reviews</router-link>
                             <button class="button is-dark my-2">Write a Review</button>
                             <button class="button is-dark my-2">Visit Website</button>
 

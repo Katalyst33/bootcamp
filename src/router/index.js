@@ -5,6 +5,17 @@ import LoginAndRegister from "../views/LoginAndRegister";
 import notFound from "../views/404.vue";
 import store from "../store/index";
 
+const About = () =>
+  import(/* webpackChunkName: "about" */ "../views/About.vue");
+const Bootcamps = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/Bootcamps");
+const ViewBootcamp = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/ViewBootcamp.vue");
+const Review = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/Review.vue");
+const AddAndUpdateReview = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/AddAndUpdateReview.vue");
+
 Vue.use(VueRouter);
 
 import xxRoutes from "./xxxRoutes";
@@ -18,9 +29,7 @@ const routes = [
   {
     path: "/about",
     name: "About",
-
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    component: About,
   },
   {
     path: "/login",
@@ -37,17 +46,30 @@ const routes = [
   {
     path: "/bootcamp/",
     name: "AllBootcamps",
-
-    component: () =>
-      import(/* webpackChunkName: "bootcamp" */ "../views/Bootcamps"),
+    component: Bootcamps,
   },
   {
     path: "/bootcamp/:id",
     name: "Bootcamp",
-
-    component: () =>
-      import(/* webpackChunkName: "bootcamp" */ "../views/ViewBootcamp.vue"),
+    component: ViewBootcamp,
   },
+  {
+    path: "/reviews/:id",
+    name: "Reviews",
+    component: Review,
+  },
+  {
+    path: "/add-reviews/",
+    name: "AddReview",
+
+    component: AddAndUpdateReview,
+  },
+  {
+    path: "/update-reviews/",
+    name: "UpdateReview",
+    component: AddAndUpdateReview,
+  },
+
   {
     path: "/404",
     alias: "*",

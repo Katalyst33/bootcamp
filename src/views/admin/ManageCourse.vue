@@ -3,6 +3,7 @@
         <div class="columns is-mobile mt-5">
             <div class="column is-three-fifths is-offset-one-fifth">
                 <section class="has-background-white px-5 has-text-left">
+                   <GoBack class="pt-4"/>
                     <h1 class="is-size-3 py-3">Manage Courses</h1>
                     <div class="columns">
                         <div class="column is-4">
@@ -74,7 +75,11 @@
 </template>
 
 <script>
+    import GoBack from "../../components/commons/GoBack";
   export default {
+    components:{
+      GoBack
+    },
     data() {
       return {
         loaded: false,
