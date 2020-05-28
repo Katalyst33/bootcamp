@@ -202,7 +202,6 @@
 
       isUpdateBootcamp() {
         return ["UpdateBootcamp"].includes(this.$route.name);
-
       },
 
       computedDescription() {

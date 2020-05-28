@@ -5,7 +5,7 @@
 
             <div class="section">
                 <div class="container  box">
-                    <table class="table is-fullwidth is-hoverable">
+                    <table class="table is-fullwidth is-striped is-hoverable">
                         <thead>
                         <tr>
                             <th>Bootcamp Name</th>

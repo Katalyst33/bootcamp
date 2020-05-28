@@ -62,7 +62,7 @@
 
                     <div class="column is-4">
                         <div class="box">
-                            <img src="/img/null-devcamp-dark.png">
+                            <img :src="`/uploads/${bootcamp.data.photo}`">
 
                             <p class="has-text-left has-text-dark "><span
                                     class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating}}</span>

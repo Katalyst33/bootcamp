@@ -8,6 +8,14 @@ const ManageBootcamps = () =>
 const AllBootcamps = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/AllBootcampsX");
 
+const ManageCourse = () =>
+  import(/* webpackChunkName: "Admin" */ "../views/admin/ManageCourse.vue");
+
+const AddAndUpdateCourse = () =>
+  import(
+    /* webpackChunkName: "Admin" */ "../views/admin/AddAndUpdateCourse.vue"
+  );
+
 export default {
   path: "/xxx",
   component: index,
@@ -32,6 +40,24 @@ export default {
       path: "add-bootcamp",
       name: "AddBootcamp",
       component: AddBootcamp,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "manage-course/:id",
+      name: "ManageCourse",
+      component: ManageCourse,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "add-course/:id",
+      name: "AddCourse",
+      component: AddAndUpdateCourse,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "update-course/:id",
+      name: "UpdateCourse",
+      component: AddAndUpdateCourse,
       meta: { requiresAuth: true },
     },
     {

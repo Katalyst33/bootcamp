@@ -21,10 +21,8 @@
                     <div class="column is-2 has-text-left">
                         <h3 class="is-size-6 has-text-left has-text-danger has-text-weight-bold">Admin routes</h3>
                             <ul class="has-text-danger">
-                                <li ><router-link :to="{name:'AddBootcamp'}" class="has-text-danger">Add bootcamp</router-link></li>
-                                <li ><router-link :to="{name:'AllBootcampX'}" class="has-text-danger">All bootcamps</router-link></li>
-
-
+                                <li ><router-link :to="{name:'AddBootcamp'}" class="has-text-danger">Add Bootcamp</router-link></li>
+                                <li ><router-link :to="{name:'AllBootcampX'}" class="has-text-danger">All Bootcamps</router-link></li>
                                 <li>item</li>
                             </ul>
                     </div>

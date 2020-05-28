@@ -3,7 +3,7 @@
         <div class="mt-5" v-if="loaded">
             <h1 class="is-size-3">Manage bootcamp</h1>
             <div class="columns is-mobile">
-                <div class="column is-half is-offset-one-quarter">
+                <div class="column is-half-desktop is-offset-one-quarter-desktop px-0 px-sm-5">
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
@@ -42,41 +42,35 @@
 
                         </div>
                     </div>
+                    <div class="section">
 
+                    <form @submit.prevent="sendFile" enctype="multipart/form-data">
 
-                </div>
-            </div>
+                        <div class="columns">
+                            <div class="column is-half is-offset-one-quarter">
+                                <div v-if="message"
+                                     :class="`message ${error ? 'is-danger': 'is-success'}`"
+                                >
+                                    <div class="message-body">{{message}}</div>
+                                </div>
 
-            <!--           image uploader-->
-            <div class="section">
+                                <div class="field">
 
-                <form @submit.prevent="sendFile" enctype="multipart/form-data">
+                                    <div class="file is-boxed ">
+                                        <label class="file-label">
 
-                    <div class="columns">
-                        <div class="column is-half is-offset-one-quarter">
-                            <div v-if="message"
-                                 :class="`message ${error ? 'is-danger': 'is-success'}`"
-                            >
-                                <div class="message-body">{{message}}</div>
-                            </div>
+                                            <input
+                                                    type="file"
+                                                    ref="file"
+                                                    @change="selectFile"
+                                                    class="file-input"
+                                                    accept="image/*"/>
 
-                            <div class="field">
-
-                                <div class="file is-boxed ">
-                                    <label class="file-label">
-
-                                        <input
-                                                type="file"
-                                                ref="file"
-                                                @change="selectFile"
-                                                class="file-input"
-                                                accept="image/*"/>
-
-                                        <span class="file-cta">
+                                            <span class="file-cta">
                             <span class="file-icon">
                                 <i class="fas fa-uploader"></i>
                             </span>
-                            <span class="file-label is-size-4 has-text-primary has-text-weight-bold">
+                            <span class="file-label is-size-5 has-text-primary has-text-weight-bold">
                                 Choose a file...
                             </span>
                                             <span class="image-preview" v-if="imageData.length > 0">
@@ -84,46 +78,52 @@
                             </span>
 
                                              </span>
-                                        <span v-if="file" class="file-name">{{file.name}}</span>
-                                    </label>
-                                </div>
-                            </div>
-
-
-
-                            <div class="field">
-                                <button class="button is-primary mt-4">Upload File</button>
-                            </div>
-
-                            <article class="media">
-                                <figure class="media-left">
-                                    <div class="image">
-
-
-                                    </div>
-                                </figure>
-
-                                <div class="media-content">
-                                    <div class="content">
-
+                                            <span v-if="file" class="file-name">{{file.name}}</span>
+                                        </label>
                                     </div>
                                 </div>
-                            </article>
+
+                                <div class="field">
+                                    <button class="button is-primary mt-4" :disabled="uploadBtn">Upload File</button>
+                                </div>
+
+                                <article class="media">
+                                    <figure class="media-left">
+                                        <div class="image">
+
+
+                                        </div>
+                                    </figure>
+
+                                    <div class="media-content">
+                                        <div class="content">
+
+                                        </div>
+                                    </div>
+                                </article>
 
 
 
 
 
+                            </div>
                         </div>
+                    </form>
+
                     </div>
-                </form>
 
+                </div>
             </div>
+
+            <!--           image uploader-->
+
+
+
             <!--           image uploader-->
 
             <!--           image uploader-->
-            <div class="button mx-3 is-dark">Manage Courses</div>
-            <router-link :to="{name:'UpdateBootcamp',params:{id:bootcamp.data._id} }" class="button is-dark mx-3">Edit Boootcamp</router-link>
+            <router-link :to="{name:'ManageCourse',params:{id:bootcamp.data._id} }"  class="button  is-success has-text-white  mx-3">Manage Courses</router-link>
+            <router-link :to="{name:'UpdateBootcamp',params:{id:bootcamp.data._id} }" class="button is-success has-text-white mx-3">Edit Boootcamp</router-link>
             <div @click="deleteBootcamp" class="button is-danger mx-3">Remove bootcamp</div>
 
             <p>* You can only add one bootcamp per account</p>
@@ -140,6 +140,7 @@
     data() {
       return {
         newImg:false,
+        uploadBtn:true,
         imageData:'',
         bootcamp: [],
         loaded: false,
@@ -167,6 +168,9 @@
 
       // photoupload
       selectFile(event) {
+        if (event.lengthComputable) {
+          console.log(event.loaded / event.total * 100);
+        }
         let input = event.target;
         if(input.files && input.files[0]){
           let reader = new FileReader()
@@ -174,7 +178,6 @@
             this.imageData = e.target.result;
           }
           reader.readAsDataURL(input.files[0]);
-          this.newImg = true;
         }
         const file = this.$refs.file.files[0];
         const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
@@ -185,7 +188,12 @@
           this.file = file;
           this.error = false;
           this.message = "";
+          this.newImg = true;
+          this.uploadBtn=false;
+
         } else {
+
+
           this.error = true;
           this.message = tooLarge ? `Too large. Max size is ${MAX_SIZE / 1000}kb ` : "only images are allowed";
         }
