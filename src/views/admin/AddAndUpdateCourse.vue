@@ -156,9 +156,9 @@
           await this.$http.post(`/api/v1/bootcamps/${code}/courses/`, this.course.data);
           await this.$swal.fire({
             icon: "success",
-            text: "Bootcamp created Successfully"
+            text: "Course was  added Successfully"
           });
-          await this.$router.push({ name: "ManageBootcamp" });
+          await this.$router.push({ name: "ManageCourse" });
 
         } catch (error) {
           await this.$swal.fire({
@@ -177,7 +177,7 @@
             icon: "success",
             text: "Course was Updated Successfully, you will now be redirected"
           });
-          await this.$router.push({ name: "ManageBootcamp" });
+          await this.$router.push({ name: "ManageCourse" });
 
         } catch (error) {
           await this.$swal.fire({

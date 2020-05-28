@@ -12,11 +12,14 @@
                         </div>
                         <div class="column is-8">
                             <h1 class="is-size-4 has-text-primary">{{bootcamp.data.name}}</h1>
-                            <span class="mr-5  has-text-primary has-text-weight-bold"><i class="fas fa-map-marker-alt pr-2"></i>{{bootcamp.data.location.city}},
+                            <span class="mr-5  has-text-primary has-text-weight-bold"><i
+                                    class="fas fa-map-marker-alt pr-2"></i>{{bootcamp.data.location.city}},
                                             {{bootcamp.data.location.state}}
                                 </span><span class="ml-5 has-text-success has-text-weight-bold">Rating {{bootcamp.data.averageRating}}</span>
                             <p class="">{{bootcamp.data.description}}</p>
-                            <router-link :to="{name:'AddCourse', params:{id:bootcamp.data._id}}" class="button is-primary my-3">Add Bootcamp Course</router-link>
+                            <router-link :to="{name:'AddCourse', params:{id:bootcamp.data._id}}"
+                                         class="button is-primary my-3">Add Bootcamp Course
+                            </router-link>
                         </div>
                     </div>
 
@@ -34,13 +37,15 @@
                                 <td>{{course.title}}</td>
                                 <td>
                                     <div class="buttons">
-                                        <router-link :to="{name:'UpdateCourse', params:{id:course._id}}" class="button is-success has-text-white"><i class="fas fa-edit"></i>
+                                        <router-link :to="{name:'UpdateCourse', params:{id:course._id}}"
+                                                     class="button is-success has-text-white"><i
+                                                class="fas fa-edit"></i>
                                         </router-link>
-                                        <button class="button is-danger has-text-white"><i class="fas fa-times"></i>
+                                        <button @click="deleteCourse(course._id)"
+                                                class="button is-danger has-text-white"><i class="fas fa-times"></i>
                                         </button>
                                     </div>
                                 </td>
-
 
 
                             </tr>
@@ -72,9 +77,9 @@
   export default {
     data() {
       return {
-        loaded:false,
-        bootcamp:[],
-        courses:[],
+        loaded: false,
+        bootcamp: [],
+        courses: []
       };
     },
     mounted() {
@@ -100,6 +105,25 @@
             this.loaded = true;
           })
           .catch();
+      },
+      async deleteCourse(code) {
+        try {
+          await this.$http.delete(`/api/v1/courses/${code}`);
+          await this.fetchCourses()
+          await this.$swal.fire({
+            icon: "success",
+            text: "Course has been deleted"
+          });
+
+
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+        }
+
+
       }
 
     }
