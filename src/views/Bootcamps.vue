@@ -20,7 +20,7 @@
                                     <div class="media-left">
                                         <div class="has-background-success">
                                             <p class="has-text-white has-text-weight-bold is-size-4 px-2">
-                                                {{bootcamp.averageRating}}</p>
+                                                {{bootcamp.averageRating | roundOff}}</p>
                                         </div>
                                     </div>
                                     <div class="media-content">
@@ -63,6 +63,8 @@
 </template>
 
 <script>
+  import {roundOff, thousand_separator} from "../utils"
+
 
   export default {
     data() {
@@ -80,6 +82,11 @@
 
       //    console.log(`route area ${this.$route.params.id}`)
 
+    },
+
+    filters:{
+      roundOff,
+      thousand_separator
     },
 
 

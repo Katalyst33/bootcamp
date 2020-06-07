@@ -15,19 +15,20 @@ const AddAndUpdateCourse = () =>
   import(
     /* webpackChunkName: "Admin" */ "../views/admin/AddAndUpdateCourse.vue"
   );
+const vuexLocal = JSON.parse(localStorage.getItem("vuex"));
 
 export default {
   path: "/xxx",
   component: index,
-  /*  beforeEnter: (to, from, next) => {
-    if (store.state.user.data.role === null) {
+  beforeEnter: (to, from, next) => {
+    if (vuexLocal.user.data.role === "user") {
       next({
         name: "login",
       });
     } else {
       next();
     }
-  },*/
+  },
 
   children: [
     {

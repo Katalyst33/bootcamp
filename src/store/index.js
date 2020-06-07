@@ -1,8 +1,15 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+import VuexPersist from "vuex-persist";
 
 Vue.use(Vuex);
+
+const vuexLocal = new VuexPersist({
+  reducer: (state) => ({
+    user: state.user,
+  }),
+});
 
 export default new Vuex.Store({
   state: {
@@ -14,7 +21,11 @@ export default new Vuex.Store({
       address: process.env["VUE_APP_ADDY"] || "{env.APP_ADDY}",
       telephone: process.env["VUE_APP_NUM"] || "{env.APP_NUM}",
     },
-    user: {},
+    user: {
+      data: {
+        role: "",
+      },
+    },
     loaded: true,
   },
 
@@ -43,4 +54,6 @@ export default new Vuex.Store({
   },
 
   modules: {},
+
+  plugins: [vuexLocal.plugin],
 });

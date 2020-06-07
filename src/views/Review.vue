@@ -16,8 +16,8 @@
                               <section class="box my-3">
                                   <h1 class="is-size-3 has-text-weight-bold">{{review.title}}</h1>
                                   <hr class="m-0">
-                                  <p class="is-size-4 py-2">Rating: <span
-                                          class="has-text-weight-bold has-text-success">{{review.rating}}</span></p>
+                                  <p class="is-size-4 py-2">Average Rating: <span
+                                          class="has-text-weight-bold has-text-success">{{review.rating }}</span></p>
                                   <p>
                                       {{review.text}}
                                   </p>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="column is-4 has-text-left">
                         <section class="box">
-                            <h1 class="is-size-3 has-text-weight-bold">Rating: <span class="has-text-success">10</span>
+                            <h1 class="is-size-3 has-text-weight-bold">Rating: <span class="has-text-success">{{bootcamp.data.averageRating | roundOff}}</span>
                             </h1>
 
                             <router-link :to="{name:'AddReview', params:{id:bootcamp.data._id}}" class="button is-dark mt-5">Review this Bootcamp</router-link>
@@ -47,6 +47,8 @@
 <script>
   import GoBack from "../components/commons/GoBack";
 
+  import {roundOff} from "../utils"
+
   export default {
     components: {
       GoBack
@@ -61,6 +63,10 @@
     },
 
     computed:{
+
+    },
+    filters:{
+      roundOff
 
     },
     mounted() {

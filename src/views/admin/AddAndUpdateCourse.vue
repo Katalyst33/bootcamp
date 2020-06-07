@@ -6,6 +6,7 @@
 
             <div class="column is-three-fifths is-offset-one-fifth">
                 <section class="has-background-white px-5 py-5 has-text-left">
+                    <GoBack/>
 
                     <h3 v-if="isUpdateCourse" class="is-size-3">{{course.data.bootcamp.name}} </h3>
                     <h3 v-if="loadedBootcamp" class="is-size-3">{{bootcamp.data.name}} </h3>
@@ -74,17 +75,20 @@
             </div>
         </div>
         <h1>Course</h1>
-        <template>
-            <json-view :data="course.data"/>
-        </template>
+
     </div>
 </template>
 
 <script>
+
+    import GoBack from "../../components/commons/GoBack";
   import Chance from "chance";
 
   const chance = new Chance;
   export default {
+    components:{
+      GoBack
+    },
     data() {
       return {
         loaded: false,

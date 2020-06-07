@@ -36,7 +36,7 @@
                     <div class="navbar-item">
                         <template v-if="!user.data">
                             <div class="buttons">
-                                <router-link :to="{name:'login'}" class="button is-primary">
+                                <router-link :to="{name:'register'}" class="button is-primary">
                                     <strong>Sign up</strong>
                                 </router-link>
                                 <router-link :to="{name:'login'}" class="button is-light">
@@ -63,6 +63,9 @@
                                            </div>
                                        </template>
                                        <hr class="navbar-divider">
+                                       <router-link :to="{name:'UpdateAccount'}">Manage Account</router-link>
+                                       <hr class="navbar-divider">
+
                                        <button @click="logOut" class="button is-danger">Logout</button>
                                    </div>
                                </div>
@@ -95,12 +98,19 @@
         toggleDrop: {
           "is-active": false
         },
+        vuexLocal:{},
+
 
       };
     },
     computed: {
       ...mapState(["user", "loaded"])
     },
+
+    mounted() {
+      this.vuexLocal  = JSON.parse(localStorage.getItem("vuex"));
+    },
+
 
 
     methods: {
@@ -112,7 +122,6 @@
       },
 
       async logOut() {
-        await this.$store.commit("SET_USER");
         function timerInterval() {
           setInterval(() => {
             const content = this.$swal.getContent();
@@ -125,28 +134,32 @@
           }, 100);
         }
 
-        await this.$swal.fire({
-          icon: "error",
-          text: "logout successfully, you will be redirected shortly",
-          timer: 2000,
-          timerProgressBar: true,
-          onBeforeOpen: () => {
-            this.$swal.showLoading();
 
-          },
-          onClose: () => {
-            clearInterval(timerInterval);
-          }
-        });
         try {
           await this.$http.get("/api/v1/auth/logout");
-          console.log("logout successfully");
           await this.$store.commit("SET_USER");
+          await this.$store.dispatch("getCurrentUser");
+          await this.$swal.fire({
+            icon: "error",
+            text: "logout successfully, you will be redirected shortly",
+            timer: 2000,
+            timerProgressBar: true,
+            onBeforeOpen: () => {
+              this.$swal.showLoading();
+
+            },
+            onClose: () => {
+              clearInterval(timerInterval);
+            }
+          });
 
           await this.$router.push({ name: "Home" });
 
-        } catch (e) {
-          return e;
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
         }
       }
 

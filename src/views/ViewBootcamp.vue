@@ -10,7 +10,7 @@
                                     <h1 class="is-size-2 has-text-weight-semibold">{{bootcamp.data.name}}</h1>
                                     <p class="py-3">{{bootcamp.data.description}}</p>
                                     <h4 class="is-size-5 has-text-weight-semibold ">Average Course Cost:<span
-                                            class="has-text-primary">${{bootcamp.data.averageCost}}</span></h4>
+                                            class="has-text-primary">${{bootcamp.data.averageCost | thousand_separator}}</span></h4>
                                 </div>
                                 <hr>
                                 <div v-if="courses.data">
@@ -30,7 +30,7 @@
                                                         <ul class="py-2 has-text-weight-semibold">
                                                             <li class="my-2"><i
                                                                     class="fad fa-money-bill-wave pr-2"></i>Cost:<span
-                                                                    class="is-size-5 has-text-weight-semibold">${{course.tuition}}</span>
+                                                                    class="is-size-5 has-text-weight-semibold">${{course.tuition | thousand_separator}}</span>
                                                             </li>
                                                             <li class="my-2"><i class="fad fa-lightbulb-on pr-2"></i>Skill
                                                                 Required:
@@ -65,7 +65,7 @@
                             <img :src="`/uploads/${bootcamp.data.photo}`">
 
                             <p class="has-text-left has-text-dark "><span
-                                    class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating}}</span>
+                                    class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating | roundOff}}</span>
                                 Rating</p>
                             <ul class="has-text-left">
                                 <hr>
@@ -96,9 +96,9 @@
                                 <hr>
                             </ul>
 
-                            <router-link :to="{name:'Reviews', params:{id:bootcamp.data._id}} " class="button is-dark my-2">Read Reviews</router-link>
+                            <router-link :to="{name:'Reviews', params:{id:bootcamp.data._id}} " class="button is-dark my-2 mx-3">Read Reviews</router-link>
                             <router-link :to="{name:'AddReview', params:{id:bootcamp.data._id}}" class="button is-dark my-2">Write a Review</router-link>
-                            <button class="button is-dark my-2">Visit Website</button>
+                            <button class="button is-dark my-2 mx-2">Visit Website</button>
 
                         </div>
                     </div>
@@ -106,22 +106,14 @@
             </div>
 
         </div>
-        <hr>
-        <h1>Bootcamp</h1>
-        <template>
-            <json-view :data="bootcamp.data"/>
-        </template>
-        <hr>
-        <h1>Courses</h1>
 
-        <template>
-            <json-view :data="courses.data"/>
-        </template>
+
     </div>
 </template>
 
 <script>
 
+    import {roundOff, thousand_separator} from "../utils"
 
   export default {
     data() {
@@ -130,6 +122,10 @@
         bootcamp: [],
         courses: []
       };
+    },
+    filters:{
+      roundOff,
+      thousand_separator,
     },
 
     mounted() {
@@ -157,7 +153,7 @@
           .catch();
       }
 
-    }
+    },
 
   };
 </script>

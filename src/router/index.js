@@ -16,6 +16,11 @@ const Review = () =>
 const AddAndUpdateReview = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/AddAndUpdateReview.vue");
 
+const ManageReviews = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/ManageReviews.vue");
+const UpdateAndReset = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/UpdateAndReset.vue");
+
 Vue.use(VueRouter);
 
 import xxRoutes from "./xxxRoutes";
@@ -59,6 +64,11 @@ const routes = [
     component: Review,
   },
   {
+    path: "/manage-reviews/",
+    name: "ManageReviews",
+    component: ManageReviews,
+  },
+  {
     path: "/add-reviews/:id",
     name: "AddReview",
 
@@ -69,7 +79,21 @@ const routes = [
     name: "UpdateReview",
     component: AddAndUpdateReview,
   },
-
+  {
+    path: "/reset-password",
+    name: "ResetPassword",
+    component: UpdateAndReset,
+  },
+  {
+    path: "/update-account",
+    name: "UpdateAccount",
+    component: UpdateAndReset,
+  },
+  {
+    path: "/update-password",
+    name: "UpdatePassword",
+    component: UpdateAndReset,
+  },
   {
     path: "/404",
     alias: "*",

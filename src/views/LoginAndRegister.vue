@@ -2,69 +2,79 @@
     <div>
 
         <div class="section">
-
-            <div class="container"><h1>Login here !!!</h1>
+            <div class="container "><h1>Login here !!!</h1>
                 {{user}}
-                <h1 class="is-size-3 has-text-danger">login form</h1>
                 <h1 v-if="isRegister" class="is-size-3 has-text-danger">Registration form</h1>
+                <h1 v-else class="is-size-3 has-text-danger">login form</h1>
 
-                <div class="columns is-mobile">
-                    <div class="column is-half is-offset-one-quarter">
-                        <section class="has-text-left">
-                            <div v-if="isRegister" class="field">
-                                <label class="label">Name:</label>
-                                <div class="control">
-                                    <input v-model="form.name" class="input" type="text"
-                                           placeholder="your name">
+                <section class="my-5">
+                    <div class="columns is-mobile">
+                        <div class="column  is-half-desktop is-offset-one-quarter-desktop has-background-white">
+                            <section class="has-text-left">
+                                <div v-if="isRegister" class="field">
+                                    <label class="label">Name:</label>
+                                    <div class="control">
+                                        <input v-model="form.name" class="input" type="text"
+                                               placeholder="your name">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">Email:</label>
-                                <div class="control">
-                                    <input v-model="form.email" class="input" type="text"
-                                           placeholder="Email address">
+                                <div class="field">
+                                    <label class="label">Email:</label>
+                                    <div class="control">
+                                        <input v-model="form.email" class="input" type="text"
+                                               placeholder="Email address">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">Password:</label>
-                                <div class="control">
-                                    <input v-model="form.password" class="input" type="text"
-                                           placeholder="Password ?">
+                                <div class="field">
+                                    <label class="label">Password:</label>
+                                    <div class="control">
+                                        <input v-model="form.password" class="input" type="text"
+                                               placeholder="Password ?">
+                                    </div>
                                 </div>
-                            </div>
-                            <div v-if="isRegister" class="field px-3">
-                                <label class="label">User Role:</label>
-                                <div class="control box-border p-3">
-                                    <label class="radio-btn">Regular User (Browse, Write reviews, etc)
-                                        <input type="radio" checked="checked" name="answer">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="radio-btn">
-                                        Bootcamp Publisher
-                                        <input type="radio" name="answer">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <p v-if="isRegister" class="has-text-danger"> * You must be affiliated with the bootcamp in
-                                some way in order
-                                to add it to DevCamper.
-                            </p>
-                        </section>
-                        <div class="field is-grouped mt-5">
-                            <p class="control">
-                                <button @click="login" class="button is-primary">Login</button>
-                            </p>
 
-                            <p class="control">
-                                <button @click="logOut" class="button is-danger">Log Out</button>
-                            </p>
+                                    <router-link :to="{name:'ResetPassword'}" class="has-text-weight-bold has-text-primary pl-2">Forgot Password ?</router-link>
+                                <div v-if="isRegister" class="field px-3">
+                                    <label class="label">User Role:</label>
+                                    <div class="control box-border p-3">
+                                        <label class="radio-btn">Regular User (Browse, Write reviews, etc)
+                                            <input v-model="form.role" value="user" type="radio" checked="checked"
+                                                   name="answer">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-btn">
+                                            Bootcamp Publisher
+                                            <input v-model="form.role" value="publisher" type="radio" name="answer">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <p v-if="isRegister" class="has-text-danger"> * You must be affiliated with the bootcamp
+                                    in
+                                    some way in order
+                                    to add it to DevCamper.
+                                </p>
+                            </section>
+                            <div class="field is-grouped mt-5">
+                                <p class="control">
+                                    <button v-if="isRegister" @click="signUp" class="button is-primary">Sign up</button>
+
+                                    <button v-else @click="login" class="button is-primary">Login</button>
+                                </p>
+
+                                <p class="control">
+                                    <button @click="logOut" class="button is-danger">Log Out</button>
+                                </p>
+                                <p class="control">
+                                    <button @click="localCheck" class="button is-warning">Local Storage</button>
+                                </p>
+
+                            </div>
+
 
                         </div>
-
-
                     </div>
-                </div>
+                </section>
             </div>
         </div>
         <template>
@@ -85,7 +95,8 @@
         error: null,
         form: {
           email: "admin@gmail.com",
-          password: "123456"
+          password: "123456",
+          role: "user"
         }
       };
     },
@@ -99,18 +110,24 @@
     },
 
 
-
     methods: {
 
+      localCheck() {
+
+        const vuexLocal = JSON.parse(localStorage.getItem("vuex"));
+
+        console.log("localstore", vuexLocal.user.data.role);
+
+      },
 
       async logOut() {
 
         try {
           await this.$http.get("/api/v1/auth/logout");
+          await this.$store.commit("SET_USER");
           console.log("logout successfully");
           await this.$store.dispatch("getCurrentUser");
-          await this.$store.commit("SET_USER");
-
+          localStorage.clear();
 
         } catch (e) {
           return e;
@@ -145,8 +162,29 @@
           });
         }
 
+      },
+
+
+      async signUp() {
+
+        try {
+          await this.$http.post("/api/v1/auth/register", this.form);
+          await this.$swal.fire({
+            icon: "success",
+            text: "YOu have successfully Registered, you will be redirected shortly"
+          });
+          await this.$store.dispatch("getCurrentUser");
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+        }
+
       }
+
     }
+
 
   };
 </script>

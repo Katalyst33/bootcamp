@@ -142,9 +142,11 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
     "host"
   )}/api/v1/auth/resetpassword/${resetToken} `;
 
-  const message = `
+  const message = `<p>
   you are receiving this email because you (or someone else ) has requested the reset of a 
-  password. Please make a PUT request to:\n\n ${resetUrl}
+  password. Please make a PUT request to:  
+  <a href="\`${resetUrl}\`">Reset Password</a>
+  \n\n ${resetUrl}</p>
   `;
 
   try {
@@ -152,6 +154,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
       email: user.email,
       subject: "Password reset token",
       message,
+      html: message,
     });
     res.status(200).json({ success: true, data: "Email sent" });
   } catch (err) {

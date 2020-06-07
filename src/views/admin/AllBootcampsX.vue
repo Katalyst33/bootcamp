@@ -4,8 +4,8 @@
 
 
             <div class="section">
-                <div class="container  box">
-                    <table class="table is-fullwidth is-striped is-hoverable">
+                <div class="container ">
+                    <table class="table is-fullwidth is-striped is-hoverable ">
                         <thead>
                         <tr>
                             <th>Bootcamp Name</th>
@@ -17,26 +17,23 @@
                         <tbody>
                         <tr v-for="bootcamp in bootcamps.data" :key="bootcamp._id">
                             <td>{{bootcamp.name}}</td>
-                            <td>{{bootcamp.averageRating}}</td>
+                            <td>{{bootcamp.averageRating | roundOff}}</td>
                             <td class="is-size-4"><span class="is-size-5 px-1">$</span>{{bootcamp.averageCost  || '0.00' }}</td>
                             <td><router-link :to="{name:'ManageBootcamp' , params:{id:bootcamp._id}}" class="button is-primary"><i class="fas fa-edit has-text-white px-2"></i>Manage</router-link></td>
                         </tr>
-
                         </tbody>
                     </table>
 
                 </div>
             </div>
         </template>
-        <template>
-            <json-view :data="bootcamps"/>
-        </template>
+
 
     </div>
 </template>
 
 <script>
-    import {thousand_separator} from "../../utils"
+  import {roundOff} from "../../utils"
   export default {
     data() {
       return {
@@ -51,7 +48,7 @@
     },
 
     filters:{
-      thousand_separator
+      roundOff,
     },
 
     methods: {

@@ -11,6 +11,7 @@ const xss = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 const hpp = require("hpp");
 const cors = require("cors");
+const session = require("express-session");
 const errorHandler = require("./api/middleware/error");
 // const logger = require("./middleware/logger");
 const connectDB = require("./config/db");
@@ -65,6 +66,17 @@ app.use(hpp());
 
 //Enable CORS
 app.use(cors());
+
+//session
+app.use(
+  session({
+    secret: "some-key",
+    // name: "_somecookie",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { domain: " http://192.168.0.160", secure: false }, // <- THIS, set domain as 'app.com'
+  })
+);
 
 //Mount routers
 app.use("/api/v1/bootcamps", bootcamps);

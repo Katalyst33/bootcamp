@@ -150,12 +150,6 @@
             </div>
 
         </div>
-        <hr class="has-background-warning">
-
-
-        <template>
-            <json-view :data="bootcamp.data"/>
-        </template>
 
 
     </div>

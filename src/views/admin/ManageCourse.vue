@@ -1,6 +1,6 @@
 <template>
     <div v-if="loaded">
-        <div class="columns is-mobile mt-5">
+        <div class="columns is-mobile my-5">
             <div class="column is-three-fifths is-offset-one-fifth">
                 <section class="has-background-white px-5 has-text-left">
                    <GoBack class="pt-4"/>
@@ -59,17 +59,12 @@
             </div>
         </div>
 
-        <hr>
-        <h1>Bootcamp</h1>
-        <template>
+       <!-- <template>
             <json-view :data="bootcamp.data"/>
-        </template>
-        <hr>
-        <h1>Courses</h1>
+        </template>-->
 
-        <template>
-            <json-view :data="courses.data"/>
-        </template>
+
+
 
     </div>
 </template>
