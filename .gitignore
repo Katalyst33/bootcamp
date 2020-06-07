@@ -23,5 +23,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-!/devcamper_project_resources/
-!/_data/
+/devcamper_project_resources/
+/_data/
