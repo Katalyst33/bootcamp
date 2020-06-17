@@ -23,7 +23,7 @@ export default new Vuex.Store({
     },
     user: {
       data: {
-        role: "",
+        role: "none",
       },
     },
     loaded: true,

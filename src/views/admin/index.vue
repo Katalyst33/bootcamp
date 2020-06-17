@@ -1,8 +1,8 @@
 <template>
     <div class="admin">
         <div class="columns">
-            <div class="column is-2 has-background-white admin">
-                <div class="has-text-primary py-5">
+            <div class="column is-2  ">
+                <div class="has-text-primary has-background-white py-5 admin">
                     <ul>
                         <li>All Bootcamps</li>
                         <li class="py-3">Add Bootcamp</li>
@@ -26,7 +26,7 @@
 <style scoped>
 
     .admin{
-        height: 100vh;
+        /*height: 100vh;*/
     }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <TheNavBar/>
-
+        <TheNavBar3/>
         <router-view v-if="loaded"/>
         <TheFooter/>
 
@@ -11,18 +11,21 @@
 <script>
 
   import TheNavBar from "./components/commons/TheNavBar";
+  import TheNavBar3 from "./components/commons/TheNavBar3";
   import TheFooter from "./components/commons/TheFooter";
   import { mapState } from "vuex";
 
   export default {
     data() {
       return {
+
         loaded: true,
         userDetail: null
       };
     },
     components: {
       TheNavBar,
+      TheNavBar3,
       TheFooter
     },
 

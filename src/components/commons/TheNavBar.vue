@@ -3,7 +3,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
-                    <img src="/logo.svg">
+                    <img src="/logo.png">
                     <h1 class="is-size-4  has-text-primary"><span
                             class="has-text-weight-bold">Dev</span><span>Bootcamp</span>
                     </h1>
@@ -28,7 +28,6 @@
                     <router-link :to="{name:'AllBootcamps'}" class="navbar-item">
                         Browse Bootcamps
                     </router-link>
-
 
                 </div>
 
@@ -176,6 +175,11 @@
         max-width: 100%;
 
     }
+
+
+
+
+
 
 
 </style>
