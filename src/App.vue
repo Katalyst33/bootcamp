@@ -11,7 +11,7 @@
 <script>
 
   import TheNavBar from "./components/commons/TheNavBar";
-  import TheNavBar3 from "./components/commons/TheNavBar3";
+  // import TheNavBar3 from "./components/commons/TheNavBar3";
   import TheFooter from "./components/commons/TheFooter";
   import { mapState } from "vuex";
 
@@ -25,7 +25,7 @@
     },
     components: {
       TheNavBar,
-      TheNavBar3,
+      // TheNavBar3,
       TheFooter
     },
 
