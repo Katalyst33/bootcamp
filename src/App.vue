@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <TheNavBar/>
-        <TheNavBar3/>
+<!--        <TheNavBar3/>-->
         <router-view v-if="loaded"/>
         <TheFooter/>
 
