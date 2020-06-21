@@ -66,6 +66,9 @@
                                        <hr class="navbar-divider">
 
                                        <button @click="logOut" class="button is-danger">Logout</button>
+                                       <router-link :to="{name:'AllBootcampX'}" v-if="user.data.role === 'admin'" @click="logOut" class="button is-warning">Administrator</router-link>
+
+
                                    </div>
                                </div>
                            </template>

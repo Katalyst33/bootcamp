@@ -7,7 +7,7 @@
                     <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop">
                         <div class="px-4 py-4 mx-0 mx-sm-5 has-background-white">
                             <GoBack class="my-1"/>
-                            <h1 class="is-size-3 has-text-weight-bold py-2">DevWorks Bootcamp</h1>
+                            <h1 class="is-size-3 has-text-weight-bold py-2">{{review.data.bootcamp.name}}</h1>
                             <h1 v-if="isUpdateReview" class="is-size-3 ">Edit a Review</h1>
                             <h1 v-else class="is-size-3 ">Write a Review</h1>
                             <p class="is-size-5">You must have attended and graduated this bootcamp to review</p>
@@ -41,9 +41,13 @@
                                 </div>
 
                                <div class="has-text-centered py-3">
-                                   <button @click="addReview" class="button is-medium is-primary px-5 lg-btn ">Submit Review</button>
+                                   <button v-if="isUpdateReview" @click="updateReview" class="button is-medium is-primary px-5 lg-btn ">Update Review</button>
+                                   <button v-else @click="addReview" class="button is-medium is-primary px-5 lg-btn ">Submit Review</button>
 
                                </div>
+
+
+
                             </div>
                         </div>
 
@@ -81,6 +85,9 @@
         return ["UpdateReview"].includes(this.$route.name);
       }
     },
+    mounted() {
+      this.fetchReview();
+    },
 
     methods: {
       async addReview() {
@@ -99,9 +106,36 @@
           });
 
         }
+      },
 
 
-      }
+      fetchReview() {
+        const code = this.$route.params.id;
+        this.$http.get(`/api/v1/reviews/${code}`)
+          .then(({ data }) => {
+            this.review= data;
+            this.loaded = true;
+          })
+          .catch();
+      },
+
+      async updateReview() {
+        try {
+          const code = this.$route.params.id;
+          await this.$http.put(`/api/v1/reviews/${code}`, this.review.data);
+          await this.$swal.fire({
+            icon: "success",
+            text: "Review was  upddate Successfully"
+          });
+          await this.$router.push({ name: "ManageReviews" });
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+
+        }
+      },
 
 
     }

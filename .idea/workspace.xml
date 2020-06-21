@@ -20,139 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/bootcamps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/courses.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/reviews.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/_data/bootcamps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/_data/courses.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/_data/reviews.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/_data/users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_specs.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-bootcamp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-course.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/add-review.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/bootcamp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/bootcamps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/img/image_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/img/image_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/img/image_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/img/image_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/img/showcase.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/js/mapbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-account.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-bootcamp-none.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-bootcamp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-courses-none.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-courses.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/manage-reviews.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/reset-password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/reviews.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/dist/update-password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_badge.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_breadcrumb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_button-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_card.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_carousel.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_close.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_code.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_custom-forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_images.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_jumbotron.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_media.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_modal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_nav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_popover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_print.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_progress.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_reboot.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_root.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_spinners.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_toasts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_tooltip.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_transitions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_type.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_utilities.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/bootstrap.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_background-variant.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_badge.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_border-radius.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_box-shadow.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_breakpoints.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_caret.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_deprecate.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_float.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_gradients.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_grid-framework.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_hover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_image.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_lists.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_nav-divider.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_reset-text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_resize.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_screen-reader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_size.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_table-row.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_text-emphasis.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_text-hide.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_text-truncate.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_transition.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/mixins/_visibility.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_align.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_background.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_borders.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_display.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_embed.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_flex.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_float.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_overflow.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_position.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_screenreaders.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_shadows.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_sizing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_spacing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_stretched-link.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_text.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/utilities/_visibility.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/devcamper_theme/scss/vendor/_rfs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devcamper_project_resources/links.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/photo_5d713a66ec8f2b88b8f830b8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/photo_5d713a66ec8f2b88b8f830b8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,10 +78,7 @@
       <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.back-end">
-    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/router/index.js" working-dir="$PROJECT_DIR$/src/router">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.start (1)">
     <configuration name="back-end" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -236,6 +109,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="yarn" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -248,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.back-end" />
         <item itemvalue="npm.front-end" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
   </component>
@@ -329,7 +213,10 @@
       <workItem from="1592091253124" duration="12402000" />
       <workItem from="1592345078791" duration="1995000" />
       <workItem from="1592347236474" duration="10408000" />
-      <workItem from="1592417376166" duration="1507000" />
+      <workItem from="1592417376166" duration="7174000" />
+      <workItem from="1592562549788" duration="262000" />
+      <workItem from="1592594580567" duration="1303000" />
+      <workItem from="1592742774967" duration="1650000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -660,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591599997081</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added custom navigation css and flex box">
+      <created>1592419022176</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1592419022176</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +575,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added protected routes for admin" />
     <MESSAGE value="added protected routes for admin ☠️" />
     <MESSAGE value="added review schema" />
     <MESSAGE value="added all review routes !! " />
@@ -706,7 +599,8 @@
     <MESSAGE value="refactor router/index&#10;&#10;add view review page&#10;&#10;updated review controller to display review username" />
     <MESSAGE value="add a Review.vue component" />
     <MESSAGE value="update git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update git ignore" />
+    <MESSAGE value="added custom navigation css and flex box" />
+    <option name="LAST_COMMIT_MESSAGE" value="added custom navigation css and flex box" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -721,10 +615,10 @@
       <screen x="0" y="23" width="1680" height="996" />
     </state>
     <state x="506" y="262" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.996@0.23.1680.996" timestamp="1592059434041" />
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1591599996896">
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1592419021839">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1591599996896" />
+    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592419021839" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -742,42 +636,74 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="718" height="149" key="GridCell.Tab.0.bottom" timestamp="1592417841443">
+    <state width="1658" height="149" key="GridCell.Tab.0.bottom" timestamp="1592749690156">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="718" height="149" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592417841443" />
+    <state width="1658" height="149" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592749690156" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state width="812" height="150" key="GridCell.Tab.0.bottom/0.23.1680.996@0.23.1680.996" timestamp="1592347142205" />
     <state width="1658" height="140" key="GridCell.Tab.0.bottom/0.23.1680.998@0.23.1680.998" timestamp="1591513468552" />
-    <state width="718" height="149" key="GridCell.Tab.0.center" timestamp="1592417841442">
+    <state width="1658" height="149" key="GridCell.Tab.0.center" timestamp="1592749690155">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="718" height="149" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592417841442" />
+    <state width="1658" height="149" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592749690155" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state width="812" height="150" key="GridCell.Tab.0.center/0.23.1680.996@0.23.1680.996" timestamp="1592347142204" />
     <state width="1658" height="140" key="GridCell.Tab.0.center/0.23.1680.998@0.23.1680.998" timestamp="1591513468551" />
-    <state width="718" height="149" key="GridCell.Tab.0.left" timestamp="1592417841440">
+    <state width="1658" height="149" key="GridCell.Tab.0.left" timestamp="1592749690155">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="718" height="149" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592417841440" />
+    <state width="1658" height="149" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592749690155" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
     <state width="812" height="150" key="GridCell.Tab.0.left/0.23.1680.996@0.23.1680.996" timestamp="1592347142203" />
     <state width="1658" height="140" key="GridCell.Tab.0.left/0.23.1680.998@0.23.1680.998" timestamp="1591513468551" />
-    <state width="718" height="149" key="GridCell.Tab.0.right" timestamp="1592417841442">
+    <state width="1658" height="149" key="GridCell.Tab.0.right" timestamp="1592749690156">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="718" height="149" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592417841442" />
+    <state width="1658" height="149" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592749690156" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state width="812" height="150" key="GridCell.Tab.0.right/0.23.1680.996@0.23.1680.996" timestamp="1592347142204" />
     <state width="1658" height="140" key="GridCell.Tab.0.right/0.23.1680.998@0.23.1680.998" timestamp="1591513468552" />
+    <state width="1658" height="357" key="GridCell.Tab.1.bottom" timestamp="1592749616981">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616981" />
+    <state width="1658" height="357" key="GridCell.Tab.1.center" timestamp="1592749616980">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616980" />
+    <state width="1658" height="357" key="GridCell.Tab.1.left" timestamp="1592749616980">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616980" />
+    <state width="1658" height="357" key="GridCell.Tab.1.right" timestamp="1592749616981">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616981" />
+    <state width="1658" height="357" key="GridCell.Tab.2.bottom" timestamp="1592749616980">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616980" />
+    <state width="1658" height="357" key="GridCell.Tab.2.center" timestamp="1592749616979">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616979" />
+    <state width="1658" height="357" key="GridCell.Tab.2.left" timestamp="1592749616979">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616979" />
+    <state width="1658" height="357" key="GridCell.Tab.2.right" timestamp="1592749616979">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1658" height="357" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592749616979" />
     <state x="149" y="150" key="RollbackChangesDialog" timestamp="1590329481410">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -786,10 +712,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1591599998713">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1592419024125">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1591599998713" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592419024125" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -807,10 +733,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1591004108556" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592418862345">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592562554609">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592418862345" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592562554609" />
     <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.998@0.23.1680.998" timestamp="1590770255720" />
   </component>
   <component name="XDebuggerManager">

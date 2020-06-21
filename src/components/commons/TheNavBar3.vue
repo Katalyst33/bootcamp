@@ -6,16 +6,8 @@
                         class="has-text-weight-bold is-size-4 ">Dev</span><span>Bootcamp</span></router-link></li>
                 <li class="item"><router-link to="/" >Home</router-link></li>
                 <li class="item"><router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link></li>
-                <li :class="dropDown" class="item has-submenu ">
-                    <a @click="dropToggle" tabindex="0">Services<i class="fas fa-angle-down px-2"></i></a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="#">Design</a></li>
-                        <li class="subitem"><a href="#">Development</a></li>
-                        <li class="subitem"><a href="#">SEO</a></li>
-                        <li class="subitem"><a href="#">Copywriting</a></li>
-                    </ul>
-                </li>
-                <li :class="dropDown" class="item has-submenu  ">
+
+                <li :class="dropDown" class="item has-submenu">
                     <a @click="dropToggle"  tabindex="1">Plans <i class="fas fa-angle-down px-2"></i></a>
                     <ul class="submenu">
                         <li class="subitem"><a href="#">Freelancer</a></li>
@@ -23,7 +15,6 @@
                         <li class="subitem"><a href="#">Enterprise</a></li>
                     </ul>
                 </li>
-                <li class="item"><a href="#">Blog</a></li>
                 <li class="item"><a href="#">Contact</a>
                 </li>
                 <li class="item button__custom  is-primary px-3"><button class="button is-primary">signup</button></li>

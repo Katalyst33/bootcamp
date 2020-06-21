@@ -4,11 +4,18 @@
             <div class="column is-2  ">
                 <div class="has-text-primary has-background-white py-5 admin">
                     <ul>
-                        <li>All Bootcamps</li>
-                        <li class="py-3">Add Bootcamp</li>
-                        <li>item</li>
-                        <li>item</li>
-                        <li>item</li>
+                        <li>
+                            <router-link :to="{name:'AddBootcamp'}" class="has-text-danger">Add Bootcamp
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'AllBootcampX'}" class="has-text-danger">All Bootcamps
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'ManageReviews'}" class="has-text-danger">Reviews
+                            </router-link>
+                        </li>
                     </ul>
                 </div>
             </div>
