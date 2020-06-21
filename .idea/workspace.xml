@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AddAndUpdateReview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,6 +207,7 @@
       <workItem from="1592562549788" duration="262000" />
       <workItem from="1592594580567" duration="1303000" />
       <workItem from="1592742774967" duration="1650000" />
+      <workItem from="1592749697096" duration="194000" />
     </task>
     <task id="LOCAL-00001" summary="mongoose custom errors handling next">
       <created>1586300009571</created>
@@ -554,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592419022176</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="changed express session to cookie sessions">
+      <created>1592749758821</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1592749758821</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +573,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added protected routes for admin ☠️" />
     <MESSAGE value="added review schema" />
     <MESSAGE value="added all review routes !! " />
     <MESSAGE value="added front end&#10;connected back and front&#10;&#10;&gt;&gt;&gt;&#10;Design frontend for back end resources" />
@@ -600,7 +597,8 @@
     <MESSAGE value="add a Review.vue component" />
     <MESSAGE value="update git ignore" />
     <MESSAGE value="added custom navigation css and flex box" />
-    <option name="LAST_COMMIT_MESSAGE" value="added custom navigation css and flex box" />
+    <MESSAGE value="changed express session to cookie sessions" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed express session to cookie sessions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -615,10 +613,10 @@
       <screen x="0" y="23" width="1680" height="996" />
     </state>
     <state x="506" y="262" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.996@0.23.1680.996" timestamp="1592059434041" />
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2" timestamp="1592419021839">
+    <state x="80" y="23" width="777" height="996" key="CommitChangelistDialog2" timestamp="1592749758603">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="0" width="777" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592419021839" />
+    <state x="80" y="23" width="777" height="996" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592749758603" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -712,10 +710,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="43" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589463636078" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1592419024125">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1592749760705">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592419024125" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592749760705" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
       <screen x="0" y="0" width="1680" height="1050" />
