@@ -2,23 +2,49 @@
     <div>
         <nav>
             <ul :class="toggleMenu" class="menu has-text-primary ">
-                <li class="logo"><router-link  to="/">  <img class="logo__img pr-2 " src="/logo.png"><span
-                        class="has-text-weight-bold is-size-4 ">Dev</span><span>Bootcamp</span></router-link></li>
-                <li class="item"><router-link to="/" >Home</router-link></li>
-                <li class="item"><router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link></li>
-
-                <li :class="dropDown" class="item has-submenu">
-                    <a @click="dropToggle"  tabindex="1">Plans <i class="fas fa-angle-down px-2"></i></a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="#">Freelancer</a></li>
-                        <li class="subitem"><a href="#">Startup</a></li>
-                        <li class="subitem"><a href="#">Enterprise</a></li>
-                    </ul>
+                <li class="logo">
+                    <router-link to="/"><img class="logo__img pr-2 " src="/logo.png"><span
+                            class="has-text-weight-bold is-size-4 ">Dev</span><span>Bootcamp</span></router-link>
                 </li>
+                <li class="item">
+                    <router-link to="/">Home</router-link>
+                </li>
+                <li class="item">
+                    <router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link>
+                </li>
+
+
+
+
                 <li class="item"><a href="#">Contact</a>
                 </li>
-                <li class="item button__custom  is-primary px-3"><button class="button is-primary">signup</button></li>
-                <li class="item button__custom  is-primary px-3"><button class="button is-success">Login</button></li>
+
+                <template v-if="!user.data">
+                    <router-link :to="{name:'register'}" class="item button__custom px-3">
+                        <button class="button is-primary">signup</button>
+                    </router-link>
+                    <router-link :to="{name:'login'}" class="item button__custom  px-3">
+                        <button class="button is-success">Login</button>
+                    </router-link>
+                </template>
+                <template v-else>
+                <template>
+                    <li :class="dropDown" class="item has-submenu">
+                        <a @click="dropToggle" tabindex="1" class="has-text-success has-text-weight-bold">{{user.data.name}}<i class="fas fa-angle-down px-2"></i></a>
+                        <ul class="submenu">
+                            <li class="subitem"><a href="#">{{user.data.email}}</a></li>
+
+                            <li class="subitem"><a href="#" class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'"> {{user.data.role}} Role</a></li>
+
+                            <router-link class="subitem" :to="{name:'UpdateAccount'}">Manage Account</router-link>
+                        </ul>
+                    </li>
+                    <div @click="logOut" class=" item button__custom px-3"> <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button></div>
+                    <router-link :to="{name:'AllBootcampX'}" v-if="user.data.role === 'admin'" @click="logOut" class="item button__custom px-3" ><button class="button is-warning ">Administrator</button></router-link>
+
+                </template>
+                </template>
+
                 <li @click="menuToggle" class="toggle pr-5"><a href="#"><i :class=toggleIcon></i></a></li>
             </ul>
         </nav>
@@ -27,6 +53,8 @@
 </template>
 
 <script>
+  import { mapState } from "vuex";
+
   export default {
     data() {
       return {
@@ -38,10 +66,14 @@
           "fas fa-times": false
         },
         dropDown: {
-          "submenu-active":false,
+          "submenu-active": false
         }
 
       };
+    },
+
+    computed: {
+      ...mapState(["user", "loaded"])
     },
 
 
@@ -56,16 +88,57 @@
       dropToggle() {
         this.dropDown["submenu-active"] = !this.dropDown["submenu-active"];
 
-      }
-    }
+      },
+      async logOut() {
+        function timerInterval() {
+          setInterval(() => {
+            const content = this.$swal.getContent();
+            if (content) {
+              const b = content.querySelector("b");
+              if (b) {
+                b.textContent = this.$swal.getTimerLeft();
+              }
+            }
+          }, 100);
+        }
 
-  };
+
+        try {
+          await this.$http.get("/api/v1/auth/logout");
+          await this.$store.commit("SET_USER");
+          await this.$store.dispatch("getCurrentUser");
+          await this.$swal.fire({
+            icon: "error",
+            text: "logout successfully, you will be redirected shortly",
+            timer: 2000,
+            timerProgressBar: true,
+            onBeforeOpen: () => {
+              this.$swal.showLoading();
+
+            },
+            onClose: () => {
+              clearInterval(timerInterval);
+            }
+          });
+
+          await this.$router.push({ name: "Home" });
+
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+        }
+      }
+
+    }
+  }
 </script>
 
 <style scoped>
 
-    .logo__img{
-        height:25px ;
+    .logo__img {
+        height: 25px;
 
     }
 
@@ -111,7 +184,6 @@
     }
 
     .menu li.subitem a {
-        /*background-color: #f15622;*/
         padding: 15px;
     }
 
@@ -157,36 +229,36 @@
 
     /*Tablet menu*/
 
-    @media all and (min-width: 700px){
+    @media all and (min-width: 700px) {
 
-        .menu{
+        .menu {
             justify-content: center;
 
         }
 
-        .logo{
+        .logo {
             flex: 1;
             align-items: flex-start;
             justify-content: left;
         }
-        .item.button__custom{
-            width:auto;
+
+        .item.button__custom {
+            width: auto;
             order: 1;
             display: block;
         }
-        .toggle{
+
+        .toggle {
             flex: 1;
             text-align: right;
             order: 2;
         }
+
         /* Button up from tablet screen */
         .menu li.button a {
             padding: 10px 15px;
             margin: 5px 0;
         }
-
-
-
 
 
     }
@@ -209,15 +281,18 @@
 
 
         }
+
         .item {
             order: 1;
             position: relative;
             display: block;
             width: auto;
         }
+
         .button__custom {
             /*order: 2;*/
         }
+
         .submenu-active .submenu {
             display: block;
             position: absolute;
@@ -226,14 +301,14 @@
             background: white;
             z-index: 1;
         }
+
         .toggle {
             display: none;
         }
+
         .submenu-active {
             border-radius: 0;
         }
-
-
 
 
     }
