@@ -1,11 +1,11 @@
 <template>
     <div>
         <template v-if="loaded">
-
-
             <div class="section">
-                <div class="container ">
-                    <table class="table is-fullwidth is-striped is-hoverable ">
+                <div class="container">
+                    <h1 class="has-text-weight-bold is-size-3">All Bootcamps</h1>
+                <div class="table-container ">
+                    <table class="table is-fullwidth is-striped  ">
                         <thead>
                         <tr>
                             <th>Bootcamp Name</th>
@@ -23,6 +23,7 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
 
                 </div>
             </div>

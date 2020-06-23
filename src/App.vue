@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <TheNavBar v-if="!isAdminPage"/>
+<!--        <TheNavBar v-if="!isAdminPage"/>-->
         <TheNavBar3 v-if="!isAdminPage"/>
         <router-view v-if="loaded"/>
         <TheFooter/>
@@ -10,12 +10,17 @@
 
 <script>
 
-  import TheNavBar from "./components/commons/TheNavBar";
+  // import TheNavBar from "./components/commons/TheNavBar";
   import TheNavBar3 from "./components/commons/TheNavBar3";
   import TheFooter from "./components/commons/TheFooter";
   import { mapState } from "vuex";
 
   export default {
+    components: {
+      // TheNavBar,
+      TheNavBar3,
+      TheFooter
+    },
     data() {
       return {
 
@@ -23,12 +28,18 @@
         userDetail: null
       };
     },
-    components: {
-      TheNavBar,
-      TheNavBar3,
-      TheFooter
-    },
 
+    computed: {
+
+      ...mapState(["user"]),
+
+      isAdminPage(){
+        const pages = ["AllBootcampX","ManageReviews","AllBootcampX","AllUsers"]
+        return pages.includes(this.$route.name);
+
+      }
+
+    },
     mounted() {
       // this.getMe();
 
@@ -49,17 +60,7 @@
       }
     },
 
-    computed: {
 
-      ...mapState(["user"]),
-
-      isAdminPage(){
-            const pages = ["AllBootcampX","ManageReviews","AllBootcampX"]
-        return pages.includes(this.$route.name);
-
-      }
-
-    }
 
   };
 

@@ -27,9 +27,15 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
+                            <router-link :to="{name:'AllUsers'}" class="has-text-white">
+                            <i class="fas fa-user is-size-1"></i><br>
+                           User
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
                             <router-link :to="{name:'ManageReviews'}" class="has-text-white">
-                            <i class="fas fa-quote-left is-size-1"></i><br>
-                           Reviews
+                                <i class="fas fa-quote-left is-size-1"></i><br>
+                                Reviews
                             </router-link>
                         </li>
                     </ul>

@@ -8,6 +8,9 @@ const ManageBootcamps = () =>
 const AllBootcamps = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/AllBootcampsX");
 
+const AllUsers = () =>
+  import(/* webpackChunkName: "Admin" */ "../views/admin/AllUsers");
+
 const ManageCourse = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/ManageCourse.vue");
 
@@ -35,6 +38,12 @@ export default {
       path: "all-bootcamps",
       name: "AllBootcampX",
       component: AllBootcamps,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "all-users",
+      name: "AllUsers",
+      component: AllUsers,
       meta: { requiresAuth: true },
     },
     {
