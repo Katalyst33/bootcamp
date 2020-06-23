@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models/Enrolled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheNavBar3.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Bootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Bootcamps.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/UpdateAndReset.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UpdateAndReset.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/config/db.js" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/models" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -59,19 +60,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/models" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/routes" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/src/scss" />
     </key>
   </component>
   <component name="RunManager" selected="npm.front-end">
@@ -203,14 +204,7 @@
       <workItem from="1592755531443" duration="4243000" />
       <workItem from="1592792420741" duration="150000" />
       <workItem from="1592833826071" duration="3000" />
-      <workItem from="1592887806869" duration="3127000" />
-    </task>
-    <task id="LOCAL-00014" summary="publisher can add only one course">
-      <created>1588004531933</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1588004531933</updated>
+      <workItem from="1592887806869" duration="12224000" />
     </task>
     <task id="LOCAL-00015" summary="started adding reset passord token funtion">
       <created>1588015985947</created>
@@ -548,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592758425938</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="updated nav bar">
+      <created>1592891287627</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1592891287628</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +570,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added front end&#10;connected back and front&#10;&#10;&gt;&gt;&gt;&#10;Design frontend for back end resources" />
     <MESSAGE value="adding view bootcamp page" />
     <MESSAGE value="adding view bootcamp page " />
     <MESSAGE value="&#10; added single bootcamp page&#10;&#10;added courses page " />
@@ -594,7 +594,8 @@
     <MESSAGE value="changed express session to cookie sessions" />
     <MESSAGE value="updated mongo uri" />
     <MESSAGE value="updated mongo uri&#10;add _data/json files" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated mongo uri&#10;add _data/json files" />
+    <MESSAGE value="updated nav bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated nav bar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -609,10 +610,10 @@
       <screen x="0" y="23" width="1680" height="996" />
     </state>
     <state x="506" y="262" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.996@0.23.1680.996" timestamp="1592059434041" />
-    <state x="80" y="23" width="777" height="996" key="CommitChangelistDialog2" timestamp="1592758425820">
+    <state x="80" y="23" width="777" height="996" key="CommitChangelistDialog2" timestamp="1592891287419">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="80" y="23" width="777" height="996" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592758425820" />
+    <state x="80" y="23" width="777" height="996" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592891287419" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -706,10 +707,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="541" y="103" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1592771531926" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1592758427374">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1592891289636">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592758427374" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592891289636" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
     <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -731,10 +732,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592891156342" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592888615153">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592900099485">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592888615153" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592900099485" />
     <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.998@0.23.1680.998" timestamp="1590770255720" />
   </component>
   <component name="XDebuggerManager">

@@ -6,10 +6,10 @@
                     <router-link to="/"><img class="logo__img pr-2 " src="/logo.png"><span
                             class="has-text-weight-bold is-size-4 ">Dev</span><span>Bootcamp</span></router-link>
                 </li>
-                <li class="item">
+                <li class="item" @click="menuToggle">
                     <router-link to="/">Home</router-link>
                 </li>
-                <li class="item">
+                <li class="item" @click="menuToggle">
                     <router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link>
                 </li>
 
@@ -36,7 +36,7 @@
 
                             <li class="subitem"><a href="#" class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'"> {{user.data.role}} Role</a></li>
 
-                            <router-link class="subitem" :to="{name:'UpdateAccount'}">Manage Account</router-link>
+                            <router-link  @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">Manage Account</router-link>
                         </ul>
                     </li>
                     <div @click="logOut" class=" item button__custom px-3"> <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button></div>
@@ -139,7 +139,6 @@
 
     .logo__img {
         height: 25px;
-
     }
 
     nav {

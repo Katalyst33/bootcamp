@@ -5,7 +5,7 @@
             <div class="container">
 
                 <div class="columns is-mobile">
-                    <div class="column is-three-fifths is-offset-one-fifth has-background-white has-text-left">
+                    <div class="column is-three-fifths-desktop is-three-fifths-tablet is-offset-one-fifth-desktop is-offset-one-fifth-tablet has-background-white has-text-left">
                         <GoBack class="py-2"/>
 
                         <div v-if="isUpdatePassword">

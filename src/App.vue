@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <TheNavBar/>
-        <TheNavBar3/>
+        <TheNavBar v-if="!isAdminPage"/>
+        <TheNavBar3 v-if="!isAdminPage"/>
         <router-view v-if="loaded"/>
         <TheFooter/>
 
@@ -50,7 +50,15 @@
     },
 
     computed: {
-      ...mapState(["user"])
+
+      ...mapState(["user"]),
+
+      isAdminPage(){
+            const pages = ["AllBootcampX","ManageReviews","AllBootcampX"]
+        return pages.includes(this.$route.name);
+
+      }
+
     }
 
   };
