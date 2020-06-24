@@ -34,7 +34,7 @@
       ...mapState(["user"]),
 
       isAdminPage(){
-        const pages = ["AllBootcampX","ManageReviews","AllBootcampX","AllUsers","UpdateUser"]
+        const pages = ["AllBootcampX","ManageReviews","AllBootcampX","AllUsers","UpdateUser","AddBootcamp"]
         return pages.includes(this.$route.name);
 
       }

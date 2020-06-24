@@ -47,7 +47,8 @@
                 </div>
             </div>
             <div class="page-content">
-                <router-view></router-view>
+                        <router-view></router-view>
+
             </div>
         </div>
     </div>
@@ -166,6 +167,14 @@
         padding: 10px 10px;
     }
 
+    /* Extra small devices (portrait phones, less than 576px)*/
+    @media (max-width: 576px) {
+
+        .page-content{
+            flex-grow: 5;
+            background-color: #5e53a5;
+        }
+    }
 
 
 

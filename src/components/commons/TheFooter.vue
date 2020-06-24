@@ -26,7 +26,7 @@
                         <h3 class="is-size-6 has-text-left has-text-white has-text-weight-bold">Explore</h3>
                         <ul>
                             <li>item</li>
-                            <li>item</li>
+                            <li><router-link :to="{name:'About'}">About</router-link></li>
                             <li><a class="has-text-grey"
                                    src="file:///Users/hibrid/hRoot/hScript/bootcamp/devcamper_project_resources/devcamper_theme/dist/index.html"
                                    target="_blank">item</a></li>
