@@ -5,12 +5,6 @@ const EnrolledSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-
-  bootcamp: {
-    type: mongoose.Schema.ObjectId,
-    ref: "Bootcamp",
-    required: true,
-  },
   course: {
     type: mongoose.Schema.ObjectId,
     ref: "Course",

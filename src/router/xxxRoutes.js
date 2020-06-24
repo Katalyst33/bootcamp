@@ -21,6 +21,10 @@ const AddAndUpdateCourse = () =>
   import(
     /* webpackChunkName: "Admin" */ "../views/admin/AddAndUpdateCourse.vue"
   );
+
+const ManageReviews = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/ManageReviews.vue");
+
 const vuexLocal = JSON.parse(localStorage.getItem("vuex"));
 
 export default {
@@ -62,9 +66,9 @@ export default {
       meta: { requiresAuth: true },
     },
     {
-      path: "manage-course/:id",
-      name: "ManageCourse",
-      component: ManageCourse,
+      path: "manage-bootcamps/:id",
+      name: "ManageBootcamp",
+      component: ManageBootcamps,
       meta: { requiresAuth: true },
     },
     {
@@ -80,17 +84,21 @@ export default {
       meta: { requiresAuth: true },
     },
     {
+      path: "manage-course/:id",
+      name: "ManageCourse",
+      component: ManageCourse,
+      meta: { requiresAuth: true },
+    },
+    {
       path: "update-bootcamp/:id",
       name: "UpdateBootcamp",
       component: AddBootcamp,
       meta: { requiresAuth: true },
     },
-
     {
-      path: "manage-bootcamps/:id",
-      name: "ManageBootcamp",
-      component: ManageBootcamps,
-      meta: { requiresAuth: true },
+      path: "/manage-reviews/",
+      name: "ManageReviews",
+      component: ManageReviews,
     },
   ],
 };

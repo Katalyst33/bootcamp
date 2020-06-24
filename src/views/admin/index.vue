@@ -158,7 +158,7 @@
     }
 
     .nav-menu{
-        height: 100vh;
+        height: 100%;
     }
 
     .nav-item{

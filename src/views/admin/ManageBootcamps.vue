@@ -171,14 +171,7 @@
         if (event.lengthComputable) {
           console.log(event.loaded / event.total * 100);
         }
-        let input = event.target;
-        if(input.files && input.files[0]){
-          let reader = new FileReader()
-          reader.onload = (e) =>{
-            this.imageData = e.target.result;
-          }
-          reader.readAsDataURL(input.files[0]);
-        }
+
         const file = this.$refs.file.files[0];
         const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
         const MAX_SIZE = 700000;
@@ -190,12 +183,19 @@
           this.message = "";
           this.newImg = true;
           this.uploadBtn=false;
+          let input = event.target;
+          if(input.files && input.files[0]){
+            let reader = new FileReader()
+            reader.onload = (e) =>{
+              this.imageData = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+          }
 
         } else {
-
-
           this.error = true;
           this.message = tooLarge ? `Too large. Max size is ${MAX_SIZE / 1000}kb ` : "only images are allowed";
+
         }
 
       },

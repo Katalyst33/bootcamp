@@ -226,12 +226,14 @@
 
       async newBootcamp() {
         try {
+          await this.changeAddress();
           await this.$http.post("/api/v1/bootcamps/", this.bootcamp.data);
           await this.$swal.fire({
             icon: "success",
             text: "Bootcamp created Successfully"
           });
           await this.$router.push({name:'ManageBootcamp'})
+          console.log(this.newBootcampData)
 
         } catch (error) {
           await this.$swal.fire({

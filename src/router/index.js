@@ -16,8 +16,6 @@ const Review = () =>
 const AddAndUpdateReview = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/AddAndUpdateReview.vue");
 
-const ManageReviews = () =>
-  import(/* webpackChunkName: "bootcamp" */ "../views/ManageReviews.vue");
 const UpdateAndReset = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/UpdateAndReset.vue");
 
