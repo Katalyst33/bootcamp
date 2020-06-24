@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bootcamp">
         <template v-if="loaded">
             <div class="section">
                 <div class="container">
@@ -19,8 +19,8 @@
                         <tr v-for="(bootcamp, index) in bootcamps.data" :key="bootcamp._id">
                             <td>{{index + 1}}</td>
                             <td>{{bootcamp.name}}</td>
-                            <td>{{bootcamp.averageRating | roundOff}}</td>
-                            <td class="is-size-4"><span class="is-size-5 px-1">$</span>{{bootcamp.averageCost  || '0.00' }}</td>
+                            <td>{{bootcamp.averageRating}}</td>
+                            <td class="is-size-4"><span class="is-size-5 px-1">$</span>{{bootcamp.averageCost  }}</td>
                             <td><router-link :to="{name:'ManageBootcamp' , params:{id:bootcamp._id}}" class="button is-primary"><i class="fas fa-edit has-text-white px-2"></i>Manage</router-link></td>
                         </tr>
                         </tbody>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  import {roundOff} from "../../utils"
+
   export default {
     data() {
       return {
@@ -50,9 +50,6 @@
       this.fetchBootcamp();
     },
 
-    filters:{
-      roundOff,
-    },
 
     methods: {
 
@@ -76,5 +73,7 @@
 </script>
 
 <style scoped>
-
+.bootcamp{
+    height: 100vh;
+}
 </style>

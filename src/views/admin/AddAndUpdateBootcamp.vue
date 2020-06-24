@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
 
         <div class="section">
             <div class="container">
@@ -138,8 +138,6 @@
                                     </template>
 
 
-                                    <button @click="changeAddress" class="button">address</button>
-
                                 </div>
 
 
@@ -232,8 +230,8 @@
             icon: "success",
             text: "Bootcamp created Successfully"
           });
-          await this.$router.push({name:'ManageBootcamp'})
-          console.log(this.newBootcampData)
+          await this.$router.push({ name: "ManageBootcamp" });
+          console.log(this.newBootcampData);
 
         } catch (error) {
           await this.$swal.fire({
@@ -272,9 +270,6 @@
       },
 
 
-
-
-
       makeRequest() {
         if (this.isUpdateBootcamp) {
           this.fetchBootcamp();
@@ -289,6 +284,11 @@
 </script>
 
 <style scoped>
+
+    .bootcamp {
+        height: 100vh;
+    }
+
     /* The container */
     .check-box {
 
