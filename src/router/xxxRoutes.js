@@ -11,6 +11,9 @@ const AllBootcamps = () =>
 const AllUsers = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/AllUsers");
 
+const UpdateUser = () =>
+  import(/* webpackChunkName: "Admin" */ "../views/admin/UpdateUser");
+
 const ManageCourse = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/ManageCourse.vue");
 
@@ -44,6 +47,12 @@ export default {
       path: "all-users",
       name: "AllUsers",
       component: AllUsers,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "update-user/:id",
+      name: "UpdateUser",
+      component: UpdateUser,
       meta: { requiresAuth: true },
     },
     {

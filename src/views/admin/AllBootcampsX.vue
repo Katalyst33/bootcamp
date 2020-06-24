@@ -8,6 +8,7 @@
                     <table class="table is-fullwidth is-striped  ">
                         <thead>
                         <tr>
+                            <th>S/n</th>
                             <th>Bootcamp Name</th>
                             <th>Ratings</th>
                             <th>Average Cost</th>
@@ -15,7 +16,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="bootcamp in bootcamps.data" :key="bootcamp._id">
+                        <tr v-for="(bootcamp, index) in bootcamps.data" :key="bootcamp._id">
+                            <td>{{index + 1}}</td>
                             <td>{{bootcamp.name}}</td>
                             <td>{{bootcamp.averageRating | roundOff}}</td>
                             <td class="is-size-4"><span class="is-size-5 px-1">$</span>{{bootcamp.averageCost  || '0.00' }}</td>

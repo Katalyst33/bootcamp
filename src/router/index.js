@@ -63,11 +63,7 @@ const routes = [
     name: "Reviews",
     component: Review,
   },
-  {
-    path: "/manage-reviews/",
-    name: "ManageReviews",
-    component: ManageReviews,
-  },
+
   {
     path: "/add-reviews/:id",
     name: "AddReview",

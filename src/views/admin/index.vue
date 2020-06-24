@@ -1,41 +1,46 @@
 <template>
     <div class="admin">
         <header class="header has-background-dark px-5 py-3">
-            <h1 class="has-text-white"> <img class="logo__img pr-2  "  src="/logo.png"> Devcamper Admin</h1>
+            <router-link to="/" class="has-text-white is-size-4"> <img class="logo__img"  src="/admin-logo.png"> Devcamper Admin</router-link>
             <ul class="actions">
-                <li @click="logOut"><button class="button is-danger">EXIT</button></li>
-                <li class="mx-3"><i class="fas fa-bars is-size-3 has-text-white"></i></li>
+                <li @click="menuToggle" class="mx-3 is-hidden-desktop"><a><i class=" is-size-3 has-text-white" :class=toggleIcon></i></a></li>
             </ul>
 
         </header>
 
              <div class="main">
-            <div class="menu is-hidden-touch">
+            <div class="menu " :class="toggleMenu">
                 <div class="has-text-primary has-background-dark py-5 admin nav-menu">
 
                     <ul class="has-text-white">
-                        <li class="nav-item">
+                        <li @click="menuToggle" class="nav-item">
                             <router-link :to="{name:'AddBootcamp'}" class="has-text-white" >
-                            <i class="far fa-layer-plus is-size-1"></i><br>
+                            <i class="far fa-layer-plus is-size-3"></i><br>
                             Add <br> Bootcamp
                             </router-link>
                         </li>
-                        <li class="nav-item">
+                        <li @click="menuToggle" class="nav-item">
                             <router-link :to="{name:'AllBootcampX'}" class="has-text-white">
-                            <i class="fas fa-eye is-size-1"></i><br>
+                            <i class="fas fa-eye is-size-3"></i><br>
                             All <br> Bootcamps
                             </router-link>
                         </li>
-                        <li class="nav-item">
+                        <li @click="menuToggle" class="nav-item">
                             <router-link :to="{name:'AllUsers'}" class="has-text-white">
-                            <i class="fas fa-user is-size-1"></i><br>
+                            <i class="fas fa-user is-size-3"></i><br>
                            User
                             </router-link>
                         </li>
-                        <li class="nav-item">
+                        <li @click="menuToggle" class="nav-item">
                             <router-link :to="{name:'ManageReviews'}" class="has-text-white">
-                                <i class="fas fa-quote-left is-size-1"></i><br>
+                                <i class="fas fa-quote-left is-size-3"></i><br>
                                 Reviews
+                            </router-link>
+                        </li>
+                        <li  class="nav-item " @click="logOut">
+                            <router-link :to="{name:'ManageReviews'}" class="has-text-white">
+                                <i class="fad fa-sign-out-alt is-size-1 has-text-danger"></i><br>
+                                Logout
                             </router-link>
                         </li>
                     </ul>
@@ -50,7 +55,25 @@
 
 <script>
   export default {
+    data() {
+      return {
+        toggleMenu:{
+          "is-hidden-touch":true
+        },
+        toggleIcon: {
+          "fas fa-bars": true,
+          "fas fa-times": false
+        },
+      };
+    },
     methods:{
+      menuToggle() {
+        this.toggleMenu["is-hidden-touch"] = !this.toggleMenu["is-hidden-touch"];
+        this.toggleIcon["fas fa-bars"] = !this.toggleIcon["fas fa-bars"];
+        this.toggleIcon["fas fa-times"] = !this.toggleIcon["fas fa-times"];
+
+      },
+
       async logOut() {
         function timerInterval() {
           setInterval(() => {
@@ -140,7 +163,7 @@
 
     .nav-item{
         border-bottom: 5px solid #ffffff;
-        padding: 5%;
+        padding: 10px 10px;
     }
 
 

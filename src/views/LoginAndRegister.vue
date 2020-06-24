@@ -33,7 +33,9 @@
                                     </div>
                                 </div>
 
-                                    <router-link :to="{name:'ResetPassword'}" class="has-text-weight-bold has-text-primary pl-2">Forgot Password ?</router-link>
+                                <router-link :to="{name:'ResetPassword'}"
+                                             class="has-text-weight-bold has-text-primary pl-2">Forgot Password ?
+                                </router-link>
                                 <div v-if="isRegister" class="field px-3">
                                     <label class="label">User Role:</label>
                                     <div class="control box-border p-3">
@@ -184,7 +186,6 @@
       }
 
     }
-
 
   };
 </script>

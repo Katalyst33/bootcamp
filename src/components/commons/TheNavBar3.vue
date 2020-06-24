@@ -286,6 +286,8 @@
             position: relative;
             display: block;
             width: auto;
+
+
         }
 
         .button__custom {
