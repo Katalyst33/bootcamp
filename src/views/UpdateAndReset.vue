@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="section">
             <div class="container">
 
@@ -27,7 +26,7 @@
                             <div class="field pb-3">
                                 <label class="label">Current Password:</label>
                                 <div class="control">
-                                    <input  v-model="form.currentPassword" class="input" type="email"
+                                    <input v-model="form.currentPassword" class="input" type="email"
                                            placeholder="Your Current Password">
                                 </div>
                             </div>
@@ -52,14 +51,14 @@
                             <div class="field pb-3">
                                 <label class="label">Name:</label>
                                 <div class="control">
-                                    <input v-model="user.data.name" class="input" type="email" placeholder="your name">
+                                    <input v-model="updateProfileForm.name" class="input" type="email" placeholder="your name">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Enter Email:</label>
                                 <div class="control">
-                                    <input v-model="user.data.email" class="input" type="email"
+                                    <input v-model="updateProfileForm.email" class="input" type="email"
                                            placeholder="Email Address">
                                 </div>
                             </div>
@@ -121,20 +120,25 @@
       return {
 
         form: {
-          name:null,
+          name: null,
           email: null,
           currentPassword: null,
           newPassword: null,
           confirmNewPassword: null
+        },
+
+        updateProfileForm: {
+          name: null,
+          email: null
         }
 
       };
     },
 
-    watch:{
-      form:{
-        currentPassword(){
-          console.log('i have changes')
+    watch: {
+      form: {
+        currentPassword() {
+          console.log("i have changes");
         }
       }
     },
@@ -165,11 +169,18 @@
 
     },
 
+    mounted() {
+      this.updateProfileForm = {
+        name: this.user.name,
+        email: this.user.email
+      }
+    },
+
     methods: {
 
-      checkForm(){
-        if(this.currentPassword.length < 5){
-          console.log("length is less than 5 ")
+      checkForm() {
+        if (this.currentPassword.length < 5) {
+          console.log("length is less than 5 ");
         }
 
       },
@@ -195,12 +206,12 @@
 
       async updateAccount() {
         try {
-          await this.$http.put('/api/v1/auth/updatedetails', this.user.data);
-          console.log(this.user)
-          await this.$swal.fire({
+          await this.$http.put("/api/v1/auth/updatedetails", this.updateProfileForm);
+          this.$swal.fire({
             icon: "success",
             text: "Account updated Successfully"
           });
+          this.$store.dispatch('getCurrentUser');
         } catch (error) {
           await this.$swal.fire({
             icon: "error",

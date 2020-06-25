@@ -53,11 +53,11 @@
 
                                    <div class="navbar-dropdown mr-5">
                                        <template >
-                                           <h1 class="navbar-item">{{user.data.name}}</h1>
-                                           <h1 class="navbar-item">{{user.data.email}}</h1>
+                                           <h1 class="navbar-item">{{user.name}}</h1>
+                                           <h1 class="navbar-item">{{user.email}}</h1>
                                            <div class="navbar-item">
-                                               <h1 class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'">
-                                                   {{user.data.role}} Role</h1>
+                                               <h1 class="is-capitalized" v-if="user.role === 'admin' || 'publisher'">
+                                                   {{user.role}} Role</h1>
 
                                            </div>
                                        </template>
@@ -66,7 +66,7 @@
                                        <hr class="navbar-divider">
 
                                        <button @click="logOut" class="button is-danger">Logout</button>
-                                       <router-link :to="{name:'AllBootcampX'}" v-if="user.data.role === 'admin'" @click="logOut" class="button is-warning">Administrator</router-link>
+                                       <router-link :to="{name:'AllBootcampX'}" v-if="user.role === 'admin'" @click="logOut" class="button is-warning">Administrator</router-link>
 
 
                                    </div>

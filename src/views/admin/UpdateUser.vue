@@ -7,30 +7,30 @@
                 <div class="field">
                     <label class="label has-text-left">Name:</label>
                     <div class="control">
-                        <input v-model="user.data.name" class="input" type="text" placeholder="Text input">
+                        <input v-model="user.name" class="input" type="text" placeholder="Text input">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label has-text-left">Email:</label>
                     <div class="control">
-                        <input v-model="user.data.email" class="input" type="text" placeholder="Text input">
+                        <input v-model="user.email" class="input" type="text" placeholder="Text input">
                     </div>
                 </div>
                 <label class="label">User Role:</label>
                 <div class="control box-border p-3">
                     <label class="radio-btn">Regular User (Browse, Write reviews, etc)
-                        <input v-model="user.data.role" value="user" type="radio"
+                        <input v-model="user.role" value="user" type="radio"
                                name="answer">
                         <span class="checkmark"></span>
                     </label>
                     <label class="radio-btn">
                         Bootcamp Publisher
-                        <input v-model="user.data.role" value="publisher" type="radio" name="answer">
+                        <input v-model="user.role" value="publisher" type="radio" name="answer">
                         <span class="checkmark"></span>
                     </label>
                     <label class="radio-btn">
                         Admin
-                        <input v-model="user.data.role" value="admin" type="radio" name="answer">
+                        <input v-model="user.role" value="admin" type="radio" name="answer">
                         <span class="checkmark"></span>
                     </label>
                 </div>

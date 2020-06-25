@@ -14,35 +14,42 @@
                 </li>
 
 
-
-
                 <li class="item"><a href="#">Contact</a>
                 </li>
 
-                <template v-if="!user.data">
+                <template v-if="user">
+                    <template>
+                        <li :class="dropDown" class="item has-submenu">
+                            <a @click="dropToggle" tabindex="1" class="has-text-success has-text-weight-bold">{{user.name}}<i
+                                    class="fas fa-angle-down px-2"></i></a>
+                            <ul class="submenu">
+                                <li class="subitem"><a href="#">{{user.email}}</a></li>
+
+                                <li class="subitem"><a href="#" class="is-capitalized"
+                                                       v-if="user.role === 'admin' || 'publisher'">
+                                    {{user.role}} Role</a></li>
+
+                                <router-link @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">Manage
+                                    Account
+                                </router-link>
+                            </ul>
+                        </li>
+                        <div @click="logOut" class=" item button__custom px-3">
+                            <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button>
+                        </div>
+                        <router-link :to="{name:'AllBootcampX'}" v-if="user.role === 'admin'" @click="logOut"
+                                     class="item button__custom px-3">
+                            <button class="button is-warning ">Administrator</button>
+                        </router-link>
+                    </template>
+                </template>
+                <template v-else>
                     <router-link :to="{name:'register'}" class="item button__custom px-3">
                         <button class="button is-primary">signup</button>
                     </router-link>
                     <router-link :to="{name:'login'}" class="item button__custom  px-3">
                         <button class="button is-success">Login</button>
                     </router-link>
-                </template>
-                <template v-else>
-                <template>
-                    <li :class="dropDown" class="item has-submenu">
-                        <a @click="dropToggle" tabindex="1" class="has-text-success has-text-weight-bold">{{user.data.name}}<i class="fas fa-angle-down px-2"></i></a>
-                        <ul class="submenu">
-                            <li class="subitem"><a href="#">{{user.data.email}}</a></li>
-
-                            <li class="subitem"><a href="#" class="is-capitalized" v-if="user.data.role === 'admin' || 'publisher'"> {{user.data.role}} Role</a></li>
-
-                            <router-link  @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">Manage Account</router-link>
-                        </ul>
-                    </li>
-                    <div @click="logOut" class=" item button__custom px-3"> <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button></div>
-                    <router-link :to="{name:'AllBootcampX'}" v-if="user.data.role === 'admin'" @click="logOut" class="item button__custom px-3" ><button class="button is-warning ">Administrator</button></router-link>
-
-                </template>
                 </template>
 
                 <li @click="menuToggle" class="toggle pr-5"><a href="#"><i :class=toggleIcon></i></a></li>
@@ -132,7 +139,7 @@
       }
 
     }
-  }
+  };
 </script>
 
 <style scoped>

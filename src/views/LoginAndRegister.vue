@@ -118,7 +118,7 @@
 
         const vuexLocal = JSON.parse(localStorage.getItem("vuex"));
 
-        console.log("localstore", vuexLocal.user.data.role);
+        console.log("localstore", vuexLocal.user.role);
 
       },
 

@@ -58,7 +58,7 @@
     },
 
     mounted() {
-      console.log('test',this.user.data.role);
+      // console.log('test',this.user.role);
     },
 
     methods: {}

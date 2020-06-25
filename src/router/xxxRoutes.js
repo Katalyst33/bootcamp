@@ -31,7 +31,7 @@ export default {
   path: "/xxx",
   component: index,
   beforeEnter: (to, from, next) => {
-    if (vuexLocal.user.data.role === "user") {
+    if (vuexLocal.user.role === "user") {
       next({
         name: "login",
       });

@@ -41,11 +41,7 @@
 
     },
     mounted() {
-      // this.getMe();
-
-
-
-
+      this.getMe();
     },
 
     methods: {
