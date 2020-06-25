@@ -12,12 +12,18 @@ const Courses = require("../models/Course");
 
 const advancedResults = require("../middleware/advancedResults");
 
+//Include other resources routes
+const enrollmentRouter = require("./enrollments");
+
 //merge route with bootcamp route
 const router = express.Router({
   mergeParams: true,
 });
 
 const { protect, authorize } = require("../middleware/auth");
+
+//Re-route into other resource routers
+router.use("/:courseId/enrollments", enrollmentRouter);
 
 router
   .route("/")

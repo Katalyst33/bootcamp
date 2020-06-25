@@ -45,7 +45,7 @@ exports.getReview = asyncHandler(async (req, res, next) => {
 });
 
 //@desc Add review
-//@route GET /api/v1/bootcamps/:bootcampId/reviews/
+//@route post /api/v1/bootcamps/:bootcampId/reviews/
 //@access Private
 
 exports.addReview = asyncHandler(async (req, res, next) => {

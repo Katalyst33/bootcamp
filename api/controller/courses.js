@@ -3,6 +3,7 @@ const asyncHandler = require("../middleware/async");
 const geocoder = require("../utils/geocoder");
 const Course = require("../models/Course");
 const Bootcamp = require("../models/Bootcamp-model");
+const Enrollment = require("../models/Enrollment");
 
 //@desc Get Course
 //@route GET /api/v1/courses
@@ -10,8 +11,11 @@ const Bootcamp = require("../models/Bootcamp-model");
 //@access Public
 exports.getCourses = asyncHandler(async (req, res, next) => {
   if (req.params.bootcampId) {
-    const courses = await Course.find({ bootcamp: req.params.bootcampId });
+    const courses = await Course.find({
+      bootcamp: req.params.bootcampId,
+    }).lean();
 
+    console.log(req.user);
     return res.status(200).json({
       success: true,
       count: courses.length,

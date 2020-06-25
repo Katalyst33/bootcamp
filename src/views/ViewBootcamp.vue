@@ -46,6 +46,8 @@
                                                             </li>
                                                         </ul>
                                                     </div>
+                                                    <button @click="enrollCourse(course._id)" class="button is-primary px-5">Enroll</button>
+
                                                 </div>
 
                                             </div>
@@ -151,6 +153,12 @@
             this.loaded = true;
           })
           .catch();
+      },
+
+      enrollCourse(code){
+        this.$http.post(`/api/v1/courses/${code}/enrollments`)
+        console.log(code)
+
       }
 
     },

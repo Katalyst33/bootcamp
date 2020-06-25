@@ -30,7 +30,7 @@ export default new Vuex.Store({
       setTimeout(function () {
         axios
           .get("/api/v1/auth/me")
-          .then(({ data: {data} }) => {
+          .then(({ data: { data } }) => {
             context.commit("SET_USER", data);
           })
           .catch((error) => {

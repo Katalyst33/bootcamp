@@ -94,7 +94,7 @@
 
       fetchBootcamp() {
 
-        this.$http.get("/api/v1/bootcamps/?limit=2")
+        this.$http.get("/api/v1/bootcamps/")
           .then(({ data }) => {
             this.bootcamps = data;
             this.loaded = true;
