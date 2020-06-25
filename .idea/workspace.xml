@@ -20,14 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7306bd-41a0-40f3-84a5-bcb6c10cd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/middleware/advancedResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/advancedResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Bootcamp-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Bootcamp-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/bootcamp.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/bootcamp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/TheFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/AllBootcampsX.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/AllBootcampsX.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Bootcamps.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Bootcamps.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/AddAndUpdateBootcamp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/AddAndUpdateBootcamp.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/config/db.js" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
@@ -81,6 +83,9 @@
     <configuration name="db.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/config/db.js" working-dir="$PROJECT_DIR$/config">
       <method v="2" />
     </configuration>
+    <configuration name="env.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/config/env.js" working-dir="$PROJECT_DIR$/config">
+      <method v="2" />
+    </configuration>
     <configuration name="seeder.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/seeder.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -104,24 +109,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.back-end" />
         <item itemvalue="npm.front-end" />
+        <item itemvalue="npm.back-end" />
+        <item itemvalue="Node.js.env.js" />
         <item itemvalue="Node.js.seeder.js" />
         <item itemvalue="Node.js.db.js" />
-        <item itemvalue="npm.start (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -207,14 +201,8 @@
       <workItem from="1592792420741" duration="150000" />
       <workItem from="1592833826071" duration="3000" />
       <workItem from="1592887806869" duration="12224000" />
-      <workItem from="1592950589336" duration="18547000" />
-    </task>
-    <task id="LOCAL-00019" summary="added protected routes for admin">
-      <created>1588993038480</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1588993038480</updated>
+      <workItem from="1592950589336" duration="26442000" />
+      <workItem from="1593047214412" duration="2220000" />
     </task>
     <task id="LOCAL-00020" summary="added protected routes for admin ☠️">
       <created>1588993110411</created>
@@ -552,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592980872593</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="fix index page views">
+      <created>1593031653326</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1593031653326</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +568,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add bootcamp route &gt;&gt;&gt; " />
     <MESSAGE value="implement vueX next &gt;&gt;. " />
     <MESSAGE value="implement vueX next &gt;&gt;." />
     <MESSAGE value="implemented vueX" />
@@ -598,7 +592,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="removed preview for invalid image" />
     <MESSAGE value="removed round off  filter property AllBootcampsX.vue file" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed round off  filter property AllBootcampsX.vue file" />
+    <MESSAGE value="fix index page views" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix index page views" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="210" key="#Inspections" timestamp="1589777712840">
@@ -613,10 +608,10 @@
       <screen x="0" y="23" width="1680" height="996" />
     </state>
     <state x="506" y="262" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.996@0.23.1680.996" timestamp="1592059434041" />
-    <state x="604" y="54" width="777" height="996" key="CommitChangelistDialog2" timestamp="1592980872416">
+    <state x="604" y="54" width="777" height="996" key="CommitChangelistDialog2" timestamp="1593031653158">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="604" y="54" width="777" height="996" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592980872416" />
+    <state x="604" y="54" width="777" height="996" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1593031653158" />
     <state x="34" y="167" key="CommitChangelistDialog2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738462496" />
     <state x="0" y="115" key="DiffContextDialog" timestamp="1586738498244">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -634,38 +629,38 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="224" y="424" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1586285343615" />
-    <state width="719" height="324" key="GridCell.Tab.0.bottom" timestamp="1593029255151">
+    <state width="849" height="310" key="GridCell.Tab.0.bottom" timestamp="1593047232675">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.bottom/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720352" />
-    <state width="719" height="324" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1593029255151" />
+    <state width="849" height="310" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1593047232675" />
     <state width="384" height="262" key="GridCell.Tab.0.bottom/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114736" />
     <state width="687" height="203" key="GridCell.Tab.0.bottom/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state width="1658" height="199" key="GridCell.Tab.0.bottom/0.23.1680.996@0.23.1680.996" timestamp="1592887812538" />
     <state width="1658" height="140" key="GridCell.Tab.0.bottom/0.23.1680.998@0.23.1680.998" timestamp="1591513468552" />
-    <state width="719" height="324" key="GridCell.Tab.0.center" timestamp="1593029255150">
+    <state width="849" height="310" key="GridCell.Tab.0.center" timestamp="1593047232673">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.center/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="719" height="324" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1593029255150" />
+    <state width="849" height="310" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1593047232673" />
     <state width="384" height="262" key="GridCell.Tab.0.center/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.center/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state width="1658" height="199" key="GridCell.Tab.0.center/0.23.1680.996@0.23.1680.996" timestamp="1592887812538" />
     <state width="1658" height="140" key="GridCell.Tab.0.center/0.23.1680.998@0.23.1680.998" timestamp="1591513468551" />
-    <state width="719" height="324" key="GridCell.Tab.0.left" timestamp="1593029255149">
+    <state width="849" height="310" key="GridCell.Tab.0.left" timestamp="1593047232672">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.left/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720350" />
-    <state width="719" height="324" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1593029255149" />
+    <state width="849" height="310" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1593047232672" />
     <state width="384" height="262" key="GridCell.Tab.0.left/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.left/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411778" />
     <state width="1658" height="199" key="GridCell.Tab.0.left/0.23.1680.996@0.23.1680.996" timestamp="1592887812537" />
     <state width="1658" height="140" key="GridCell.Tab.0.left/0.23.1680.998@0.23.1680.998" timestamp="1591513468551" />
-    <state width="719" height="324" key="GridCell.Tab.0.right" timestamp="1593029255150">
+    <state width="849" height="310" key="GridCell.Tab.0.right" timestamp="1593047232674">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="813" height="261" key="GridCell.Tab.0.right/0.0.1680.1019@0.0.1680.1019" timestamp="1589463720351" />
-    <state width="719" height="324" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593029255150" />
+    <state width="849" height="310" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593047232674" />
     <state width="384" height="262" key="GridCell.Tab.0.right/0.23.1680.1000@0.23.1680.1000" timestamp="1588558114735" />
     <state width="687" height="203" key="GridCell.Tab.0.right/0.23.1680.1002@0.23.1680.1002" timestamp="1587854411779" />
     <state width="1658" height="199" key="GridCell.Tab.0.right/0.23.1680.996@0.23.1680.996" timestamp="1592887812538" />
@@ -710,15 +705,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="541" y="103" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1592771531926" />
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1592980875125">
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2" timestamp="1593031655083">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592980875124" />
+    <state x="0" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593031655083" />
     <state x="0" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1000@0.23.1680.1000" timestamp="1586738433748" />
-    <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589784980362">
+    <state x="375" y="82" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593032873161">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="454" y="101" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589784980362" />
+    <state x="375" y="82" width="1088" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593032873161" />
     <state x="128" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589538223217">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -727,18 +722,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="100" y="100" width="462" height="850" key="dock-window-1/0.0.1680.1050@0.0.1680.1050" timestamp="1589522963568" />
-    <state x="126" y="252" width="582" height="546" key="find.popup" timestamp="1593019803766">
+    <state x="126" y="252" width="582" height="546" key="find.popup" timestamp="1593044716564">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593019803766" />
+    <state x="126" y="252" width="582" height="546" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593044716564" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1592891156342">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592891156342" />
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1593031314017">
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1593047247465">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593031314017" />
+    <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593047247465" />
     <state x="31" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.998@0.23.1680.998" timestamp="1590770255720" />
   </component>
   <component name="XDebuggerManager">
@@ -762,8 +757,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/router/xxxRoutes.js</url>
           <line>29</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/admin/AddAndUpdateBootcamp.vue</url>
+          <line>204</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

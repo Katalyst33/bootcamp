@@ -13,6 +13,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@xpresser/env": "^1.0.1",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "bulma": "^0.8.2",
@@ -30,6 +31,7 @@
     "helmet": "^3.22.0",
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
+    "lodash.omit": "^4.5.0",
     "mongoose": "^5.9.6",
     "morgan": "^1.10.0",
     "node-geocoder": "^3.27.0",

@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
 
         <div class="section">
             <div class="container">
@@ -225,13 +225,13 @@
       async newBootcamp() {
         try {
           await this.changeAddress();
-          await this.$http.post("/api/v1/bootcamps/", this.bootcamp.data);
-          await this.$swal.fire({
+          const { data: { bootcamp } } = await this.$http.post("/api/v1/bootcamps/", this.newBootcampData);
+             this.$swal.fire({
             icon: "success",
             text: "Bootcamp created Successfully"
           });
-          await this.$router.push({ name: "ManageBootcamp" });
-          console.log(this.newBootcampData);
+
+          await this.$router.push({ name: "ManageBootcamp", params: { id: bootcamp._id } });
 
         } catch (error) {
           await this.$swal.fire({

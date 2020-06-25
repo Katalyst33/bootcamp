@@ -3,6 +3,7 @@ const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const geocoder = require("../utils/geocoder");
 const Bootcamp = require("../models/Bootcamp-model");
+const lodashOmit = require("lodash.omit");
 
 //@desc Get all bootcamps
 //@route GET /api/v1/bootcamps
@@ -32,10 +33,13 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
     );
   }
 
-  const bootcamp = await Bootcamp.create(req.body);
+  const filterBody = lodashOmit(req.body, ["_id"]);
+  const bootcamp = await Bootcamp.create(filterBody);
+  console.log(filterBody);
+
   res.status(201).json({
     success: true,
-    data: bootcamp,
+    bootcamp,
   });
 });
 
