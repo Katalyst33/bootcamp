@@ -4,8 +4,9 @@
             <div class="container has-text-left">
                 <GoBack/>
                 <h1 class="is-size-3 has-text-weight-bold pt-3">
-                    {{bootcamp.data.name}}
+                    {{bootcamp.data.name}} Reviews
                 </h1>
+                <p>Here what people have to say about {{bootcamp.data.name}}</p>
                 <div class="columns">
 
                     <div class="column is-8 has-text-left">
@@ -33,7 +34,7 @@
                             <h1 class="is-size-3 has-text-weight-bold">Rating: <span class="has-text-success">{{bootcamp.data.averageRating | roundOff}}</span>
                             </h1>
 
-                            <router-link :to="{name:'AddReview', params:{id:bootcamp.data._id}}" class="button is-dark mt-5">Review this Bootcamp</router-link>
+                            <router-link :to="{name:'AddReview', params:{id:bootcamp.data._id}}" class="button is-dark mt-5">{{bootcamp.data._id}}</router-link>
 
                         </section>
                     </div>

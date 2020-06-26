@@ -108,7 +108,7 @@
 </template>
 
 <script>
-  import GoBack from "../components/commons/GoBack";
+  import GoBack from "../../components/commons/GoBack";
   import { mapState } from "vuex";
 
 

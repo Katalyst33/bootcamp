@@ -19,8 +19,8 @@
                         <ul class="has-text-white">
                             <li @click="menuToggle" class="nav-item">
                                 <router-link :to="{name:'AddBootcamp'}" class="has-text-white">
-                                    <i class="fal fa-layer-plus is-size-3"></i><br>
-                                    Add <br> Bootcamp
+                                    <i class="fal fa-layer-plus is-size-3"></i>
+                                    Add Bootcamp
                                 </router-link>
                             </li>
                             <li @click="menuToggle" class="nav-item">

@@ -49,6 +49,8 @@ exports.getReview = asyncHandler(async (req, res, next) => {
 //@access Private
 
 exports.addReview = asyncHandler(async (req, res, next) => {
+
+
   req.body.bootcamp = req.params.bootcampId;
   req.body.user = req.user.id;
 

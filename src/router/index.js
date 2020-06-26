@@ -17,7 +17,7 @@ const AddAndUpdateReview = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/AddAndUpdateReview.vue");
 
 const UpdateAndReset = () =>
-  import(/* webpackChunkName: "bootcamp" */ "../views/UpdateAndReset.vue");
+  import(/* webpackChunkName: "bootcamp" */ "../views/account/UpdateAndReset.vue");
 
 Vue.use(VueRouter);
 

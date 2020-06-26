@@ -32,6 +32,7 @@
                                 <router-link @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">Manage
                                     Account
                                 </router-link>
+                                <li class="py-2">Enrollments</li>
                             </ul>
                         </li>
                         <div @click="logOut" class=" item button__custom px-3">
