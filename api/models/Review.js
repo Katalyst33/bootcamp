@@ -26,6 +26,11 @@ const ReviewSchema = new mongoose.Schema({
     ref: "Bootcamp",
     required: true,
   },
+  course: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Course",
+    required: true,
+  },
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",

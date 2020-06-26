@@ -14,6 +14,8 @@ const advancedResults = require("../middleware/advancedResults");
 
 //Include other resources routes
 const enrollmentRouter = require("./enrollments");
+const reviewRouter = require("./reviews");
+
 
 //merge route with bootcamp route
 const router = express.Router({
@@ -24,6 +26,8 @@ const { protect, authorize } = require("../middleware/auth");
 
 //Re-route into other resource routers
 router.use("/:courseId/enrollments", enrollmentRouter);
+router.use("/:courseId/reviews", reviewRouter);
+
 
 router
   .route("/")
