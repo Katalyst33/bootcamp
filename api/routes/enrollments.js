@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { addEnrollment } = require("../controller/enrollments");
+const { addEnrollment, getEnrollments } = require("../controller/enrollments");
 
 const Enrollment = require("../models/Enrollment");
 
@@ -11,9 +11,28 @@ const router = express.Router({
 
 const advancedResults = require("../middleware/advancedResults");
 const { protect, authorize } = require("../middleware/auth");
+let populateQuery = [
+  {
+    path:"bootcamp",
+    select:"name"
+  },
+  {
+    path:"course",
+    select:"title"
+  },
+  {
+    path:"user",
+    select:"name"
+  },
+
+]
 
 router
   .route("/")
+  .get(
+    advancedResults(Enrollment, populateQuery ),
+    getEnrollments
+  )
   .post(protect, authorize("user", "admin", "publisher"), addEnrollment);
 
 router.route("/:id");

@@ -46,7 +46,9 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <button @click="enrollCourse(course._id)" class="button is-primary px-5">Enroll</button>
+
+                                                    <button v-if="course.enrolled" @click="enrollCourse(course._id)" class="button is-success px-5" disabled>Enrolled</button>
+                                                    <button v-else @click="enrollCourse(course._id)" class="button is-primary px-5" :disabled="course.enrolled">Enroll</button>
 
                                                 </div>
 
@@ -130,12 +132,20 @@
       thousand_separator,
     },
 
+    computed:{
+      isEnrolled(){
+      return true
+
+      }
+    },
+
     mounted() {
       this.fetchBootcamp();
       this.fetchCourses();
     },
 
     methods: {
+
       fetchBootcamp() {
         const code = this.$route.params.id;
         this.$http.get("/api/v1/bootcamps/" + code)
@@ -157,7 +167,12 @@
 
       enrollCourse(code){
         this.$http.post(`/api/v1/courses/${code}/enrollments`)
-        console.log(code)
+        this.$swal.fire({
+          icon: "success",
+          text: "You have successfully enrolled for this course",
+          imageAlt: "Custom image"
+        });
+        this.fetchCourses()
 
       }
 

@@ -35,3 +35,29 @@ exports.addEnrollment = asyncHandler(async (req, res, next) => {
     data: newEnrollment,
   });
 });
+
+
+
+//@desc Get Enrollment
+//@route GET /api/v1/enrollments/
+//@access Public
+
+exports.getEnrollments = asyncHandler(async (req, res) =>{
+  let populateQuery = [{
+    path:"user", select:"name"
+  }];
+ if(req.params.bootcampId){
+   const enrollments = await  Enrollment.find({
+     bootcamp:req.params.bootcampId,
+   }).populate(populateQuery);
+
+   return  res.status(200).json({
+     success:true,
+     count:enrollments.length,
+     data:enrollments,
+   });
+ }else {
+   res.status(200).json(res.advancedResults);
+ }
+
+});

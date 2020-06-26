@@ -11,6 +11,10 @@ const AllBootcamps = () =>
 const AllUsers = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/AllUsers");
 
+
+const AllEnrollments = () =>
+  import(/* webpackChunkName: "Admin" */ "../views/admin/EnrolledUsers");
+
 const UpdateUser = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/UpdateUser");
 
@@ -51,6 +55,12 @@ export default {
       path: "all-users",
       name: "AllUsers",
       component: AllUsers,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "all-enrollments",
+      name: "AllEnrollments",
+      component: AllEnrollments,
       meta: { requiresAuth: true },
     },
     {

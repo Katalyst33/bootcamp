@@ -14,7 +14,13 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
     const courses = await Course.find({
       bootcamp: req.params.bootcampId,
     }).lean();
-
+    for (const course of courses) {
+      course.enrolled =
+        (await Enrollment.count({
+          course: course._id,
+          user: req.user.id,
+        })) > 0;
+    }
     console.log(req.user);
     return res.status(200).json({
       success: true,

@@ -80,8 +80,8 @@ app.use(
 );
 
 //Mount routers
-const {authUser} = require('./api/middleware/auth');
-app.use('/api/*', authUser);
+const { authUser } = require("./api/middleware/auth");
+app.use("/api/*", authUser);
 app.use("/api/v1/bootcamps", bootcamps);
 app.use("/api/v1/courses", courses);
 app.use("/api/v1/auth", auth);
