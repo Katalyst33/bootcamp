@@ -3,40 +3,37 @@ const asyncHandler = require("./async");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
-//protect routes
-
-exports.protect = asyncHandler(async (req, res, next) => {
-  const isMeRoute = req.url === "/me";
-  let token = req.cookies["token"];
-  if (isMeRoute && (!token || token === "none")) {
+// Check and populate user.
+exports.authUser = (req, res, next) => {
+  if (req.user) {
     return next();
-  }
-  /*if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
-    //set token fom bearer token in header
-    token = req.headers.authorization.split(" ")[1];
-    //set token from cookie
-  }*/
-  /*  else if (req.cookies.token) {
-    token = req.cookies.token;
-  }*/
+  } else {
+    let token = req.cookies["token"];
+    if (!token || token === "none") {
+      return next();
+    }
 
-  //Make sure token exsits
-  if (!token) {
-    return next(new ErrorResponse("Not authorized t0 access this route", 401));
+    // Token exists so validate token
+    try {
+      // verify token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      User.findById(decoded.id).then((user) => {
+        req.user = user;
+        return next();
+      });
+    } catch (err) {
+      return next(new ErrorResponse("Invalid access token.", 401));
+    }
   }
+};
 
-  try {
-    //verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(decoded);
-    req.user = await User.findById(decoded.id);
-    next();
-  } catch (err) {
+//protect routes
+exports.protect = asyncHandler(async (req, res, next) => {
+  if (!req.user) {
     return next(new ErrorResponse("Not authorized to access this route", 401));
   }
+
+  return next();
 });
 
 //Grant access to specifi roles
