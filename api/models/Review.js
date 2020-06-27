@@ -39,7 +39,7 @@ const ReviewSchema = new mongoose.Schema({
 });
 
 //prevent user from submitting more than one review per bootcamp
-ReviewSchema.index({ bootcamp: 1, user: 1 }, { unique: true });
+// ReviewSchema.index({ bootcamp: 1, user: 1 }, { unique: true });
 
 // static method to get the average and save
 

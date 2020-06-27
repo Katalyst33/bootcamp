@@ -8,10 +8,12 @@ const Course = require("../models/Course");
 //@route GET /api/v1/reviews/
 //@access Public
 exports.getReviews = asyncHandler(async (req, res, next) => {
-  let populateQuery = [{ path: "user", select: "name" }];
-  if (req.params.bootcampId) {
+  let populateQuery = [
+    { path: "user", select: "name" },
+    { path: "course", select: "title" }];
+  if (req.params.courseId) {
     const reviews = await Review.find({
-      bootcamp: req.params.bootcampId
+      course: req.params.courseId
     }).populate(populateQuery);
 
     return res.status(200).json({
@@ -46,7 +48,7 @@ exports.getReview = asyncHandler(async (req, res, next) => {
 });
 
 //@desc Add review
-//@route post /api/v1/bootcamps/:bootcampId/reviews/
+//@route post /api/v1/courses/:courseId/reviews/
 //@access Private
 
 exports.addReview = asyncHandler(async (req, res, next) => {
@@ -65,7 +67,6 @@ exports.addReview = asyncHandler(async (req, res, next) => {
     });
 
   }
-
 
   const course = await Course.findById(reviewData.course);
   if (!course) {
