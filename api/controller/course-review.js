@@ -5,7 +5,7 @@ const CourseReview = require("../models/course-review");
 
 
 //@desc Add review
-//@route post /api/v1/courses/:courseId/reviews/
+//@route post /api/v1/courses/:courseId/course-reviews/
 //@access Private
 
 exports.addCourseReview = asyncHandler(async (req, res, next) => {
@@ -47,4 +47,105 @@ exports.addCourseReview = asyncHandler(async (req, res, next) => {
   });
 
 });
+
+
+
+//@desc Get Reviews
+//@route GET /api/v1/course-reviews/
+//@access Public
+exports.getCourseReviews = asyncHandler(async (req, res, next) => {
+  let populateQuery = [
+    { path: "user", select: "name" },
+    { path: "course", select: "title" }
+    ];
+  if (req.params.courseId) {
+    const reviews = await CourseReview.find({
+      course: req.params.courseId
+    }).populate(populateQuery);
+
+    return res.status(200).json({
+      success: true,
+      count: reviews.length,
+      data: reviews
+    });
+  } else {
+    res.status(200).json(res.advancedResults);
+  }
+});
+
+
+//@desc Single Course Review
+//@route GET /api/v1/course-review/:id
+//@access Public
+
+exports.getCourseReview = asyncHandler(async (req, res, next) => {
+  let populateQuery = [
+    { path: "user", select: "name" },
+    { path: "course", select: "title" }
+  ];
+  const review = await CourseReview.findById(req.params.id).populate(populateQuery);
+  if (!review) {
+    return next(
+      new ErrorResponse(`No review with the id of ${req.params.id}`, 404)
+    );
+  }
+  res.status(200).json({
+    success: true,
+    data: review
+  });
+});
+
+
+//@desc Update review
+//@route PUT /api/v1/course-reviews/:id
+//@access Private
+
+exports.updateCourseReview = asyncHandler(async (req, res, next) => {
+  let review = await CourseReview.findById(req.params.id);
+  if (!review) {
+    return next(
+      new ErrorResponse(`No Review with the id of ${req.params.id}`, 404)
+    );
+  }
+
+  //make sure review belongs to user, or user is an admin
+  if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(new ErrorResponse(`Not authorised to update review`, 401));
+  }
+  review = await CourseReview.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  });
+
+  res.status(201).json({
+    success: true,
+    data: review
+  });
+});
+
+//@desc Delete review
+//@route Delete /api/v1/reviews/:id
+//@access Private
+
+exports.deleteCourseReview = asyncHandler(async (req, res, next) => {
+  const review = await CourseReview.findById(req.params.id);
+  if (!review) {
+    return next(
+      new ErrorResponse(`No Review with the id of ${req.params.id}`, 404)
+    );
+  }
+
+  //make sure review belongs to user, or user is an admin
+  if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(new ErrorResponse(`Not authorised to Delete review`, 401));
+  }
+
+  await CourseReview.remove();
+
+  res.status(201).json({
+    success: true,
+    data: {}
+  });
+});
+
 

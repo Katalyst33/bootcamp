@@ -10,10 +10,10 @@ const Course = require("../models/Course");
 exports.getReviews = asyncHandler(async (req, res, next) => {
   let populateQuery = [
     { path: "user", select: "name" },
-    { path: "course", select: "title" }];
-  if (req.params.courseId) {
+  ]
+  if (req.params.bootcampId) {
     const reviews = await Review.find({
-      course: req.params.courseId
+      bootcamp: req.params.bootcampId,
     }).populate(populateQuery);
 
     return res.status(200).json({
@@ -25,6 +25,9 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
     res.status(200).json(res.advancedResults);
   }
 });
+
+
+
 
 //@desc Single Review
 //@route GET /api/v1/reviews/:id
@@ -120,7 +123,7 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
   let review = await Review.findById(req.params.id);
   if (!review) {
     return next(
-      new ErrorResponse(`No bootcamp with the id of ${req.params.id}`, 404)
+      new ErrorResponse(`No Review with the id of ${req.params.id}`, 404)
     );
   }
 
