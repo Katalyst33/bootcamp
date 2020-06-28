@@ -30,6 +30,7 @@ const courses = require("./api/routes/course");
 const auth = require("./api/routes/auth");
 const users = require("./api/routes/users");
 const reviews = require("./api/routes/reviews");
+const courseReviews = require("./api/routes/course-review");
 const enrollments = require("./api/routes/enrollments");
 
 const app = express();
@@ -87,6 +88,7 @@ app.use("/api/v1/courses", courses);
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/users", users);
 app.use("/api/v1/reviews", reviews);
+app.use("/api/v1/course-reviews",courseReviews);
 app.use("/api/v1/enrollments", enrollments);
 
 //Set static folder

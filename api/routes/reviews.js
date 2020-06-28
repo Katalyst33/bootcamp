@@ -19,6 +19,7 @@ const advancedResults = require("../middleware/advancedResults");
 
 const { protect, authorize } = require("../middleware/auth");
 
+
 router
   .route("/")
   .get(

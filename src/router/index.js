@@ -11,6 +11,9 @@ const Bootcamps = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/Bootcamps");
 const ViewBootcamp = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/ViewBootcamp.vue");
+const ViewCourse = () =>
+  import(/* webpackChunkName: "bootcamp" */ "../views/ViewCourse.vue");
+
 const Review = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/Review.vue");
 const AddAndUpdateReview = () =>
@@ -55,6 +58,11 @@ const routes = [
     path: "/bootcamp/:id",
     name: "Bootcamp",
     component: ViewBootcamp,
+  },
+  {
+    path: "/course/:id",
+    name: "ViewCourse",
+    component: ViewCourse,
   },
   {
     path: "/reviews/:id",

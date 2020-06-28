@@ -25,8 +25,6 @@
                                         </div>
                                         <div class="media-content">
 
-                                            <!--                                                {{bootcamp._id}}-->
-
                                             <router-link :to="{name:'Bootcamp' , params:{id:bootcamp._id}}"
                                                          class="title is-4 has-text-primary">{{bootcamp.name}}
                                             </router-link>
@@ -34,7 +32,7 @@
                                     </div>
 
                                     <div class="content">
-                                        <p class="has-text-justified">
+                                        <p class="has-text-justified text-contain">
                                             {{bootcamp.description}}
                                         </p>
                                     </div>
@@ -108,5 +106,6 @@
 </script>
 
 <style scoped>
+
 
 </style>

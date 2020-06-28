@@ -20,7 +20,7 @@
                 <template v-if="user">
                     <template>
                         <li :class="dropDown" class="item has-submenu">
-                            <a @click="dropToggle" tabindex="1" class="has-text-success has-text-weight-bold">{{user.name}}<i
+                            <a @click="dropToggle" tabindex="1" class="has-text-success has-text-weight-bold is-capitalized">{{user.name}}<i
                                     class="fas fa-angle-down px-2"></i></a>
                             <ul class="submenu">
                                 <li class="subitem"><a href="#">{{user.email}}</a></li>
