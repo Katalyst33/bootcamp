@@ -4,7 +4,7 @@ const Course = require("../models/Course");
 const Bootcamp = require("../models/Bootcamp-model");
 const Enrollment = require("../models/Enrollment");
 
-//@desc Get Course
+//@desc Get All Course
 //@route GET /api/v1/courses
 //@route GET /api/v1/bootcamps/:bootcampId/courses
 //@access Public
@@ -35,10 +35,14 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
 //@route GET /api/v1/courses/:id
 //@access Public
 exports.getCourse = asyncHandler(async (req, res, next) => {
-  const course = await Course.findById(req.params.id).populate({
-    path: "bootcamp",
-    select: "name description",
-  }).lean();
+  let populateQuery = [
+    {
+      path: "bootcamp",
+      select: "name description",
+    },
+    { path: "user", select: "name" }
+  ];
+  const course = await Course.findById(req.params.id).populate(populateQuery).lean();
   course.enrolled =
     (await Enrollment.count({
       course: course._id,

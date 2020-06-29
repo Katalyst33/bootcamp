@@ -14,40 +14,60 @@
                                     <p> Skill level:{{course.data.minimumSkill}} </p>
                                     <p> Scholarship :{{course.data.scholarshipAvailable}} </p>
                                     <p>Published: {{course.data.createdAt | formattedDate}}</p>
-                                    <p>Published by: {{course.data.user}}</p>
+                                    <p>Published by: {{course.data.user.name}}</p>
                                     <p>Enrolled:{{course.data.enrolled}} </p>
 
 
                                 </div>
                             </div>
 
-                            <div class="has-background-white my-3 px-5 py-3">
-                                <h1 class="is-size-4"> Enrolled Students
-                                </h1>
-                                <div class="has-text-left">
-                                    <p>james anthony</p>
+
+                            <div class="my-3 has-background-white px-5">
+                                <h4 class="is-size-4 py-4">Course Reviews</h4>
+                                <div v-for="review in reviews.data" :key="review._id">
+
+
+
+
+                                    <div class="columns">
+                                        <div class="column is-2 has-text-left">
+                                            <p>by {{review.user.name}}</p>
+                                            <p>{{review.createdAt | formattedDate}}</p>
+                                        </div>
+                                        <div class="column has-text-left">
+                                            rating:{{review.rating}}
+                                            <p>{{review.title}}</p>
+                                            <p>{{review.text}}</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
 
                             </div>
+                            <div class="column is-4 ">
+                                <div class="has-background-white">
 
-                        </div>
-                        <div class="column is-4 ">
-                            <div class="has-background-white">
+                                    <h3 class="is-size-5 is-capitalized">number of students:<span
+                                            class="is-capitalized is-size-4">5</span></h3>
+                                    <h3 class="is-size-5 is-capitalized">number of reviews:<span
+                                            class="is-capitalized is-size-4">5</span></h3>
 
-                                <h3 class="is-size-5 is-capitalized">number of students:<span
-                                        class="is-capitalized is-size-4">5</span></h3>
-                                <h3 class="is-size-5 is-capitalized">number of reviews:<span
-                                        class="is-capitalized is-size-4">5</span></h3>
+                                    <p class="py-1">Enrollment Starts:{{course.data.startDate | formattedDate}}</p>
+                                    <p class="py-1">Enrollment Ends:{{course.data.endDate | formattedDate}}</p>
+                                    <p class="py-1">Number of Reviews:{{reviews.count}}</p>
 
-                                <p class="py-2">Enrollment Starts:{{course.data.startDate | formattedDate}}</p>
-                                <p class="py-2">Enrollment Ends:{{course.data.endDate | formattedDate}}</p>
+                                </div>
+                                <div class="has-background-white my-3 px-5 py-3">
+                                    <h1 class="is-size-4"> Enrolled Students
+                                    </h1>
+                                    <div class="has-text-left">
+                                        <p>james anthony</p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="my-3 has-background-grey-lighter">
-                        <h4 class="is-size-4 py-4">User Reviews</h4>
-                    </div>
                 </template>
             </div>
         </div>
@@ -62,7 +82,9 @@
         </template>
         <h1 class="is-size-5 has-text-danger has-text-weight-bold">Course Reviews</h1>
 
-
+        <template v-if="loadedReview">
+            <json-view :data="reviews.data"/>
+        </template>
 
     </div>
 </template>
@@ -75,7 +97,8 @@
       return {
         reviews: [],
         loaded: false,
-        course: []
+        course: [],
+        loadedReview: false
 
       };
     },
@@ -86,7 +109,7 @@
 
 
     mounted() {
-      // this.fetchReviews();
+      this.fetchReviews();
       this.fetchCourse();
     },
 
@@ -103,11 +126,10 @@
 
       fetchReviews() {
         const code = this.$route.params.id;
-        this.$http.get(`/api/v1/courses/${code}/reviews`)
+        this.$http.get(`/api/v1/courses/${code}/course-review`)
           .then(({ data }) => {
             this.reviews = data;
-            this.loaded = true;
-            console.log(this.reviews);
+            this.loadedReview = true;
           })
           .catch();
       }
