@@ -38,15 +38,16 @@ exports.addEnrollment = asyncHandler(async (req, res, next) => {
 
 
 
-//@desc Get Enrollment
+//@desc Get All  Enrollment
 //@route GET /api/v1/enrollments/
 //@access Public
 
 exports.getEnrollments = asyncHandler(async (req, res) =>{
-  let populateQuery = [{
-    path:"user", select:"name"
-  }];
- if(req.params.bootcampId){
+  let populateQuery = [
+    {    path:"user", select:"name"  },
+
+    ];
+ if(req.params.courseId){
    const enrollments = await  Enrollment.find({
      bootcamp:req.params.bootcampId,
    }).populate(populateQuery);
@@ -61,3 +62,12 @@ exports.getEnrollments = asyncHandler(async (req, res) =>{
  }
 
 });
+
+exports.getEnrollment = asyncHandler(async (req, res) =>{
+  let populateQuery = [
+    {    path:"user", select:"name"  },
+  ];
+  const course = await  Course.findById(req.params.id).populate(populateQuery).lean();
+
+})
+

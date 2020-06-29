@@ -29,7 +29,8 @@
                                                        v-if="user.role === 'admin' || 'publisher'">
                                     {{user.role}} Role</a></li>
 
-                                <router-link @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">Manage
+                                <router-link @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">
+                                    <i class="fas fa-external-link-alt px-1"></i>Manage
                                     Account
                                 </router-link>
                                 <li class="py-2">Enrollments</li>

@@ -45,26 +45,35 @@
 
                             </div>
                             <div class="column is-4 ">
-                                <div class="has-background-white">
 
-                                    <h3 class="is-size-5 is-capitalized">number of students:<span
-                                            class="is-capitalized is-size-4">5</span></h3>
-                                    <h3 class="is-size-5 is-capitalized">number of reviews:<span
-                                            class="is-capitalized is-size-4">5</span></h3>
+                               <div class="has-background-white px-5 is-size-6">
+                                   <div class="has-background-white py-3 has-text-left">
 
-                                    <p class="py-1">Enrollment Starts:{{course.data.startDate | formattedDate}}</p>
-                                    <p class="py-1">Enrollment Ends:{{course.data.endDate | formattedDate}}</p>
-                                    <p class="py-1">Number of Reviews:{{reviews.count}}</p>
+                                       <h3 class=" is-capitalized">number of students:<span
+                                               class="is-capitalized is-size-4">5</span></h3>
+                                       <h3 class=" is-capitalized">number of reviews:<span
+                                               class="is-capitalized is-size-4">5</span></h3>
 
-                                </div>
-                                <div class="has-background-white my-3 px-5 py-3">
-                                    <h1 class="is-size-4"> Enrolled Students
-                                    </h1>
-                                    <div class="has-text-left">
-                                        <p>james anthony</p>
-                                    </div>
+                                       <p class="py-1">Enrollment Starts:{{course.data.startDate | formattedDate}}</p>
+                                       <p class="py-1">Enrollment Ends:{{course.data.endDate | formattedDate}}</p>
+                                       <p class="py-1">Number of Reviews:{{reviews.count}}</p>
 
-                                </div>
+                                   </div>
+                                   <hr class="has-background-grey-lighter">
+                                   <div class="has-background-white my-3 px-5 py-3">
+                                       <h1 class="is-size-4"> Enrolled Students
+                                       </h1>
+                                       <div class="has-text-left">
+                                           <p>james anthony</p>
+                                       </div>
+
+                                   </div>
+                                   <hr class="has-background-grey-lighter">
+
+                                   <div class="py-5">
+                                       <button class="button is-primary">Pay now</button>
+                                   </div>
+                               </div>
                             </div>
                         </div>
 

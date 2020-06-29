@@ -18,6 +18,7 @@ const reviewRouter = require("./reviews");
 const courseReviewRouter = require("./course-review");
 
 
+
 //merge route with bootcamp route
 const router = express.Router({
   mergeParams: true,

@@ -17,8 +17,15 @@ const router = express.Router({
 const advancedResults = require("../middleware/advancedResults");
 const { protect, authorize } = require("../middleware/auth");
 
+//Include other resoures router
+const enrollmentRouter = require("./enrollments");
+
+
 router.use(protect);
 router.use(authorize("admin"));
+
+//Re- route into other resource routers
+router.use("/:userId/enrollments", enrollmentRouter)
 
 router.route("/").get(advancedResults(User), getUsers).post(createUser);
 
