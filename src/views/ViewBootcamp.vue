@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <Breadcrumbs/>
         <template>
             <div v-if="loaded === true" class="section">
                 <div class="container">
@@ -22,9 +22,11 @@
                                             <div :key="index">
                                                 <div class="my-3">
                                                     <div class="box">
-                                                        <div class="">
-                                                            <h1 class="is-size-3 has-text-weight-bold has-text-primary  px-3">
+                                                        <div class="title-area">
+                                                            <h1 class="is-size-3 has-text-weight-bold has-text-primary is-capitalized px-3">
                                                                 {{course.title}}</h1>
+                                                            <h1 v-if="course.enrolled" class="is-size-4 has-text-success"><i class="fas fa-star is-size-3"></i>
+                                                                Enrolled</h1>
                                                         </div>
                                                         <hr class="line">
                                                         <div class="px-3 py-4">
@@ -53,25 +55,9 @@
                                                             </ul>
                                                         </div>
 
-
-                                                        <div class="columns">
-                                                            <div class="column">
-                                                                <button v-if="course.enrolled"
-                                                                        @click="enrollCourse(course._id)"
-                                                                        class="button is-success px-5" disabled>Enrolled
-                                                                </button>
-                                                                <button v-else @click="enrollCourse(course._id)"
-                                                                        class="button is-primary px-5"
-                                                                        :disabled="course.enrolled">Enroll
-                                                                </button>
-
-                                                            </div>
-                                                            <div class="column">
-                                                                <router-link :to="{name:'ViewCourse', params:{id:course._id}} "
-                                                                        class="button is-grey">Course Reviews
-                                                                </router-link>
-                                                            </div>
-                                                        </div>
+                                                        <router-link :to="{name:'ViewCourse', params:{id:course._id}} "
+                                                                     class="button is-grey is-outlined is-primary"> View Details
+                                                        </router-link>
                                                     </div>
 
                                                 </div>
@@ -231,6 +217,11 @@
 
     .line {
         margin: 0;
+    }
+
+    .title-area{
+        display: flex;
+        justify-content: space-between;
     }
 
 </style>

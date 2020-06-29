@@ -30,6 +30,9 @@ const routes = [
   {
     path: "/",
     name: "Home",
+    meta:{
+      breadcrumb: 'Home'
+    },
     component: Home,
   },
   {
@@ -52,12 +55,19 @@ const routes = [
   {
     path: "/bootcamp/",
     name: "AllBootcamps",
+    meta:{
+      breadcrumb: 'All Bootcamps'
+    },
     component: Bootcamps,
   },
   {
     path: "/bootcamp/:id",
     name: "Bootcamp",
     component: ViewBootcamp,
+    meta:{
+      label: 'All Bootcamps',
+      breadcrumb: 'Bootcamp Details'
+    },
   },
   {
     path: "/course/:id",

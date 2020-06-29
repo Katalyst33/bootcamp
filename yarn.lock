@@ -2882,6 +2882,16 @@ dasherize@2.0.0:
   resolved "https://registry.yarnpkg.com/dasherize/-/dasherize-2.0.0.tgz#6d809c9cd0cf7bb8952d80fc84fa13d47ddb1308"
   integrity sha1-bYCcnNDPe7iVLYD8hPoT1H3bEwg=
 
+date-fns@^2.0.1:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
+  integrity sha512-1zD+68jhFgDIM0rF05rcwYO8cExdNqxjq4xP1QKM60Q45mnO6zaMWB4tOzrIr4M4GSLntsKeE4c9Bdl2jhL/yw==
+
+date-format-parse@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/date-format-parse/-/date-format-parse-0.2.5.tgz#6acd7672058e59cb34c85e0d82c04bceeac9d652"
+  integrity sha512-PzvB3p9bTxrGQbz3ZlO/kxgXzKZhMo4l0OQfPqVYjuwixHRS9yHH6cUJI9JG2Hh6iUQgh17T7w95lzQ131dS/g==
+
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
@@ -5740,6 +5750,11 @@ mixin-deep@^1.2.0:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
+
+moment@^2.27.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
 
 mongodb@3.5.5:
   version "3.5.5"
@@ -8827,6 +8842,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-2-breadcrumbs@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/vue-2-breadcrumbs/-/vue-2-breadcrumbs-0.7.7.tgz#add6487fc98fa7bfb6a17103ec905ce238e5d097"
+  integrity sha512-LWQpNGEK/BYDort2jHpQjf08s07trc+v32iVDNQmE8OZ3xSnah2o0fGXgIolVrf4h+6IZBIVH2EsDfb5Bmv5wQ==
+
 vue-country-region-select@^2.0.13:
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/vue-country-region-select/-/vue-country-region-select-2.0.13.tgz#8f6ab8ecc9c40e038c93114620bcb6273d38452c"
@@ -8904,6 +8924,14 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue2-datepicker@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vue2-datepicker/-/vue2-datepicker-3.6.0.tgz#5000bd18aabf66d22b5f412e2537a63a9dc3b30f"
+  integrity sha512-PDGkOIU2LCripjsWsosrHpxUSmR3itkdAHwhh5YU8aEOsc4kUKwR/aBqwn89PYophi1EwNcsPreeY1b8WhiSGg==
+  dependencies:
+    date-fns "^2.0.1"
+    date-format-parse "^0.2.5"
 
 vue@^2.5.17, vue@^2.6.11:
   version "2.6.11"

@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="container">
+            <Breadcrumbs/>
             <h1 class="is-size-1 has-text-primary">
                 All Bootcamps here
             </h1>

@@ -2,7 +2,7 @@
     <div>
         <!--        <h3 v-if="isUpdateCourse" class="is-size-3">{{bootcamp.data.name}} </h3>-->
         <!--        <h3 v-else class="is-size-3">{{bootcamp.data.name}} </h3>-->
-        <div v-if="loaded" class="columns is-mobile mt-5">
+        <div v-if="loaded" class="columns is-mobile my-5">
 
             <div class="column is-three-fifths is-offset-one-fifth">
                 <section class="has-background-white px-5 py-5 has-text-left">
@@ -23,9 +23,30 @@
                     <div class="field my-4">
                         <label class="label">Duration:(Weeks)</label>
                         <div class="control">
-                            <input v-model="course.data.weeks" class="input" type="number" placeholder="Duration"
+                            <input v-model="course.data.weeks" class="input" value-type="format" type="number"
+                                   placeholder="Duration"
                                    number>
                         </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div>
+
+                                <label class="label">Enroll Start Date:</label>
+                                <date-picker v-model="course.data.startDate" type="date" format="YYYY-MM-DD"/>
+
+                                {{course.data.startDate}}
+                                {{momentDate}}
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <label class="label">Enroll End Date:</label>
+                                <date-picker v-model="course.data.endDate" type="date"/>
+
+                            </div>
+                        </div>
+
                     </div>
                     <div class="field my-4">
                         <label class="label">Course Tuition:</label>
@@ -74,28 +95,32 @@
 
             </div>
         </div>
-        <h1>Course</h1>
 
     </div>
 </template>
 
 <script>
 
-    import GoBack from "../../components/commons/GoBack";
+  import GoBack from "../../components/commons/GoBack";
+  import DatePicker from "vue2-datepicker";
+  import "../../scss/calender.scss";
   import Chance from "chance";
+  // import moment from 'moment';
 
   const chance = new Chance;
   export default {
-    components:{
-      GoBack
+    components: {
+      GoBack, DatePicker
     },
     data() {
       return {
         loaded: false,
-        loadedBootcamp:false,
+        loadedBootcamp: false,
         bootcamp: [],
         course: {
           data: {
+            startDate: null,
+            endDate: null,
             weeks: chance.integer({ min: 2, max: 7 }),
             description: chance.paragraph({ sentences: 2 }),
             tuition: chance.integer({ min: 1000, max: 3000 }),
@@ -117,8 +142,9 @@
       newCourseData() {
         const { _id, id, ...other } = this.course.data;
         return other;
-      }
+      },
       /* eslint-disable no-unused-vars */
+
 
     },
 
@@ -136,7 +162,7 @@
           const code = this.$route.params.id;
           const { data } = await this.$http.get(`/api/v1/bootcamps/${code}`);
           this.bootcamp = data;
-          this.loadedBootcamp =true;
+          this.loadedBootcamp = true;
 
 
         } catch (e) {

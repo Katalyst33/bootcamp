@@ -38,7 +38,12 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
   const course = await Course.findById(req.params.id).populate({
     path: "bootcamp",
     select: "name description",
-  });
+  }).lean();
+  course.enrolled =
+    (await Enrollment.count({
+      course: course._id,
+      user: req.user.id,
+    })) > 0;
   if (!course) {
     return next(
       new ErrorResponse(`No course with the id of ${req.params.id}`),
