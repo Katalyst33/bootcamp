@@ -5,8 +5,6 @@
             <div v-if="loaded === true" class="section">
                 <div class="container">
                     <div class="columns">
-
-
                         <div class="column is-8 has-text-left">
                             <template>
                                 <div>
@@ -26,7 +24,9 @@
                                                         <div class="title-area">
                                                             <h1 class="is-size-3 has-text-weight-bold has-text-primary is-capitalized px-3">
                                                                 {{course.title}}</h1>
-                                                            <h1 v-if="course.enrolled" class="is-size-4 has-text-success"><i class="fas fa-star is-size-3"></i>
+                                                            <h1 v-if="course.enrolled"
+                                                                class="is-size-4 has-text-success"><i
+                                                                    class="fas fa-star is-size-3"></i>
                                                                 Enrolled</h1>
                                                         </div>
                                                         <hr class="line">
@@ -57,12 +57,23 @@
                                                         </div>
 
                                                         <div>
-                                                            <router-link :to="{name:'ViewCourse', params:{id:course._id}} "
-                                                                         class="button is-grey is-outlined is-primary "> View Details
+                                                            <router-link
+                                                                    :to="{name:'ViewCourse', params:{id:course._id}} "
+                                                                    class="button is-grey is-outlined is-primary "> View
+                                                                Details
                                                             </router-link>
-                                                            <router-link v-if="!course.isFree" :to="{name:'Cart'} "
-                                                                         class="button is-danger  is-primary is-pulled-right"> Add to Cart
-                                                            </router-link>
+                                                            <template v-if="!course.isFree">
+                                                                <button v-if="coursesInCart.includes(course._id)"
+                                                                        @click.prevent="removeFromCart(course)"
+                                                                        class="button is-danger  is-primary is-pulled-right">
+                                                                    Remove from cart
+                                                                </button>
+                                                                <button v-else
+                                                                        @click.prevent="addToCart(course)"
+                                                                        class="button is-success  is-primary is-pulled-right">
+                                                                    Add to Cart
+                                                                </button>
+                                                            </template>
                                                         </div>
                                                     </div>
 
@@ -138,6 +149,7 @@
 <script>
 
   import { roundOff, thousand_separator } from "../utils";
+  import { mapGetters } from "vuex";
 
   export default {
     data() {
@@ -154,9 +166,9 @@
     },
 
     computed: {
+      ...mapGetters(["coursesInCart"]),
       isEnrolled() {
         return true;
-
       }
     },
 
@@ -186,7 +198,21 @@
           .catch();
       },
 
+      addToCart(course) {
+        this.$store.commit("SET_CART", course);
+        this.$swal.fire({
+          icon: "success",
+          text: "Course has been added to cart"
+        });
+      },
 
+      removeFromCart(course){
+        this.$store.commit("REMOVE_FROM_CART", course);
+        this.$swal.fire({
+          icon: "success",
+          text: "Course has been removed from cart"
+        });
+      }
 
 
     }
@@ -215,7 +241,7 @@
         margin: 0;
     }
 
-    .title-area{
+    .title-area {
         display: flex;
         justify-content: space-between;
     }

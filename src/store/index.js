@@ -8,7 +8,8 @@ Vue.use(Vuex);
 const vuexLocal = new VuexPersist({
   reducer: (state) => ({
     user: state.user,
-  }),
+    cart: state.cart
+  })
 });
 
 export default new Vuex.Store({
@@ -19,15 +20,16 @@ export default new Vuex.Store({
       domain: process.env["VUE_APP_DOMAIN"] || "{env.APP_DOMAIN}",
       email: process.env["VUE_APP_EMAIL"] || "{env.APP_EMAIL}",
       address: process.env["VUE_APP_ADDY"] || "{env.APP_ADDY}",
-      telephone: process.env["VUE_APP_NUM"] || "{env.APP_NUM}",
+      telephone: process.env["VUE_APP_NUM"] || "{env.APP_NUM}"
     },
     user: null,
     loaded: true,
+    cart: []
   },
 
   actions: {
     getCurrentUser: (context) => {
-      setTimeout(function () {
+      setTimeout(function() {
         axios
           .get("/api/v1/auth/me")
           .then(({ data: { data } }) => {
@@ -37,19 +39,52 @@ export default new Vuex.Store({
             return console.log("get Me error ", error.response.data.error);
           });
       }, 100);
-    },
+    }
   },
 
   mutations: {
+    SET_CART: (state, cartItem) => {
+      state.cart.push(cartItem);
+    },
+    REMOVE_FROM_CART: (state, course) => {
+      state.cart = state.cart.filter((item) => {
+        return item._id !== course._id;
+      });
+    },
     SET_USER: (state, user) => {
       state.user = user;
     },
     SET_STATUS: (state, authenticated) => {
       state.authenticated = authenticated;
+    }
+  },
+
+  getters: {
+    coursesInCart: (state) => {
+      const courseIds = [];
+
+      for (const course of state.cart) {
+        courseIds.push(course._id);
+      }
+
+      return courseIds;
     },
+
+    coursesInCartWithPrices: (state) => {
+      const courseIds = [];
+
+      for (const course of state.cart) {
+        courseIds.push({
+          id: course._id,
+          price: course.tuition
+        });
+      }
+
+      return courseIds;
+    }
   },
 
   modules: {},
 
-  plugins: [vuexLocal.plugin],
+  plugins: [vuexLocal.plugin]
 });

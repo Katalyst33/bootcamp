@@ -20,7 +20,8 @@
                 <template v-if="user">
                     <template>
                         <li :class="dropDown" class="item has-submenu">
-                            <a @click="dropToggle" tabindex="1" class="has-text-success has-text-weight-bold is-capitalized">{{user.name}}<i
+                            <a @click="dropToggle" tabindex="1"
+                               class="has-text-success has-text-weight-bold is-capitalized">{{user.name}}<i
                                     class="fas fa-angle-down px-2"></i></a>
                             <ul class="submenu">
                                 <li class="subitem"><a href="#">{{user.email}}</a></li>
@@ -34,7 +35,9 @@
                                     Account
                                 </router-link>
                                 <li class="py-2">Enrollments</li>
-                                <router-link :to="{name:'Cart'}" class="py-2"><i class="far fa-shopping-cart"></i> Carts items</router-link>
+                                <router-link :to="{name:'Cart'}" class="py-2">
+                                    <i class="far fa-shopping-cart"></i>({{cart.length}}) Carts items
+                                </router-link>
                             </ul>
                         </li>
                         <div @click="logOut" class=" item button__custom px-3">
@@ -83,7 +86,7 @@
     },
 
     computed: {
-      ...mapState(["user", "loaded"])
+      ...mapState(["user", "loaded", "cart"])
     },
 
 
