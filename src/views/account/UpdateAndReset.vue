@@ -51,7 +51,8 @@
                             <div class="field pb-3">
                                 <label class="label">Name:</label>
                                 <div class="control">
-                                    <input v-model="updateProfileForm.name" class="input" type="email" placeholder="your name">
+                                    <input v-model="updateProfileForm.name" class="input" type="email"
+                                           placeholder="your name">
                                 </div>
                             </div>
 
@@ -173,7 +174,7 @@
       this.updateProfileForm = {
         name: this.user.name,
         email: this.user.email
-      }
+      };
     },
 
     methods: {
@@ -211,7 +212,7 @@
             icon: "success",
             text: "Account updated Successfully"
           });
-          this.$store.dispatch('getCurrentUser');
+          this.$store.dispatch("getCurrentUser");
         } catch (error) {
           await this.$swal.fire({
             icon: "error",

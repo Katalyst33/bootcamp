@@ -206,7 +206,7 @@
         });
       },
 
-      removeFromCart(course){
+      removeFromCart(course) {
         this.$store.commit("REMOVE_FROM_CART", course);
         this.$swal.fire({
           icon: "success",

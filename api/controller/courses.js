@@ -11,20 +11,20 @@ const Enrollment = require("../models/Enrollment");
 exports.getCourses = asyncHandler(async (req, res, next) => {
   if (req.params.bootcampId) {
     const courses = await Course.find({
-      bootcamp: req.params.bootcampId,
+      bootcamp: req.params.bootcampId
     }).lean();
     for (const course of courses) {
       course.enrolled =
         (await Enrollment.count({
           course: course._id,
-          user: req.user.id,
+          user: req.user.id
         })) > 0;
     }
     console.log(req.user);
     return res.status(200).json({
       success: true,
       count: courses.length,
-      data: courses,
+      data: courses
     });
   } else {
     res.status(200).json(res.advancedResults);
@@ -38,7 +38,7 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
   let populateQuery = [
     {
       path: "bootcamp",
-      select: "name description",
+      select: "name description"
     },
     { path: "user", select: "name" }
   ];
@@ -46,7 +46,7 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
   course.enrolled =
     (await Enrollment.count({
       course: course._id,
-      user: req.user.id,
+      user: req.user.id
     })) > 0;
   if (!course) {
     return next(
@@ -58,13 +58,14 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
 
-    data: course,
+    data: course
   });
 });
 
 //@desc Add Course
 //@route POST /api/v1/bootcamps/:bootcampId/courses
 //@access Private
+
 exports.addCourse = asyncHandler(async (req, res, next) => {
   req.body.bootcamp = req.params.bootcampId;
   req.body.user = req.user.id;
@@ -87,11 +88,11 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
     );
   }
   const course = await Course.create(req.body);
-  console.log(req.body)
+  console.log(req.body);
   res.status(200).json({
     success: true,
 
-    data: course,
+    data: course
   });
 });
 
@@ -117,12 +118,12 @@ exports.updateCourse = asyncHandler(async (req, res, next) => {
   }
   course = await Course.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true,
+    runValidators: true
   });
   res.status(200).json({
     success: true,
 
-    data: course,
+    data: course
   });
 });
 
@@ -149,6 +150,6 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
   await course.remove();
   res.status(200).json({
     success: true,
-    data: {},
+    data: {}
   });
 });

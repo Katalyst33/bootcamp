@@ -73,6 +73,7 @@
                                     <button v-else class="button is-success my-3 is-fullwidth" :disabled="course.data.enrolled">you are Enrolled</button>
                                <br>
                                     <button class="button is-danger is-fullwidth" :disabled="course.data.isFree">Add to Cart Cart</button>
+                                    <button class="button is-success is-fullwidth" disabled>Free</button>
 
                                 </div>
 

@@ -40,12 +40,15 @@
                                     </div>
                                 </div>
 
-                               <div class="has-text-centered py-3">
-                                   <button v-if="isUpdateReview" @click="updateReview" class="button is-medium is-primary px-5 lg-btn ">Update Review</button>
-                                   <button v-else @click="addReview" class="button is-medium is-primary px-5 lg-btn ">Submit Review</button>
+                                <div class="has-text-centered py-3">
+                                    <button v-if="isUpdateReview" @click="updateReview"
+                                            class="button is-medium is-primary px-5 lg-btn ">Update Review
+                                    </button>
+                                    <button v-else @click="addReview" class="button is-medium is-primary px-5 lg-btn ">
+                                        Submit Review
+                                    </button>
 
-                               </div>
-
+                                </div>
 
 
                             </div>
@@ -113,7 +116,7 @@
         const code = this.$route.params.id;
         this.$http.get(`/api/v1/reviews/${code}`)
           .then(({ data }) => {
-            this.review= data;
+            this.review = data;
             this.loaded = true;
           })
           .catch();
@@ -135,7 +138,7 @@
           });
 
         }
-      },
+      }
 
 
     }
@@ -156,7 +159,8 @@
     .range-slider-fill {
         background-color: #5e53a5;
     }
-    .lg-btn{
+
+    .lg-btn {
         width: 70%;
     }
 </style>
