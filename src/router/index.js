@@ -7,6 +7,8 @@ import store from "../store/index";
 
 const About = () =>
   import(/* webpackChunkName: "about" */ "../views/About.vue");
+const Cart = () =>
+  import(/* webpackChunkName: "about" */ "../views/Cart");
 const Bootcamps = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/Bootcamps");
 const ViewBootcamp = () =>
@@ -79,6 +81,12 @@ const routes = [
     name: "Reviews",
     component: Review,
   },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
+  },
+
 
   {
     path: "/add-reviews/:id",

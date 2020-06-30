@@ -34,6 +34,7 @@
                                     Account
                                 </router-link>
                                 <li class="py-2">Enrollments</li>
+                                <router-link :to="{name:'Cart'}" class="py-2"><i class="far fa-shopping-cart"></i> Carts items</router-link>
                             </ul>
                         </li>
                         <div @click="logOut" class=" item button__custom px-3">
