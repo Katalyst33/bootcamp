@@ -6,6 +6,7 @@
                 <div class="container">
                     <div class="columns">
 
+
                         <div class="column is-8 has-text-left">
                             <template>
                                 <div>
@@ -180,16 +181,6 @@
           .catch();
       },
 
-      enrollCourse(code) {
-        this.$http.post(`/api/v1/courses/${code}/enrollments`);
-        this.$swal.fire({
-          icon: "success",
-          text: "You have successfully enrolled for this course",
-          imageAlt: "Custom image"
-        });
-        this.fetchCourses();
-
-      },
 
 
 

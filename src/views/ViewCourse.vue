@@ -69,8 +69,13 @@
                                 <hr class="has-background-grey-lighter">
 
                                 <div class="py-5">
-                                    <button class="button is-primary">Pay now</button>
+                                    <button v-if="!course.data.enrolled"  @click="enrollCourse(course.data._id)" class="button is-primary is-outlined my-3 is-fullwidth">Enroll</button>
+                                    <button v-else class="button is-success my-3 is-fullwidth" :disabled="course.data.enrolled">you are Enrolled</button>
+                               <br>
+                                    <button class="button is-primary is-fullwidth" :disabled="course.data.isFree">Add to Cart Cart</button>
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -141,7 +146,18 @@
             this.loadedReview = true;
           })
           .catch();
-      }
+      },
+      enrollCourse(code) {
+        this.$http.post(`/api/v1/courses/${code}/enrollments`);
+        this.$swal.fire({
+          icon: "success",
+          text: "You have successfully enrolled for this course",
+          imageAlt: "Custom image"
+        });
+        this.fetchCourses();
+
+      },
+
 
     }
 

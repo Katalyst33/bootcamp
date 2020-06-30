@@ -37,6 +37,10 @@ const CourseSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  isFree: {
+    type: Boolean,
+    default: false,
+  },
   bootcamp: {
     type: mongoose.Schema.ObjectId,
     ref: "Bootcamp",
