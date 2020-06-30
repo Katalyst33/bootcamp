@@ -16,8 +16,6 @@
                                     <p>Published: {{course.data.createdAt | formattedDate}}</p>
                                     <p>Published by: {{course.data.user.name}}</p>
                                     <p>Enrolled:{{course.data.enrolled}} </p>
-
-
                                 </div>
                             </div>
 
@@ -25,10 +23,6 @@
                             <div class="my-3 has-background-white px-5">
                                 <h4 class="is-size-4 py-4">Course Reviews</h4>
                                 <div v-for="review in reviews.data" :key="review._id">
-
-
-
-
                                     <div class="columns">
                                         <div class="column is-2 has-text-left">
                                             <p>by {{review.user.name}}</p>
@@ -41,41 +35,45 @@
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-
                             </div>
-                            <div class="column is-4 ">
 
-                               <div class="has-background-white px-5 is-size-6">
-                                   <div class="has-background-white py-3 has-text-left">
-
-                                       <h3 class=" is-capitalized">number of students:<span
-                                               class="is-capitalized is-size-4">5</span></h3>
-                                       <h3 class=" is-capitalized">number of reviews:<span
-                                               class="is-capitalized is-size-4">5</span></h3>
-
-                                       <p class="py-1">Enrollment Starts:{{course.data.startDate | formattedDate}}</p>
-                                       <p class="py-1">Enrollment Ends:{{course.data.endDate | formattedDate}}</p>
-                                       <p class="py-1">Number of Reviews:{{reviews.count}}</p>
-
-                                   </div>
-                                   <hr class="has-background-grey-lighter">
-                                   <div class="has-background-white my-3 px-5 py-3">
-                                       <h1 class="is-size-4"> Enrolled Students
-                                       </h1>
-                                       <div class="has-text-left">
-                                           <p>james anthony</p>
-                                       </div>
-
-                                   </div>
-                                   <hr class="has-background-grey-lighter">
-
-                                   <div class="py-5">
-                                       <button class="button is-primary">Pay now</button>
-                                   </div>
-                               </div>
+                            <div class="mt-5">
+                                <h3 class="is-size-4">Pay with Paystack.</h3>
+                                <PayStack :ref-id="course.data._id" :amount="course.data.tuition"/>
                             </div>
                         </div>
+                        <div class="column is-4 ">
+
+                            <div class="has-background-white px-5 is-size-6">
+                                <div class="has-background-white py-3 has-text-left">
+
+                                    <h3 class=" is-capitalized">number of students:<span
+                                            class="is-capitalized is-size-4">5</span></h3>
+                                    <h3 class=" is-capitalized">number of reviews:<span
+                                            class="is-capitalized is-size-4">5</span></h3>
+
+                                    <p class="py-1">Enrollment Starts:{{course.data.startDate | formattedDate}}</p>
+                                    <p class="py-1">Enrollment Ends:{{course.data.endDate | formattedDate}}</p>
+                                    <p class="py-1">Number of Reviews:{{reviews.count}}</p>
+
+                                </div>
+                                <hr class="has-background-grey-lighter">
+                                <div class="has-background-white my-3 px-5 py-3">
+                                    <h1 class="is-size-4"> Enrolled Students
+                                    </h1>
+                                    <div class="has-text-left">
+                                        <p>james anthony</p>
+                                    </div>
+
+                                </div>
+                                <hr class="has-background-grey-lighter">
+
+                                <div class="py-5">
+                                    <button class="button is-primary">Pay now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </template>
             </div>
@@ -100,8 +98,10 @@
 
 <script>
   import { formattedDate } from "../utils";
+  import PayStack from "../components/PayStack";
 
   export default {
+    components: {PayStack},
     data() {
       return {
         reviews: [],
