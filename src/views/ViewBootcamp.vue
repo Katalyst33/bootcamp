@@ -56,9 +56,14 @@
                                                             </ul>
                                                         </div>
 
-                                                        <router-link :to="{name:'ViewCourse', params:{id:course._id}} "
-                                                                     class="button is-grey is-outlined is-primary"> View Details
-                                                        </router-link>
+                                                        <div>
+                                                            <router-link :to="{name:'ViewCourse', params:{id:course._id}} "
+                                                                         class="button is-grey is-outlined is-primary "> View Details
+                                                            </router-link>
+                                                            <router-link v-if="!course.isFree" :to="{name:'Cart'} "
+                                                                         class="button is-danger  is-primary is-pulled-right"> Add to Cart
+                                                            </router-link>
+                                                        </div>
                                                     </div>
 
                                                 </div>

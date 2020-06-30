@@ -72,7 +72,7 @@
                                     <button v-if="!course.data.enrolled"  @click="enrollCourse(course.data._id)" class="button is-primary is-outlined my-3 is-fullwidth">Enroll</button>
                                     <button v-else class="button is-success my-3 is-fullwidth" :disabled="course.data.enrolled">you are Enrolled</button>
                                <br>
-                                    <button class="button is-primary is-fullwidth" :disabled="course.data.isFree">Add to Cart Cart</button>
+                                    <button class="button is-danger is-fullwidth" :disabled="course.data.isFree">Add to Cart Cart</button>
 
                                 </div>
 
