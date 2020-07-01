@@ -1,8 +1,8 @@
 <template>
     <div>
-       <div id="breadcrumbs" >
-           <Breadcrumbs  class="container"/>
-       </div>
+        <div id="breadcrumbs">
+            <Breadcrumbs class="container"/>
+        </div>
         <template>
             <div v-if="loaded === true" class="section">
                 <div class="container">
@@ -35,29 +35,46 @@
                                                         <div class="px-3 py-4">
                                                             <h3 class="is-size-5 has-text-weight-semibold">Duration:
                                                                 {{course.weeks}} weeks</h3>
-                                                            <p class="py-2">{{course.description}}</p>
-                                                            <ul class="py-2 has-text-weight-semibold">
-                                                                <li class="my-2"><i
-                                                                        class="fad fa-money-bill-wave pr-2"></i>Cost:<span
-                                                                        class="is-size-5 has-text-weight-semibold">${{course.tuition | thousand_separator}}</span>
-                                                                </li>
-                                                                <li class="my-2"><i
-                                                                        class="fad fa-lightbulb-on pr-2"></i>Skill
-                                                                    Required:
-                                                                    <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
-                                                                </li>
-                                                                <li class="my-2"><i
-                                                                        class="fad fa-graduation-cap pr-2"></i>Scholarship:
+                                                            <p class="py-2 is-size-5">{{course.description}}</p>
 
-                                                                    <span v-if="course.scholarshipAvailable === true ">  Available<i
-                                                                          class="fas fa-check-circle has-text-success is-size-4 pl-2"></i></span>
-                                                                    <span v-else>Not Available
+                                                            <div class="py-2 has-text-weight-semibold">
+                                                                <div class="columns">
+                                                                    <div class="column">
+                                                                        <p class="my-2">
+                                                                            <i
+                                                                                    class="fad fa-lightbulb-on pr-2"></i>Skill
+                                                                            Required:
+                                                                            <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
+
+                                                                        </p>
+                                                                        <p class="my-2">
+                                                                            <i
+                                                                                    class="fad fa-graduation-cap pr-2"></i>Scholarship:
+
+                                                                            <span v-if="course.scholarshipAvailable === true ">  Available<i
+                                                                                    class="fas fa-check-circle has-text-success is-size-4 pl-2"></i></span>
+                                                                            <span v-else>Not Available
                                                                         <i
-                                                                           class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
+                                                                                class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
                                                                     </span>
+                                                                        </p>
 
-                                                                </li>
-                                                            </ul>
+                                                                    </div>
+                                                                    <div class="column is-4">
+                                                                        <div class="price-tag pt-3">
+                                                                            <p class="is-size-1 has-text-weight-bold has-text-centered"
+                                                                               :class="{'strike  has-text-grey':course.isFree}"
+                                                                            >
+                                                                                ${{course.tuition}}
+                                                                            </p>
+                                                                            <p v-if="course.isFree" class="dot">
+                                                                                free</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
                                                         </div>
 
                                                         <div>
@@ -226,6 +243,9 @@
 
 <style scoped>
 
+    .strike {
+        text-decoration: line-through;
+    }
 
     .box-border {
         border-style: solid;
@@ -252,4 +272,21 @@
         justify-content: space-between;
     }
 
+    .price-tag{
+        display: flex;
+    }
+
+    .dot {
+        background: #64d797;
+        color: #ffffff;
+        /*font-size: 10px;*/
+        height: 22px;
+        width: 70px;
+        line-height: 25px;
+        text-align: center;
+        -webkit-border-radius: 10%;
+        -moz-border-radius:10%;
+        border-radius: 10%;
+
+    }
 </style>

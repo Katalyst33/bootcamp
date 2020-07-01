@@ -13,11 +13,21 @@
 
                 <template v-if="user">
                     <template>
-                       <div class="item my-3">
-                           <router-link :to="{name:'Cart'}" >
-                               <i class="far fa-shopping-cart"></i>({{cart.length}}) Carts items
-                           </router-link>
-                       </div>
+                        <div class="item my-3">
+                            <router-link :to="{name:'Cart'}">
+                                <div>
+                                  <div class="cart">
+                                      <p><i class="far fa-shopping-cart is-size-4"></i></p>
+                                      <div>
+                                          <p class="dot ml-2 has-text-weight-bold is-size-5">{{cart.length}}</p>
+                                          <p>Cart</p>
+
+                                      </div>
+                                  </div>
+
+                                </div>
+                            </router-link>
+                        </div>
                         <ul class="item ">
                             <li :class="dropDown" class="has-submenu">
                                 <a @click="dropToggle" tabindex="1"
@@ -50,7 +60,7 @@
                 </template>
                 <template v-else>
                     <router-link :to="{name:'register'}" class="item button__custom px-3">
-                        <button class="button is-primary">signup</button>
+                        <button class="button is-primary">Signup</button>
                     </router-link>
                     <router-link :to="{name:'login'}" class="item button__custom  px-3">
                         <button class="button is-success">Login</button>
@@ -148,6 +158,24 @@
 </script>
 
 <style scoped>
+    .dot {
+        background: #f15622;
+        color: #ffffff;
+        display: block;
+        font-size: 10px;
+        height: 22px;
+        width: 22px;
+        line-height: 25px;
+        text-align: center;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        margin-top: -35%;
+    }
+
+    .cart {
+        display: flex;
+    }
 
     .logo__img {
         height: 25px;
