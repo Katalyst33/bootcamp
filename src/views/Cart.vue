@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="cart">
         <div class="section">
             <div class="container">
                 <div class="has-background-white px-5 py-5">
@@ -67,5 +67,8 @@
 
 <style scoped>
 
+    #cart{
+        height: 100vh;
+    }
 
 </style>

@@ -6,40 +6,39 @@
                     <router-link to="/"><img class="logo__img pr-2 " src="/logo.png"><span
                             class="has-text-weight-bold is-size-4 ">Dev</span><span>Bootcamp</span></router-link>
                 </li>
-                <li class="item" @click="menuToggle">
-                    <router-link to="/">Home</router-link>
-                </li>
+
                 <li class="item" @click="menuToggle">
                     <router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link>
                 </li>
 
-
-                <li class="item"><a href="#">Contact</a>
-                </li>
-
                 <template v-if="user">
                     <template>
-                        <li :class="dropDown" class="item has-submenu">
-                            <a @click="dropToggle" tabindex="1"
-                               class="has-text-success has-text-weight-bold is-capitalized">{{user.name}}<i
-                                    class="fas fa-angle-down px-2"></i></a>
-                            <ul class="submenu">
-                                <li class="subitem"><a href="#">{{user.email}}</a></li>
+                       <div class="item my-3">
+                           <router-link :to="{name:'Cart'}" >
+                               <i class="far fa-shopping-cart"></i>({{cart.length}}) Carts items
+                           </router-link>
+                       </div>
+                        <ul class="item ">
+                            <li :class="dropDown" class="has-submenu">
+                                <a @click="dropToggle" tabindex="1"
+                                   class="has-text-success has-text-weight-bold is-capitalized">{{user.name}}<i
+                                        class="fas fa-angle-down px-2"></i></a>
+                                <ul class="submenu">
+                                    <li class="subitem"><a href="#">{{user.email}}</a></li>
 
-                                <li class="subitem"><a href="#" class="is-capitalized"
-                                                       v-if="user.role === 'admin' || 'publisher'">
-                                    {{user.role}} Role</a></li>
+                                    <li class="subitem"><a href="#" class="is-capitalized"
+                                                           v-if="user.role === 'admin' || 'publisher'">
+                                        {{user.role}} Role</a></li>
 
-                                <router-link @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">
-                                    <i class="fas fa-external-link-alt px-1"></i>Manage
-                                    Account
-                                </router-link>
-                                <li class="py-2">Enrollments</li>
-                                <router-link :to="{name:'Cart'}" class="py-2">
-                                    <i class="far fa-shopping-cart"></i>({{cart.length}}) Carts items
-                                </router-link>
-                            </ul>
-                        </li>
+                                    <router-link @click="menuToggle" class="subitem" :to="{name:'UpdateAccount'}">
+                                        <i class="fas fa-external-link-alt px-1"></i>Manage
+                                        Account
+                                    </router-link>
+                                    <li class="py-2">Enrollments</li>
+                                </ul>
+                            </li>
+                        </ul>
+
                         <div @click="logOut" class=" item button__custom px-3">
                             <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button>
                         </div>
@@ -156,6 +155,10 @@
 
     nav {
         background: white;
+        box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+        color: #4a4a4a;
+
+
     }
 
     a {

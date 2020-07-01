@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div id="home">
 
         <section class="section">
             <div class="container has-text-left">
@@ -48,3 +48,9 @@
     components: {}
   };
 </script>
+
+<style scoped>
+    #home{
+        height: 100vh;
+    }
+</style>

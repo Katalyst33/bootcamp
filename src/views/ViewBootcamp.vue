@@ -1,6 +1,8 @@
 <template>
     <div>
-        <Breadcrumbs/>
+       <div id="breadcrumbs" >
+           <Breadcrumbs  class="container"/>
+       </div>
         <template>
             <div v-if="loaded === true" class="section">
                 <div class="container">
@@ -10,7 +12,7 @@
                                 <div>
                                     <div class="has-text-left">
                                         <h1 class="is-size-2 has-text-weight-semibold">{{bootcamp.data.name}}</h1>
-                                        <p class="py-3">{{bootcamp.data.description}}</p>
+                                        <p class="py-3 is-size-5">{{bootcamp.data.description}}</p>
                                         <h4 class="is-size-5 has-text-weight-semibold ">Average Course Cost:<span
                                                 class="has-text-primary">${{bootcamp.data.averageCost | thousand_separator}}</span>
                                         </h4>
@@ -45,12 +47,14 @@
                                                                     <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
                                                                 </li>
                                                                 <li class="my-2"><i
-                                                                        class="fad fa-graduation-cap pr-2"></i>Scholarship
-                                                                    Available:
-                                                                    <i v-if="course.scholarshipAvailable === true "
-                                                                       class="fas fa-check-circle has-text-success is-size-4"></i>
-                                                                    <i v-else
-                                                                       class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
+                                                                        class="fad fa-graduation-cap pr-2"></i>Scholarship:
+
+                                                                    <span v-if="course.scholarshipAvailable === true ">  Available<i
+                                                                          class="fas fa-check-circle has-text-success is-size-4 pl-2"></i></span>
+                                                                    <span v-else>Not Available
+                                                                        <i
+                                                                           class="fas fa-times-circle  has-text-danger  is-size-4 px-3"></i>
+                                                                    </span>
 
                                                                 </li>
                                                             </ul>
@@ -221,6 +225,8 @@
 </script>
 
 <style scoped>
+
+
     .box-border {
         border-style: solid;
         border-color: #d7d7d7;
