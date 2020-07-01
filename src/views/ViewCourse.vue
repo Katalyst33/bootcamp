@@ -64,14 +64,14 @@
 
                             <div class="has-background-white px-5 is-size-6">
                                 <div class="has-background-white py-3 has-text-left is-size-5">
-                                  <div class="price-tag">
-                                      <p class="is-size-1 has-text-weight-bold has-text-centered"
-                                         :class="{'strike  has-text-grey':course.data.isFree}"
-                                      >
-                                          ${{course.data.tuition}}
-                                      </p>
-                                      <p v-if="course.data.isFree" class="dot">free</p>
-                                  </div>
+                                    <div class="price-tag">
+                                        <p class="is-size-1 has-text-weight-bold has-text-centered"
+                                           :class="{'strike  has-text-grey':course.data.isFree}"
+                                        >
+                                            ${{course.data.tuition}}
+                                        </p>
+                                        <p v-if="course.data.isFree" class="dot">free</p>
+                                    </div>
 
                                     <p class=" is-capitalized"><i class="fad fa-users pr-2"></i>Students:<span
                                             class="is-capitalized is-size-4">5</span></p>
@@ -94,24 +94,26 @@
 
 
                                 <div class="pb-5">
-
                                     <br>
                                     <template v-if="!course.data.isFree">
-
+                                        {{course.data._id}}
 
                                         <template v-if="!course.data.isFree">
                                             <button v-if="coursesInCart.includes(course.data._id)"
-                                                    @click.prevent="removeFromCart(course)"
+                                                    @click.prevent="removeFromCart(course.data)"
                                                     class="button is-danger  is-fullwidth is-large is-primary">
                                                 Remove from cart
                                             </button>
                                             <button v-else
-                                                    @click.prevent="addToCart(course)"
+                                                    @click.prevent="addToCart(course.data)"
                                                     class="button is-success is-fullwidth is-large  is-primary ">
                                                 Add to Cart
                                             </button>
                                         </template>
-                                        <button  @click="buyNow" class="button is-primary is-fullwidth  is-large is-outlined my-4">Buy Now</button>
+                                        <button @click="buyNow"
+                                                class="button is-primary is-fullwidth  is-large is-outlined my-4">Buy
+                                            Now
+                                        </button>
 
                                     </template>
 
@@ -222,17 +224,15 @@
         });
       },
 
-      buyNow(){
+      buyNow() {
         this.addToCart();
 
-      },
+      }
 
 
+    }
 
-
-    },
-
-  }
+  };
 </script>
 
 <style scoped>
@@ -258,7 +258,8 @@
     .strike {
         text-decoration: line-through;
     }
-    .price-tag{
+
+    .price-tag {
         display: flex;
     }
 
@@ -271,7 +272,7 @@
         line-height: 25px;
         text-align: center;
         -webkit-border-radius: 10%;
-        -moz-border-radius:10%;
+        -moz-border-radius: 10%;
         border-radius: 10%;
 
     }
