@@ -54,7 +54,6 @@
                                 </div>
                             </div>
 
-
                             <div class="mt-5">
                                 <h3 class="is-size-4">Pay with Paystack.</h3>
                                 <PayStack :ref-id="course.data._id" :amount="course.data.tuition"/>
