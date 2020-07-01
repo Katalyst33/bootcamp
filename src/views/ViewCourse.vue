@@ -99,8 +99,8 @@
                                     <template v-if="!course.data.isFree">
 
 
-                                        <template v-if="!course.isFree">
-                                            <button v-if="coursesInCart.includes(course._id)"
+                                        <template v-if="!course.data.isFree">
+                                            <button v-if="coursesInCart.includes(course.data._id)"
                                                     @click.prevent="removeFromCart(course)"
                                                     class="button is-danger  is-fullwidth is-large is-primary">
                                                 Remove from cart
@@ -111,7 +111,7 @@
                                                 Add to Cart
                                             </button>
                                         </template>
-                                        <button class="button is-primary is-fullwidth  is-large is-outlined my-4">Buy Now</button>
+                                        <button  @click="buyNow" class="button is-primary is-fullwidth  is-large is-outlined my-4">Buy Now</button>
 
                                     </template>
 
@@ -210,6 +210,8 @@
           icon: "success",
           text: "Course has been added to cart"
         });
+
+
       },
 
       removeFromCart(course) {
@@ -218,7 +220,12 @@
           icon: "success",
           text: "Course has been removed from cart"
         });
-      }
+      },
+
+      buyNow(){
+        this.addToCart();
+
+      },
 
 
 

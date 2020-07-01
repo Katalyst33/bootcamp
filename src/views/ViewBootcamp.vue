@@ -18,6 +18,7 @@
                                         </h4>
                                     </div>
                                     <hr>
+
                                     <div v-if="courses.data">
                                         <template v-for="(course, index) in courses.data">
                                             <div :key="index">
@@ -63,7 +64,7 @@
                                                                     <div class="column is-4">
                                                                         <div class="price-tag pt-3">
                                                                             <p class="is-size-1 has-text-weight-bold has-text-centered"
-                                                                               :class="{'strike  has-text-grey':course.isFree}"
+                                                                               :class="{'strike  has-text-greysss':course.isFree}"
                                                                             >
                                                                                 ${{course.tuition}}
                                                                             </p>
