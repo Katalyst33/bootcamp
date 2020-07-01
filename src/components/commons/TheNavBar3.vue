@@ -1,6 +1,7 @@
 <template>
     <div>
         <nav>
+
             <ul :class="toggleMenu" class="menu has-text-primary ">
                 <li class="logo">
                     <router-link to="/"><img class="logo__img pr-2 " src="/logo.png"><span
@@ -16,14 +17,13 @@
                         <div class="item my-3">
                             <router-link :to="{name:'Cart'}">
                                 <div>
-                                  <div class="cart">
-                                      <p><i class="far fa-shopping-cart is-size-4"></i></p>
-                                      <div>
-                                          <p class="dot ml-2 has-text-weight-bold is-size-5">{{cart.length}}</p>
-                                          <p>Cart</p>
+                                    <i v-if="cart.length === 0" class="far fa-shopping-cart is-size-4"></i>
+                                   <template v-else>
+                                       <i  class="far fa-shopping-cart is-size-4"></i>
+                                       <span class='badge badge-warning has-text-weight-bold ' id='lblCartCount'> {{cart.length}}</span>
 
-                                      </div>
-                                  </div>
+                                   </template>
+
 
                                 </div>
                             </router-link>
@@ -158,20 +158,7 @@
 </script>
 
 <style scoped>
-    .dot {
-        background: #f15622;
-        color: #ffffff;
-        display: block;
-        font-size: 10px;
-        height: 22px;
-        width: 22px;
-        line-height: 25px;
-        text-align: center;
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        margin-top: -35%;
-    }
+
 
     .cart {
         display: flex;
@@ -357,6 +344,40 @@
 
 
     }
+
+    .badge {
+        padding-left: 9px;
+        padding-right: 9px;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+        border-radius: 9px;
+    }
+
+    .label-warning[href],
+    .badge-warning[href] {
+        background-color: #c67605;
+    }
+    #lblCartCount {
+        font-size: 12px;
+        background: #f15622;
+        color: #fff;
+        height: 22px;
+        width: 22px;
+
+
+        padding: 0 5px;
+        vertical-align: top;
+        margin-left: -5px;
+        text-align: center;
+
+
+
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
+
+
 
 
 </style>

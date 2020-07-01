@@ -40,17 +40,17 @@
 
                                                             <div class="py-2 has-text-weight-semibold">
                                                                 <div class="columns">
-                                                                    <div class="column">
-                                                                        <p class="my-2">
+                                                                    <div class="column is-size-5">
+                                                                        <p class="my-2 ">
                                                                             <i
-                                                                                    class="fad fa-lightbulb-on pr-2"></i>Skill
+                                                                                    class="fad fa-lightbulb-on pr-2 "></i>Skill
                                                                             Required:
-                                                                            <span class="is-size-5 has-text-weight-semibold">{{course.minimumSkill}}</span>
+                                                                            <span class="is-size-5 has-text-weight-semibold is-capitalized">{{course.minimumSkill}}</span>
 
                                                                         </p>
                                                                         <p class="my-2">
                                                                             <i
-                                                                                    class="fad fa-graduation-cap pr-2"></i>Scholarship:
+                                                                                    class="fad fa-graduation-cap pr-2 "></i>Scholarship:
 
                                                                             <span v-if="course.scholarshipAvailable === true ">  Available<i
                                                                                     class="fas fa-check-circle has-text-success is-size-4 pl-2"></i></span>
@@ -118,7 +118,7 @@
                                 <p class="has-text-left has-text-dark "><span
                                         class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating | roundOff}}</span>
                                     Rating</p>
-                                <ul class="has-text-left">
+                                <ul class="has-text-left is-size-4 ">
                                     <hr>
 
                                     <li><i class="fas fa-home-alt pr-2"></i>Housing:
