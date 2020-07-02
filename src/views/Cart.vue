@@ -37,11 +37,12 @@
 
                                 <h3 class="is-size-4">Total:</h3>
                                 <h1 class="is-size-1 has-text-weight-bold">{{totalItem}}</h1>
-                                <button @click="checkout" class="button is-success is-fullwidth is-large">Checkout
-                                </button>
+                                <PayStack :amount="totalItem"/>
                             </div>
                         </div>
                     </div>
+
+
 
 
                 </div>
@@ -51,9 +52,11 @@
 </template>
 
 <script>
+  import PayStack from "../components/PayStackTotal";
   import { mapGetters, mapState } from "vuex";
 
   export default {
+    components: { PayStack },
 
     computed: {
       ...mapState(["cart"]),
