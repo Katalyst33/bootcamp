@@ -81,7 +81,7 @@ const BootcampSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
-      default: "null-devcamp-dark.png",
+      default: "bootcamp-img-dark.png",
     },
     housing: {
       type: Boolean,

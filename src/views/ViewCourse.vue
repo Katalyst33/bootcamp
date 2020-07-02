@@ -30,23 +30,24 @@
                                 </div>
                             </div>
 
+                            <h4 class="is-size-4 py-2 mt-5">Course Reviews</h4>
+
                             <div class="my-3 has-background-white pl-2">
-                                <h4 class="is-size-4 py-4">Course Reviews</h4>
                                 <div v-for="review in reviews.data" :key="review._id">
                                     <div class="columns">
                                         <div class="column is-4 avatar">
                                             <img class="profile__pix" src="/img/assets/user.png">
                                             <div class="pl-3 has-text-left">
-                                                <p>{{review.createdAt | agoDate}}</p>
+                                                <p class="is-capitalized">{{review.createdAt | agoDate}}</p>
 
                                                 <p class="has-text-weight-bold">{{review.user.name}}</p>
                                             </div>
                                         </div>
                                         <div class="column has-text-left">
                                             <div class="m-0 ml-md-3">
-                                                <p class="is-size-5 has-text-weight-bold"> rating: {{review.rating}}</p>
+                                                <p class="is-size-5 has-text-weight-bold"> Rating: {{review.rating}}</p>
                                                 <p class="is-size-5 is-capitalized">{{review.title}}</p>
-                                                <p class="is-size-6">{{review.text}}</p>
+                                                <p class="is-size-6 ">{{review.text}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -55,8 +56,8 @@
                             </div>
 
                             <div class="mt-5">
-                                <h3 class="is-size-4">Pay with Paystack.</h3>
-                                <PayStack :ref-id="course.data._id" :amount="course.data.tuition"/>
+<!--                                <h3 class="is-size-4">Pay with Paystack.</h3>-->
+<!--                                <PayStack :ref-id="course.data._id" :amount="course.data.tuition"/>-->
                             </div>
                         </div>
                         <div class="column is-4 ">
@@ -143,10 +144,9 @@
   import { formattedDate, agoDate } from "../utils";
   import { mapGetters } from "vuex";
 
-  import PayStack from "../components/PayStack";
 
   export default {
-    components: { PayStack },
+
     data() {
       return {
         reviews: [],
@@ -196,14 +196,14 @@
           .catch();
       },
       enrollCourse(code) {
+
         this.$http.post(`/api/v1/courses/${code}/enrollments`);
         this.$swal.fire({
           icon: "success",
           text: "You have successfully enrolled for this course",
           imageAlt: "Custom image"
         });
-        this.fetchCourses();
-        this.fetchReviews();
+
       },
       addToCart(course) {
         this.$store.commit("SET_CART", course);

@@ -42,16 +42,16 @@ exports.addEnrollment = asyncHandler(async (req, res, next) => {
 //@route GET /api/v1/enrollments/
 //@access Public
 
-exports.getEnrollments = asyncHandler(async (req, res) =>{
+exports.getEnrollments = asyncHandler(async (req, res, next) =>{
   let populateQuery = [
     {    path:"user", select:"name"  },
+    { path: "course", select: "title" }
 
     ];
  if(req.params.courseId){
    const enrollments = await  Enrollment.find({
-     bootcamp:req.params.bootcampId,
+     course:req.params.courseId,
    }).populate(populateQuery);
-
    return  res.status(200).json({
      success:true,
      count:enrollments.length,

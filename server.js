@@ -93,6 +93,7 @@ app.use("/api/v1/course-reviews",courseReviews);
 app.use("/api/v1/enrollments", enrollments);
 app.use("/api/v1/transactions", transactions)
 
+
 //Set static folder
 // app.use(express.static(path.join(__dirname, "public")));
 // app.use(express.static(path.join(__dirname, "/dist/")));

@@ -2,15 +2,16 @@
     <div>
 
         <div class="section">
-            <div class="container "><h1>Login here !!!</h1>
-                {{user}}
+            <div class="container ">
+
+
                 <h1 v-if="isRegister" class="is-size-3 has-text-danger">Registration form</h1>
                 <h1 v-else class="is-size-3 has-text-danger">login form</h1>
 
                 <section class="my-5">
                     <div class="columns is-mobile">
-                        <div class="column  is-half-desktop is-offset-one-quarter-desktop has-background-white">
-                            <section class="has-text-left">
+                        <div class="column is-half is-offset-one-quarter has-background-white">
+                            <section class="has-text-left py-3 px-3">
                                 <div v-if="isRegister" class="field">
                                     <label class="label">Name:</label>
                                     <div class="control">
@@ -57,19 +58,15 @@
                                     to add it to DevCamper.
                                 </p>
                             </section>
-                            <div class="field is-grouped mt-5">
-                                <p class="control">
-                                    <button v-if="isRegister" @click="signUp" class="button is-primary">Sign up</button>
+                            <div class="field is-grouped my-5 ml-4 ">
 
-                                    <button v-else @click="login" class="button is-primary">Login</button>
-                                </p>
+                                <button v-if="isRegister" @click="signUp" class="button is-primary is-fullwidth">Sign
+                                    up
+                                </button>
 
-                                <p class="control">
-                                    <button @click="logOut" class="button is-danger">Log Out</button>
-                                </p>
-                                <p class="control">
-                                    <button @click="localCheck" class="button is-warning">Local Storage</button>
-                                </p>
+                                <button v-else @click="login" class="button is-primary  ">Login <i v-if="spinner"
+                                        class=" ml-2 fad fa-spinner-third fa-spin is-size-4"></i></button>
+
 
                             </div>
 
@@ -79,9 +76,7 @@
                 </section>
             </div>
         </div>
-        <template>
-            <json-view :data="form"/>
-        </template>
+
 
     </div>
 </template>
@@ -94,6 +89,7 @@
 
     data() {
       return {
+        spinner:false,
         error: null,
         form: {
           email: "admin@gmail.com",
@@ -122,21 +118,6 @@
 
       },
 
-      async logOut() {
-
-        try {
-          await this.$http.get("/api/v1/auth/logout");
-          await this.$store.commit("SET_USER");
-          console.log("logout successfully");
-          await this.$store.dispatch("getCurrentUser");
-          localStorage.clear();
-
-        } catch (e) {
-          return e;
-        }
-
-
-      },
       checkUser() {
         this.$http.get("/api/v1/auth/me")
           .then(({ data }) => {
@@ -147,9 +128,13 @@
           });
       },
 
-      async login() {
 
+
+      async login() {
         try {
+
+
+
           await this.$http.post("/api/v1/auth/login", this.form);
           await this.$swal.fire({
             icon: "success",
@@ -157,6 +142,8 @@
             imageAlt: "Custom image"
           });
           await this.$store.dispatch("getCurrentUser");
+          await this.$router.push({ name: "Home"});
+
         } catch (error) {
           await this.$swal.fire({
             icon: "error",
@@ -176,6 +163,7 @@
             text: "YOu have successfully Registered, you will be redirected shortly"
           });
           await this.$store.dispatch("getCurrentUser");
+
         } catch (error) {
           await this.$swal.fire({
             icon: "error",
