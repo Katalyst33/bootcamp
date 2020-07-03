@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <h1 class="is-size-1 has-text-weight-bold">Edit user</h1>
 
         <div class="columns is-mobile">

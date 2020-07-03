@@ -27,6 +27,8 @@ const UpdateAndReset = () =>
 Vue.use(VueRouter);
 
 import xxRoutes from "./xxxRoutes";
+import accountRoutes from "./accountRoutes";
+
 
 const routes = [
   {
@@ -53,6 +55,7 @@ const routes = [
     component: LoginAndRegister,
   },
   xxRoutes,
+  accountRoutes,
 
   {
     path: "/bootcamp/",
@@ -104,16 +107,7 @@ const routes = [
     name: "ResetPassword",
     component: UpdateAndReset,
   },
-  {
-    path: "/update-account",
-    name: "UpdateAccount",
-    component: UpdateAndReset,
-  },
-  {
-    path: "/update-password",
-    name: "UpdatePassword",
-    component: UpdateAndReset,
-  },
+
   {
     path: "/404",
     alias: "*",

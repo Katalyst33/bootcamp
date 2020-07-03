@@ -1,7 +1,9 @@
 <template>
     <div>
+        <p>Use talabat user account disp;ay</p>
         <div class="section">
             <div class="container">
+
 
                 <div class="columns is-mobile">
                     <div class="column is-three-fifths-desktop is-three-fifths-tablet is-offset-one-fifth-desktop is-offset-one-fifth-tablet has-background-white has-text-left">
@@ -82,7 +84,7 @@
 
                             <div v-if="isUpdateAccount" class="columns">
                                 <div class="column">
-                                    <button @click="updateAccount" class="button is-primary">Save</button>
+                                    <button @click="updateAccount" class="button is-primary">Update</button>
                                 </div>
                                 <div class="column">
                                     <router-link :to="{name:'UpdatePassword'}" class="button is-dark">Update

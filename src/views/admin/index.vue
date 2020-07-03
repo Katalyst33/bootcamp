@@ -12,21 +12,21 @@
         </header>
 
         <div class="columns is-mobile">
-            <div class="column is-1-desktop  has-background-dark" :class="toggleMenu">
+            <div class="column is-narrow-desktop  has-background-dark" :class="toggleMenu">
                 <div class="menu " :class="toggleMenu">
                     <div class="has-text-primary  py-5 admin">
 
                         <ul class="has-text-white">
                             <li @click="menuToggle" class="nav-item">
                                 <router-link :to="{name:'AddBootcamp'}" class="has-text-white">
-                                    <i class="fal fa-layer-plus is-size-3"></i>
+                                    <i class="fal fa-layer-plus is-size-3"></i><br>
                                     Add Bootcamp
                                 </router-link>
                             </li>
                             <li @click="menuToggle" class="nav-item">
                                 <router-link :to="{name:'AllBootcampX'}" class="has-text-white">
                                     <i class="fal fa-warehouse is-size-3"></i><br>
-                                    All <br> Bootcamps
+                                    All  Bootcamps
                                 </router-link>
                             </li>
                             <li @click="menuToggle" class="nav-item">
@@ -59,56 +59,13 @@
                     </div>
                 </div>
             </div>
-            <div class="column is-11">
+            <div class="column">
                 <router-view></router-view>
 
             </div>
         </div>
 
 
-       <!-- <div class="main">
-            <div class="menu " :class="toggleMenu">
-                <div class="has-text-primary has-background-dark py-5 admin nav-menu">
-
-                    <ul class="has-text-white">
-                        <li @click="menuToggle" class="nav-item">
-                            <router-link :to="{name:'AddBootcamp'}" class="has-text-white" >
-                                <i class="far fa-layer-plus is-size-3"></i><br>
-                                Add <br> Bootcamp
-                            </router-link>
-                        </li>
-                        <li @click="menuToggle" class="nav-item">
-                            <router-link :to="{name:'AllBootcampX'}" class="has-text-white">
-                                <i class="fas fa-eye is-size-3"></i><br>
-                                All <br> Bootcamps
-                            </router-link>
-                        </li>
-                        <li @click="menuToggle" class="nav-item">
-                            <router-link :to="{name:'AllUsers'}" class="has-text-white">
-                                <i class="fas fa-user is-size-3"></i><br>
-                                User
-                            </router-link>
-                        </li>
-                        <li @click="menuToggle" class="nav-item">
-                            <router-link :to="{name:'ManageReviews'}" class="has-text-white">
-                                <i class="fas fa-quote-left is-size-3"></i><br>
-                                Reviews
-                            </router-link>
-                        </li>
-                        <li  class="nav-item " @click="logOut">
-                            <router-link :to="{name:'ManageReviews'}" class="has-text-white">
-                                <i class="fad fa-sign-out-alt is-size-1 has-text-danger"></i><br>
-                                Logout
-                            </router-link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="page-content">
-                <router-view></router-view>
-
-            </div>
-        </div>-->
 
 
 
@@ -228,7 +185,7 @@
     }
 
     .nav-item {
-        border-bottom: 5px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
         padding: 10px 10px;
     }
 

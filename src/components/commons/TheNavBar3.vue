@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav>
+        <nav class="px-3">
 
             <ul :class="toggleMenu" class="menu has-text-primary ">
                 <li class="logo">
@@ -45,13 +45,14 @@
                                         Account
                                     </router-link>
                                     <li class="py-2">Enrollments</li>
+                                    <li @click="logOut" class=" item button__custom px-3">
+                                        <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
 
-                        <div @click="logOut" class=" item button__custom px-3">
-                            <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button>
-                        </div>
+
                         <router-link :to="{name:'AllBootcampX'}" v-if="user.role === 'admin'"
                                      class="item button__custom px-3">
                             <a class="button is-warning ">Administrator</a>

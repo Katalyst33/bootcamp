@@ -56,8 +56,8 @@
                             </div>
 
                             <div class="mt-5">
-<!--                                <h3 class="is-size-4">Pay with Paystack.</h3>-->
-<!--                                <PayStack :ref-id="course.data._id" :amount="course.data.tuition"/>-->
+                                <!--                                <h3 class="is-size-4">Pay with Paystack.</h3>-->
+                                <!--                                <PayStack :ref-id="course.data._id" :amount="course.data.tuition"/>-->
                             </div>
                         </div>
                         <div class="column is-4 ">
@@ -96,7 +96,7 @@
                                 <div class="pb-5">
                                     <br>
                                     <template v-if="!course.data.isFree">
-                                        {{course.data._id}}
+
 
                                         <template v-if="!course.data.isFree">
                                             <button v-if="coursesInCart.includes(course.data._id)"
@@ -120,10 +120,15 @@
 
                                 </div>
                                 <div class="has-background-white my-3 py-3">
-                                    <h1 class="is-size-4 has-text-left"> Enrolled Students
+                                    <h1 class="is-size-5 has-text-left"> Enrolled Students
                                     </h1>
                                     <div class="has-text-left">
-                                        <p>james anthony</p>
+                                        <template v-for="(enrollment, index) in enrollments.data" >
+                                            <div :key="enrollment._id">
+                                                <p class="is-capitalized">{{index + 1}}. {{enrollment.user.name}}</p>
+
+                                            </div>
+                                        </template>
                                     </div>
 
                                 </div>
@@ -152,7 +157,9 @@
         reviews: [],
         loaded: false,
         course: [],
-        loadedReview: false
+        loadedReview: false,
+        loadedEnrollment: false,
+        enrollments: []
 
       };
     },
@@ -171,8 +178,7 @@
 
 
     mounted() {
-      this.fetchReviews();
-      this.fetchCourse();
+     this.fetchAll();
     },
 
     methods: {
@@ -189,20 +195,37 @@
       fetchReviews() {
         const code = this.$route.params.id;
         this.$http.get(`/api/v1/courses/${code}/course-review`)
+
           .then(({ data }) => {
             this.reviews = data;
             this.loadedReview = true;
           })
           .catch();
       },
+      fetchCourseEnrollments() {
+        const code = this.$route.params.id;
+        this.$http.get(`/api/v1/courses/${code}/enrollment`)
+          .then(({ data }) => {
+            this.enrollments = data;
+            this.loadedEnrollment = true;
+          })
+          .catch();
+      },
+
+      //fetch all data
+      fetchAll(){
+        this.fetchReviews();
+        this.fetchCourse();
+        this.fetchCourseEnrollments();
+      },
       enrollCourse(code) {
-        this.$http.post(`/api/v1/courses/${code}/enrollment`,);
+        this.$http.post(`/api/v1/courses/${code}/enrollment`);
+        this.fetchAll();
         this.$swal.fire({
           icon: "success",
           text: "You have successfully enrolled for this course",
           imageAlt: "Custom image"
         });
-
       },
       addToCart(course) {
         this.$store.commit("SET_CART", course);
