@@ -58,10 +58,13 @@ exports.getCourseReviews = asyncHandler(async (req, res, next) => {
     { path: "user", select: "name" },
     { path: "course", select: "title" }
     ];
+  const reviewData = {
+    course: req.params.courseId,
+    // user: req.user.id
+  };
+
   if (req.params.courseId) {
-    const reviews = await CourseReview.find({
-      course: req.params.courseId
-    }).populate(populateQuery);
+    const reviews = await CourseReview.find(reviewData).populate(populateQuery);
 
     return res.status(200).json({
       success: true,
@@ -71,7 +74,9 @@ exports.getCourseReviews = asyncHandler(async (req, res, next) => {
   } else {
     res.status(200).json(res.advancedResults);
   }
+
 });
+
 
 
 //@desc Single Course Review

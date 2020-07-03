@@ -19,15 +19,18 @@ const { protect, authorize } = require("../middleware/auth");
 
 //Include other resoures router
 const enrollmentRouter = require("./enrollments");
+const reviewRouter = require("./course-review");
+
 
 
 router.use(protect);
-router.use(authorize("admin"));
+router.use(authorize("user"));
 
 //Re- route into other resource routers
 router.use("/:userId/enrollments", enrollmentRouter)
+router.use("/:userId/reviews",advancedResults(User, "user"), authorize("user"), reviewRouter)
 
-router.route("/").get(advancedResults(User), getUsers).post(createUser);
+router.route("/").get(protect, authorize("admin"), advancedResults(User), getUsers).post(createUser);
 
 router.route("/:id").get(getUser).put(updateUser).delete(deleteUser);
 

@@ -5,7 +5,7 @@ const {
   getCourseReviews,
   getCourseReview,
   updateCourseReview,
-  deleteCourseReview
+  deleteCourseReview,
 
 } = require("../controller/course-review");
 
@@ -25,10 +25,13 @@ const { protect, authorize } = require("../middleware/auth");
 router
 .route("/")
   .get(
-    advancedResults(CourseReview,{
-      path: "course",
-      select: "title",
-    }),getCourseReviews
+    advancedResults(CourseReview,[
+      {
+        path: "course",
+        select: "title",
+      },
+      { path: "user", select: "name" },
+    ]),getCourseReviews
   )
 .post(protect, authorize("user", "admin"), addCourseReview);
 

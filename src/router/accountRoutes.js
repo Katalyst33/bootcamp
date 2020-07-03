@@ -4,13 +4,13 @@ const UpdateAndReset = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/account/UpdateAndReset.vue");
 
 const Enrollments = () =>
-  import(/* webpackChunkName: "bootcamp" */ "../views/account/Enrollments.vue");
+  import(/* webpackChunkName: "bootcamp" */ "../views/account/UserEnrollments.vue");
 
 const Transactions = () =>
-  import(/* webpackChunkName: "bootcamp" */ "../views/account/Transactions.vue");
+  import(/* webpackChunkName: "bootcamp" */ "../views/account/UserTransactions.vue");
 
 const Reviews = () =>
-  import(/* webpackChunkName: "bootcamp" */ "../views/account/Reviews.vue");
+  import(/* webpackChunkName: "bootcamp" */ "../views/account/UserReviews.vue");
 
 
 
