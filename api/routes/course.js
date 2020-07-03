@@ -29,7 +29,7 @@ const { protect, authorize } = require("../middleware/auth");
 //Re-route into other resource routers
 router.use("/:courseId/reviews", reviewRouter);
 router.use("/:courseId/course-review", courseReviewRouter);
-router.use("/:courseId/enrollments", enrollmentRouter);
+router.use("/:courseId/enrollment", enrollmentRouter);
 
 
 

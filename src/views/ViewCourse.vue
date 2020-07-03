@@ -196,8 +196,7 @@
           .catch();
       },
       enrollCourse(code) {
-
-        this.$http.post(`/api/v1/courses/${code}/enrollments`);
+        this.$http.post(`/api/v1/courses/${code}/enrollment`,);
         this.$swal.fire({
           icon: "success",
           text: "You have successfully enrolled for this course",

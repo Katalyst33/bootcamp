@@ -20,6 +20,7 @@ exports.addEnrollment = asyncHandler(async (req, res, next) => {
   }
 
   const course = await Course.findById(enrollmentData.course);
+  console.log("course display",course)
   if (!course) {
     return next(
       new ErrorResponse(`No course with the id of ${req.params.courseId}`, 404)
