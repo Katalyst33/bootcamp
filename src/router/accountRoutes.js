@@ -52,7 +52,7 @@ export default {
     },
     {
       path: "/reviews",
-      name: "Reviews",
+      name: "AllReviews",
       component: Reviews,
     },
   ],

@@ -39,12 +39,16 @@ export default new Vuex.Store({
             return console.log("get Me error ", error.response.data.error);
           });
       }, 100);
-    }
+    },
+
+
   },
 
   mutations: {
-    SET_CART: (state, cartItem) => {
+    SET_CART: (state, cartItem) =>
+    {
       state.cart.push(cartItem);
+
     },
     REMOVE_FROM_CART: (state, course) => {
       state.cart = state.cart.filter((item) => {

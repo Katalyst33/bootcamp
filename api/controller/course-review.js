@@ -76,6 +76,27 @@ exports.getCourseReviews = asyncHandler(async (req, res, next) => {
   }
 
 });
+//@desc Get User Course Reviews
+//@route GET /api/v1/course-reviews/userId
+//@access Public
+exports.getUserCourseReviews = asyncHandler(async (req, res, next) => {
+  let populateQuery = [
+    { path: "user", select: "name" },
+    { path: "course", select: "title" }
+  ];
+  const reviewData = {
+    user: req.user.id
+  };
+
+    const reviews = await CourseReview.find(reviewData).populate(populateQuery);
+
+    return res.status(200).json({
+      success: true,
+      count: reviews.length,
+      data: reviews
+    });
+
+});
 
 
 
@@ -154,3 +175,12 @@ exports.deleteCourseReview = asyncHandler(async (req, res, next) => {
 });
 
 
+// //
+// gvhb
+
+/*
+1) During our OCnversation, you mentioned laravel Nova admin dashbaord.
+but its not mentioned in this over view.
+2) Scheduling with a mobile application (In Progress)
+You specifically stated that, you only needed  laravel support for the project.
+*/

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <p>Use talabat user account disp;ay</p>
         <div class="section">
             <div class="container">
 
@@ -177,6 +176,8 @@
         name: this.user.name,
         email: this.user.email
       };
+
+
     },
 
     methods: {

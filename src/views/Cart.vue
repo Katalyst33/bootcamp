@@ -67,15 +67,8 @@
         this.cart.forEach(function(item) {
           sum += (parseFloat(item.tuition));
         });
-
         return sum;
       }
-
-
-
-    },
-    mounted() {
-      console.log(this.cartItem())
     },
 
     methods: {

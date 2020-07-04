@@ -182,6 +182,7 @@
     },
 
     methods: {
+      //fetch all data
       fetchCourse() {
         const code = this.$route.params.id;
         this.$http.get("/api/v1/courses/" + code)
@@ -218,6 +219,7 @@
         this.fetchCourse();
         this.fetchCourseEnrollments();
       },
+
       enrollCourse(code) {
         this.$http.post(`/api/v1/courses/${code}/enrollment`);
         this.fetchAll();

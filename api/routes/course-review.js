@@ -3,6 +3,7 @@ const express = require("express");
 const {
   addCourseReview,
   getCourseReviews,
+  getUserCourseReviews,
   getCourseReview,
   updateCourseReview,
   deleteCourseReview,
@@ -34,6 +35,8 @@ router
     ]),getCourseReviews
   )
 .post(protect, authorize("user", "admin"), addCourseReview);
+
+router.route("/:userId/").get(getUserCourseReviews)
 
 router
   .route("/:id")
