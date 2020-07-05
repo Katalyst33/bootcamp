@@ -14,6 +14,22 @@ exports.getCart = asyncHandler(async (req, res, next) =>{
 //@route GET /api/v1/carts/
 //@access Public
 
+exports.getUserCart = asyncHandler(async (req, res)=>{
+
+   const cart = await Cart.findOne({user: req.user.id})
+  if (!cart) {
+    res.status(200).json({
+      success: true,
+      data: {}
+    });
+  }
+  res.status(200).json({
+    success: true,
+    data: cart
+  });
+
+});
+
 exports.addCart = asyncHandler(async (req, res, next) => {
 
   const newCart = await  Cart.create( req.body)

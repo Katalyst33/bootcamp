@@ -3,6 +3,7 @@ const express = require("express");
 const {
   addCart,
   updateCart,
+  getUserCart
 
 
 } = require("../controller/cart");
@@ -18,6 +19,7 @@ const { protect, authorize } = require("../middleware/auth");
 router
   .route("/")
   .post(addCart)
+  .get(protect, authorize("user"), getUserCart)
 
 router
   .route("/:id")

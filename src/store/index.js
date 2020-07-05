@@ -38,8 +38,24 @@ export default new Vuex.Store({
           .catch((error) => {
             return console.log("get Me error ", error.response.data.error);
           });
-      }, 100);
+
+        }, 100);
     },
+
+    getCartItem:(context) =>{
+      axios
+      .get("/api/v1/cart")
+        .then(({ data: { data } }) => {
+          context.commit("SET_USER", data);
+        })
+        .catch((error) => {
+          return console.log("get Me error ", error.response.data.error);
+        });
+
+
+    }
+
+
 
 
   },
