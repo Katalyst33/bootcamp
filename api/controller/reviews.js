@@ -1,7 +1,6 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const Review = require("../models/Review");
-const Bootcamp = require("../models/Bootcamp-model");
 const Course = require("../models/Course");
 
 //@desc Get Reviews
