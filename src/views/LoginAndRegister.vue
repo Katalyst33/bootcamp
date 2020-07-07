@@ -65,7 +65,8 @@
                                 </button>
 
                                 <button v-else @click="login" class="button is-primary  ">Login <i v-if="spinner"
-                                        class=" ml-2 fad fa-spinner-third fa-spin is-size-4"></i></button>
+                                                                                                   class=" ml-2 fad fa-spinner-third fa-spin is-size-4"></i>
+                                </button>
 
 
                             </div>
@@ -89,7 +90,7 @@
 
     data() {
       return {
-        spinner:false,
+        spinner: false,
         error: null,
         form: {
           email: "admin@gmail.com",
@@ -110,29 +111,9 @@
 
     methods: {
 
-      localCheck() {
-
-        const vuexLocal = JSON.parse(localStorage.getItem("vuex"));
-
-        console.log("localstore", vuexLocal.user.role);
-
-      },
-
-      checkUser() {
-        this.$http.get("/api/v1/auth/me")
-          .then(({ data }) => {
-            console.log(data);
-          })
-          .catch(({ data }) => {
-            console.log(data);
-          });
-      },
-
-
 
       async login() {
         try {
-
 
 
           await this.$http.post("/api/v1/auth/login", this.form);
@@ -142,7 +123,7 @@
             imageAlt: "Custom image"
           });
           await this.$store.dispatch("getCurrentUser");
-          await this.$router.push({ name: "Home"});
+          await this.$router.push({ name: "Home" });
 
         } catch (error) {
           await this.$swal.fire({

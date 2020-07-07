@@ -71,10 +71,7 @@
       }
     },
 
-    mounted() {
-      console.log("All course cart",this.cart)
 
-    },
 
     methods: {
       removeFromCart(course) {

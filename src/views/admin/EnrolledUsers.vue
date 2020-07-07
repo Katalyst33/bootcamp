@@ -65,7 +65,7 @@
           this.enrollments = data;
           this.loaded = true;
         } catch (e) {
-          console.log(e)
+         return e;
         }
       },
 

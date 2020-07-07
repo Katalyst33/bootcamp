@@ -168,9 +168,6 @@
 
       // photoupload
       selectFile(event) {
-        if (event.lengthComputable) {
-          console.log(event.loaded / event.total * 100);
-        }
 
         const file = this.$refs.file.files[0];
         const allowedTypes = ["image/jpeg", "image/png", "image/gif"];

@@ -137,13 +137,7 @@
       };
     },
 
-    watch: {
-      form: {
-        currentPassword() {
-          console.log("i have changes");
-        }
-      }
-    },
+
 
     computed: {
 
@@ -182,12 +176,7 @@
 
     methods: {
 
-      checkForm() {
-        if (this.currentPassword.length < 5) {
-          console.log("length is less than 5 ");
-        }
 
-      },
 
       async forgotPassword() {
 
@@ -227,14 +216,12 @@
       async updatePassword() {
         try {
           await this.$http.put(`/api/v1/auth/updatepassword`, this.newFormData);
-          console.log("hello success");
 
           await this.$swal.fire({
             icon: "success",
             text: "Account updated Successfully"
           });
         } catch (error) {
-          console.log("hello error ");
 
           await this.$swal.fire({
             icon: "error",
