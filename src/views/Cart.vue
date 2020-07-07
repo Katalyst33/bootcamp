@@ -71,20 +71,21 @@
       }
     },
 
+    mounted() {
+      console.log("All course cart",this.cart)
+
+    },
+
     methods: {
       removeFromCart(course) {
         this.$store.commit("REMOVE_FROM_CART", course);
+        this.$store.dispatch("addCartItem");
         this.$swal.fire({
           icon: "success",
           text: "Course has been removed from cart"
         });
       },
 
-      checkout() {
-        // console.log(this.coursesInCartWithPrices);
-
-
-      },
 
       TotalCart(cartItems) {
         return cartItems.reduce((a, b) => a + b, 0);

@@ -1,12 +1,12 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
-const Cart = require("../models/Cart")
+const Cart = require("../models/Cart");
 
 
 //@desc Get Cart Items
 //@route GET /api/v1/carts/
 //@access Public
-exports.getCart = asyncHandler(async (req, res, next) =>{
+exports.getCart = asyncHandler(async (req, res, next) => {
   res.status(200).json(res.advancedResults);
 });
 
@@ -14,59 +14,66 @@ exports.getCart = asyncHandler(async (req, res, next) =>{
 //@route GET /api/v1/carts/
 //@access Public
 
-exports.getUserCart = asyncHandler(async (req, res)=>{
+exports.getUserCart = asyncHandler(async (req, res) => {
 
-   const cart = await Cart.findOne({user: req.user.id})
+  const cart = await Cart.findOne({ user: req.user.id });
   if (!cart) {
     res.status(200).json({
       success: true,
-      data: {}
+    });
+  } else {
+    res.status(200).json({
+      success: true,
+      cart
     });
   }
-  res.status(200).json({
-    success: true,
-    data: cart
-  });
+
 
 });
 
+//Stop undo herew
+
 exports.addCart = asyncHandler(async (req, res, next) => {
 
-  const newCart = await  Cart.create( req.body)
+  const cartData = {
+    user: req.user.id
+  };
 
+  let cart = await Cart.findOne(cartData)
+
+if(!cart){
+   cart = await Cart.create({
+    ...cartData,
+    ...{course:req.body}
+  });
+}else{
+
+   cart = await Cart.findOneAndUpdate(cartData,
+    {
+      ...{ courses: req.body },
+      ...{ user: req.user.id }
+    }, {
+      new: true
+    });
+  // console.log("REQ BODY HERE",{ courses: req.body })
   res.status(201).json({
     success: true,
-    data: newCart
+    data: cart
   });
+}
 
-})
 
-/*
-*  "courses": [
-            {
-                "_id": "5f01177a7adaa090d01fae3a",
-                "course": "5ef85cb9b7f6725193275041",
-                "price": 3000,
-                "title": "angular school"
-            },
-            {
-                "_id": "5f01177a7adaa090d01fae3b",
-                "course": "5ef66768e59b4f43a602d438",
-                "price": 4000,
-                "title": "react school"
-            }
-        ],
-* */
+});
 
 
 //@desc update Cart
 //@route PUT /api/v1/cart/:id
 //@access Public
 
-exports.updateCart = asyncHandler(async (req, res, next) =>{
+exports.updateCart = asyncHandler(async (req, res, next) => {
 
-  let cart =  await Cart.findById(req.params.id);
-  if(!cart){
+  let cart = await Cart.findOne({ user: req.user.id });
+  if (!cart) {
     return next(
       new ErrorResponse(`No Review with the id of ${req.params.id}`, 404)
     );
@@ -74,12 +81,12 @@ exports.updateCart = asyncHandler(async (req, res, next) =>{
 
   //make sure review belongs to user
 
-  if(cart.user.toString() !== req.user.id ){
+  if (cart.user.toString() !== req.user.id) {
     return next(new ErrorResponse(`Not authorised to update review`, 401));
 
   }
 
-  cart = await Cart.findByIdAndUpdate(req.params.id, req.body, {
+  cart = await Cart.findByIdAndUpdate(req.params.id, { $push: { cart: req.body } }, {
     new: true,
     runValidators: true
   });

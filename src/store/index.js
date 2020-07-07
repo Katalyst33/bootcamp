@@ -28,6 +28,11 @@ export default new Vuex.Store({
   },
 
   actions: {
+
+    currentCart() {
+      console.log("vuex all cart", this.state.cart);
+    },
+
     getCurrentUser: (context) => {
       setTimeout(function() {
         axios
@@ -39,30 +44,31 @@ export default new Vuex.Store({
             return console.log("get Me error ", error.response.data.error);
           });
 
-        }, 100);
+      }, 100);
     },
 
-    getCartItem:(context) =>{
-      axios
-      .get("/api/v1/cart")
-        .then(({ data: { data } }) => {
-          context.commit("SET_USER", data);
-        })
-        .catch((error) => {
-          return console.log("get Me error ", error.response.data.error);
-        });
 
+    async addCartItem({ commit }) {
+      const data = await axios.post("/api/v1/cart", this.state.cart);
+      commit("SET_CART", data);
 
+    },
+
+    async getCartItem({ commit }) {
+      const data = await axios.get("/api/v1/cart");
+      commit("GET_CART", data.data.cart.courses);
+      console.log("GET_CART", data.data.cart.courses);
     }
-
-
-
 
   },
 
   mutations: {
-    SET_CART: (state, cartItem) =>
-    {
+
+    GET_CART: (state, cart) => {
+      state.cart = cart;
+    },
+
+    SET_CART: (state, cartItem) => {
       state.cart.push(cartItem);
 
     },

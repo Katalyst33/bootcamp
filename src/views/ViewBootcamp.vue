@@ -197,6 +197,7 @@
     mounted() {
       this.fetchBootcamp();
       this.fetchCourses();
+
     },
 
     methods: {
@@ -222,6 +223,9 @@
 
       addToCart(course) {
         this.$store.commit("SET_CART", course);
+        this.$store.dispatch("addCartItem");
+
+
         this.$swal.fire({
           icon: "success",
           text: "Course has been added to cart"
@@ -230,6 +234,8 @@
 
       removeFromCart(course) {
         this.$store.commit("REMOVE_FROM_CART", course);
+        this.$store.dispatch("addCartItem");
+
         this.$swal.fire({
           icon: "success",
           text: "Course has been removed from cart"

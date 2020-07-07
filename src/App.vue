@@ -31,7 +31,7 @@
 
     computed: {
 
-      ...mapState(["user"]),
+      ...mapState(["user","cart"]),
 
       isAdminPage(){
         const pages = ["AllBootcampX","ManageReviews","AllBootcampX","AllUsers","UpdateUser","AddBootcamp","ManageBootcamp"]
@@ -42,6 +42,8 @@
     },
     mounted() {
       this.getMe();
+       this.$store.dispatch("getCartItem")
+
     },
 
     methods: {
@@ -49,6 +51,7 @@
         try {
        await this.$store.dispatch("getCurrentUser");
         // await console.log('get me data', data)
+
 
         } catch (error) {
           // return console.log('get me error',error)
