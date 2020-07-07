@@ -29,10 +29,6 @@ export default new Vuex.Store({
 
   actions: {
 
-    currentCart() {
-      console.log("vuex all cart", this.state.cart);
-    },
-
     getCurrentUser: (context) => {
       setTimeout(function() {
         axios

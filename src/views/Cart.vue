@@ -87,19 +87,6 @@
       },
 
 
-      TotalCart(cartItems) {
-        return cartItems.reduce((a, b) => a + b, 0);
-      },
-
-
-      cartItem() {
-        for (const course of this.cart) {
-          // return course.tuition;
-         return this.TotalCart([course.tuition])
-
-        }
-      }
-
 
     }
   };
