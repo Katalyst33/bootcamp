@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-<!--        <TheNavBar v-if="!isAdminPage"/>-->
+        <!--        <TheNavBar v-if="!isAdminPage"/>-->
         <TheNavBar3 v-if="!isAdminPage"/>
         <router-view v-if="loaded"/>
         <TheFooter/>
@@ -31,10 +31,10 @@
 
     computed: {
 
-      ...mapState(["user","cart"]),
+      ...mapState(["user", "cart"]),
 
-      isAdminPage(){
-        const pages = ["AllBootcampX","ManageReviews","AllBootcampX","AllUsers","UpdateUser","AddBootcamp","ManageBootcamp"]
+      isAdminPage() {
+        const pages = ["AllBootcampX", "ManageReviews", "AllBootcampX", "AllUsers", "UpdateUser", "AddBootcamp", "ManageBootcamp"];
         return pages.includes(this.$route.name);
 
       }
@@ -42,23 +42,21 @@
     },
     mounted() {
       this.getMe();
-       this.$store.dispatch("getCartItem")
-
+      this.$store.dispatch("getCartItem");
     },
 
     methods: {
       async getMe() {
         try {
-       await this.$store.dispatch("getCurrentUser");
-        // await console.log('get me data', data)
+          await this.$store.dispatch("getCurrentUser");
+          // await console.log('get me data', data)
 
 
         } catch (error) {
           // return console.log('get me error',error)
         }
       }
-    },
-
+    }
 
 
   };

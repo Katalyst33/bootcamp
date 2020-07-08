@@ -6,6 +6,7 @@ import VuexPersist from "vuex-persist";
 Vue.use(Vuex);
 
 const vuexLocal = new VuexPersist({
+  storage: window.sessionStorage,
   reducer: (state) => ({
     user: state.user,
     cart: state.cart
@@ -44,16 +45,13 @@ export default new Vuex.Store({
     },
 
 
-    async addCartItem({ commit }) {
-      const data = await axios.post("/api/v1/cart", this.state.cart);
-      commit("SET_CART", data);
-
+    async addCartItem() {
+      await axios.post("/api/v1/cart", this.state.cart);
     },
 
     async getCartItem({ commit }) {
-      const data = await axios.get("/api/v1/cart");
-      commit("GET_CART", data.data.cart.courses);
-      console.log("GET_CART", data.data.cart.courses);
+      const { data: { cart: { courses } } } = await axios.get("/api/v1/cart");
+      commit("GET_CART", courses);
     }
 
   },
@@ -64,9 +62,8 @@ export default new Vuex.Store({
       state.cart = cart;
     },
 
-    SET_CART: (state, cartItem) => {
+    PUSH_TO_CART: (state, cartItem) => {
       state.cart.push(cartItem);
-
     },
     REMOVE_FROM_CART: (state, course) => {
       state.cart = state.cart.filter((item) => {

@@ -19,7 +19,7 @@ exports.getUserCart = asyncHandler(async (req, res) => {
   const cart = await Cart.findOne({ user: req.user.id });
   if (!cart) {
     res.status(200).json({
-      success: true,
+      success: true
     });
   } else {
     res.status(200).json({
@@ -33,34 +33,34 @@ exports.getUserCart = asyncHandler(async (req, res) => {
 
 //Stop undo herew
 
-exports.addCart = asyncHandler(async (req, res, next) => {
+exports.addCart = asyncHandler(async (req, res) => {
 
   const cartData = {
     user: req.user.id
   };
 
-  let cart = await Cart.findOne(cartData)
+  let cart = await Cart.findOne(cartData);
 
-if(!cart){
-   cart = await Cart.create({
-    ...cartData,
-    ...{course:req.body}
-  });
-}else{
-
-   cart = await Cart.findOneAndUpdate(cartData,
-    {
-      ...{ courses: req.body },
-      ...{ user: req.user.id }
-    }, {
-      new: true
+  if (!cart) {
+    cart = await Cart.create({
+      ...cartData,
+      courses: req.body
     });
-  // console.log("REQ BODY HERE",{ courses: req.body })
-  res.status(201).json({
-    success: true,
-    data: cart
-  });
-}
+  } else {
+
+    cart = await Cart.findOneAndUpdate(cartData,
+      {
+        ...{ courses: req.body },
+        ...{ user: req.user.id }
+      }, {
+        new: true
+      });
+    // console.log("REQ BODY HERE",{ courses: req.body })
+    res.status(201).json({
+      success: true,
+      data: cart
+    });
+  }
 
 
 });

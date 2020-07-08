@@ -231,7 +231,7 @@
       },
       addToCart(course) {
 
-        this.$store.commit("SET_CART", course);
+        this.$store.commit("PUSH_TO_CART", course);
         this.$store.dispatch("addCartItem");
 
         this.$swal.fire({

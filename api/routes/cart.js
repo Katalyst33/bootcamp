@@ -4,8 +4,6 @@ const {
   addCart,
   updateCart,
   getUserCart
-
-
 } = require("../controller/cart");
 
 
