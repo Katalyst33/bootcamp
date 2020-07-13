@@ -11,12 +11,12 @@ module.exports = {
   devServer: {
     proxy: {
       "/api/": {
-        target: "http://localhost:5000/",
+        target: "http://localhost:2000/",
         ws: false,
         changeOrigin: true,
       },
       "/uploads": {
-        target: "http://localhost:5000",
+        target: "http://localhost:2000",
         ws: false,
         changeOrigin: true,
       },
@@ -24,4 +24,4 @@ module.exports = {
   },
 };
 
-console.log(__dirname);
+

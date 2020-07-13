@@ -1,4 +1,5 @@
 const advancedResults = (model, populate) => async (req, res, next) => {
+
   let query;
   //Copy req.query
   const reqQuery = { ...req.query };
@@ -71,6 +72,7 @@ const advancedResults = (model, populate) => async (req, res, next) => {
     pagination,
     data: results,
   };
+
   next();
 };
 

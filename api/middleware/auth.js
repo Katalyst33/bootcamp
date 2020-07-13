@@ -32,6 +32,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
   if (!req.user) {
     return next(new ErrorResponse("Not authorized to access this route", 401));
   }
+  console.log('Protect meee')
 
   return next();
 });

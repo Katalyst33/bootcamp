@@ -14,7 +14,7 @@
                                         <h1 class="is-size-2 has-text-weight-semibold">{{bootcamp.data.name}}</h1>
                                         <p class="py-3 is-size-5">{{bootcamp.data.description}}</p>
                                         <h4 class="is-size-5 has-text-weight-semibold ">Average Course Cost:<span
-                                                class="has-text-primary">${{bootcamp.data.averageCost | thousand_separator}}</span>
+                                                class="has-text-primary">${{bootcamp.data.averageCost}}</span>
                                         </h4>
                                     </div>
                                     <hr>
@@ -81,7 +81,7 @@
                                                         <div>
                                                             <router-link
                                                                     :to="{name:'ViewCourse', params:{id:course._id}} "
-                                                                    class="button is-grey is-outlined is-primary "> View
+                                                                    class="button is-grey is-outlined is-primary ">View
                                                                 Details
                                                             </router-link>
                                                             <template v-if="!course.isFree">
@@ -113,10 +113,12 @@
 
                         <div class="column is-4">
                             <div class="box">
-                                <img :src="`/uploads/${bootcamp.data.photo}`">
+                                <img :src="`/img/assets/${bootcamp.data.photo}`" alt="Placeholder image">
+
+<!--                                <img :src="`/uploads/${bootcamp.data.photo}`">-->
 
                                 <p class="has-text-left has-text-dark "><span
-                                        class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating | roundOff}}</span>
+                                        class="px-2 is-size-3 has-text-success font-weight-bold ">{{bootcamp.data.averageRating}}</span>
                                     Rating</p>
                                 <ul class="has-text-left is-size-4 ">
                                     <hr>

@@ -1,3 +1,5 @@
+import store from "../store/index";
+
 const index = () =>
   import(/* webpackChunkName: "Admin" */ "../views/admin/index");
 const AddBootcamp = () =>
@@ -29,18 +31,21 @@ const AddAndUpdateCourse = () =>
 const ManageReviews = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/ManageReviews.vue");
 
-const vuexLocal = JSON.parse(localStorage.getItem("vuex"));
 
 export default {
+
+
+
   path: "/xxx",
   component: index,
   beforeEnter: (to, from, next) => {
-    if (["user", "publisher"].includes(vuexLocal.user.role)) {
+    if (["user", "publisher"].includes(store.state.user.role)) {
       next({
         name: "login",
       });
     } else {
       next();
+      console.log("XXX GUARD")
     }
   },
 

@@ -42,7 +42,7 @@
     },
     mounted() {
       this.getMe();
-      this.$store.dispatch("getCartItem");
+      // this.$store.dispatch("getCartItem");
     },
 
     methods: {

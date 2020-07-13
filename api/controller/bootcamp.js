@@ -58,6 +58,7 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
   });
 });
 
+
 //@desc Update Bootcamp
 //@route PUT /api/v1/bootcamps/
 //@access Private

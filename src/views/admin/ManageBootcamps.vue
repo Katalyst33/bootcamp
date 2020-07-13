@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img v-if="!newImg" :src="`/uploads/${bootcamp.data.photo}`" alt="Placeholder image">
+                                <img v-if="!newImg" :src="`/img/assets/${bootcamp.data.photo}`" alt="Placeholder image">
                                 <img v-else :src="imageData" alt="Placeholder image">
                             </figure>
                         </div>
@@ -73,7 +73,7 @@
                             <span class="file-label is-size-5 has-text-primary has-text-weight-bold">
                                 Choose a file...
                             </span>
-                                            <span class="image-preview" v-if="imageData.length > 0">
+                                            <span class="image-preview" xv-if="imageData.length > 0">
                                 <img class="preview" :src="imageData">
                             </span>
 

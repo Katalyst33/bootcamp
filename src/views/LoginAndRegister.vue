@@ -113,26 +113,16 @@
 
 
       async login() {
-        try {
-
-
-          await this.$http.post("/api/v1/auth/login", this.form);
-          await this.$swal.fire({
-            icon: "success",
-            text: "Welcome back, you will be redirected shortly",
-            imageAlt: "Custom image"
-          });
+        const data = await this.$http.post("/api/v1/auth/login", this.form);
+        console.log(data);
+        if (data) {
           await this.$store.dispatch("getCurrentUser");
           await this.$router.push({ name: "Home" });
-
-        } catch (error) {
-          await this.$swal.fire({
-            icon: "error",
-            text: `${error.response.data.error}`
-          });
         }
 
       },
+
+
 
 
       async signUp() {
