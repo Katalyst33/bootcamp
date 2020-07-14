@@ -2,7 +2,7 @@ const Enrollment = require("../../api/models/Enrollment");
 const advancedResults = require("../../api/middleware/advancedResults");
 const Course = require("../../api/models/Course");
 const { protect, authorize } = require("../../api/middleware/auth");
-
+const Bootcamp = require("../../api/models/Bootcamp-model");
 
 
 /**
@@ -31,18 +31,18 @@ class CourseController extends $.controller {
   }
 
   static async getAllCourses({ res }) {
-    return res.status(200).json(res.advancedResults);
+    return res.json(res.advancedResults);
 
   }
 
-  static async getBootcampCourses({ req, res }) {
+  static async getCourses({ req, res }) {
 
     if (req.params.bootcampId) {
       const courses = await Course.find({
         bootcamp: req.params.bootcampId
       }).lean();
       if (!req.user) {
-        return res.status(200).json({
+        return res.json({
           success: true,
           count: courses.length,
           data: courses
@@ -56,18 +56,18 @@ class CourseController extends $.controller {
             })) > 0;
         }
       }
-      console.log(req.user);
-      return res.status(200).json({
+
+      return res.json({
         success: true,
         count: courses.length,
         data: courses
       });
     } else {
-      res.status(200).json(res.advancedResults);
+      res.json(res.advancedResults);
     }
   }
 
-  static async getOneCourse({ req, res}) {
+  static async getOneCourse({ req, res }) {
 
     let populateQuery = [
       {
@@ -78,9 +78,9 @@ class CourseController extends $.controller {
     ];
     const course = await Course.findById(req.params.courseId).populate(populateQuery).lean();
     if (!course) {
-      return res.json({error:"No Coursefound"})
+      return res.json({ error: "No Coursefound" });
 
-    }else {
+    } else {
       course.enrolled =
         (await Enrollment.count({
           course: course._id,
@@ -88,16 +88,93 @@ class CourseController extends $.controller {
         })) > 0;
 
 
-      res.status(200).json({
+      res.json({
         success: true,
         data: course
       });
     }
 
 
+  }
 
+  static async addCourse({ req, res }) {
+    req.body.bootcamp = req.params.bootcampId;
+    req.body.user = req.user.id;
+
+    const bootcamp = await Bootcamp.findById(req.params.bootcampId);
+    if (!bootcamp) {
+      return res.json({
+        error: `No Bootcamp was found`
+      });
+
+    }
+    //MAke sure is bootcamp owner
+    if (bootcamp.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return res.json({
+        error: ` You are not authorized to add a course to bootcamp `
+      });
+
+    }
+    const course = await Course.create(req.body);
+    res.json({
+      success: true,
+      data: course
+    });
 
   }
+
+
+  static async updateCourse({req, res}){
+    let course = await Course.findById(req.params.courseId);
+    if (!course) {
+      return res.json({
+        error: `No Course with the id of`
+      });
+
+    }
+    //MAke sure is USer id course owner
+    if (course.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return res.json({
+        error: `Your are not authorized to update course`
+      });
+
+
+    }
+    course = await Course.findByIdAndUpdate(req.params.courseId, req.body, {
+      new: true,
+      runValidators: true
+    });
+    console.log("COURSE DATA",  course)
+    res.status(200).json({
+      success: true,
+
+      data: course
+    });
+
+  }
+
+  static async deleteCourse({req, res}){
+    const course = await Course.findById(req.params.courseId);
+    if (!course) {
+      return res.json({
+        error: ` No Course found `
+      });
+
+    }
+    //Make sure is USer is course owner
+    if (course.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return res.json({
+        error: `you are not authorized to delete course `
+      });
+    }
+
+    await course.remove();
+    res.status(200).json({
+      success: true,
+      data: {}
+    });
+  }
+
 
 
 }

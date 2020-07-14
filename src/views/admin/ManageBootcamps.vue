@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img v-if="!newImg" :src="`/img/assets/${bootcamp.data.photo}`" alt="Placeholder image">
+                                <img v-if="!newImg" :src="`/uploads/${bootcamp.data.photo}`" alt="Placeholder image">
                                 <img v-else :src="imageData" alt="Placeholder image">
                             </figure>
                         </div>
@@ -198,14 +198,20 @@
       },
 
       async sendFile() {
+
         const formData = new FormData();
+        // console.log("SELECTED FILE", formData )
+
         formData.append("file", this.file);
+
         try {
           const code = this.$route.params.id;
 
           await this.$http.put(`/api/v1/bootcamps/${code}/photo`, formData);
           this.message = "File has been uploaded";
           this.error = false;
+          console.log("SELECTED FILE", this.file)
+
           this.file = "";
 
         } catch (err) {

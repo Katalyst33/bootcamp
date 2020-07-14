@@ -1,5 +1,7 @@
+const path = require("path");
 const Bootcamp = require("../../api/models/Bootcamp-model");
 const advancedResults = require("../../api/middleware/advancedResults");
+const { protect, authorize } = require("../../api/middleware/auth");
 
 /**
  * BootcampController
@@ -14,7 +16,12 @@ class BootcampController extends $.controller {
    */
   static middleware() {
     return {
-      "@getAllBootcamps": advancedResults(Bootcamp)
+      "@getAllBootcamps": advancedResults(Bootcamp),
+
+      "@uploadBootcampPhoto": [
+        protect,
+        authorize("admin", "publisher")
+      ]
 
     };
   }
@@ -37,14 +44,16 @@ class BootcampController extends $.controller {
 
   static getAllBootcamps({ res }) {
 
-    return res.status(200).json(res.advancedResults);
+    return res.json(res.advancedResults);
 
   }
 
 
   static async getOneBootcamp({ res }, { bootcamp }) {
     // const bootcamp = await Bootcamp.findById(req.params.bootcampId);
-    res.status(200).json({
+
+
+    res.json({
       success: true,
       data: bootcamp
     });
@@ -85,7 +94,7 @@ class BootcampController extends $.controller {
     }
 
     bootcamp.remove();
-    res.status(200).json({
+    res.json({
       success: true,
       data: {}
     });
@@ -93,10 +102,101 @@ class BootcampController extends $.controller {
 
   }
 
-  static async updateBootcamp({req, res},{bootcamp}){
+  static async updateBootcamp({ req, res }, { bootcamp }) {
+    if (!bootcamp) {
+      return res.json({
+        error: `Bootcamp was not found`
+      });
+    }
+    //Make sure user is bootcamp owner
+    if (bootcamp.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return res.json({
+        error: `You are not authorized to update this bootcamp`
+      });
+
+    }
+
+    bootcamp = await Bootcamp.findOneAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+
+    res.json({
+      success: true,
+      data: bootcamp
+    });
 
 
   }
+
+  static async uploadBootcampPhoto({ req, res }, { bootcamp }) {
+    //MAke sure is bootcamp owner
+    if (bootcamp.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return res.json({
+        error: `Your are  not authorized to access this route`
+      });
+
+    }
+
+    if (!req.files) {
+
+      return res.json({
+        error: `please upload a file`
+      });
+
+
+    }
+    console.log("REQ_FILE", req.files.file);
+
+    const file = req.files.file;
+    if (!file.mimetype.startsWith("image")) {
+      return res.json({
+        error: `Please upload an image file`
+      });
+    }
+
+    //Check file size
+    if (file.size > process.env.MAX_FILE_UPLAOD) {
+
+      return res.json({
+        error: `Please upload an image less than
+    ${process.env.MAX_FILE_UPLAOD}`
+      });
+    }
+
+
+    //Check file size
+    if (file.size > process.env.MAX_FILE_UPLAOD) {
+      return res.json({
+        error: `Please upload an image less than
+    ${process.env.MAX_FILE_UPLAOD}`
+      });
+
+    }
+    //create custom file name
+    file.name = `photo_${bootcamp._id}${path.parse(file.name).ext}`;
+    file.mv(`${process.env.FILE_UPLAOD_PATH}/${file.name}`, async (err) => {
+      if (err) {
+        console.error(err);
+
+        return res.json({
+          error: `Problem with file upload`
+        });
+
+      }
+
+      await Bootcamp.findByIdAndUpdate(bootcamp._id, { photo: file.name });
+
+      res.json({
+        success: true,
+        data: file.name
+      });
+    });
+    console.log(file.name);
+
+
+  }
+
 
 }
 

@@ -36,7 +36,7 @@
                                 <date-picker v-model="course.data.startDate" type="date" format="YYYY-MM-DD"/>
 
                                 {{course.data.startDate}}
-                                {{momentDate}}
+
                             </div>
                         </div>
                         <div class="column">
@@ -129,7 +129,6 @@
 
           }
         }
-
       };
     },
 
@@ -149,7 +148,6 @@
     },
 
     mounted() {
-
 
       this.makeRequest();
     },
@@ -203,11 +201,12 @@
         try {
           const code = this.$route.params.id;
           await this.$http.put(`/api/v1/courses/${code}`, this.newCourseData);
-          await this.$swal.fire({
+
+          this.$swal.fire({
             icon: "success",
             text: "Course was Updated Successfully, you will now be redirected"
           });
-          await this.$router.push({ name: "ManageCourse" });
+         this.$router.push({ name: "ManageCourse",  params:{id:this.newCourseData.bootcamp._id}});
 
         } catch (error) {
           await this.$swal.fire({

@@ -113,7 +113,7 @@
 
                         <div class="column is-4">
                             <div class="box">
-                                <img :src="`/img/assets/${bootcamp.data.photo}`" alt="Placeholder image">
+                                <img :src="`/uploads/${bootcamp.data.photo}`" alt="Placeholder image">
 
 <!--                                <img :src="`/uploads/${bootcamp.data.photo}`">-->
 

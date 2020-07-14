@@ -45,7 +45,7 @@ export default {
       });
     } else {
       next();
-      console.log("XXX GUARD")
+
     }
   },
 

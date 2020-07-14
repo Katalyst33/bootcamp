@@ -8,7 +8,7 @@ const lodashOmit = require("lodash.omit");
 //@desc Get all bootcamps
 //@route GET /api/v1/bootcamps
 //@access Public
-exports.getBootcamps = asyncHandler(async (req, res, next) => {
+exports.getBootcamps = asyncHandler(async (req, res) => {
   res.status(200).json(res.advancedResults);
 });
 
@@ -118,7 +118,7 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
 //@desc Get bootcamps within a radius
 //@route GET /api/v1/bootcamps/radius/:zipcode/:distance
 //@access Private
-exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
+exports.getBootcampsInRadius = asyncHandler(async (req, res) => {
   const { zipcode, distance } = req.params;
 
   //Get lat/lng from geocoder
@@ -159,7 +159,7 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== "admin") {
     return next(
       new ErrorResponse(
-        `User ${req.params.id} is not authorized to delete this bootcamp`,
+        `User ${req.params.id} is not authorized to access this route`,
         401
       )
     );
