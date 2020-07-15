@@ -1,8 +1,9 @@
 const Enrollment = require("../../api/models/Enrollment");
 const advancedResults = require("../../api/middleware/advancedResults");
 const Course = require("../../api/models/Course");
-const { protect, authorize } = require("../../api/middleware/auth");
 const Bootcamp = require("../../api/models/Bootcamp-model");
+const { protect, authorize } = require("../../api/middleware/auth");
+
 
 
 /**
@@ -20,13 +21,24 @@ class CourseController extends $.controller {
     return {
 
       "@getAllCourses": [
-        /*     protect,
-             authorize("admin"),*/
+
         advancedResults(Course, {
           path: "bootcamp",
           select: "name description"
         })
-      ]
+      ],
+      "@addCourse": [
+        protect,
+        authorize("admin", "publisher")
+      ],
+      "@updateCourse": [
+        protect,
+        authorize("admin", "publisher")
+      ],
+      "@deleteCourse": [
+        protect,
+        authorize("admin", "publisher")
+      ],
     };
   }
 
@@ -128,7 +140,7 @@ class CourseController extends $.controller {
     let course = await Course.findById(req.params.courseId);
     if (!course) {
       return res.json({
-        error: `No Course with the id of`
+        error: `No Course found`
       });
 
     }

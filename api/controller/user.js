@@ -1,4 +1,3 @@
-const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const User = require("../models/User");
 
@@ -6,7 +5,7 @@ const User = require("../models/User");
 //@route GET /api/v1/auth/users
 //@access Private/admin
 
-exports.getUsers = asyncHandler(async (req, res, next) => {
+exports.getUsers = asyncHandler(async (req, res) => {
   res.status(200).json(res.advancedResults);
 });
 
@@ -14,11 +13,11 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
 //@route GET /api/v1/auth/users/:id
 //@access Private/admin
 
-exports.getUser = asyncHandler(async (req, res, next) => {
+exports.getUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
-  res.status(200).json({
+  res.json({
     success: true,
-    data: user,
+    data: user
   });
 });
 
@@ -26,11 +25,11 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 //@route POST /api/v1/auth/users/
 //@access Private/admin
 
-exports.createUser = asyncHandler(async (req, res, next) => {
+exports.createUser = asyncHandler(async (req, res) => {
   const user = await User.create(req.body);
   res.status(201).json({
     success: true,
-    data: user,
+    data: user
   });
 });
 
@@ -38,14 +37,14 @@ exports.createUser = asyncHandler(async (req, res, next) => {
 //@route PUT /api/v1/auth/users/:id
 //@access Private/admin
 
-exports.updateUser = asyncHandler(async (req, res, next) => {
+exports.updateUser = asyncHandler(async (req, res) => {
   const user = await User.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true,
+    runValidators: true
   });
-  res.status(200).json({
+  res.json({
     success: true,
-    data: user,
+    data: user
   });
 });
 
@@ -53,11 +52,11 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
 //@route DELETE /api/v1/auth/users/:id
 //@access Private/admin
 
-exports.deleteUser = asyncHandler(async (req, res, next) => {
+exports.deleteUser = asyncHandler(async (req, res) => {
   await User.findByIdAndDelete(req.params.id);
 
-  res.status(200).json({
+  res.json({
     success: true,
-    data: {},
+    data: {}
   });
 });

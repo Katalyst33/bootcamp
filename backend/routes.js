@@ -8,6 +8,7 @@ const route = $.router;
 
 require("./routes/BootcampRoutes");
 require("./routes/courseRoutes")
+require("./routes/userRoutes")
 
 require("./routes/authRoutes");
 

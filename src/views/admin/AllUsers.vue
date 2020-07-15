@@ -62,9 +62,7 @@
       this.allUsers()
     },
     methods:{
-
       async allUsers() {
-
         try {
           const { data } = await this.$http.get("/api/v1/users/");
           this.users = data;

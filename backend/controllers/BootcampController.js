@@ -21,7 +21,20 @@ class BootcampController extends $.controller {
       "@uploadBootcampPhoto": [
         protect,
         authorize("admin", "publisher")
-      ]
+      ],
+      "@createBootcamp": [
+        protect,
+        authorize("admin", "publisher")
+      ],
+      "@updateBootcamp": [
+        protect,
+        authorize("admin", "publisher")
+      ],
+      "@deleteBootcamp": [
+        protect,
+        authorize("admin", "publisher")
+      ],
+
 
     };
   }

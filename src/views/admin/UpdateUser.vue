@@ -1,47 +1,49 @@
 <template>
     <div>
 
-        <h1 class="is-size-1 has-text-weight-bold">Edit user</h1>
 
-        <div class="columns is-mobile">
-            <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop has-background-white mx-5 py-5 px-5">
-                <div class="field">
-                    <label class="label has-text-left">Name:</label>
-                    <div class="control">
-                        <input v-model="user.name" class="input" type="text" placeholder="Text input">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label has-text-left">Email:</label>
-                    <div class="control">
-                        <input v-model="user.email" class="input" type="text" placeholder="Text input">
-                    </div>
-                </div>
-                <label class="label">User Role:</label>
-                <div class="control box-border p-3">
-                    <label class="radio-btn">Regular User (Browse, Write reviews, etc)
-                        <input v-model="user.role" value="user" type="radio"
-                               name="answer">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="radio-btn">
-                        Bootcamp Publisher
-                        <input v-model="user.role" value="publisher" type="radio" name="answer">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="radio-btn">
-                        Admin
-                        <input v-model="user.role" value="admin" type="radio" name="answer">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
+     <template v-if="loaded">
+         <h1 class="is-size-1 has-text-wedata.ight-bold">Edit user</h1>
+         <div class="columns is-mobile">
+             <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop has-background-white mx-5 py-5 px-5">
+                 <div class="field">
+                     <label class="label has-text-left">Name:</label>
+                     <div class="control">
+                         <input v-model="user.data.name" class="input" type="text" placeholder="Text input">
+                     </div>
+                 </div>
+                 <div class="field">
+                     <label class="label has-text-left">Email:</label>
+                     <div class="control">
+                         <input v-model="user.data.email" class="input" type="text" placeholder="Text input">
+                     </div>
+                 </div>
+                 <label class="label">User Role:</label>
+                 <div class="control box-border p-3">
+                     <label class="radio-btn">Regular User (Browse, Write reviews, etc)
+                         <input v-model="user.data.role" value="user" type="radio"
+                         >
+                         <span class="checkmark"></span>
+                     </label>
+                     <label class="radio-btn">
+                         Bootcamp Publisher
+                         <input v-model="user.data.role" value="publisher" type="radio" >
+                         <span class="checkmark"></span>
+                     </label>
+                     <label class="radio-btn">
+                         Admin
+                         <input v-model="user.data.role" value="admin" type="radio" >
+                         <span class="checkmark"></span>
+                     </label>
+                 </div>
 
-            </div>
-        </div>
+                 <button @click="updateUser" class="button is-primary my-3 is-fullwidth py-3">Update User</button>
 
-        <template>
-            <json-view :data="user.data"/>
-        </template>
+             </div>
+         </div>
+     </template>
+
+
     </div>
 </template>
 
@@ -49,12 +51,7 @@
   export default {
     data() {
       return {
-        user:{
-          data:{
-
-          }
-
-        },
+        user: {},
         loaded: false
       };
     },
@@ -70,7 +67,25 @@
             this.loaded = true;
           })
           .catch();
-      }
+      },
+
+      async updateUser() {
+        try {
+          const code = this.$route.params.id;
+          await this.$http.put(`/api/v1/users/${code}`, this.user.data);
+          this.$swal.fire({
+            icon: "success",
+            text: "USer was Updated Successfully, you will now be redirected"
+          });
+          this.$router.push({ name: "AllUsers"});
+
+        } catch (error) {
+          await this.$swal.fire({
+            icon: "error",
+            text: `${error.response.data.error}`
+          });
+        }
+      },
 
     }
 

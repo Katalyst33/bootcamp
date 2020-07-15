@@ -21,8 +21,6 @@ const { protect, authorize } = require("../middleware/auth");
 const enrollmentRouter = require("./enrollments");
 const reviewRouter = require("./course-review");
 
-
-
 router.use(protect);
 router.use(authorize("user"));
 
