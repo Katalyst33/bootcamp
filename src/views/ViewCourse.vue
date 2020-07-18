@@ -19,20 +19,21 @@
                                     </p>
                                     <p><i class="far fa-user-edit pr-2"></i>Published by: {{course.data.user.name}}</p>
                                     <p>Last Updated: {{course.data.createdAt | formattedDate}}</p>
-
-
-                                    <button v-if="!course.data.enrolled" @click="enrollCourse(course.data._id)"
-                                            class="button is-primary  my-3 px-5">Enroll
-                                    </button>
-                                    <button v-else class="button is-primary my-3"
-                                            :disabled="course.data.enrolled">you are Enrolled
-                                    </button>
+                                    <template v-if="user">
+                                        <button v-if="!course.data.enrolled" @click="enrollCourse(course.data._id)"
+                                                class="button is-primary  my-3 px-5">Enroll
+                                        </button>
+                                        <button v-else class="button is-primary my-3"
+                                                :disabled="course.data.enrolled">you are Enrolled
+                                        </button>
+                                    </template>
                                 </div>
                             </div>
 
                             <h4 class="is-size-4 py-2 mt-5">Course Reviews</h4>
 
-                            <div class="my-3 has-background-white pl-2">
+
+                            <div class="my-3 has-background-white px-5">
                                 <div v-for="review in reviews.data" :key="review._id">
                                     <div class="columns">
                                         <div class="column is-4 avatar">
@@ -48,12 +49,14 @@
                                                 <p class="is-size-5 has-text-weight-bold"> Rating: {{review.rating}}</p>
                                                 <p class="is-size-5 is-capitalized">{{review.title}}</p>
                                                 <p class="is-size-6 ">{{review.text}}</p>
+                                                <p  class="has-text-primary is-size-6"><span>Edit <i class="fal fa-edit px-1"></i></span> <span class="px-2">delete<i class="far fa-trash-alt px-1"></i></span></p>
                                             </div>
                                         </div>
                                     </div>
                                     <hr class="has-background-grey-lighter">
                                 </div>
                             </div>
+
 
                             <div class="mt-5">
                                 <!--                                <h3 class="is-size-4">Pay with Paystack.</h3>-->
@@ -62,7 +65,7 @@
                         </div>
                         <div class="column is-4 ">
 
-                            <div class="has-background-white px-5 is-size-6">
+                            <div class="has-background-white  is-size-6 px-5 py-5">
                                 <div class="has-background-white py-3 has-text-left is-size-5">
                                     <div class="price-tag">
                                         <p class="is-size-1 has-text-weight-bold has-text-centered"
@@ -96,8 +99,6 @@
                                 <div class="pb-5">
                                     <br>
                                     <template v-if="!course.data.isFree">
-
-
                                         <template v-if="!course.data.isFree">
                                             <button v-if="coursesInCart.includes(course.data._id)"
                                                     @click.prevent="removeFromCart(course.data)"
@@ -119,11 +120,15 @@
 
 
                                 </div>
-                                <div class="has-background-white my-3 py-3">
+                                <div class=" my-3 py-3">
                                     <h1 class="is-size-5 has-text-left"> Enrolled Students
                                     </h1>
+                                    <router-link v-if="user" :to="{name:'AddReview' , params:{id:course.data._id}}"
+                                                 class="button is-fullwidth is-primary is-pulled-left">Review
+                                    </router-link>
+
                                     <div class="has-text-left">
-                                        <template v-for="(enrollment, index) in enrollments.data" >
+                                        <template v-for="(enrollment, index) in enrollments.data">
                                             <div :key="enrollment._id">
                                                 <p class="is-capitalized">{{index + 1}}. {{enrollment.user.name}}</p>
 
@@ -148,6 +153,7 @@
 <script>
   import { formattedDate, agoDate } from "../utils";
   import { mapGetters } from "vuex";
+  import { mapState } from "vuex";
 
 
   export default {
@@ -164,6 +170,8 @@
       };
     },
     computed: {
+      ...mapState(["user"]),
+
       ...mapGetters(["coursesInCart"]),
       isEnrolled() {
         return true;
@@ -178,7 +186,7 @@
 
 
     mounted() {
-     this.fetchAll();
+      this.fetchAll();
     },
 
     methods: {
@@ -213,7 +221,7 @@
       },
 
       //fetch all data
-      fetchAll(){
+      fetchAll() {
         this.fetchReviews();
         this.fetchCourse();
         this.fetchCourseEnrollments();
@@ -252,7 +260,11 @@
 
       buyNow() {
         this.addToCart();
+      },
 
+      addReview(code) {
+        // this.$router.push({name:'AddReview', params:{courseId:}})
+        console.log("COURSE ID", code);
       }
 
 

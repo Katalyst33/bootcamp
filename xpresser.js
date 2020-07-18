@@ -11,7 +11,10 @@ dotenv.config({
 //> 2
 const $ = xpresser({
   name: "Bootcamper",
-  paths: { base: __dirname, public:"dist" },
+  paths: {
+    base: __dirname, public:"dist" ,
+    backend:"base://server"
+  },
   server: {
     port: 2000,
     servePublicFolder: true,
@@ -27,7 +30,7 @@ $.on.start(next => {
 
 
 $.on.expressInit(next => {
-  return require('./backend/express')(next)
+  return require('./server/express')(next)
 })
 $.on.bootServer(next => {
   const errorHandler = require("./api/middleware/error");

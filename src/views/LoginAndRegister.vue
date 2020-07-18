@@ -114,7 +114,7 @@
 
       async login() {
         const data = await this.$http.post("/api/v1/auth/login", this.form);
-        console.log(data);
+
         if (data) {
           await this.$store.dispatch("getCurrentUser");
           await this.$router.push({ name: "Home" });

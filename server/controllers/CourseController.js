@@ -5,7 +5,6 @@ const Bootcamp = require("../../api/models/Bootcamp-model");
 const { protect, authorize } = require("../../api/middleware/auth");
 
 
-
 /**
  * CourseController
  * @class
@@ -18,27 +17,17 @@ class CourseController extends $.controller {
    * @returns {Object}
    */
   static middleware() {
+    const protectedRoutes = ["addCourse", "updateCourse", "deleteCourse"];
     return {
-
+      "protect": protectedRoutes,
+      "roles.editor": protectedRoutes,
       "@getAllCourses": [
-
         advancedResults(Course, {
           path: "bootcamp",
           select: "name description"
         })
-      ],
-      "@addCourse": [
-        protect,
-        authorize("admin", "publisher")
-      ],
-      "@updateCourse": [
-        protect,
-        authorize("admin", "publisher")
-      ],
-      "@deleteCourse": [
-        protect,
-        authorize("admin", "publisher")
-      ],
+      ]
+
     };
   }
 
@@ -89,23 +78,23 @@ class CourseController extends $.controller {
       { path: "user", select: "name" }
     ];
     const course = await Course.findById(req.params.courseId).populate(populateQuery).lean();
+
+
     if (!course) {
       return res.json({ error: "No Coursefound" });
 
-    } else {
+    } else if (req.user) {
+      console.log("USER HERE");
       course.enrolled =
-        (await Enrollment.count({
+        (await Enrollment.countDocuments({
           course: course._id,
           user: req.user.id
         })) > 0;
-
-
-      res.json({
-        success: true,
-        data: course
-      });
     }
-
+    res.json({
+      success: true,
+      data: course
+    });
 
   }
 
@@ -135,8 +124,7 @@ class CourseController extends $.controller {
 
   }
 
-
-  static async updateCourse({req, res}){
+  static async updateCourse({ req, res }) {
     let course = await Course.findById(req.params.courseId);
     if (!course) {
       return res.json({
@@ -156,7 +144,7 @@ class CourseController extends $.controller {
       new: true,
       runValidators: true
     });
-    console.log("COURSE DATA",  course)
+    console.log("COURSE DATA", course);
     res.status(200).json({
       success: true,
 
@@ -165,7 +153,7 @@ class CourseController extends $.controller {
 
   }
 
-  static async deleteCourse({req, res}){
+  static async deleteCourse({ req, res }) {
     const course = await Course.findById(req.params.courseId);
     if (!course) {
       return res.json({
@@ -186,7 +174,6 @@ class CourseController extends $.controller {
       data: {}
     });
   }
-
 
 
 }

@@ -44,7 +44,4 @@ router
   .put(protect, authorize("user", "admin"), updateCourseReview)
   .delete(protect, authorize("user", "admin"),  deleteCourseReview)
 
-
-
-
 module.exports = router;
