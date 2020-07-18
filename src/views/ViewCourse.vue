@@ -49,7 +49,7 @@
                                                 <p class="is-size-5 has-text-weight-bold"> Rating: {{review.rating}}</p>
                                                 <p class="is-size-5 is-capitalized">{{review.title}}</p>
                                                 <p class="is-size-6 ">{{review.text}}</p>
-                                                <p  class="has-text-primary is-size-6"><span>Edit <i class="fal fa-edit px-1"></i></span> <span class="px-2">delete<i class="far fa-trash-alt px-1"></i></span></p>
+                                                <a  class="has-text-primary is-size-6"><router-link :to="{name:'UpdateReview', params:{reviewId:review._id}}">Edit <i class="fal fa-edit px-1"></i></router-link> <span class="px-2">delete<i class="far fa-trash-alt px-1"></i></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -123,8 +123,8 @@
                                 <div class=" my-3 py-3">
                                     <h1 class="is-size-5 has-text-left"> Enrolled Students
                                     </h1>
-                                    <router-link v-if="user" :to="{name:'AddReview' , params:{id:course.data._id}}"
-                                                 class="button is-fullwidth is-primary is-pulled-left">Review
+                                    <router-link v-if="user" :to="{name:'AddReview' , params:{courseId:course.data._id}}"
+                                                 class="button is-fullwidth is-primary is-pulled-left">Add Review
                                     </router-link>
 
                                     <div class="has-text-left">
@@ -265,6 +265,10 @@
       addReview(code) {
         // this.$router.push({name:'AddReview', params:{courseId:}})
         console.log("COURSE ID", code);
+      },
+
+      edit(code){
+        console.log(code)
       }
 
 

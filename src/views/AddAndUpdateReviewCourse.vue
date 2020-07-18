@@ -93,14 +93,14 @@
       }
     },
     mounted() {
-      // this.fetchReview();
-      this.fetchCourse()
+      this.fetchItems()
+      // this.fetchCourse()
     },
 
     methods: {
 
       fetchCourse() {
-        const code = this.$route.params.id;
+        const code = this.$route.params.courseId;
         this.$http.get("/api/v1/courses/" + code)
           .then(({ data }) => {
             this.course = data;
@@ -131,7 +131,7 @@
 
 
       fetchReview() {
-        const code = this.$route.params.id;
+        const code = this.$route.params.reviewId;
         this.$http.get(`/api/v1/course-reviews/${code}`)
           .then(({ data }) => {
             this.review = data;
@@ -154,6 +154,16 @@
             icon: "error",
             text: `${error.response.data.error}`
           });
+
+        }
+      },
+
+      fetchItems(){
+        if(this.isUpdateReview){
+          this.fetchReview();
+
+        }else {
+          this.fetchCourse()
 
         }
       }
