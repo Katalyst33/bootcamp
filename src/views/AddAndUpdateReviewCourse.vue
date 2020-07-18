@@ -1,14 +1,13 @@
+<!--suppress ALL -->
 <template>
     <div>
 
-        <div class="section">
+        <div v-if="loaded" class="section">
             <div class="container">
                 <div id="reviews" class="columns is-mobile my-5 has-text-left">
                     <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop">
                         <div class="px-4 py-4 mx-0 mx-sm-5 has-background-white">
                             <GoBack class="my-1"/>
-
-
                             <template v-if="isUpdateReview">
                                 <h1 class="is-size-4 ">Edit a Review for</h1>
                                 <h1 class="is-size-3 has-text-weight-bold py-2">
@@ -96,7 +95,7 @@
         },
         loaded: false,
         courseLoaded: false,
-        course: null,
+        course: null
       };
     },
     computed: {
@@ -152,25 +151,10 @@
           .catch();
       },
 
-      async updateReview() {
-        try {
-          const code = this.$route.params.reviewId;
-          await this.$http.put(`/api/v1/course-reviews/${code}`, this.review.data);
-          console.log(this.review.data)
-          await this.$swal.fire({
-            icon: "success",
-            text: "Review was  upddate Successfully"
-          });
-          // await this.$router.push({ name: "ViewCourse", params: { id: this.review.data.course._id } });
-
-
-        } catch (error) {
-          await this.$swal.fire({
-            icon: "error",
-            text: `${error.response.data.error}`
-          });
-
-        }
+      updateReview() {
+        const code = this.$route.params.reviewId;
+        this.$http.put(`/api/v1/course-reviews/${code}`, this.review.data);
+        this.$router.push({ name: "ViewCourse", params: { id: this.review.data.course._id } });
       },
 
       fetchItems() {

@@ -160,6 +160,7 @@ class CourseReviewController extends $.controller {
     });
 
     res.status(201).json({
+      msg:"updated review successfully",
       success: true,
       data: review
     });
