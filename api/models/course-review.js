@@ -16,6 +16,10 @@ const CourseReviewSchema = new mongoose.Schema({
     max: 10,
     required: [true, "Please add a rating between 1 and 5"],
   },
+  isOwner:{
+    type:Boolean,
+    default: false,
+  },
 
   createdAt: {
     type: Date,

@@ -32,6 +32,8 @@
 
                             <h4 class="is-size-4 py-2 mt-5">Course Reviews</h4>
 
+                            {{isOwner}}
+
 
                             <div class="my-3 has-background-white px-5">
                                 <div v-for="review in reviews.data" :key="review._id">
@@ -49,7 +51,13 @@
                                                 <p class="is-size-5 has-text-weight-bold"> Rating: {{review.rating}}</p>
                                                 <p class="is-size-5 is-capitalized">{{review.title}}</p>
                                                 <p class="is-size-6 ">{{review.text}}</p>
-                                                <a  class="has-text-primary is-size-6"><router-link :to="{name:'UpdateReview', params:{reviewId:review._id}}">Edit <i class="fal fa-edit px-1"></i></router-link> <span class="px-2">delete<i class="far fa-trash-alt px-1"></i></span></a>
+                                                <template v-if="course.data.enrolled">
+                                                    <template v-if="review.user._id === user._id ">
+                                                        <a  class="has-text-primary is-size-6"><router-link :to="{name:'UpdateReview', params:{reviewId:review._id}}">Edit <i class="fal fa-edit px-1"></i></router-link> <span class="px-2">delete<i class="far fa-trash-alt px-1"></i></span></a>
+
+                                                    </template>
+
+                                                </template>
                                             </div>
                                         </div>
                                     </div>
@@ -123,9 +131,16 @@
                                 <div class=" my-3 py-3">
                                     <h1 class="is-size-5 has-text-left"> Enrolled Students
                                     </h1>
-                                    <router-link v-if="user" :to="{name:'AddReview' , params:{courseId:course.data._id}}"
-                                                 class="button is-fullwidth is-primary is-pulled-left">Add Review
-                                    </router-link>
+                                    <template  v-if="course.data.enrolled" >
+                                        <router-link v-if="user" :to="{name:'AddReview' , params:{courseId:course.data._id}}"
+                                                     class="button is-fullwidth is-primary is-pulled-left">Add Review
+                                        </router-link>
+                                    </template>
+                                    <template  v-if="!course.data.enrolled" >
+                                        <button class="button is-primary" disabled>Add review</button>
+                                        <p class="has-text-danger">You must be enrolled to drop a review</p>
+                                    </template>
+
 
                                     <div class="has-text-left">
                                         <template v-for="(enrollment, index) in enrollments.data">
@@ -165,7 +180,8 @@
         course: [],
         loadedReview: false,
         loadedEnrollment: false,
-        enrollments: []
+        enrollments: [],
+        isOwner:false
 
       };
     },
@@ -175,7 +191,9 @@
       ...mapGetters(["coursesInCart"]),
       isEnrolled() {
         return true;
-      }
+      },
+
+
     },
 
 
@@ -187,9 +205,12 @@
 
     mounted() {
       this.fetchAll();
+
     },
 
     methods: {
+
+
       //fetch all data
       fetchCourse() {
         const code = this.$route.params.id;
@@ -207,6 +228,7 @@
           .then(({ data }) => {
             this.reviews = data;
             this.loadedReview = true;
+
           })
           .catch();
       },

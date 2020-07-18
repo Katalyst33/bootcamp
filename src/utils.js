@@ -15,6 +15,6 @@ exports.formattedDate = (date)=>{
 
 
 exports.agoDate = (date)=>{
-  return   moment(date, "YYYYMMDD").fromNow();
+  return   moment(date).fromNow();
 };
 

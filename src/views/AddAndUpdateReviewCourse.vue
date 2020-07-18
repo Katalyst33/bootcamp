@@ -124,12 +124,6 @@
         try {
           const code = this.$route.params.courseId;
           await this.$http.post(`/api/v1/courses/${code}/course-review`, this.review.data);
-          await this.$swal.fire({
-            icon: "success",
-            text: "Review was  added Successfully"
-          });
-
-
           await this.$router.push({ name: "ViewCourse", params: { id: code } });
         } catch (error) {
           await this.$swal.fire({
