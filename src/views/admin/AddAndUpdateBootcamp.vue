@@ -264,7 +264,6 @@
         this.$http.get("/api/v1/bootcamps/" + code)
           .then(({ data }) => {
             this.bootcamp = data;
-            this.loaded = true;
           })
           .catch();
       },

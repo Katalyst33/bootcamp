@@ -96,7 +96,7 @@
         },
         loaded: false,
         courseLoaded: false,
-        course: null
+        course: null,
       };
     },
     computed: {
@@ -154,13 +154,16 @@
 
       async updateReview() {
         try {
-          const code = this.$route.params.id;
-          await this.$http.put(`/api/v1/reviews/${code}`, this.review.data);
+          const code = this.$route.params.reviewId;
+          await this.$http.put(`/api/v1/course-reviews/${code}`, this.review.data);
+          console.log(this.review.data)
           await this.$swal.fire({
             icon: "success",
             text: "Review was  upddate Successfully"
           });
-          await this.$router.push({ name: "ManageReviews" });
+          // await this.$router.push({ name: "ViewCourse", params: { id: this.review.data.course._id } });
+
+
         } catch (error) {
           await this.$swal.fire({
             icon: "error",

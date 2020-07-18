@@ -140,6 +140,31 @@ class CourseReviewController extends $.controller {
 
   }
 
+  static async updateCourseReview({req,res}){
+    let review = await CourseReview.findById(req.params.reviewId);
+    if (!review) {
+    return res.json({
+      error:`No Review with the id of ${req.params.id}`
+    })
+    }
+
+    //make sure review belongs to user, or user is an admin
+    if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return ({
+        error:`Not authorised to update review`
+      })
+    }
+    review = await CourseReview.findByIdAndUpdate(req.params.reviewId, req.body, {
+      new: true,
+      runValidators: true
+    });
+
+    res.status(201).json({
+      success: true,
+      data: review
+    });
+  }
+
   static async deleteCourseReview({req,res}){
 
 

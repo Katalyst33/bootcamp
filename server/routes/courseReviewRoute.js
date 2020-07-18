@@ -6,6 +6,7 @@ route.path("/api/v1/course-reviews", () => {
 
   route.get("/:reviewId", "getOneCourseReview");
   route.post("/:courseId", "addCourseReview");
+  route.put("/:reviewId", "updateCourseReview");
   route.delete("/:reviewId", "deleteCourseReview");
 
 
