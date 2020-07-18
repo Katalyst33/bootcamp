@@ -7,9 +7,21 @@
                     <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop">
                         <div class="px-4 py-4 mx-0 mx-sm-5 has-background-white">
                             <GoBack class="my-1"/>
-                            <h1 v-if="isUpdateReview" class="is-size-3 ">Edit a Review</h1>
-                            <h1 v-else class="is-size-4 ">Write a Review for</h1>
-                            <h1 v-if="courseLoaded" class="is-size-3 has-text-weight-bold py-2"> {{course.data.title}} course</h1>
+
+
+                            <template v-if="isUpdateReview">
+                                <h1 class="is-size-4 ">Edit a Review for</h1>
+                                <h1 class="is-size-3 has-text-weight-bold py-2">
+                                    {{review.data.course.title}} course</h1>
+
+                            </template>
+                            <template v-else>
+                                <h1 class="is-size-4 ">Write a Review for</h1>
+                                <h1 v-if="courseLoaded" class="is-size-3 has-text-weight-bold py-2">
+                                    {{course.data.title}} course</h1>
+
+                            </template>
+
 
                             <p class="is-size-5">You must have enrolled in this course to review</p>
 
@@ -82,9 +94,9 @@
             rating: 0
           }
         },
-        loaded:false,
-        courseLoaded:false,
-        course:null
+        loaded: false,
+        courseLoaded: false,
+        course: null
       };
     },
     computed: {
@@ -93,7 +105,7 @@
       }
     },
     mounted() {
-      this.fetchItems()
+      this.fetchItems();
       // this.fetchCourse()
     },
 
@@ -119,7 +131,7 @@
           });
 
 
-          await this.$router.push({ name: "ViewCourse", params:{id:code} });
+          await this.$router.push({ name: "ViewCourse", params: { id: code } });
         } catch (error) {
           await this.$swal.fire({
             icon: "error",
@@ -158,12 +170,12 @@
         }
       },
 
-      fetchItems(){
-        if(this.isUpdateReview){
+      fetchItems() {
+        if (this.isUpdateReview) {
           this.fetchReview();
 
-        }else {
-          this.fetchCourse()
+        } else {
+          this.fetchCourse();
 
         }
       }

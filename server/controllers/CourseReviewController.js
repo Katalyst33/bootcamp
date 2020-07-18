@@ -53,7 +53,7 @@ class CourseReviewController extends $.controller {
       { path: "course", select: "title" }
     ];
     const reviewData = {
-      course: req.params.courseId
+      course: req.params.courseId,
       // user: req.user.id
     };
 
@@ -69,7 +69,23 @@ class CourseReviewController extends $.controller {
   }
   static async getOneCourseReview({res, req}){
 
-  }
+    console.log("ONE COURSE REVIEW");
+    let populateQuery = [
+      { path: "user", select: "name" },
+      { path: "course", select: "title" }
+    ];
+    const review = await CourseReview.findById(req.params.reviewId).populate(populateQuery);
+    if (!review) {
+     return res.json({
+       error:`No review found oooo`
+     })
+    }
+    res.json({
+      success: true,
+      data: review
+    });
+    }
+
 
   static async getUserCourseReviews({ req, res }) {
     let populateQuery = [

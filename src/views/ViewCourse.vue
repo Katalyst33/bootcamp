@@ -203,7 +203,7 @@
 
       fetchReviews() {
         const code = this.$route.params.id;
-        this.$http.get(`/api/v1/courses/${code}/course-review`)
+        this.$http.get(`/api/v1/courses/${code}/course-reviews`)
           .then(({ data }) => {
             this.reviews = data;
             this.loadedReview = true;

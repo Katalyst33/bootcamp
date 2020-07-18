@@ -81,7 +81,7 @@ class CourseController extends $.controller {
 
 
     if (!course) {
-      return res.json({ error: "No Coursefound" });
+      return res.json({ error: "No Course found" });
 
     } else if (req.user) {
       console.log("USER HERE");
