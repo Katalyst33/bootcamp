@@ -197,7 +197,7 @@ class CourseReviewController extends $.controller {
     }
 
 
-    await CourseReview.remove();
+    await review.remove();
 
 
     res.status(201).json({

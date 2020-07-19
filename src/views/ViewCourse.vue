@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <template>
     <div>
         <div id="breadcrumbs">
@@ -32,7 +33,7 @@
 
                             <h4 class="is-size-4 py-2 mt-5">Course Reviews</h4>
 
-                            {{isOwner}}
+
 
 
                             <div class="my-3 has-background-white px-5">
@@ -53,7 +54,13 @@
                                                 <p class="is-size-6 ">{{review.text}}</p>
                                                 <template v-if="course.data.enrolled">
                                                     <template v-if="review.user._id === user._id ">
-                                                        <a  class="has-text-primary is-size-6"><router-link :to="{name:'UpdateReview', params:{reviewId:review._id}}">Edit <i class="fal fa-edit px-1"></i></router-link> <span class="px-2">delete<i class="far fa-trash-alt px-1"></i></span></a>
+                                                        <a class="has-text-primary is-size-6">
+                                                            <router-link
+                                                                    :to="{name:'UpdateReview', params:{reviewId:review._id}}">
+                                                                Edit <i class="fal fa-edit px-1"></i></router-link>
+                                                            <span @click="deleteReview(review._id)"
+                                                                  class="px-2">Delete<i
+                                                                    class="far fa-trash-alt px-1"></i></span></a>
 
                                                     </template>
 
@@ -131,12 +138,13 @@
                                 <div class=" my-3 py-3">
                                     <h1 class="is-size-5 has-text-left"> Enrolled Students
                                     </h1>
-                                    <template  v-if="course.data.enrolled" >
-                                        <router-link v-if="user" :to="{name:'AddReview' , params:{courseId:course.data._id}}"
+                                    <template v-if="course.data.enrolled">
+                                        <router-link v-if="user"
+                                                     :to="{name:'AddReview' , params:{courseId:course.data._id}}"
                                                      class="button is-fullwidth is-primary is-pulled-left">Add Review
                                         </router-link>
                                     </template>
-                                    <template  v-if="!course.data.enrolled" >
+                                    <template v-if="!course.data.enrolled">
                                         <button class="button is-primary" disabled>Add review</button>
                                         <p class="has-text-danger">You must be enrolled to drop a review</p>
                                     </template>
@@ -181,7 +189,7 @@
         loadedReview: false,
         loadedEnrollment: false,
         enrollments: [],
-        isOwner:false
+        isOwner: false
 
       };
     },
@@ -191,7 +199,7 @@
       ...mapGetters(["coursesInCart"]),
       isEnrolled() {
         return true;
-      },
+      }
 
 
     },
@@ -289,8 +297,54 @@
         console.log("COURSE ID", code);
       },
 
-      edit(code){
-        console.log(code)
+      deleteReview2(code) {
+        console.log(code);
+        this.$swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        })
+          .then((code) => {
+            console.log("SEconad code", code);
+            // this.$http.delete(`/api/v1/course-reviews/${code}/`);
+
+          })
+          .then((result) => {
+            if (result.value) {
+              this.$swal.fire(
+                "Deleted!",
+                "Your file has been deleted.",
+                "success"
+              );
+            }
+          });
+      },
+
+      async deleteReview(code) {
+        await this.$swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        });
+        const data = await this.$http.delete(`/api/v1/course-reviews/${code}/`);
+        if (data) {
+          this.$swal.fire(
+            "Deleted!",
+            "Your file has been deleted.",
+            "success"
+          );
+        }
+        this.fetchAll();
+
+
+
       }
 
 
