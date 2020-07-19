@@ -2,7 +2,6 @@ const Enrollment = require("../../api/models/Enrollment");
 const advancedResults = require("../../api/middleware/advancedResults");
 const Course = require("../../api/models/Course");
 const Bootcamp = require("../../api/models/Bootcamp-model");
-const { protect, authorize } = require("../../api/middleware/auth");
 
 
 /**
@@ -36,8 +35,7 @@ class CourseController extends $.controller {
 
   }
 
-  static async getCourses({ req, res }) {
-
+  static async getBootcampCourses({ req, res }) {
     if (req.params.bootcampId) {
       const courses = await Course.find({
         bootcamp: req.params.bootcampId
@@ -137,8 +135,6 @@ class CourseController extends $.controller {
       return res.json({
         error: `Your are not authorized to update course`
       });
-
-
     }
     course = await Course.findByIdAndUpdate(req.params.courseId, req.body, {
       new: true,

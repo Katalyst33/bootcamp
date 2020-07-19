@@ -12,7 +12,7 @@ module.exports = {
             })
 
         }
-        console.log('Protect meee')
+        console.log('Protect meee', http.req.user)
 
         return http.next();
     }

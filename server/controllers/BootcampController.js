@@ -15,27 +15,11 @@ class BootcampController extends $.controller {
    * @returns {Object}
    */
   static middleware() {
+    const protectedRoutes = ["uploadBootcampPhoto","createBootcamp","updateBootcamp","deleteBootcamp"]
     return {
+      "protect":protectedRoutes,
+      "roles.editor":protectedRoutes,
       "@getAllBootcamps": advancedResults(Bootcamp),
-
-      "@uploadBootcampPhoto": [
-        protect,
-        authorize("admin", "publisher")
-      ],
-      "@createBootcamp": [
-        protect,
-        authorize("admin", "publisher")
-      ],
-      "@updateBootcamp": [
-        protect,
-        authorize("admin", "publisher")
-      ],
-      "@deleteBootcamp": [
-        protect,
-        authorize("admin", "publisher")
-      ],
-
-
     };
   }
 
@@ -61,7 +45,6 @@ class BootcampController extends $.controller {
 
   }
 
-
   static async getOneBootcamp({ res }, { bootcamp }) {
     // const bootcamp = await Bootcamp.findById(req.params.bootcampId);
 
@@ -71,7 +54,6 @@ class BootcampController extends $.controller {
       data: bootcamp
     });
   }
-
 
   static async createBootcamp({ req, res }) {
     //Add user to req.body
@@ -92,27 +74,6 @@ class BootcampController extends $.controller {
       success: true,
       bootcamp
     });
-  }
-
-  static async deleteBootcamp({ req, res }, { bootcamp }) {
-
-
-    //MAke sure is bootcamp owner
-    if (bootcamp.user.toString() !== req.user.id && req.user.role !== "admin") {
-
-      return res.json({
-        error: `This user is not authorized to delete this bootcamp`
-      });
-
-    }
-
-    bootcamp.remove();
-    res.json({
-      success: true,
-      data: {}
-    });
-
-
   }
 
   static async updateBootcamp({ req, res }, { bootcamp }) {
@@ -137,6 +98,27 @@ class BootcampController extends $.controller {
     res.json({
       success: true,
       data: bootcamp
+    });
+
+
+  }
+
+  static async deleteBootcamp({ req, res }, { bootcamp }) {
+
+
+    //MAke sure is bootcamp owner
+    if (bootcamp.user.toString() !== req.user.id && req.user.role !== "admin") {
+
+      return res.json({
+        error: `This user is not authorized to delete this bootcamp`
+      });
+
+    }
+
+    bootcamp.remove();
+    res.json({
+      success: true,
+      data: {}
     });
 
 
@@ -209,7 +191,6 @@ class BootcampController extends $.controller {
 
 
   }
-
 
 }
 

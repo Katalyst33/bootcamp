@@ -17,25 +17,22 @@ class CourseReviewController extends $.controller {
    * @returns {Object}
    */
   static middleware() {
+    const protectedRoutes = ["addCourseReview", "updateCourseReview", "deleteCourseReview"];
+    const populateQuery = [
+      {
+        path: "course",
+        select: "title"
+      },
+      { path: "user", select: "name" }
+    ];
     return {
+      "protect": protectedRoutes,
+      "roles.owner": protectedRoutes,
       "@getCourseReviews": [
-        advancedResults(CourseReview,
-          [{
-            path: "course",
-            select: "title"
-          },
-            { path: "user", select: "name" }
-          ]
-        )
-      ],
+        advancedResults(CourseReview, populateQuery)
 
-      "@getAllReviews": advancedResults(CourseReview, [
-        {
-          path: "course",
-          select: "title"
-        },
-        { path: "user", select: "name" }
-      ])
+      ],
+      "@getAllReviews": advancedResults(CourseReview, populateQuery)
 
     };
   }
@@ -48,13 +45,12 @@ class CourseReviewController extends $.controller {
 
   static async getCourseReviews({ res, req }) {
 
-    console.log("COURSE_REVIEW");
     let populateQuery = [
       { path: "user", select: "name" },
       { path: "course", select: "title" }
     ];
     const reviewData = {
-      course: req.params.courseId,
+      course: req.params.courseId
     };
 
     const reviews = await CourseReview.find(reviewData).populate(populateQuery);

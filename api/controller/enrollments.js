@@ -43,7 +43,7 @@ exports.addEnrollment = asyncHandler(async (req, res, next) => {
 //@route GET /api/v1/enrollments/
 //@access Public
 
-exports.getEnrollments = asyncHandler(async (req, res, next) =>{
+exports.getEnrollments = asyncHandler(async (req, res) =>{
   let populateQuery = [
     {    path:"user", select:"name"  },
     { path: "course", select: "title" }
@@ -64,7 +64,7 @@ exports.getEnrollments = asyncHandler(async (req, res, next) =>{
 
 });
 
-exports.getEnrollment = asyncHandler(async (req, res) =>{
+exports.getEnrollment = asyncHandler(async (req) =>{
   let populateQuery = [
     {    path:"user", select:"name"  },
   ];

@@ -12,6 +12,23 @@ exports.getBootcamps = asyncHandler(async (req, res) => {
   res.status(200).json(res.advancedResults);
 });
 
+//@desc Get a single bootcamp
+//@route GET /api/v1/bootcamps/:id
+//@access Public
+exports.getBootcamp = asyncHandler(async (req, res, next) => {
+  const bootcamp = await Bootcamp.findById(req.params.id);
+  if (!bootcamp) {
+    return next(
+      new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
+    );
+  }
+  res.status(200).json({
+    success: true,
+    data: bootcamp,
+  });
+});
+
+
 //@desc Create new Bootcamp
 //@route POST /api/v1/bootcamps/
 //@access Private
@@ -41,23 +58,6 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
     bootcamp,
   });
 });
-
-//@desc Get a single bootcamp
-//@route GET /api/v1/bootcamps/:id
-//@access Public
-exports.getBootcamp = asyncHandler(async (req, res, next) => {
-  const bootcamp = await Bootcamp.findById(req.params.id);
-  if (!bootcamp) {
-    return next(
-      new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
-    );
-  }
-  res.status(200).json({
-    success: true,
-    data: bootcamp,
-  });
-});
-
 
 //@desc Update Bootcamp
 //@route PUT /api/v1/bootcamps/
