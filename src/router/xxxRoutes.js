@@ -34,8 +34,6 @@ const ManageReviews = () =>
 
 export default {
 
-
-
   path: "/xxx",
   component: index,
   beforeEnter: (to, from, next) => {

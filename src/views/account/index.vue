@@ -15,7 +15,7 @@
                                  <router-link :to="{name:'Enrollments'}">Enrollments</router-link>
                              </p>
                              <p class="py-3 is-size-4 has-text-weight-bold">
-                                 <router-link :to="{name:'Reviews'}">Reviews</router-link>
+                                 <router-link :to="{name:'AllReviews'}">Reviews</router-link>
                              </p>
                              <p class="py-3 is-size-4 has-text-weight-bold">
                                  <router-link :to="{name:'Transactions'}">Transactions</router-link>

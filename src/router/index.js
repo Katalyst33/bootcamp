@@ -35,93 +35,89 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    meta:{
-      breadcrumb: 'Home'
+    meta: {
+      breadcrumb: "Home"
     },
-    component: Home,
+    component: Home
   },
   {
     path: "/about",
     name: "About",
-    component: About,
+    component: About
   },
   {
     path: "/login",
     name: "login",
-    component: LoginAndRegister,
+    component: LoginAndRegister
   },
   {
     path: "/register",
     name: "register",
-    component: LoginAndRegister,
+    component: LoginAndRegister
   },
   xxRoutes,
   accountRoutes,
-
   {
     path: "/bootcamp/",
     name: "AllBootcamps",
-    meta:{
-      breadcrumb: 'All Bootcamps'
+    meta: {
+      breadcrumb: "All Bootcamps"
     },
-    component: Bootcamps,
+    component: Bootcamps
   },
   {
     path: "/bootcamp/:id",
     name: "Bootcamp",
     component: ViewBootcamp,
-    meta:{
-      label: 'All Bootcamps',
-      breadcrumb: 'Bootcamp Details'
-    },
+    meta: {
+      label: "All Bootcamps",
+      breadcrumb: "Bootcamp Details"
+    }
   },
   {
     path: "/course/:id",
     name: "ViewCourse",
-    component: ViewCourse,
+    component: ViewCourse
   },
   {
     path: "/reviews/:id",
     name: "Reviews",
-    component: Review,
+    component: Review
   },
   {
     path: "/cart",
     name: "Cart",
-    component: Cart,
+    component: Cart
   },
-
-
   {
     path: "/add-reviews/:courseId",
     name: "AddReview",
-
-    component: AddAndUpdateReview,
+    component: AddAndUpdateReview
   },
   {
     path: "/update-reviews/:reviewId",
     name: "UpdateReview",
-    component: AddAndUpdateReview,
+    component: AddAndUpdateReview
   },
   {
     path: "/reset-password",
     name: "ResetPassword",
-    component: UpdateAndReset,
+    component: UpdateAndReset
   },
 
   {
     path: "/404",
     alias: "*",
     name: "notFound",
-    component: notFound,
-  },
+    component: notFound
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
-  store,
+  store
 });
 
 export default router;

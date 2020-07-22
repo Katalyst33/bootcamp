@@ -7,24 +7,7 @@
                 <div class="columns is-mobile">
                     <div class="column is-three-fifths is-offset-one-fifth">
 
-                        <template v-for="enrollment in enrollments.data">
-                            <div :key="enrollment._id">
-                                <div class="has-background-white has-text-left ">
-
-                                    <router-link :to="{name:'ViewCourse' , params:{id:enrollment.course._id}}" class="is-size-4 is-capitalized has-text-weight-bold underline">
-                                        {{enrollment.course.title}}</router-link>
-                                    <p class="is-size-5"> {{enrollment.text}}</p>
-                                    <p class="is-size-5">Rating {{enrollment.rating}}</p>
-                                    <p class="is-size-6"><i class="fal fa-clock"></i> {{enrollment.createdAt | agoDate}}
-                                    </p>
-                                    <div class="actions pt-2">
-                                        <a class="underline"> <i class="fas fa-edit pr-2"></i>Edit</a>
-                                        <a class="px-4 underline"><i class="fas fa-trash pr-2"></i>Delete</a>
-                                    </div>
-                                </div>
-                                <hr class="has-background-grey">
-                            </div>
-                        </template>
+                     <p class="has-text-danger"> {{reviews}}</p>
                     </div>
                 </div>
 
@@ -41,7 +24,7 @@
   export default {
     data() {
       return {
-        enrollments: []
+        reviews: []
       };
     },
 
@@ -57,17 +40,20 @@
 
     mounted() {
 
-      this.fetchEnrollments();
+      this.fetchUserReviews();
     },
     methods: {
-      fetchEnrollments() {
+      fetchUserReviews() {
 
-        this.$http.get(`/api/v1/course-reviews/${this.user._id}/`)
+        this.$http.get(`/api/v1/course-reviews/user-reviews/`)
           .then(({ data }) => {
-            this.enrollments = data;
+            this.reviews = data;
             this.loaded = true;
           })
-          .catch();
+          .catch((e) =>{
+            console.log(e)
+            return e
+          });
 
       }
     }
