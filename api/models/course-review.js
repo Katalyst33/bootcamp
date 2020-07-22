@@ -13,8 +13,10 @@ const CourseReviewSchema = new mongoose.Schema({
   rating: {
     type: Number,
     min: 1,
-    max: 10,
+    max: 5,
     required: [true, "Please add a rating between 1 and 5"],
+    default: 1,
+
   },
   createdAt: {
     type: Date,
@@ -36,7 +38,7 @@ const CourseReviewSchema = new mongoose.Schema({
 //prevent user from submitting more than one review per course
 CourseReviewSchema.index({ course: 1, user: 1 }, { unique: true });
 
-// static method to get the average and save
+// static method to get the averageRating  and save
 
 CourseReviewSchema.statics.getAverageRating = async function (courseId) {
   const obj = await this.aggregate([
@@ -45,7 +47,7 @@ CourseReviewSchema.statics.getAverageRating = async function (courseId) {
     },
     {
       $group: {
-        _id: "$bootcamp",
+        _id: "$course",
         averageRating: { $avg: "$rating" },
       },
     },
@@ -53,6 +55,8 @@ CourseReviewSchema.statics.getAverageRating = async function (courseId) {
   try {
     await this.model("Course").findByIdAndUpdate(courseId, {
       averageRating: obj[0].averageRating,
+
+
     });
   } catch (err) {
     console.error(err);

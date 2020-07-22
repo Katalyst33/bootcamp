@@ -11,22 +11,22 @@
                 <li class="item" @click="menuToggle">
                     <router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link>
                 </li>
+                <router-link :to="{name:'Cart'}">
+                    <div>
+                        <i v-if="cart.length === 0" class="far fa-shopping-cart is-size-4"></i>
+                        <template v-else>
+                            <i  class="far fa-shopping-cart is-size-4"></i>
+                            <span class='badge badge-warning has-text-weight-bold ' id='lblCartCount'> {{cart.length}}</span>
 
+                        </template>
+
+
+                    </div>
+                </router-link>
                 <template v-if="user">
                     <template>
                         <div class="item my-3">
-                            <router-link :to="{name:'Cart'}">
-                                <div>
-                                    <i v-if="cart.length === 0" class="far fa-shopping-cart is-size-4"></i>
-                                   <template v-else>
-                                       <i  class="far fa-shopping-cart is-size-4"></i>
-                                       <span class='badge badge-warning has-text-weight-bold ' id='lblCartCount'> {{cart.length}}</span>
 
-                                   </template>
-
-
-                                </div>
-                            </router-link>
                         </div>
                         <ul class="item ">
                             <li :class="dropDown" class="has-submenu">

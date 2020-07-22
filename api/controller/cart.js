@@ -7,7 +7,9 @@ const Cart = require("../models/Cart");
 //@route GET /api/v1/carts/
 //@access Public
 exports.getCart = asyncHandler(async (req, res, next) => {
+
   res.status(200).json(res.advancedResults);
+
 });
 
 //@desc add cart

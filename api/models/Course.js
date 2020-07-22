@@ -27,6 +27,14 @@ const CourseSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  averageRating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    required: [true, "Please add a rating between 1 and 5"],
+    default: 1,
+
+  },
   startDate:{
     type: Date,
   },
@@ -54,6 +62,7 @@ const CourseSchema = new mongoose.Schema({
 });
 // static method to get the average and save
 CourseSchema.statics.getAverageCost = async function (bootcampId) {
+
   const obj = await this.aggregate([
     {
       $match: { bootcamp: bootcampId },
@@ -65,6 +74,7 @@ CourseSchema.statics.getAverageCost = async function (bootcampId) {
       },
     },
   ]);
+
   try {
     await this.model("Bootcamp").findByIdAndUpdate(bootcampId, {
       averageCost: Math.ceil(obj[0].averageCost / 10) * 10,

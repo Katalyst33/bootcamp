@@ -9,14 +9,17 @@
 
                     <div class="has-background-white has-text-left">
                         <div v-for="review in reviews.data" :key="review._id">
-                            <h4 class="has-text-primary is-size-4 "> {{review.course.title}}</h4>
+                            <p>
+                                <router-link :to="{name:'ViewCourse', params:{id:review.course._id}}"
+                                             class="has-text-primary is-size-4 "> {{review.course.title}}
+                                </router-link><i class="fad fa-external-link-alt has-text-primary"></i>
+                            </p>
                             <img class="rating" :src="`/stars/stars-${review.rating}.svg`">
                             <p class="is-size-4"> {{review.title}}</p>
                             <p class="is-size-5"> {{review.text}}</p>
                             <p>{{review.createdAt | agoDate}}</p>
 
                         </div>
-
 
 
                     </div>
@@ -81,7 +84,8 @@
         text-decoration: underline;
         color: #5e53a5;
     }
-    .rating{
+
+    .rating {
         height: 20%;
         width: 40%;
     }

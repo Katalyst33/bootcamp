@@ -11,6 +11,7 @@ require("./routes/userRoutes")
 require("./routes/courseReviewRoute")
 require("./routes/enrollmentRoutes")
 require("./routes/authRoutes");
+require("./routes/cartRoutes");
 
 route.get("*", ({ res }) => {
   res.sendFile($.path.base("dist/index.html"));

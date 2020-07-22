@@ -79,6 +79,9 @@
                                             class="is-capitalized is-size-4">5</span></p>
                                     <p> Scholarship :<span v-if="course.data.scholarshipAvailable">Available</span>
                                         <span v-else>Not Available</span></p>
+                                    <p>
+                                       Average Rating: {{course.data.averageRating}}
+                                    </p>
 
 
                                 </div>
