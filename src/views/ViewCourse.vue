@@ -41,6 +41,7 @@
                                     <ReviewsComponent :ago-date="review.createdAt | agoDate" :course="course"
                                                   :delete-review="deleteReview" :review="review"
                                                   :user="user"/>
+
                                     <hr class="has-background-grey-lighter">
                                 </div>
                             </div>

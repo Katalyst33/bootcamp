@@ -12,7 +12,8 @@
 
 
             <div class="m-0 ml-md-3">
-                <p class="is-size-5 has-text-weight-bold"> Rating: {{review.rating}}</p>
+                <img class="rating" :src="`/stars/stars-${review.rating}.svg`">
+
                 <p class="is-size-5 is-capitalized">{{review.title}}</p>
                 <p class="is-size-6 ">{{review.text}}</p>
                 <template v-if="course.data.enrolled">
@@ -61,5 +62,9 @@
         height: 50px;
         width: 50px;
         margin-left: 10px;
+    }
+    .rating{
+        height: 20%;
+        width: 40%;
     }
 </style>

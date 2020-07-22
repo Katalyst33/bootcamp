@@ -5,9 +5,20 @@
             <div class="container">
 
                 <div class="columns is-mobile">
-                    <div class="column is-three-fifths is-offset-one-fifth">
 
-                     <p class="has-text-danger"> {{reviews}}</p>
+
+                    <div class="has-background-white has-text-left">
+                        <div v-for="review in reviews.data" :key="review._id">
+                            <h4 class="has-text-primary is-size-4 "> {{review.course.title}}</h4>
+                            <img class="rating" :src="`/stars/stars-${review.rating}.svg`">
+                            <p class="is-size-4"> {{review.title}}</p>
+                            <p class="is-size-5"> {{review.text}}</p>
+                            <p>{{review.createdAt | agoDate}}</p>
+
+                        </div>
+
+
+
                     </div>
                 </div>
 
@@ -22,6 +33,7 @@
 
 
   export default {
+
     data() {
       return {
         reviews: []
@@ -50,9 +62,9 @@
             this.reviews = data;
             this.loaded = true;
           })
-          .catch((e) =>{
-            console.log(e)
-            return e
+          .catch((e) => {
+            console.log(e);
+            return e;
           });
 
       }
@@ -68,6 +80,10 @@
     .underline {
         text-decoration: underline;
         color: #5e53a5;
+    }
+    .rating{
+        height: 20%;
+        width: 40%;
     }
 </style>
 
