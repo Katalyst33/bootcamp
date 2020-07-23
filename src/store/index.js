@@ -44,14 +44,19 @@ export default new Vuex.Store({
       }, 100);
     },
 
-
     async addCartItem() {
-      await axios.post("/api/v1/cart", this.state.cart);
+     if(this.state.user){
+       await axios.post("/api/v1/cart", this.state.cart);
+     }
+     console.log("CART STATE", this.state.cart)
     },
 
     async getCartItem({ commit }) {
       const { data: { cart: { courses } } } = await axios.get("/api/v1/cart");
       commit("GET_CART", courses);
+    },
+    clearCart() {
+      this.state.cart = ''
     }
 
   },
@@ -65,6 +70,7 @@ export default new Vuex.Store({
     PUSH_TO_CART: (state, cartItem) => {
       state.cart.push(cartItem);
     },
+
     REMOVE_FROM_CART: (state, course) => {
       state.cart = state.cart.filter((item) => {
         return item._id !== course._id;

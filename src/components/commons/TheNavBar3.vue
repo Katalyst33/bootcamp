@@ -130,6 +130,8 @@
           await this.$http.get("/api/v1/auth/logout");
           await this.$store.commit("SET_USER");
           await this.$store.dispatch("getCurrentUser");
+          await this.$store.dispatch("clearCart");
+
           await this.$swal.fire({
             icon: "error",
             text: "logout successfully, you will be redirected shortly",

@@ -84,6 +84,7 @@
                                     </p>
 
 
+
                                 </div>
                                 <hr class="has-background-grey-lighter">
 
@@ -269,10 +270,6 @@
         this.addToCart();
       },
 
-      addReview(code) {
-        // this.$router.push({name:'AddReview', params:{courseId:}})
-        console.log("COURSE ID", code);
-      },
 
       deleteReview2(code) {
         console.log(code);

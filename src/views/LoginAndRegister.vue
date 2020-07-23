@@ -110,13 +110,12 @@
 
 
     methods: {
-
-
       async login() {
         const data = await this.$http.post("/api/v1/auth/login", this.form);
 
         if (data) {
           await this.$store.dispatch("getCurrentUser");
+          await this.$store.dispatch("getCartItem");
           await this.$router.push({ name: "Home" });
         }
 

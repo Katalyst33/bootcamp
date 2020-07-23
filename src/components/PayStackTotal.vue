@@ -11,7 +11,8 @@
             <form @submit.prevent="() => false" id="paymentForm">
 
                 <div class="form-submit">
-                    <button class="button is-success is-fullwidth is-large has-text-weight-bold is-uppercase" type="submit"
+                    <button class="button is-success is-fullwidth is-large has-text-weight-bold is-uppercase"
+                            type="submit"
                             @click="payWithPaystack"> Check Out
                     </button>
                 </div>
@@ -34,7 +35,7 @@
         },
 
         paymentMessage: "",
-        paymentComplete: false,
+        paymentComplete: false
       };
     },
 
@@ -43,12 +44,7 @@
     },
 
     mounted() {
-      const names = this.user.name.split(" ");
-      this.form = {
-        email: this.user.email,
-        firstname: names[0],
-        lastname: names[1]
-      };
+      this.setForm();
     },
 
     methods: {
@@ -70,6 +66,16 @@
         handler.openIframe();
       },
 
+      setForm() {
+        if(this.user){
+          const names = this.user.name.split(" ");
+          this.form = {
+            email: this.user.email,
+            firstname: names[0],
+            lastname: names[1]
+          };
+        }
+      }
 
     }
   };

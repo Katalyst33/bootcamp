@@ -2,7 +2,14 @@
     <div id="app">
         <!--        <TheNavBar v-if="!isAdminPage"/>-->
         <TheNavBar3 v-if="!isAdminPage"/>
-        <router-view v-if="loaded"/>
+
+       <!-- <transition
+                name="fade"
+                mode="out-in"
+        >-->
+            <router-view v-if="loaded"/>
+
+<!--        </transition>-->
         <TheFooter/>
 
     </div>
@@ -42,7 +49,7 @@
     },
     mounted() {
       this.getMe();
-      // this.$store.dispatch("getCartItem");
+      this.$store.dispatch("getCartItem");
     },
 
     methods: {
@@ -66,6 +73,18 @@
 
 
 <style lang="scss">
+    .fade-enter-active,
+    .fade-leave-active {
+        transition-duration: 0.9s;
+        transition-property: opacity;
+        transition-timing-function: ease;
+    }
+
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
 
     #app {

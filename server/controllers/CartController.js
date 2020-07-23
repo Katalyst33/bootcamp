@@ -1,4 +1,5 @@
 const Cart = require("../../api/models/Cart");
+const Course = require("../../api/models/Course");
 const advancedResults = require("../../api/middleware/advancedResults");
 
 
@@ -57,12 +58,12 @@ class CartController extends $.controller {
 
       cart = await Cart.findOneAndUpdate(cartData,
         {
-          ...{ courses: req.body },
+      ...{courses: req.body},
           ...{ user: req.user.id }
         }, {
           new: true
         });
-      // console.log("REQ BODY HERE",{ courses: req.body })
+      console.log("REQ BODY HERE",req.body)
       res.status(201).json({
         success: true,
         data: cart

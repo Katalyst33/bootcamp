@@ -26,7 +26,7 @@ const ManageCourse = () =>
 const AddAndUpdateCourse = () =>
   import(
     /* webpackChunkName: "Admin" */ "../views/admin/AddAndUpdateCourse.vue"
-  );
+    );
 
 const ManageReviews = () =>
   import(/* webpackChunkName: "bootcamp" */ "../views/ManageReviews.vue");
@@ -39,7 +39,7 @@ export default {
   beforeEnter: (to, from, next) => {
     if (["user", "publisher"].includes(store.state.user.role)) {
       next({
-        name: "login",
+        name: "login"
       });
     } else {
       next();
@@ -52,66 +52,66 @@ export default {
       path: "all-bootcamps",
       name: "AllBootcampX",
       component: AllBootcamps,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "all-users",
       name: "AllUsers",
       component: AllUsers,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "all-enrollments",
       name: "AllEnrollments",
       component: AllEnrollments,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "update-user/:id",
       name: "UpdateUser",
       component: UpdateUser,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "add-bootcamp",
       name: "AddBootcamp",
       component: AddBootcamp,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "manage-bootcamps/:id",
       name: "ManageBootcamp",
       component: ManageBootcamps,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "add-course/:id",
       name: "AddCourse",
       component: AddAndUpdateCourse,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "update-course/:id",
       name: "UpdateCourse",
       component: AddAndUpdateCourse,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "manage-course/:id",
       name: "ManageCourse",
       component: ManageCourse,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "update-bootcamp/:id",
       name: "UpdateBootcamp",
       component: AddBootcamp,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
     },
     {
       path: "/manage-reviews/",
       name: "ManageReviews",
-      component: ManageReviews,
-    },
-  ],
+      component: ManageReviews
+    }
+  ]
 };

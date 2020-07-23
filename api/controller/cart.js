@@ -52,8 +52,8 @@ exports.addCart = asyncHandler(async (req, res) => {
 
     cart = await Cart.findOneAndUpdate(cartData,
       {
-        ...{ courses: req.body },
-        ...{ user: req.user.id }
+        courses: req.body ,
+        user: req.user.id
       }, {
         new: true
       });

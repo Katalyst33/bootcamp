@@ -152,7 +152,7 @@
                                 <router-link :to="{name:'Reviews', params:{id:bootcamp.data._id}} "
                                              class="button is-dark my-2 mx-3">Read Reviews
                                 </router-link>
-                                <router-link :to="{name:'AddReview', params:{id:bootcamp.data._id}}"
+                                <router-link :to="{name:'AddReview', params:{courseId:bootcamp.data._id}}"
                                              class="button is-dark my-2">Write a Review
                                 </router-link>
                                 <button class="button is-dark my-2 mx-2">Visit Website</button>
@@ -226,6 +226,7 @@
       addToCart(course) {
         this.$store.commit("PUSH_TO_CART", course);
         this.$store.dispatch("addCartItem");
+
 
 
         this.$swal.fire({
