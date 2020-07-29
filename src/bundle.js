@@ -7,6 +7,7 @@ import VueSweetalert2 from "vue-sweetalert2";
 import "./scss/sweetAlertCustom.scss";
 import  gsap from "gsap"
 
+
 Vue.use(gsap)
 Vue.use(JSONView);
 Vue.use(VueSweetalert2);
