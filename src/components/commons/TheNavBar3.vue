@@ -11,18 +11,18 @@
                 <li class="item" @click="menuToggle">
                     <router-link :to="{name:'AllBootcamps'}">Browse Bootcamps</router-link>
                 </li>
-                <router-link :to="{name:'Cart'}">
-                    <div>
-                        <i v-if="cart.length === 0" class="far fa-shopping-cart is-size-4"></i>
-                        <template v-else>
-                            <i  class="far fa-shopping-cart is-size-4"></i>
-                            <span class='badge badge-warning has-text-weight-bold ' id='lblCartCount'> {{cart.length}}</span>
+            <li class="item" >    <router-link :to="{name:'Cart'}">
+                <div>
+                    <i v-if="carts.length === 0" class="far fa-shopping-cart is-size-4"></i>
+                    <template v-else>
+                        <i  class="far fa-shopping-cart is-size-4"></i>
+                        <span class='badge badge-warning has-text-weight-bold ' id='lblCartCount'> {{carts.length}}</span>
 
-                        </template>
+                    </template>
 
 
-                    </div>
-                </router-link>
+                </div>
+            </router-link></li>
                 <template v-if="user">
                     <template>
                         <div class="item my-3">
@@ -96,7 +96,7 @@
     },
 
     computed: {
-      ...mapState(["user", "loaded", "cart"])
+      ...mapState(["user", "loaded", "carts"])
     },
 
 

@@ -37,6 +37,7 @@ class CartController extends $.controller {
         success: true,
         cart
       });
+      console.log(cart)
     }
 
   }
@@ -46,24 +47,32 @@ class CartController extends $.controller {
     const cartData = {
       user: req.user.id
     };
+    const fullCartData = {
+      courses: Object.values(req.body),
+      user: req.user.id
+    }
 
     let cart = await Cart.findOne(cartData);
 
     if (!cart) {
       cart = await Cart.create({
         ...cartData,
-        courses: req.body
+        courses: Object.values(req.body)
       });
+       console.log("HERE 1")
     } else {
+      console.log("REQ BODY",Object.values(req.body) )
 
       cart = await Cart.findOneAndUpdate(cartData,
         {
-      ...{courses: req.body},
-          ...{ user: req.user.id }
-        }, {
+     $push:{fullCartData}
+        },
+        {
+          safe: true,
+          upsert: true,
           new: true
         });
-      console.log("REQ BODY HERE",req.body)
+      // console.log("REQ BODY HERE",req.body)
       res.status(201).json({
         success: true,
         data: cart

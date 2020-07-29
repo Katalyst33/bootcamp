@@ -38,7 +38,7 @@
 
     computed: {
 
-      ...mapState(["user", "cart"]),
+      ...mapState(["user", "carts"]),
 
       isAdminPage() {
         const pages = ["AllBootcampX", "ManageReviews", "AllBootcampX", "AllUsers", "UpdateUser", "AddBootcamp", "ManageBootcamp"];
@@ -49,7 +49,9 @@
     },
     mounted() {
       this.getMe();
-      this.$store.dispatch("getCartItem");
+      this.$store.commit("GET_CART");
+
+      // this.$store.dispatch("getCartItem");
     },
 
     methods: {

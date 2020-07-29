@@ -224,11 +224,9 @@
       },
 
       addToCart(course) {
+        console.log("")
         this.$store.commit("PUSH_TO_CART", course);
         this.$store.dispatch("addCartItem");
-
-
-
         this.$swal.fire({
           icon: "success",
           text: "Course has been added to cart"

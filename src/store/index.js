@@ -9,7 +9,7 @@ const vuexLocal = new VuexPersist({
   storage: window.sessionStorage,
   reducer: (state) => ({
     user: state.user,
-    cart: state.cart
+    carts: state.carts
   })
 });
 
@@ -25,7 +25,7 @@ export default new Vuex.Store({
     },
     user: null,
     loaded: true,
-    cart: []
+    carts: []
   },
 
   actions: {
@@ -40,23 +40,26 @@ export default new Vuex.Store({
           .catch((error) => {
             return console.log("get Me error ", error.response.data.error);
           });
-
       }, 100);
     },
 
     async addCartItem() {
-     if(this.state.user){
-       await axios.post("/api/v1/cart", this.state.cart);
-     }
-     console.log("CART STATE", this.state.cart)
+
+
+      if (this.state.user) {
+        await axios.post("/api/v1/cart", this.state.carts);
+      }
+      console.log("CART STATE", this.state.carts);
     },
 
-    async getCartItem({ commit }) {
-      const { data: { cart: { courses } } } = await axios.get("/api/v1/cart");
-      commit("GET_CART", courses);
+    async getCartItem({commit}) {
+      // const { data: { carts: { courses } } } = await axios.get("/api/v1/cart");
+      const data = await axios.get("/api/v1/cart");
+      commit("GET_CART", data.data.cart.courses);
+      console.log("GET_CART",data.data.cart.courses)
     },
     clearCart() {
-      this.state.cart = ''
+      this.state.carts = "";
     }
 
   },
@@ -67,12 +70,15 @@ export default new Vuex.Store({
       state.cart = cart;
     },
 
-    PUSH_TO_CART: (state, cartItem) => {
-      state.cart.push(cartItem);
+    PUSH_TO_CART(state, cartItem) {
+
+      state.carts.push(cartItem);
+      console.log(state.carts);
     },
 
     REMOVE_FROM_CART: (state, course) => {
-      state.cart = state.cart.filter((item) => {
+      state.carts = state.carts.filter((item) => {
+
         return item._id !== course._id;
       });
     },
@@ -88,7 +94,7 @@ export default new Vuex.Store({
     coursesInCart: (state) => {
       const courseIds = [];
 
-      for (const course of state.cart) {
+      for (const course of state.carts) {
         courseIds.push(course._id);
       }
 
@@ -98,7 +104,7 @@ export default new Vuex.Store({
     coursesInCartWithPrices: (state) => {
       const courseIds = [];
 
-      for (const course of state.cart) {
+      for (const course of state.carts) {
         courseIds.push({
           id: course._id,
           price: course.tuition

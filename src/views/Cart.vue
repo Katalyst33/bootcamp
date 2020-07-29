@@ -3,8 +3,8 @@
         <div class="section">
             <div class="container">
                 <div class="has-background-white px-5 py-5">
-                    <h1 v-if="cart.length === 0" class="is-size-3 has-text-left"> Cart is Empty</h1>
-                    <h1 v-else class="is-size-3 has-text-left"> {{cart.length}} course in cart</h1>
+                    <h1 v-if="carts.length === 0" class="is-size-3 has-text-left"> Cart is Empty</h1>
+                    <h1 v-else class="is-size-3 has-text-left"> {{carts.length}} course in cart</h1>
 
 
                     <div class="columns">
@@ -17,7 +17,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <template v-for="(course, cartIndex) in cart">
+                                    <template v-for="(course, cartIndex) in carts">
                                         <tr :key="cartIndex">
                                             <td class="py-3">{{course.title}}</td>
                                             <td class="py-3 is-size-5 has-text-weight-bold">{{course.tuition}}</td>
@@ -34,17 +34,13 @@
                         </div>
                         <div class="column is-4">
                             <div class="mt-3 has-text-left">
-
                                 <h3 class="is-size-4">Total:</h3>
                                 <h1 class="is-size-1 has-text-weight-bold">{{totalItem}}</h1>
                                 <PayStack :amount="totalItem"/>
                             </div>
                         </div>
                     </div>
-
-
-
-
+                    <button @click="getCartDb" class="button is-danger">add to cart</button>
                 </div>
             </div>
         </div>
@@ -52,28 +48,40 @@
 </template>
 
 <script>
+    import _ from "lodash"
   import PayStack from "../components/PayStackTotal";
   import { mapGetters, mapState } from "vuex";
 
   export default {
     components: { PayStack },
-
     computed: {
-      ...mapState(["cart"]),
+      ...mapState(["carts"]),
       ...mapGetters(["coursesInCart", "coursesInCartWithPrices"]),
 
-      totalItem: function(){
+      totalItem() {
+/*
         let sum = 0;
         this.cart.forEach(function(item) {
           sum += (parseFloat(item.tuition));
         });
-        return sum;
+        return sum;*/
+        return _.sum(this.carts.tuition)
       }
     },
 
 
+    mounted() {
+      console.log(_.sum(this.carts.tuition))
+      console.log()
+    },
+
 
     methods: {
+
+      addArray(arr){
+       return arr.reduce((a,b) => a + b, 0);
+      },
+
       removeFromCart(course) {
         this.$store.commit("REMOVE_FROM_CART", course);
         this.$store.dispatch("addCartItem");
@@ -82,6 +90,14 @@
           text: "Course has been removed from cart"
         });
       },
+
+      getCartDb() {
+
+        this.$store.dispatch("getCartItem");
+
+
+
+      }
 
     }
   };

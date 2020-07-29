@@ -14,6 +14,7 @@ module.exports = {
         target: "http://localhost:2000/",
         ws: false,
         changeOrigin: true,
+        secure:false
       },
       "/uploads": {
         target: "http://localhost:2000",
