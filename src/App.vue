@@ -3,13 +3,13 @@
         <!--        <TheNavBar v-if="!isAdminPage"/>-->
         <TheNavBar3 v-if="!isAdminPage"/>
 
-       <!-- <transition
-                name="fade"
-                mode="out-in"
-        >-->
-            <router-view v-if="loaded"/>
+   <!--      <transition
+                 name="fade"
+                 mode="out-in"
+         >-->
+        <router-view v-if="loaded"/>
 
-<!--        </transition>-->
+<!--                </transition>-->
         <TheFooter/>
 
     </div>
@@ -17,14 +17,12 @@
 
 <script>
 
-  // import TheNavBar from "./components/commons/TheNavBar";
   import TheNavBar3 from "./components/commons/TheNavBar3";
   import TheFooter from "./components/commons/TheFooter";
   import { mapState } from "vuex";
 
   export default {
     components: {
-      // TheNavBar,
       TheNavBar3,
       TheFooter
     },
@@ -49,24 +47,19 @@
     },
     mounted() {
       this.getMe();
-      this.$store.commit("GET_CART");
 
-      // this.$store.dispatch("getCartItem");
+
     },
 
     methods: {
-      async getMe() {
-        try {
-          await this.$store.dispatch("getCurrentUser");
-          // await console.log('get me data', data)
+      getMe() {
+        if (this.user) {
+          this.$store.dispatch("getCurrentUser");
+          this.$store.dispatch("getCartItem");
 
-
-        } catch (error) {
-          // return console.log('get me error',error)
         }
       }
     }
-
 
   };
 

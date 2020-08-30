@@ -43,23 +43,36 @@ export default new Vuex.Store({
       }, 100);
     },
 
+
     async addCartItem() {
-
-
       if (this.state.user) {
         await axios.post("/api/v1/cart", this.state.carts);
+
       }
-      console.log("CART STATE", this.state.carts);
     },
 
-    async getCartItem({commit}) {
-      // const { data: { carts: { courses } } } = await axios.get("/api/v1/cart");
-      const data = await axios.get("/api/v1/cart");
-      commit("GET_CART", data.data.cart.courses);
-      console.log("GET_CART",data.data.cart.courses)
+    getCartItem: (context) => {
+      axios
+        .get("/api/v1/cart")
+        .then((data) => {
+          context.commit("GET_CART", data.data.cart.courses);
+        })
+        .catch((error) => {
+          return console.log(error);
+        });
+
     },
+
+
+    /*   async getCartItem({commit}) {
+         // const { data: { carts: { courses } } } = await axios.get("/api/v1/cart");
+         const data = await axios.get("/api/v1/cart");
+         commit("GET_CART", data.data.cart.courses);
+         console.log("GET_CART",data.data.cart.courses)
+       },*/
+
     clearCart() {
-      this.state.carts = "";
+      this.state.carts = [];
     }
 
   },
@@ -67,13 +80,11 @@ export default new Vuex.Store({
   mutations: {
 
     GET_CART: (state, cart) => {
-      state.cart = cart;
+      state.carts = cart;
     },
 
     PUSH_TO_CART(state, cartItem) {
-
       state.carts.push(cartItem);
-      console.log(state.carts);
     },
 
     REMOVE_FROM_CART: (state, course) => {
@@ -83,6 +94,7 @@ export default new Vuex.Store({
       });
     },
     SET_USER: (state, user) => {
+
       state.user = user;
     },
     SET_STATUS: (state, authenticated) => {

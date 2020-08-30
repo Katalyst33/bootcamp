@@ -12,7 +12,9 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
   ]
   if (req.params.bootcampId) {
     const reviews = await Review.find({
+
       bootcamp: req.params.bootcampId,
+
     }).populate(populateQuery);
 
     return res.status(200).json({
@@ -31,7 +33,6 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
 //@desc Single Review
 //@route GET /api/v1/reviews/:id
 //@access Public
-
 exports.getReview = asyncHandler(async (req, res, next) => {
   let populateQuery = [
     { path: "bootcamp", select: "name description" },
@@ -52,7 +53,6 @@ exports.getReview = asyncHandler(async (req, res, next) => {
 //@desc Add review
 //@route post /api/v1/courses/:courseId/reviews/
 //@access Private
-
 exports.addReview = asyncHandler(async (req, res, next) => {
   const reviewData = {
     course: req.params.courseId,
@@ -62,12 +62,10 @@ exports.addReview = asyncHandler(async (req, res, next) => {
   };
 //check if review exists
   const review = await Review.findOne(reviewData);
-
   if (review) {
     return res.json({
       msg: "you have reviewed this course already"
     });
-
   }
 
   const course = await Course.findById(reviewData.course);

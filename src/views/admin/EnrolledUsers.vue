@@ -1,3 +1,4 @@
+<!--
 <template>
     <div>
         <div class="section">
@@ -73,6 +74,25 @@
     }
 
   };
+</script>
+
+<style scoped>
+
+</style>
+-->
+
+<template>
+  <div>
+    <h1 class="is-size-1 has-text-weight-bold has-background-danger">
+      Enrolled Users
+    </h1>
+  </div>
+</template>
+
+<script>
+export default {
+
+};
 </script>
 
 <style scoped>

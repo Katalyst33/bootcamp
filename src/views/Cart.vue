@@ -5,15 +5,12 @@
                 <div class="has-background-white px-5 py-5">
                     <h1 v-if="carts.length === 0" class="is-size-3 has-text-left"> Cart is Empty</h1>
                     <h1 v-else class="is-size-3 has-text-left"> {{carts.length}} course in cart</h1>
-
-
                     <div class="columns">
                         <div class="column">
                             <div class="table-container mt-5">
                                 <table class="table is-fullwidth is-striped">
                                     <thead>
                                     <tr>
-
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -40,7 +37,6 @@
                             </div>
                         </div>
                     </div>
-                    <button @click="getCartDb" class="button is-danger">add to cart</button>
                 </div>
             </div>
         </div>
@@ -48,7 +44,6 @@
 </template>
 
 <script>
-    import _ from "lodash"
   import PayStack from "../components/PayStackTotal";
   import { mapGetters, mapState } from "vuex";
 
@@ -59,28 +54,20 @@
       ...mapGetters(["coursesInCart", "coursesInCartWithPrices"]),
 
       totalItem() {
-/*
         let sum = 0;
-        this.cart.forEach(function(item) {
-          sum += (parseFloat(item.tuition));
-        });
-        return sum;*/
-        return _.sum(this.carts.tuition)
+
+        for (const item of this.carts) {
+          sum += Number(item.tuition);
+
+        }
+        return sum;
+
       }
-    },
-
-
-    mounted() {
-      console.log(_.sum(this.carts.tuition))
-      console.log()
     },
 
 
     methods: {
 
-      addArray(arr){
-       return arr.reduce((a,b) => a + b, 0);
-      },
 
       removeFromCart(course) {
         this.$store.commit("REMOVE_FROM_CART", course);
@@ -89,14 +76,6 @@
           icon: "success",
           text: "Course has been removed from cart"
         });
-      },
-
-      getCartDb() {
-
-        this.$store.dispatch("getCartItem");
-
-
-
       }
 
     }

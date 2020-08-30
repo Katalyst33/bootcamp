@@ -15,7 +15,7 @@
 
                         <div v-if="isUpdateAccount">
 
-                            <h1 class="is-size-3">Manage Account</h1>
+                            <h1 class="is-size-4 has-text-weight-bold">Manage Account</h1>
                         </div>
 
                         <div v-if="isResetPassword">
@@ -86,14 +86,14 @@
                                     <button @click="updateAccount" class="button is-primary">Update</button>
                                 </div>
                                 <div class="column">
-                                    <router-link :to="{name:'UpdatePassword'}" class="button is-dark">Update
+                                    <router-link :to="{name:'UpdatePassword'}" class="pt-5">Update
                                         Password
                                     </router-link>
                                 </div>
                             </div>
 
-                            <button v-if="isUpdatePassword" @click="updatePassword" class="button is-primary">Update
-                                Password
+                            <button v-if="isUpdatePassword" @click="updatePassword" class="button is-primary">
+                              Update Password
                             </button>
 
                         </section>

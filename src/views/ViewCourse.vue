@@ -271,32 +271,6 @@
       },
 
 
-      deleteReview2(code) {
-        console.log(code);
-        this.$swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!"
-        })
-          .then((code) => {
-            console.log("SEconad code", code);
-            // this.$http.delete(`/api/v1/course-reviews/${code}/`);
-
-          })
-          .then((result) => {
-            if (result.value) {
-              this.$swal.fire(
-                "Deleted!",
-                "Your file has been deleted.",
-                "success"
-              );
-            }
-          });
-      },
 
       async deleteReview(code) {
         await this.$swal.fire({

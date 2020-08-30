@@ -5,6 +5,7 @@ import LoginAndRegister from "../views/LoginAndRegister";
 import notFound from "../views/404.vue";
 import store from "../store/index";
 
+
 const About = () =>
   import(/* webpackChunkName: "about" */ "../views/About.vue");
 const Cart = () =>
