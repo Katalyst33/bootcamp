@@ -20,59 +20,16 @@
               <li @click="menuToggle(id)" class="nav-item">
                 <router-link :to="{name:link.route}" class="has-text-white">
                   <i :class="link.icon" class="is-size-3"></i><br>
-                  {{ link.title }}
+                  {{link.title}}
                 </router-link>
               </li>
             </ul>
 
-     <!--       <ul class="has-text-white">
-
-              <li @click="menuToggle" class="nav-item">
-                <router-link :to="{name:'AddBootcamp'}" class="has-text-white">
-                  <i class="fal fa-layer-plus is-size-3"></i><br>
-                  Add Bootcamp
-                </router-link>
-              </li>
-
-              <li @click="menuToggle" class="nav-item">
-                <router-link :to="{name:'AllBootcampX'}" class="has-text-white">
-                  <i class="fal fa-warehouse is-size-3"></i><br>
-                  All Bootcamps
-                </router-link>
-              </li>
-              <li @click="menuToggle" class="nav-item">
-                <router-link :to="{name:'AllUsers'}" class="has-text-white">
-                  <i class="fal fa-users is-size-3"></i><br>
-                  All<br>
-                  User
-                </router-link>
-              </li>
-              <li @click="menuToggle" class="nav-item">
-                <router-link :to="{name:'AllEnrollments'}" class="has-text-white">
-                  <i class="fal fa-user-tag is-size-3"></i><br>
-                  Enrolled <br>
-                  User
-                </router-link>
-              </li>
-              <li @click="menuToggle" class="nav-item">
-                <router-link :to="{name:'ManageReviews'}" class="has-text-white">
-                  <i class="fal fa-quote-left is-size-3"></i><br>
-                  Reviews
-                </router-link>
-              </li>
-              <li class="nav-item " @click="logOut">
-                <router-link :to="{name:'ManageReviews'}" class="has-text-white">
-                  <i class="fal fa-sign-out-alt is-size-1 has-text-danger"></i><br>
-                  Logout
-                </router-link>
-              </li>
-            </ul>-->
           </div>
         </div>
       </div>
       <div class="column">
         <router-view></router-view>
-
       </div>
     </div>
 
