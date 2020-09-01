@@ -1,5 +1,5 @@
-const Cart = require("../../api/models/Cart");
-const Course = require("../../api/models/Course");
+const Cart = require("../models/Cart");
+const Course = require("../models/Course");
 const advancedResults = require("../../api/middleware/advancedResults");
 
 

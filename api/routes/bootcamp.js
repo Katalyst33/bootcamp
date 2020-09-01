@@ -10,7 +10,7 @@ const {
   bootcampPhotoUpload,
 } = require("../controller/bootcamp");
 
-const Bootcamp = require("../models/Bootcamp-model");
+const Bootcamp = require("../../server/models/Bootcamp-model");
 const advancedResults = require("../middleware/advancedResults");
 
 //Include other resource router

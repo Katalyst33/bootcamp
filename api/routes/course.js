@@ -8,7 +8,7 @@ const {
   deleteCourse,
 } = require("../controller/courses");
 
-const Courses = require("../models/Course");
+const Courses = require("../../server/models/Course");
 
 const advancedResults = require("../middleware/advancedResults");
 

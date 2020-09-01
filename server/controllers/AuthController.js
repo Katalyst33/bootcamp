@@ -1,5 +1,5 @@
 const ErrorResponse = require("../../api/utils/errorResponse");
-const User = require("../../api/models/User");
+const User = require("../models/User");
 const sendEmail = require("../../api/utils/sendEmail");
 
 

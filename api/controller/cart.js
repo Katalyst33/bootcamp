@@ -1,6 +1,6 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
-const Cart = require("../models/Cart");
+const Cart = require("../../server/models/Cart");
 
 
 //@desc Get Cart Items

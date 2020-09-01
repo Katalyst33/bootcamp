@@ -1,6 +1,6 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("./async");
-const User = require("../models/User");
+const User = require("../../server/models/User");
 const jwt = require("jsonwebtoken");
 
 // Check and populate user.

@@ -7,7 +7,7 @@ const {
 } = require("../controller/cart");
 
 
-const Cart = require("../models/Cart");
+const Cart = require("../../server/models/Cart");
 
 const router = express.Router();
 

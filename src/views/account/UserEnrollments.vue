@@ -5,7 +5,7 @@
         <div>
 
 
-            <table class="table is-bordered is-fullwidth">
+            <table v-if="loaded" class="table is-bordered is-fullwidth mt-5">
                 <thead>
                 <tr>
                     <th>
@@ -22,13 +22,14 @@
                     </th>
                 </tr>
                 </thead>
+
                 <tbody>
                 <tr v-for="(enrollment, index) in enrollments.data" :key="enrollment.id">
                     <td>{{index + 1}}</td>
                     <td> {{enrollment.bootcamp.name}}</td>
                     <td> {{enrollment.course.title}}</td>
                     <td>
-                        <i class="fas fa-trash has-text-danger"></i>
+                        <i @click="RemoveEnrollment(index)" class="fas fa-trash has-text-danger"></i>
                     </td>
                 </tr>
                 </tbody>
@@ -61,10 +62,16 @@
         try {
           const { data } = await this.$http.get(`/api/v1/enrollments/user`);
           this.enrollments = data;
+          this.loaded= true
         } catch (e) {
           return e;
         }
+      },
+
+      RemoveEnrollment(id){
+        console.log(id, "Removed")
       }
+
     }
 
   };

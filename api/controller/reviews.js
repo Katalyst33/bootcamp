@@ -1,7 +1,7 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
-const Review = require("../models/Review");
-const Course = require("../models/Course");
+const Review = require("../../server/models/Review");
+const Course = require("../../server/models/Course");
 
 //@desc Get Reviews
 //@route GET /api/v1/reviews/

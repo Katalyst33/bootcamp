@@ -10,7 +10,7 @@ const {
 
 } = require("../controller/course-review");
 
-const CourseReview = require("../models/course-review");
+const CourseReview = require("../../server/models/course-review");
 
 //merge route with course route
 const router = express.Router({

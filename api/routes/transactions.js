@@ -11,7 +11,7 @@ const {
 
 
 const router = express.Router();
-const Transaction = require("../models/transactions");
+const Transaction = require("../../server/models/transactions");
 
 const advancedResults = require("../middleware/advancedResults");
 

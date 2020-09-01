@@ -1,5 +1,5 @@
 const path = require("path");
-const Bootcamp = require("../../api/models/Bootcamp-model");
+const Bootcamp = require("../models/Bootcamp-model");
 const advancedResults = require("../../api/middleware/advancedResults");
 const { protect, authorize } = require("../../api/middleware/auth");
 

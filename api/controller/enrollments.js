@@ -1,7 +1,7 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
-const Course = require("../models/Course");
-const Enrollment = require("../models/Enrollment");
+const Course = require("../../server/models/Course");
+const Enrollment = require("../../server/models/Enrollment");
 
 //@desc Add Enrollement
 //@route POST /api/v1/bootcamps/:bootcampId/courses

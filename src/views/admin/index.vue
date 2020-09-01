@@ -16,11 +16,11 @@
         <div class="menu " :class="toggleMenu">
           <div class="has-text-primary  py-5 admin">
 
-            <ul class="" v-for="(link, id) in links" :key="id">
-              <li @click="menuToggle(id)" class="nav-item">
-                <router-link :to="{name:link.route}" class="has-text-white">
-                  <i :class="link.icon" class="is-size-3"></i><br>
-                  {{link.title}}
+            <ul v-for="(link, id) in links" :key="id">
+              <li :class="activeTab === id ? 'is-active':'' " @click="menuToggle(id)" class="nav-item">
+                <router-link :to="{name:link.route}" class="has-text-white menu-items py-3">
+                  <i :class="link.icon" class="is-size-4 px-3 nav-icon"></i>
+                  <span class="nav-text"> {{ link.title }}</span>
                 </router-link>
               </li>
             </ul>
@@ -80,7 +80,7 @@ export default {
       toggleIcon: {
         "fas fa-bars": true,
         "fas fa-times": false
-      },
+      }
     };
   },
   mounted() {
@@ -89,15 +89,14 @@ export default {
   },
 
 
-
   methods: {
     lastArray() {
 
       let lastItem = this.links[this.links.length - 1];
       console.log(lastItem.title);
-      if(lastItem){
-        console.log("TRUE")
-        this.link.icon = 'fal fa-sign-out-alt has-text-danger'
+      if (lastItem) {
+        console.log("TRUE");
+        this.link.icon = "fal fa-sign-out-alt has-text-danger";
       }
 
     },
@@ -159,6 +158,11 @@ export default {
 
 <style scoped>
 
+.menu-items{
+  display: flex;
+
+}
+
 .header {
   display: flex;
 }
@@ -205,7 +209,11 @@ export default {
 
 .nav-item {
   border-bottom: 1px solid #ffffff;
-  padding: 10px 10px;
+
+}
+
+.is-active{
+  color: #2fd95e;
 }
 
 /* Extra small devices (portrait phones, less than 576px)*/

@@ -1,5 +1,5 @@
-const CourseReview = require("../../api/models/course-review");
-const Course = require("../../api/models/Course");
+const CourseReview = require("../models/course-review");
+const Course = require("../models/Course");
 const advancedResults = require("../../api/middleware/advancedResults");
 
 // const { protect, authorize } = require("../../api/middleware/auth");

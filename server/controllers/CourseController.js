@@ -1,7 +1,7 @@
-const Enrollment = require("../../api/models/Enrollment");
+const Enrollment = require("../models/Enrollment");
 const advancedResults = require("../../api/middleware/advancedResults");
-const Course = require("../../api/models/Course");
-const Bootcamp = require("../../api/models/Bootcamp-model");
+const Course = require("../models/Course");
+const Bootcamp = require("../models/Bootcamp-model");
 
 
 /**

@@ -8,7 +8,7 @@ const {
   deleteUser,
 } = require("../controller/user");
 
-const User = require("../models/User");
+const User = require("../../server/models/User");
 
 //merge route with bootcamp route
 const router = express.Router({

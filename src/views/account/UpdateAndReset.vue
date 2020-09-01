@@ -86,14 +86,14 @@
                                     <button @click="updateAccount" class="button is-primary">Update</button>
                                 </div>
                                 <div class="column">
-                                    <router-link :to="{name:'UpdatePassword'}" class="pt-5">Update
-                                        Password
+                                    <router-link :to="{name:'UpdatePassword'}" class="pt-5 has-text-weight-bold">Update
+                                        Password ?
                                     </router-link>
                                 </div>
                             </div>
 
-                            <button v-if="isUpdatePassword" @click="updatePassword" class="button is-primary">
-                              Update Password
+                            <button v-if="isUpdatePassword" @click="updatePassword" class="button is-primary has-text-weight-bold">
+                              Update Password ?
                             </button>
 
                         </section>

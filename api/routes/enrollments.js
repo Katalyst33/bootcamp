@@ -2,7 +2,7 @@ const express = require("express");
 
 const { addEnrollment, getEnrollments } = require("../controller/enrollments");
 
-const Enrollment = require("../models/Enrollment");
+const Enrollment = require("../../server/models/Enrollment");
 
 //merge route with bootcamp route
 const router = express.Router(

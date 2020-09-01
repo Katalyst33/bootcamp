@@ -1,7 +1,7 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
-const Transaction = require("../models/transactions");
-const Course = require("../models/Course");
+const Transaction = require("../../server/models/transactions");
+const Course = require("../../server/models/Course");
 
 
 //@desc Add Transactions

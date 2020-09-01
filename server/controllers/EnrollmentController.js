@@ -1,5 +1,5 @@
-const Enrollment = require("../../api/models/Enrollment");
-const Course = require("../../api/models/Course");
+const Enrollment = require("../models/Enrollment");
+const Course = require("../models/Course");
 const advancedResults = require("../../api/middleware/advancedResults");
 
 
@@ -25,14 +25,12 @@ class EnrollmentController extends $.controller {
     return {
       "@getAllEnrollments": advancedResults(Enrollment, populateQuery),
       "@getUserEnrollments": advancedResults(Enrollment, populateQuery)
-
     };
   }
 
   static async getAllEnrollments({ res }) {
 
     return res.json(res.advancedResults);
-
   }
 
   static async addEnrollment({ req, res }) {
@@ -89,9 +87,40 @@ class EnrollmentController extends $.controller {
 
 
 
+
     //end
 
   }
+
+
+  static async removeEnrollment({req, res}){
+    const enrollmentData = {
+      course: req.params.courseId,
+      user: req.user.id
+    };
+
+    const enrollment = await Enrollment.findOne(enrollmentData);
+
+if(!enrollment){
+  return res.json({
+    error:`Not enrolled`
+  });
+}
+//make sure user is owner of enrollment
+    if(enrollmentData.user !== req.user.id && req.user.role !== "admin"){
+      return res.json({
+        error: `you are not authorized to delete enrollment `
+      });
+    }
+
+    await  enrollment.remove();
+    res.json({
+      success: true,
+      data: {}
+    })
+
+  }
+
 
   //end
 }

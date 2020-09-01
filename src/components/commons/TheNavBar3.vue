@@ -44,7 +44,7 @@
                                         <i class="fas fa-external-link-alt px-1"></i>Manage
                                         Account
                                     </router-link>
-                                    <li class="py-2">Enrollments</li>
+
                                     <li @click="logOut" class=" item button__custom px-3">
                                         <button class="button is-danger"><i class="fas fa-sign-out-alt"></i>Logout</button>
                                     </li>

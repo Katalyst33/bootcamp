@@ -8,7 +8,7 @@ const {
   deleteReview,
 } = require("../controller/reviews");
 
-const Review = require("../models/Review");
+const Review = require("../../server/models/Review");
 
 //merge route with bootcamp route
 const router = express.Router({
