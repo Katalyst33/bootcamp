@@ -95,12 +95,12 @@ class EnrollmentController extends $.controller {
 
   static async removeEnrollment({req, res}){
     const enrollmentData = {
-      course: req.params.courseId,
+
       user: req.user.id
     };
 
     const enrollment = await Enrollment.findOne(enrollmentData);
-
+console.log(enrollmentData)
 if(!enrollment){
   return res.json({
     error:`Not enrolled`
@@ -116,6 +116,7 @@ if(!enrollment){
     await  enrollment.remove();
     res.json({
       success: true,
+      msg:'You are no longer enrolled in this Course',
       data: {}
     })
 

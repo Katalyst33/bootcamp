@@ -17,7 +17,7 @@
           <div class="has-text-primary  py-5 admin">
 
             <ul v-for="(link, id) in links" :key="id">
-              <li :class="activeTab === id ? 'is-active':'' " @click="menuToggle(id)" class="nav-item">
+              <li  @click="menuToggle(id)" class="nav-item">
                 <router-link :to="{name:link.route}" class="has-text-white menu-items py-3">
                   <i :class="link.icon" class="is-size-4 px-3 nav-icon"></i>
                   <span class="nav-text"> {{ link.title }}</span>

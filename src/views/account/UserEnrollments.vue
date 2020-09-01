@@ -29,7 +29,8 @@
                     <td> {{enrollment.bootcamp.name}}</td>
                     <td> {{enrollment.course.title}}</td>
                     <td>
-                        <i @click="RemoveEnrollment(index)" class="fas fa-trash has-text-danger"></i>
+
+                        <i @click="RemoveEnrollment(enrollment._id)" class="fas fa-trash has-text-danger pointer"></i>
                     </td>
                 </tr>
                 </tbody>
@@ -68,8 +69,10 @@
         }
       },
 
-      RemoveEnrollment(id){
-        console.log(id, "Removed")
+      RemoveEnrollment(enrollmentId){
+        this.$http.delete( `/api/v1/enrollments/${enrollmentId}`)
+        console.log(enrollmentId, "found id")
+        this.fetchEnrollment()
       }
 
     }
@@ -78,5 +81,9 @@
 </script>
 
 <style scoped>
+
+.pointer{
+  cursor: pointer;
+}
 
 </style>
