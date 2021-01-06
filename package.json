@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@xpresser/env": "^1.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bulma": "^0.8.2",
     "colors": "^1.4.0",
